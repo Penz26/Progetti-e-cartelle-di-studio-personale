@@ -1,0 +1,17 @@
+### Python ###
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+.env
+*.log
+
+### Obsidian ###
+# Ignora le impostazioni locali di Obsidian (ma tiene i tuoi appunti .md)
+.obsidian/
+
+### System Files ###
+.DS_Store
+Thumbs.db
