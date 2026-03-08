@@ -1,3 +1,4 @@
+#Git [[Git & GitHub]]
 
 ```Shell
 #1
@@ -33,21 +34,25 @@
     - Trucco: git add . aggiunge tutti i file modificati in una volta sola.
      
 - git rm --cached nome_file
-  #rimuove un file dalla Staging Area   
+  #rimuove un file dalla Staging Area ma lo mantiene nella cartella locale
+  #si usa quando si ha aggiunto un file alla repo che non dovrebbe esserci
   
 - git rm "nome-file"
   #Cancella il file dalla repository 
   #Se si vuole cancellarlo definitivamente bisogna fare un    git commit successivamente
   
 - git restore "nome-file"
-  #Permette di recuperare il file cancellato, affinchè non sia stato già fatto il commit
+  #Permette di recuperare il file cancellato, affinchè non sia stato già fatto il commit, recupera il file originale non modificato
+	--staged #permette di spostare il file dalla staging area alla working directory senza perdere le modifiche 
+	#si usa quando si ha inserito il file nella staging area quando non si aveva ancora finito di modificarlo
   
 - git commit -m "Messaggio descrittivo" 
   #Scatta l'istantanea definitiva. Il messaggio (-m) spiega cosa hai cambiato (es: "Riparato bug nel login").
   #con --amend sovrascrivi il commit precedente
+  -a #permette di skippare completamente la staging area committando direttamente
   
 - git mv "Nome-file-vecchio" "Nome-file-nuovo"
-  s
+  
 --------------------------------------------------------------   
 #4
 #Sincronizzazione con GitHub
