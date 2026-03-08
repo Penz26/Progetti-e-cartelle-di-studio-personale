@@ -1,5 +1,5 @@
 
-```
+```Shell
 #1
 #Preparazione (Setup) all'interno della GitBash, o qualsiasi terminale che si stia usando per Git
 

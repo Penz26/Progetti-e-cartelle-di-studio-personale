@@ -1,4 +1,4 @@
-[Cosa Sono ?]
+# **Cosa Sono** ?
 
 #Git 
 
@@ -37,4 +37,5 @@ Permette a migliaia di persone di lavorare sullo stesso progetto contemporaneame
 Se il tuo computer decide di morire il tuo codice è al sicuro sui server di GitHub
 
 [[Comandi di Git basilari]]
-[[Cos'è  un file gitignore]]
+[[Cos'è un file .gitignore]]
+[[Comandi di Git per collegarsi a GitHub]]
