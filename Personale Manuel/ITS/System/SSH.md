@@ -35,7 +35,9 @@ Le chiavi vengono salvate in ~/.ssh/
 Ora dobbiamo trasferire la chiave per fare la connesione
 si usa il comando:
 
+```Shell
 ssh-copy-id nome_utente@ip_macchina
+```
 
 Chiederà per l'ultima volta la password della macchina ma dopo ciò si potrà loggare senza dover mettere la password
 Per configurare al meglio l' SSH possiamo modificare nei file di configurazione sshd_config in etc/ssh/sshd_config
