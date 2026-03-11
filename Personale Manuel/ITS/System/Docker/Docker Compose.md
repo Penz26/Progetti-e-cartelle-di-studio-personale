@@ -1,6 +1,5 @@
 #Docker [[Cos'è Docker]]  [[- Docker]]
 
-
 # COS' E'?
 
 Docker Compose è uno strumento per definire e gestire applicazioni Docker multi-container usando un file **YAML** .
