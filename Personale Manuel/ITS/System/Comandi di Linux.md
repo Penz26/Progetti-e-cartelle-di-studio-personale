@@ -108,7 +108,11 @@ fg %numero_job #porta in primo piano dei programmi eseguiti
 
 bg #riavviare un processo stavolta in background
 
-kill #specificando il PID (kill PID) termina il processo con il relativo PID
+kill PID #specificando il PID (kill PID) termina il processo con il relativo PID
+#esempio:
+#abbiamo startato un processo e non possiamo fermarlo
+# ps aux --- troviamo il pid del processo e facciamo
+#kill PID
 
 pkill nome_processo #termina processi cercando per nome 
 
@@ -310,6 +314,31 @@ cat doesnotexist.txt 2> error.txt
 process_transactions.sh worldbanc/private/transactions/2020.csv 2> /tmp/worldbanc.log
 
 #Con questo comando usiamo lo script che legge e stampa le transazioni E QUELLE CHE NON RISPETTANO IL FILTRO (QUINDI SONO IN STANDARD ERROR) IN UN FILE DI LOG ATTRAVERSO 2> che direziona SOLO gli standard error al file nella directory specificata
+
+
+#Reinderizzamento standard input (stdin)
+#Posto di default in cui i programmi leggono l'input
+#Dalla bash in uno script usa il comando:
+
+read
+
+#Piping
+#Permette di passare l'output di un comando/programma in input ad un altro comando/programma in modo da automatizzare funzioni
+
+| = simbolo di pipe
+#esempio:
+
+echo "Ciao mi chiamo Manuel" | wc -w
+
+#Il testo che viene printato con echo viene reinderizzato in input al comando wc che attraverso la flag -w conra quante parole (words) ci sono all'interno di quello che gli abbiamo passato (4).
+
+#ESEMPIO PRATICO:
+#Vogliamo vedere il numero di transazioni di un nostro cliente nella directory che contiene tutte le transazioni dei nostro clienti senza però le transazioni salvate nella cartella backup all' interno di transazioni
+
+grep -R worldbanc/private/transaction --exclude-dir="backups" | wc -l
+#	-R cerca in modo ricorsivo in tutti i file della cartella e dei file all'interno delle cartelle della nostra attuale directory
+#   --exclude-dir= ci permette di lasciar stare una directory all'interno in cui stiamo cercando, in questo caso backups
+
 
 ```
 ----------------------------------------------------------------------
