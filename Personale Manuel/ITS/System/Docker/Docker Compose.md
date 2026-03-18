@@ -1,4 +1,4 @@
-#Docker [[Cos'è Docker]]  [[- Docker]]
+#Docker [[Cos'è Docker]]  
 
 # COS' E'?
 

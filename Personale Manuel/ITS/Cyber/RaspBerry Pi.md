@@ -24,3 +24,13 @@ sudo nmap -p 22,443,80 --open 192.168.100.0/24 | grep B8:27:EB
 # Bettercap per attacchi MITM
 >Bettercap è un framework che permette di analizzare e attaccare reti wifi, bluetooth, IPv4/IPv6
 
+>Entri nel framework
+```Shell
+sudo bettercap
+```
+
+>Comandi del framework:
+```Shell
+net.probe on
+net.show
+```
