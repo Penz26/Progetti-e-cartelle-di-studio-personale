@@ -41,5 +41,34 @@
    >- ERD Tool genera automaticamente uno schema visivo che mostra come le tue tabelle sono collegate tra loro
    
    
-   
+```docker-compose.yml
+services:
+  db:
+    image: postgres:latest
+    container_name: postgres-container
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password123 # Cambiala in qualcosa di sicuro!
+      POSTGRES_DB: mydatabase
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin-container
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: adminpassword
+    ports:
+      - "8080:80" # Accedi via browser su http://localhost:8080
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:   
+```
    
