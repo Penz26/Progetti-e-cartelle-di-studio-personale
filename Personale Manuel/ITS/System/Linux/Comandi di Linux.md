@@ -1,3 +1,4 @@
+#Linux 
 ```Bash
 echo("Messaggio") # printa il messaggio nel terminale
 whoami # printa a schermo il nome dell utente
