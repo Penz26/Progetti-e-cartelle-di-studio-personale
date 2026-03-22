@@ -31,7 +31,7 @@ ncat -l numero_porta
 #Flag utili:
 -k # accetta più connessioni in listening mode
 -v # verbosità, descrive quello che sta succedendo
-#Da un'altra shell possiamo vedere chi è in ascolto con il comando
+-m N # limita il numero di macchine che possono collegarsi (N = numero massimo di macchine che possono collegarsi al server)
 ```
 
 >Per vedere che servizi ci sono in ascolto sulla rete:
@@ -91,7 +91,7 @@ openssl req -x509 -newkey rsa:2048 -keyout key.pem -out cert.pem -days 365 -node
 #-nodes non protegge la chiave con una password
 ```
 
->Ora dopo che il server ha generato i certificati e le chiavi basterà fare:
+>Ora  che il server ha generato i certificati e le chiavi basterà fare:
 ```Shell
 ncat -lkv IP_server PORTA --ssl --ssl-cert cert.pem --ssl-key key.pem
 
