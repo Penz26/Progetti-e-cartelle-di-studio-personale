@@ -90,6 +90,23 @@ systemctl  #permette di controllare lo stato dei servizi attraverso:
         enable #configura l'avvio automatico al boot
 
         disable #toglie l'avvio automatico al boot
+        
+awk #comando che permette di filtrare in modo intelligente una riga data in input tramite | . Divide la riga in colonne e ti permette di manipolare quei dati con estrema precisione. Di default considera lo spazio come separatore tra una colonna e l'altra.
+	"{print $1}" #stampa la prima colonna
+	"{print $0}" #stampa l'intera riga
+	"{print $NF}" #stampa il contenuto dell'ultima colonna
+	"NR==1 {print $0}" #stampa esattamente il numero di riga che si specifica
+			
+	-F "value" #permette di cambiare il separatore
+	#può anche accettare più di un divisore con:
+	[valori]
+	#esempio
+	[/ :] #questo userà anche come divisori / lo spazio e i due punti
+	
+	#awk può anche avere delle condizioni per cui cercare seguendo questa sintassi /condizione/
+	#esempio:
+	ip addr | awk '/inet / {print $2}'
+	
 ----------------------------------------------------------------------------
 
 VISUALIZZAZIONE E CONTROLLI PROCESSI 
