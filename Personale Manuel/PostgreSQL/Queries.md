@@ -1,4 +1,4 @@
-#Database [[Introduzione a PostgreSQL]]
+[[Introduzione a PostgreSQL]]
 # **Grande recap delle Queries**
 >Operatori, clausole, funzioni ecc...
 

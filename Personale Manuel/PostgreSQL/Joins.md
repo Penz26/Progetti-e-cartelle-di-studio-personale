@@ -1,1 +1,1 @@
-#Database [[Introduzione a PostgreSQL]]
+[[Introduzione a PostgreSQL]]

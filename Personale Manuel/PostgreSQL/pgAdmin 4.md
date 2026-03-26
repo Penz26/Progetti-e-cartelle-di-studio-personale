@@ -1,4 +1,4 @@
-#Database  [[Introduzione a PostgreSQL]]
+[[Introduzione a PostgreSQL]]
 
 # **Cos'è pgAdmin?**
 >In parole povere è il PhpMyAdmin di PostgreSQL

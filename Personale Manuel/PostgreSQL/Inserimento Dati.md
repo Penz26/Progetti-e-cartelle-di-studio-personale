@@ -1,4 +1,4 @@
-#Database [[Introduzione a PostgreSQL]]
+[[Introduzione a PostgreSQL]]
 
 # **Come e dove inseriamo i dati?**
 

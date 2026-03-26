@@ -1,4 +1,4 @@
-#Database  [[Introduzione a PostgreSQL]]
+[[Introduzione a PostgreSQL]]
 
 # **Come Installarlo?**
 >Di seguito riporto l'installazione attraverso l'installer ufficiale di PostgreSQL per Windows mentre Linux attraverso un container

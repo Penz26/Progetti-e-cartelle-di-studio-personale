@@ -61,7 +61,7 @@ cd ~  #sposta alla home directory,
 grep  #cerca una stringa in un file, è case sensitive quindi cercherà solo l'esatta stringa
         ESEMPIO: grep "CRITICAL"  2024-01-10.log
 	    #può anche cercare una stringa in più file alla volta (grep "hello" hello.txt hello2.txt)
-        #può anche cercare nella cartella corrente e le subcartelle (grep -r "hello" . (-r cerca anche nelle sottocartelle, mentre con il . cerca nella directory in cui siamo
+        -r #può anche cercare nella cartella corrente e le subcartelle (grep -r "hello" .) (mentre con il . cerca nella directory in cui siamo
 
 find  #cerca files e directory attraverso il nome
         #esempi: 
