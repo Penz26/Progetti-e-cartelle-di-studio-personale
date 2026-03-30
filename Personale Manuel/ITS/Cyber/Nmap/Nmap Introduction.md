@@ -67,7 +67,11 @@ nmap -sV --script=nome_script -p porta_da_attaccare nome_server
 ```
 
 # **7. Usare lo script vulners per vedere che vulnerabilità ci siano sul target**
->Dopo aver fatto lo scan con -sV il comando da in pasto il risultato al database di vulnerabilità di vulners.com che restituisce un elenco di vulnerabilità note associate a quelle specifiche versioni includendo un punteggio di gravità CVSS
+>Dopo aver fatto lo scan con -sV il comando da in pasto il risultato al database di vulnerabilità di vulners.com che restituisce un elenco di vulnerabilità note associate a quelle specifiche versioni includendo un punteggio di gravità CVSS.
+
+
+>**Molte volte però nmap dice che ci sono delle vulnerabilità solo basandosi sul numero della versione ufficiale del servizio, ma non controlla eventuali backporting eseguiti da sviluppatori per il proprio OS che corregono eventuali debolezze. 
+>Ciò risulta in "falsi positivi" che quindi ti allertano di eventuali debolezze quando in verità è tutto a posto :)**
 ```Shell
 #darà tutte le vulnerabilità trovate in base ai vari servizi
 nmap -sV --script=vulners -v nome_server
