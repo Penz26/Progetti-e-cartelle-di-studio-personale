@@ -1,19 +1,17 @@
 # **Cosa Sono** ?
 
+>Git è un software per il controllo di versione locale utilizzabile da interfaccia a riga di comando.
+
+# **Come funziona?**
+
+>Invece di salvare il file come prova_sito_finale.html, git scatta delle "istantanee" chiamate **commit** 
+
+>Se si fa un macello con il codice e questo smette di funzionare si può tornare a una versione funzionante precedente in pochi secondi.
+
+>Permette anche di creare "branch" paralleli per testare nuove idee senza rovinare la versione principale
 
 
-Git è un software per il controllo di versione locale utilizzabile da interfaccia a riga di comando.
-
-*Come funziona?*
-
-Invece di salvare il file come prova_sito_finale.html, git scatta delle "istantanee" chiamate **commit** 
-
-Se si fa un macello con il codice e questo smette di funzionare si può tornare a una versione funzionante precedente in pochi secondi.
-
-Permette anche di creare "branch" paralleli per testare nuove idee senza rovinare la versione principale
-
-
-## Ci sono 3 principali aree in Git
+# **Ci sono 3 principali aree in Git**
 - **Working Directory**
    - Mentre si lavora su dei file (modifica, correzione errori, migliorie ecc...) si è in questa cartella.
 - **Staging Area**

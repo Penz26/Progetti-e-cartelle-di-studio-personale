@@ -10,7 +10,7 @@ git nome_comando --help
 #Questi due comandi permettono di capire chi "FIRMA" i salvataggi
 
 - git config --global user.name "Il tuo nome"
-- git config --global user.email "la tua mai.com"
+- git config --global user.email "la tua mail.com"
   
 ```
 ---
@@ -23,7 +23,7 @@ git nome_comando --help
 ```
 
 ---
-# 3. **Mantenere un Progetto                              (Ciclo di lavoro quotidiano)
+# 3. **Mantenere un Progetto  (Ciclo di lavoro quotidiano)
 > Questo è il flusso che ripeterai continuamente:  Modifica → Aggiungi → Salva.
 
 ```Shell
@@ -103,8 +103,23 @@ git nome_comando --help
 - git switch nome-ramo
   #ti sposta da un ramo all'altro
   -c #permette di switchare e creare il branch allo stesso momento
+  
+#Una volta creati i branch in locale bisogna pusharli sulla repo github
+- git push -u origin nome-del-nuovo-branch
+  
+#Finchè non si entra negli altri branch con il comando git branch non li vede
 
-#QUANDO SI E' ALL' INTERNO DI UN BRANCH GLI AGGIORNAMENTI AI FILE NELLA WORKING DIRECTORY SARANNO SALVATI SOLO IN QUEL BRANCH, GLI ALTRI BRANCH NON SARANNO AFFETTI DAI CAMBIAMENTI. PROVARE PER CREDERE
+#Per vedere i branch in cui non si è ancora entrati fare
+- git branch -a 
+  #oppure 
+  git branch -r
+```
+
+
+>**QUANDO SI E' ALL' INTERNO DI UN BRANCH GLI AGGIORNAMENTI AI FILE NELLA WORKING DIRECTORY SARANNO SALVATI SOLO IN QUEL BRANCH, GLI ALTRI BRANCH NON SARANNO AFFETTI DAI CAMBIAMENTI. PROVARE PER CREDERE**
+
+
+```Shell
 - git merge -m "Messaggio" nome-ramo
   #Unisce le modifiche del ramo secondario a quello principale (main)
   

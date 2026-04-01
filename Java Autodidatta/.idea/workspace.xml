@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="f51d684a-7b21-48d8-ac51-e4ba193d2096" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../Personale Manuel/ITS/System/Comandi di Linux.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Personale Manuel/ITS/System/Comandi di Linux.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Introduzione_java/.vscode/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Introduzione_java/src/Introduzione.java" beforeDir="false" afterPath="$PROJECT_DIR$/Introduzione_java/src/Introduzione.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Personale Manuel/Comandi Git &amp; GitHub/Comandi di Git basilari.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Personale Manuel/Comandi Git &amp; GitHub/Comandi di Git basilari.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Personale Manuel/Comandi Git &amp; GitHub/Cos'è un file .gitignore.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Personale Manuel/Comandi Git &amp; GitHub/Cos'è un file .gitignore.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Personale Manuel/Comandi Git &amp; GitHub/Git &amp; GitHub.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Personale Manuel/Comandi Git &amp; GitHub/Git &amp; GitHub.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,31 +24,39 @@
     <commands />
     <urls />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="3B1oxCiIKgWTfDzeMMvpK3Qwfz8" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "main",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/marco/Desktop/Progetti-e-cartelle-di-studio-personale/Java Autodidatta",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Introduzione.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/marco/Desktop/Progetti-e-cartelle-di-studio-personale/Java Autodidatta&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -57,6 +73,10 @@
       <option name="presentableId" value="Default" />
       <updated>1773666182403</updated>
       <workItem from="1773666183484" duration="16000" />
+      <workItem from="1774975559499" duration="2639000" />
+      <workItem from="1775042685616" duration="1952000" />
+      <workItem from="1775061147236" duration="374000" />
+      <workItem from="1775061830071" duration="765000" />
     </task>
     <servers />
   </component>

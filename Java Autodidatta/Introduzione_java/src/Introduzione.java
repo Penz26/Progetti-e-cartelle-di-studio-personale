@@ -122,5 +122,106 @@ public class Introduzione {
         }else{
             System.out.println("Sei minorenne");
         }
+
+        //Si possono avere condizioni if nested come in ogni linguaggio di programmazione
+        //Come nell'esempio:
+
+        if(age > 0){
+            if(age >= 18){
+                System.out.println("Sei maggiorenne");
+            }else if(age <18){
+                System.out.println("Non sei ancora maggiorenne");
+            }
+        }else{
+            System.out.println("Non sei ancora Nato");
+        }
+
+
+        //4. Metodi delle stringhe
+
+        String chiave = "Caspiterina";
+
+        int lunghezza = chiave.length();    //restituisce la lunghezza (contando gli spazi della stringa
+        char letter = chiave.charAt(0);     //Restituisce la lettera all'index specificato
+        int index = chiave.indexOf("a");    //Restituisce l'indice di dove appare per la prima volta la lettera all'interno della stringa
+        int lastIndex = chiave.lastIndexOf("a"); //Restituisce l'indice di dove appare la lettera per l'ultima volta all'interno della stringa
+
+        System.out.println(lunghezza);
+        System.out.println(letter);
+        System.out.println(index);
+        System.out.println(lastIndex);
+
+        chiave = chiave.toUpperCase();      //Rende la stringa MAIUSCOLA
+        chiave = chiave.toLowerCase();      //Rende la stringa MINUSCOLA
+
+        chiave = "     Accidenti    ";
+        chiave = chiave.trim();             //Elimina gli spazi davanti e dietro
+
+        chiave = chiave.replace("a", "i");  //Rimpiazza la prima lettera con la seconda
+
+        System.out.println(chiave.isEmpty());   //ritorna true o false
+
+        System.out.println(chiave.contains(" "));   //ritorna true or false in base se la stringa contiene tale carattere
+
+        if(chiave.equals("password")){           //ritorna true or false se la stringa è uguale a quella determinata (CASE SENSITIVE)
+            System.out.println("La password non può essere password");
+        }
+
+        if(chiave.equalsIgnoreCase("password")){        //ritorna true or false se la stringa è uguale a quella determinata (CASE INSENSITIVE
+            System.out.println("La password non può essere password");
+        }
+
+        //Substring
+        String email = "blabla@gmail.com";
+        String username = email.substring(0, 6); //prende i caratteri da 0 a 6 NON COMPRESI
+        String domain = email.substring(9);
+
+        //Così è più flessibile:
+        username = email.substring(0, email.indexOf("@"));  //Parte dall'inizio ed arriva fino alla @ senza comprenderla
+        domain = email.substring(email.indexOf("@") +1);    //Parte dal carattere dopo la chiocciola e và fino alla fine
+        System.out.println(username);
+        System.out.println(domain);
+
+
+        //Operatore Terziario (?)
+        int score = 70;
+
+        String passOrFail = (score >= 60) ? "PASS" : "FAIL";    //Se la condizione è vera stampa PASS altrimenti (:) stampa FAIL
+        System.out.println(passOrFail);
+
+        //Switch Case (sostituto di if cases inutili)
+        String day = "Venerdì";
+        switch(day){
+            case "Lunedì" -> System.out.println("Oggi è Lunedì");
+            case "Martedì" -> System.out.println("Oggi è Martedì");
+            case "Mercoledì" -> System.out.println("Oggi è Mercoledì");
+            case "Giovedì" -> System.out.println("Oggi è Giovedì");
+            case "Venerdì" -> System.out.println("Oggi è Venerdì");
+            //Si possono aggregare questi per dire "E' una giornata normale" così:
+            //case "lunedì" , "martedì", "mercoledì", ecc.. -> System.out.println("Giornata normale");
+            case "Sabato" -> System.out.println("Oggi è Sabato");
+            case "Domenica" -> System.out.println("Oggi è Domenica");
+            default -> System.out.println(day + " non è una giornata.");   //Se nessuna delle condizioni è rispettata enterà in questo
+        }
+
+        //Operatori Logici
+        //&& = AND
+        //|| = OR
+        //! = NOT
+        
+        double temp = 40;
+        boolean isSunny = true;
+        
+        if(temp <= 30 && temp >= 0 && isSunny){         //ENTRAMBE LE CONDIZIONI DEVO ESSERE TRUE
+            System.out.println("Giornata perfetta per uscire");
+            System.out.println("C'è mite e c'è il Sole");
+        } else if (temp <= 30 && temp >= 0 && !isSunny) {   //TUTTE LE CONDIZIONI DEVONO ESSERE VERE, e NON ci deve essere il sole
+            System.out.println("Il tempo è bello");
+            System.out.println("Ma non c'è il Sole");
+        } else if (temp > 30 || temp < 0){
+            System.out.println("Il tempo è brutto");
+        }
+
+
     }
 }
