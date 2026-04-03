@@ -60,7 +60,7 @@ git nome_comando --help
 
 ---
 # **4. Sincronizzazione con GitHub**
-> Una voolta salvato sul PC, devi inviare i dati alla repo che hai collegato
+> Una volta salvato sul PC, devi inviare i dati alla repo che hai collegato
 > Vedere come collegare ----> [[Comandi di Git per collegarsi a GitHub]]
 
 ```Shell
