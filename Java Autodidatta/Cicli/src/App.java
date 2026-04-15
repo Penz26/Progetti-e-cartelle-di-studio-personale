@@ -8,7 +8,7 @@ public class App {
         //Cicli While, vengono ripetuti finché la condizione è vera
         String name = "";
         while(name.isEmpty()){
-            System.out.println("Inserisci il tuo nome: ");
+            System.out.print("Inserisci il tuo nome: ");
             name = scanner.nextLine();
         }
 
@@ -20,7 +20,7 @@ public class App {
         while(!response.equals("Q")){
             System.out.println("Stai giocando ad un gioco");
             System.out.println("Scrivi Q per uscire");
-            response = scanner.nextLine();
+            response = scanner.nextLine().toUpperCase();
         }
         System.out.println("Hai lasciato il gioco"); 
 
@@ -30,16 +30,16 @@ public class App {
         System.out.print("Quanti anni hai? ");
         age = scanner.nextInt();
         while(age <=0){
-            System.out.println("Età non valida. Inserisci un'età valida: ");
+            System.out.print("Età non valida. Inserisci un'età valida: ");
             age = scanner.nextInt();
         }
 
         System.out.println("Hai " + age + " anni");
-
+        scanner.nextLine();
         //do-while, viene eseguito almeno una volta, poi continua finché la condizione è vera
         String password = "";
         do{
-            System.out.println("Inserisci la password: ");
+            System.out.print("Inserisci la password: ");
             password = scanner.nextLine();
         }while(password.isEmpty());
 
@@ -48,12 +48,30 @@ public class App {
 
         int numero = 0;
         do{
-            System.out.println("Inserisci un numero da 1 a 10");
+            System.out.print("Inserisci un numero da 1 a 10: ");
             numero = scanner.nextInt();
         }while(numero <=0 && numero >10);
 
         System.out.println("Il numero che hai inserito è valido (" +numero+ ").");
 
 
+        //for , esegue un blocco di codice per un determinato numero di volte
+
+        for(int i=0; i < 10; i++){
+            System.out.println(i);
+        }
+
+        for(int i=10; i>=0; i-=2){
+            System.out.println(i);
+        }
+
+        System.out.print("Inserisci quante volte vuoi ripetere");
+        int max = scanner.nextInt();
+
+        for(int i=0; i<=max; i++){
+            System.out.println("Ripetizione " + (i));
+        }
+
+        scanner.close();
     }
 }
