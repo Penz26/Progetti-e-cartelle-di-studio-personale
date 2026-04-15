@@ -9,6 +9,15 @@
 5. Race condition/TOCTOU
 6. Command Injection
 
+## Compilare il file .c con:
+```Bash
+gcc nome_file.c
+```
+
+## Questo produce un file eseguibile chiamato solitamente a.out, che si esegue normalmente con ./
+```Bash
+./a.out
+```
 
 ## 1. **Buffer Overflow**
 
@@ -30,6 +39,10 @@ int main(){
 >Se inseriamo del testo di più di 10 caratteri ci darà un problema perchè appunto il buffer è di solo 10.
 >Possiamo evitare questo overflow eseguendolo dalla shell con: 
 
+
+>-fno-stack-protector disabilita lo Stack Canary, ovvero un piccolo valore casuale posto sullo stack prima dell'indirizzo di ritorno.
+>Se un utente tenta un _buffer overflow_, il canarino viene sovrascritto, il programma se ne accorge e si chiude immediatamente per evitare l'esecuzione di codice malevolo.
+>
 ```bash
 gcc -fno-stack-protector nome_file.c
 ```
@@ -208,3 +221,60 @@ int main()
     return 0;
 }
 ```
+>gets() prende delle stringhe in input e le butta dentro a buffer, anche se sono numeri gli input quello che verrà registrato sarà una stringa.
+
+|**Tipo**|**Dimensione (Byte)**|**Range Approssimativo**|
+|---|---|---|
+|**`char`**|1|Da -128 a 127|
+|**`short`**|2|Da -32.768 a 32.767|
+|**`int`**|4|Da -2 miliardi a +2 miliardi|
+|**`long`**|8|Molto ampio (64 bit)|
+|**`long long`**|8|Molto ampio (64 bit)|
+|**`float`**|4|Precisione singola (virgola mobile)|
+|**`double`**|8|Precisione doppia|
+|**`long double`**|16|Precisione estesa (spesso 80-bit su x86)|
+|**Puntatore** (`void*`, `int*`, etc.)|8|Indirizzo di memoria (su sistemi 64-bit)|
+
+>Inserendogli 9 carattere (numero o lettera) il 9° verrà scritto in is_admin e visto che è un char non vale 0.
+
+>Per farlo eseguire e andare in Race condition tramite gcc flags:
+```Bash
+gcc -fno-stack-protector -Wno-implicit-function-declaration challenge_11.c
+```
+
+>Dice al compilatore: "Stai zitto, non avvertirmi se mancano le dichiarazioni delle funzioni".
+>Normalmente il GCC se si prova ad usare funzioni come system() o gets() come in questo caso senza aver incluso l'header corretto il compilatore ti dà un warning
+
+
+## **2. Esempio**
+```C
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+	char username[8];
+	char password[8];
+	int authenticated = 0;
+	//char authenticated = 0; // variante più interessante
+
+	printf("Username: ");
+	gets(username);
+
+	printf("Password: ");
+	gets(password);
+
+	if (strcmp(username, "admin") == 0 && strcmp(password, "1234") == 0)
+	        authenticated = 1;
+
+	if (authenticated)
+		printf("Benvenuto admin!\n");
+	else
+	printf("Accesso negato.\n");
+
+	return 0;
+}
+```
+
+>In questo caso se l'username è uguale a "admin" e la password è "1234" l'autenticazione è 1, quindi vera, e stamperà di conseguenza "Benvenuto Admin".
+>Può essere mandato in overflow con i comandi di prima.

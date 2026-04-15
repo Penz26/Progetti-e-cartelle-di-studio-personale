@@ -11,7 +11,7 @@
 
 1. Genereazione coppia di chiavi:
 	Viene creata una chiave privata (mantenuta segreta sul client) e una chiave pubblica (condivisa con il server)
-	>Le Chiavi verrano salvate in tilde/.ssh/
+	Le Chiavi verrano salvate in tilde/.ssh/
 ```Shell
 ssh-keygen -t ED25519 -C "Nome identificativo"
 #(-C ci permette di dare un nome al computer per identificarlo)

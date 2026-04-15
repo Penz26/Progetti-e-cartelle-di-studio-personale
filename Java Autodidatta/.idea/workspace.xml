@@ -5,12 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f51d684a-7b21-48d8-ac51-e4ba193d2096" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Personale Manuel/ITS/System/Linux/Bash Scripting Advanced.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Personale Manuel/ITS/System/Linux/Bash Scripting.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Introduzione_java/.vscode/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cicli/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/Cicli/src/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Introduzione_java/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Introduzione_java/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Introduzione_java/src/Introduzione.java" beforeDir="false" afterPath="$PROJECT_DIR$/Introduzione_java/src/Introduzione.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Personale Manuel/Comandi Git &amp; GitHub/Comandi di Git basilari.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Personale Manuel/Comandi Git &amp; GitHub/Comandi di Git basilari.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Personale Manuel/Comandi Git &amp; GitHub/Cos'è un file .gitignore.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Personale Manuel/Comandi Git &amp; GitHub/Cos'è un file .gitignore.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Personale Manuel/Comandi Git &amp; GitHub/Git &amp; GitHub.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Personale Manuel/Comandi Git &amp; GitHub/Git &amp; GitHub.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Introduzione_java/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Personale Manuel/ITS/System/Docker/Cos'è Docker.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Personale Manuel/ITS/System/Docker/Cos'è Docker.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Personale Manuel/ITS/System/Docker/Docker Compose.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Personale Manuel/ITS/System/Docker/Docker Compose.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Personale Manuel/ITS/System/Linux/SSH.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Personale Manuel/ITS/System/Linux/SSH.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +81,7 @@
       <workItem from="1775042685616" duration="1952000" />
       <workItem from="1775061147236" duration="374000" />
       <workItem from="1775061830071" duration="765000" />
+      <workItem from="1776097818441" duration="2695000" />
     </task>
     <servers />
   </component>

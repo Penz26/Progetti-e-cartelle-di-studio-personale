@@ -223,5 +223,32 @@ public class Introduzione {
         }
 
 
+
+        //METODI
+        //Codice che può essere richiamato con nome_metodo();
+        //Vanno scritti fuori dal main(){}
+
+        //Le variabili vengono viste solo nel metodo in cui sono state dichiarate
+        //Per fargliele vedere ad altri metodi devono essere passati al metodo come ARGOMENTI
+        String name = "Man";
+        int age = 25;
+
+        happyBirthDay(name, age);
+        System.out.println();
+
+        int numero;
+        System.out.println("Di che numero vuoi sapere il quadrato? ");
+        numero = sc.nextInt();
+        double result = square(numero);
+        System.out.println("Il quadrato di ", numero, " è ", result);
+
+    }
+    static void happyBirthDay(String name,  int age){   //VOID SIGNIFICA CHE NON RITORNA NULLA
+        System.out.println("Happy Birthday " , name);
+        System.out.println("Your age: " + age);
+
+    }
+    static double square(double number){
+        return number * number;
     }
 }
