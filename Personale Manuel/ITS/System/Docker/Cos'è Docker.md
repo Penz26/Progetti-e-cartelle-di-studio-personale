@@ -79,3 +79,223 @@ sudo systemctl start docker
 ```Bash
 sudo docker run hello-world   
 ```
+
+# **ARCHITETTURA DI DOCKER IN PILLOLE**
+
+**Docker Daemon:**
+>il demone (dockerd) è un processo che continua a essere eseguito in background e
+attende i comandi dal client. Il demone è in grado di gestire vari oggetti Docker.
+
+**Docker Client:**
+>Il client (docker) è un'interfaccia da riga di comando principalmente responsabile del
+trasporto dei comandi lanciati dagli utenti.
+
+**REST API:**
+> l'API REST agisce come un ponte tra il demone e il client. Ogni comando lanciato usando il client passa per l'API per raggiungere il demone alla fine.predefinito per Docker.
+Un altro registro di immagini molto popolare è Quay di Red Hat.
+
+
+---
+# **COMANDI DOCKER BASE**
+
+## Docker Pull
+>Il comando docker pull scarica immagini Docker da repository remoti, tipicamente Docker Hub, il registro pubblico principale che ospita migliaia di immagini pronte all'uso.
+
+- Sintassi e Utilizzo
+>**Scaricare immagine ufficiale (ultima versione)
+```d
+docker pull nginx
+```
+
+>**Scaricare versione specifica**
+```D
+docker pull nginx:1.25.3
+```
+
+>**Scaricare da registro alternativo**
+```D
+docker pull ghrc.io/organization/image:tag
+```
+
+>**Scaricare tutte le versioni (tag)**
+```D
+docker pull -a nginx
+```
+
+- Struttura Tag Immagini (la parte dopo i : )
+>latest -tag predefinito, ultima versione stabile
+>version -tag specifico (es: 1.25, 20.04)
+>alpine -variante leggera basata su Alpine Linux (lightweight)
+>slim -versione ridotta con meno componenti
+
+---
+## Docker Run
+>Il comando docker run è il cuore dell'utilizzo di Docker: crea e avvia un container basato su un immagine specificata. Questo comando combina diverse operazioni in un singolo passaggio.
+
+-Esempi Pratici
+
+>Esecuzione base
+```D
+docker run nginx
+```
+
+>Container in background (detached)
+```D
+docker run -d nginx
+```
+
+>Mapping porte (prima host e poi container (**host:container**))
+```D
+docker run -d -p 8080:80 nginx
+```
+
+>Assegnare un nome al container
+```D
+docker run -d --name webserver nginx
+```
+
+>Variabili d'ambiente
+```D
+docker run -e MYSQL_ROOT_PASSWORD=secret_password
+```
+
+>Montare Volume (prima host e poi container (**host:container**))
+```D
+docker run -v /host/data:/container/data nginx
+```
+
+- Opzioni Comuni
+
+| **-d**     | esegui in background                        |
+| ---------- | ------------------------------------------- |
+| **-p**     | pubblica le porte                           |
+| **--name** | assegna un nome personalizzato              |
+| **-v**     | monta un volume per la persistenza dei dati |
+| **-e**     | imposta variabili d'ambiente                |
+| **--rm**   | rimuovi container dopo l'arresto            |
+| **-it**    | modalità interattiva con terminale          |
+
+---
+
+## Docker ps
+>Il comando docker ps visualizza informazioni sui container in esecuzione, fornendo una panoramica dello stato del sistema Dockerr. E' uno degli strumenti più utilizzati per il monitoraggio dei container
+
+>Container Attivi
+>- Mostra solo i container attualmente in esecuzione con informazioni essenziali
+```D
+docker ps
+```
+
+>Tutti i Container
+>- Include anche container fermati, in pausa o terminati con errori
+```D
+docker ps -a
+```
+
+>Ultimi creati
+>- Mostra gli ultimi N container creati, utile per debug recenti
+```D
+docker ps -n 5
+```
+
+>Solo ID
+>- Output solo degli ID container, perfetto per scripting e automazione
+```D
+docker ps -q
+```
+
+--- 
+
+## Gestire ciclo di vita dei container
+
+1. Fermare
+```D
+docker stop <container>   
+```
+2. Terminare
+```D
+docker kill <container>   
+```
+3. Rimuovere
+```D
+docker rm <container>   
+```
+4. Riavviare
+```D
+docker restart <docker>   
+```
+
+- Comandi di Pulizia
+
+>Rimuovere container fermato
+```D
+docker rm nome_container
+```
+
+>Rimuovere con forza (anche in esecuzione)
+```D
+docker rm -f nome_container
+```
+
+>Rimuovere tutti i container fermati
+```D
+docker containe prune
+```
+
+>Rimuovere container e volume
+```D
+docker rm -v nome_container
+```
+
+- Operazioni di Massa
+
+>Fermare tutti i container in esecuzione
+```D
+docker stop $(docker ps -q)
+```
+
+>Rimuovere tutti i container
+```D
+docker rm $(docker ps -aq)
+```
+
+>Pulizia completa sistema
+```D
+docker system prune -a
+```
+
+---
+
+## Gestione delle immagini Docker
+>Le immagini Docker sono template immutabili utilizzati per creare container. Comprendere come gestirle
+efficacemente è fondamentale per ottimizzare spazio disco e workflow di sviluppo.
+
+>Ogni immagine è composta da layer sovrapposti che rappresentano modifiche incrementali. 
+
+![[layer_image.png]]
+
+>Questo sistema a layer permette di condividere componenti comuni tra immagini diverse, riducendo duplicazioni e spazio utilizzato.
+
+- Elencare Immagini (visualizza tutte le immagini disponibili localmente con dimensioni e tag)
+```D
+docker images
+docker image ls
+```
+
+- Rimuovere le Immagini (Elimina immagini non più necessarie per liberare spazio disco)
+```D
+docker rmi nginx:alpine
+docker image rm <image-id>
+```
+
+- Ispezionare Immagini (Ottieni informazioni dettagliate su configurazione e layer dell'immagine)
+```D
+docker inspect nginx
+docker history nginx
+```
+
+- Pulizia Immagini (Rimuovere immagini dangling o tutte quelle non utilizzate dai container)
+```D
+docker image prune
+docker image prune -a
+```

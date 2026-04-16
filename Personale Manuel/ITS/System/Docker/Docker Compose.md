@@ -7,11 +7,11 @@
 # **Le sue funzioni principali**:
 >- **Orchestrazione semplificata**
 	  gestisce più container come un'unica unità logica
->- Configurazione come codice
+>- **Configurazione come codice**
 	 la config è versionata insieme al progetto
->  Riproducibilità totale
+>  **Riproducibilità totale**
 	Stesso ambiente su dev, test e CI/CD senza differenze
->- Onboarding rapido
+>- **Onboarding rapido**
 	Un nuovo sviluppatore è subito operativo con un solo comando (docker compose up)
 
 
@@ -27,7 +27,7 @@
 
 ## Avvio e Build
 
-```SHell
+```Shell
 #Avvia in foreground (vedi i log)
 docker compose up
 
@@ -46,7 +46,7 @@ docker compose up --build
 docker compose down
 
 #Ferma, rimuove e cancella volumi
-
+docker compose down --volumes
 ```
 
 ---
