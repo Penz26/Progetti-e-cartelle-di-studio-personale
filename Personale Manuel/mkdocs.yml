@@ -1,0 +1,71 @@
+site_name: Documentazione di Manuel
+site_description: Il mio archivio personale di appunti su Obsidian.
+
+theme:
+  name: material
+  language: it
+  # Personalizzazione Colori e Tema
+  palette:
+    # Opzione Moderno
+    - scheme: default
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/brightness-7
+        name: Passa al tema scuro
+    # Opzione Minimalista
+    - scheme: slate
+      primary: blue grey
+      accent: light blue
+      toggle:
+        icon: material/brightness-4
+        name: Passa al tema chiaro
+  
+  # Funzionalità Extra per l'interfaccia
+  features:
+    - navigation.tabs          # Sposta il menu principale in alto
+    - navigation.sections      # Rende le sezioni cliccabili e ordinate
+    - navigation.expand        # Espande i menu automaticamente
+    - navigation.top           # Aggiunge il tasto "Torna su"
+    - search.suggest           # Suggerimenti durante la ricerca
+    - search.highlight         # Evidenzia i risultati della ricerca
+    - content.code.copy        # Aggiunge il tasto copia ai blocchi di codice
+
+nav:
+  - Home: index.md
+  - Git & GitHub:
+      - Introduzione: "Comandi Git & GitHub/Comandi di Git Basilari.md"
+      - Connessioni a GitHub: "Comandi Git & GitHub/Comandi di Git per collegarsi a GitHub.md"
+      - Gitignore: "Comandi Git & GitHub/Cos'è un file .gitignore.md"
+      - Generale: "Comandi Git & GitHub/Git & GitHub.md"
+      - Issues e Pull Requests: "Comandi Git & GitHub/Issues e Pull Requests.md"
+  - ITS:
+      - Cyber:
+          - Nmap: "ITS/Cyber/Nmap/Nmap Introduction.md"
+          - Ncat:
+              - Introduzione: "ITS/Cyber/Ncat/Ncat Introduction.md"
+              - Avanzato: "ITS/Cyber/Ncat/Ncat Advanced.md"
+          - Challenge UDP: "ITS/Cyber/Challenge 3, UDP Chat (Red vs Blue vs Red vs Blue).md"
+          - Raspberry Pi: "ITS/Cyber/RaspBerry Pi Server.md"
+          - Vulnerabilità: "ITS/Cyber/Vulnerabilità locali - Programmazione.md"
+      - System:
+          - Docker:
+              - Cos'è Docker: "ITS/System/Docker/Cos'è Docker.md"
+              - Docker Compose: "ITS/System/Docker/Docker Compose.md"
+              - Dockerfile: "ITS/System/Docker/DockerFile.md"
+          - Linux:
+              - Comandi Base: "ITS/System/Linux/Comandi di Linux.md"
+              - Bash Scripting: "ITS/System/Linux/Bash Scripting.md"
+              - Bash Avanzato: "ITS/System/Linux/Bash Scripting Advanced.md"
+              - SSH: "ITS/System/Linux/SSH.md"
+              - File Tree: "ITS/System/Linux/FileTree.md"
+          - Windows Server: "ITS/System/Windows Server/Installazione Servizi  4° e 5° Slide.md"
+  - PostgreSQL:
+      - Introduzione: "PostgreSQL/Introduzione a PostgreSQL.md"
+      - Installazione: "PostgreSQL/Installazione.md"
+      - Inserimento Dati: "PostgreSQL/Inserimento Dati.md"
+      - Queries: "PostgreSQL/Queries.md"
+      - Joins: "PostgreSQL/Joins.md"
+      - pgAdmin 4: "PostgreSQL/pgAdmin 4.md"
+  - Altro:
+      - Mermaid e MkDocs: "MkDocs & Mermaid.js.md"

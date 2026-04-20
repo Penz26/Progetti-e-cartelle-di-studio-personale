@@ -6,7 +6,7 @@
 
 
 ## Molto simile a PhpMyAdmin non sembra?
-![[pgAdmin DashBoard.png]]
+![Descrizione](../Images/pgAdmin%20DashBoard.png)
 
 >Si possono fare esattamente le stesse operazioni che si possono fare con PhpMyAdmin, ma ovviamente è più veloce, open source e fatto apposta per PostgreSQL.
 
@@ -26,7 +26,7 @@
    >- Esportazione Rapida
 >Per accedere alla dashboard per le query fare clic con tasto destro sul nome del database e dal menù a tendina selezionare "Query Tool"
 
-![[Tool Query.png]]
+![Descrizione](../Images/Tool%20Query.png)
 
 3. **Dashboard di Monitoraggio**
 >pgAdmin ti mostra subito dei grafici in tempo reale. Permette di capire:

@@ -54,7 +54,7 @@ git commit -m "fix/doc: Descrizione Problema"
 git push origin nome_branch
 ```
 5. Una volta pushati su GitHub apparirà una notifica come questa: 
-![[notifica_pull_request.png]]
+![Descrizione](../Images/notifica_pull_request.png)
 
 ---
 
@@ -63,7 +63,7 @@ git push origin nome_branch
 >Permettono di mettere a fine le modifiche e pusharle sul main (o il branch specificato) in modo semplice e intuitivo. Evitando Merge o cicli lunghi di passaggio di info sul lavoro svolto.
 
 >Esempio:
-![[pull-request.png]]
+![Descrizione](../Images/pull-request.png)
 
 >[!ATTENTION] Cosa deve essere all'interno della pull request?
 >- Titolo dell'Issue risolto + ID
@@ -81,5 +81,5 @@ git push origin nome_branch
 >- lasciare una review sul codice
 >  può lasciare aperta la pull request se necessita di altre modifiche
 >  chiuderla con una review positiva 
->- dare il messaggio di 
->- fare il merge sul branch 
+>- dare il messaggio di approve
+>- fare il merge sul branch main

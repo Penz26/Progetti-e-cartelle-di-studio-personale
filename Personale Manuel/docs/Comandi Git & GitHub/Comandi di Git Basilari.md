@@ -131,7 +131,7 @@ git nome_comando --help
   #Dopo averlo riaperto vedremo una roba del genere:
 ```  
 
-![[Immagine_merge_conflict.png ]]
+![Descrizione](../Images/Immagine_merge_conflict.png)
 
 ```Shell
 #COME RISOLVERE: 
@@ -156,6 +156,6 @@ git nome_comando --help
  ## **Come si fa?**
  - Si manda il comando git rebase -i root che darà un immagine come questa:
 
-![[immagine_rebase.png | 1200]]
+![Descrizione](../Images/immagine_rebase.png)
 
 >Una volta al suo interno mettiamo al posto di pick squash (oppure s per abbreviare) salviamo il file, chiudiamo l'editor e tornando nella shell ci verrà chiesto il nuovo messaggio per il nuovo commit unito.

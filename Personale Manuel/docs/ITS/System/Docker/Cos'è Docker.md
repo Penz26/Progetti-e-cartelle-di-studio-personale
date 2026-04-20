@@ -272,7 +272,7 @@ efficacemente è fondamentale per ottimizzare spazio disco e workflow di svilupp
 
 >Ogni immagine è composta da layer sovrapposti che rappresentano modifiche incrementali. 
 
-![[layer_image.png]]
+![Descrizione](../../../Images/layer_image.png)
 
 >Questo sistema a layer permette di condividere componenti comuni tra immagini diverse, riducendo duplicazioni e spazio utilizzato.
 
