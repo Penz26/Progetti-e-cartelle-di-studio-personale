@@ -56,7 +56,7 @@ CREATE TABLE veicoli (
 
 ---
 
-- **Operazioni CRUD**
+## **Operazioni CRUD**
 
 1. Inserimento Dati
    
@@ -145,7 +145,7 @@ TRUNCATE TABLE veicoli;
 DROP TABLE cars;
 ```
 
-## **Comandi di Ispezione (Meta-Comandi)
+## **Comandi di Ispezione (Meta-Comandi)**
 >Nonostante ci sia scritto Meta non stiamo parlando di Zuckerberg e della sua schifosa impresa.
 >Sono comandi per controllare la struttura dei database, tabelle, utenti
 

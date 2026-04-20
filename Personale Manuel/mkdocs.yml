@@ -1,26 +1,9 @@
 site_name: Documentazione di Manuel
 site_description: Il mio archivio personale di appunti su Obsidian.
 
-theme:
-  name: material
-  language: it
-  # Personalizzazione Colori e Tema
-  palette:
-    # Opzione Moderno
-    - scheme: default
-      primary: teal
-      accent: amber
-      toggle:
-        icon: material/brightness-7
-        name: Passa al tema scuro
-    # Opzione Minimalista
-    - scheme: slate
-      primary: blue grey
-      accent: light blue
-      toggle:
-        icon: material/brightness-4
-        name: Passa al tema chiaro
-  
+theme: 
+  name: lux
+
   # Funzionalità Extra per l'interfaccia
   features:
     - navigation.tabs          # Sposta il menu principale in alto
