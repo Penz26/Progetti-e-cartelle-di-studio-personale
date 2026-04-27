@@ -23,7 +23,7 @@ jobs:
       - name: Installa MkDocs e il tema Lux
         run: |
           pip install mkdocs
-          pip install mkdocs-lux
+          pip install mkdocs-boostrap
 
       - name: Compila e Pubblica
         run: mkdocs gh-deploy --force
