@@ -1,4 +1,4 @@
-#Linux 
+e#Linux 
 >Lungo questo appunti partireo da uno script minimale e lo arrichiremo passo dopo passo, introducendo ogni volta una best practice concreta, spiegata e immediatamente applicabile.
 
 >Il risultato finale sarà un **template standard riutilizzabile** come punto di partenza per automazioni, task di sistema e utility interne.

@@ -29,9 +29,29 @@ mkdocs new . #crea il progetto nella cartella specifica, in questo              
 >Avvia il server e lo aggiorna
 ```Python
 mkdocs serve
+
+--livereload permette di aggiornare continuamente la pagina in tempo reale
 ```
 
 ---
 
 # **2. Configurazione**
 >Attraverso il file mkdocs.yml si può configurare il sito
+
+```Mermaid.js
+site_name: "Documentazione Progetto ITS"
+theme:
+name: material
+palette:
+scheme: slate
+primary: teal
+markdown_extensions:
+- pymdownx.superfences:
+custom_fences:
+- name: mermaid
+class: mermaid
+```
+
+- site_name = titolo del sito di documentazione
+- scheme: slate = tema scuro
+- superfences = abilita il rendering dei blocchi Mermaid come immagini
