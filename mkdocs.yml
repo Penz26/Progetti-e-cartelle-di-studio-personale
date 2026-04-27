@@ -14,6 +14,7 @@ theme:
     - search.highlight         # Evidenzia i risultati della ricerca
     - content.code.copy        # Aggiunge il tasto copia ai blocchi di codice
 
+docs_dir: Personale Manuel/docs
 nav:
   - Home: index.md
   - Git & GitHub:
