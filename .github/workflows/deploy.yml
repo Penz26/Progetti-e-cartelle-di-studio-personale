@@ -15,6 +15,8 @@ jobs:
       - name: Scarica il codice
         uses: actions/checkout@v4
 
+      - name: Mostra i file del server
+        run: ls -la
       - name: Installa Python
         uses: actions/setup-python@v5
         with:
