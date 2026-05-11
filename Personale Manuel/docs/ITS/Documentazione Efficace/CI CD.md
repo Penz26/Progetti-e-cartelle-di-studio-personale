@@ -46,7 +46,7 @@
 >Stessa roba il mkdocs.yml, così che lui possa leggerlo direttamente.
 >In quest'ultimo bisognerà anche specificare di conseguenza la directory di dove andare a cercare la documentation
 
->Il file YAML è struttura in 4 livelli:
+>Il file YAML è strutturato in 4 livelli:
 1. Workflow
    >E' l'intero processo automatizzato. Corrisponde al file .yml stesso
 2. Job
@@ -54,8 +54,8 @@
 3. Step
    >Dentro ad un job ci sono gli step (funzioni del programma), la lista delle azioni da fare.
 4. Action / Run
-   >run esegue un comando da terminale (es. pip, ls, cd, ecc)
-   >   uses, usa un comando precofenzionato scritto da altri (es. actions/checkout)
+   >run, esegue un comando da terminale (es. pip, ls, cd, ecc)
+   >   uses, usa un comando preconfezionato scritto da altri (es. actions/checkout)
    
 
 >**Esempio Action**

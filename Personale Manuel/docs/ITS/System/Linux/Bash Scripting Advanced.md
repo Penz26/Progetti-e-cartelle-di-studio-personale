@@ -1,5 +1,5 @@
-e#Linux 
->Lungo questo appunti partireo da uno script minimale e lo arrichiremo passo dopo passo, introducendo ogni volta una best practice concreta, spiegata e immediatamente applicabile.
+#Bash #Linux 
+>Lungo questi appunti partiremo da uno script minimale e lo arrichiremo passo dopo passo, introducendo ogni volta una best practice concreta, spiegata e immediatamente applicabile.
 
 >Il risultato finale sarà un **template standard riutilizzabile** come punto di partenza per automazioni, task di sistema e utility interne.
 
@@ -65,6 +65,9 @@ cp $1 $2
 >[!NOTE] pipefail
 >Fa fallire l'intera pipeline se fallisce un comando interno, non solo l'ultimo
 
+>[!ATTENTION] IL SET -EUO PIPEFAIL NON FUNZIONA PER CONDIZIONI DENTRO DEGLI IF PERCHE' QUESTI SI COMPORTANO COME BLOCCHI DI CODICE AUTONOMI E GESTISCONO I PROPRI ERRORI MANUALMENTE exit 0 oppure exit 1
+
+---
 # **Best Practice #3**
 >Quotare sempre le variabili
 
@@ -134,7 +137,7 @@ EOF
 >[!NOTE] **Leggibilità**
 >Il codice della logica principale rimane pulito e non intasato da testo di supporto
 
-
+---
 # **Best Practice #6**
 >Help Inline e Uscita Corretta
 
@@ -151,10 +154,10 @@ EOF
 # **Best Practice #7**
 >**Verificare che l'input Esista davvero***
 
-
 >Non basta controllare il numero di parametri: bisogna anche validare ciò che i parametri rappresentano. Nel nostro caso, il file sorgente deve effettivamente esistere prima di tentare la copia.
 
 >La validazione preventiva riduce gli errori ambigui e rende lo script molto più affidabile in produzione.
+
 ```Bash
 [[ -f "$1" ]] || {
 	echo "Errore: file sorgente non trovato: $1" >&2
@@ -257,15 +260,21 @@ force=0
 while getopts ":hvf" opt; do
 	case "$opt" in
 		h) 
-			usage; exit 0 ;;
+			usage; 
+			exit 0 
+			;;
 		v) 
-			verbose=1 ;;
+			verbose=1 
+			;;
 		f) 
-			force=1 ;;
+			force=1 
+			;;
 		:) 
-			die "L'opzione -$OPTARG richiede un valore" ;;
+			die "L'opzione -$OPTARG richiede un valore" 
+			;;
 		\?) 
-			die "Opzione non valida: -$OPTARG" ;;
+			die "Opzione non valida: -$OPTARG" 
+			;;
 	esac
 done
 shift $((OPTIND - 1)
@@ -379,6 +388,20 @@ shellcheck script.sh
 ```
 
 ---
+
+# **Best Practice #16**
+>IFS
+
+>IFS è una variabile di shell che permette di ignorare gli spazi come separatori e usare come separatori solo quelli specificati
+
+```Shell
+IFS=$'\n\t'
+#Dice alla bash che come separatori solo l'invio \n e tab \t
+
+# Senza l' IFS NOMI="Mario Rossi" for persona in $NOMI; do echo "Ciao $persona" done # Output: # Ciao Mario # Ciao Rossi (Sbagliato!) # Con IFS=$'\n\t' IFS=$'\n\t' for persona in $NOMI; do echo "Ciao $persona" done # Output: # Ciao Mario Rossi (Corretto!)
+```
+
+----
 # **TEMPLATE BASH RIUTILIZZABILE**
 
 ```Shell
@@ -434,3 +457,4 @@ main() {
 trap cleanup EXIT
 main "$@
 ```
+

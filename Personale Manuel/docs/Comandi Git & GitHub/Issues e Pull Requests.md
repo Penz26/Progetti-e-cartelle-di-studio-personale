@@ -31,13 +31,13 @@
 >- Assegnatario (Chi si occuperà di risolvere l'issue)
 >- Etichetta (Bug, enhancement, documentation, ecc...)
 
-##  **Si può creare e configurare il template degli Issues nella cartella .github/ISSUE_TEMPLATE**
+> [!NOTE] **Si può creare e configurare il template degli Issues nella cartella .github/ISSUE_TEMPLATE**
 
 ---
 # **Procedimento di risoluzione degli ISSUE**
 
 1. Clonare la repository 
-   **OPPURE ENTRARE NELLA REPOSITORY CHE SI HA GIA'**
+   >**OPPURE ENTRARE NELLA REPOSITORY CHE SI HA GIA'**
 ```Bash
 git clone URL_REPOSITORY    
 ```

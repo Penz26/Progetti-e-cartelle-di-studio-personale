@@ -144,7 +144,7 @@ services:
 			
 ```
 
->Quando il browser richiede localhost:8080, Docker instrada il traffico versoo la porta 80 del container Nginx. 
+>Quando il browser richiede localhost:8080, Docker instrada il traffico verso la porta 80 del container Nginx. 
 
 >[!NOTE] L'Host e il container usano porte indipendenti
 
@@ -163,6 +163,7 @@ services:
 
 ## Named Volume:
 >Gestito Interamente da Docker. 
+>Docker crea una directory dentro /var/lib/docker/volumes/ con il nome specificato, sulla macchina HOST. E docker se la gestisce da sola la directory.
   Cross-Platform, performance ottimali, sopravvive a docker compose down. Ideale per Database e dati Persistenti
 
 ```Shell
@@ -227,10 +228,111 @@ services:
 	api:
 		env_file:
 			- .env
-			- .env.local  #Override localee
+			- .env.local  #Override locale
 ```
 
 >[!IMPORTANT] **🔒Best Practice Security:**                                 
 >- **Aggiungi .env al .gitignore**          
 >- **Committa .env.example con valori fake**  
 >- **Mai committare password in Git!**
+
+---
+
+# **depends_on**
+>Ordine di avvio
+
+>depends_on garantisce che i container vengano avviati nell'ordine corretto. Aspetta che il servizio sia UP, non che il servizio sia pronto ad accettare connessioni
+
+>Esempio:
+```d
+services:
+	api:
+		depends_on:
+		db:
+			condition: service_healthy
+		
+	db:
+		image: postgres:latest
+		healthcheck:
+			test["CMD", "pg_is_ready"]
+			interval: 10s
+			timeout: 5s
+			retries: 5
+```
+
+>[!NOTE] Con condition: service_healthy l'API parte solo quando il DB è veramente pronto ad accettare connessioni - nessun errore di connessione al primo avvio
+
+---
+
+# **Networks**
+>Comunicazione tra Servizi
+
+>Docker compose crea automaticamente una rete per tutti i servizi. Ogni servizio è raggiungibile dagli altri usando il nome del servizio come hostname DNS.
+
+
+>[!IMPORTANT] Se non si specifica nulla tutti i servizi saranno collegati tra di loro perche docker compose crea automaticamente una rete default: 
+>nomeprogetto_default
+
+>[!IMPORTANT] Le reti custom permettono l'isolamento
+
+>Esempio:
+```yaml
+services:
+  web-app:
+    image: nginx
+    networks:
+      - mia-rete
+
+  api-service:
+    image: my-api-image
+    networks:
+      - mia-rete
+
+networks:
+  mia-rete:
+    driver: bridge
+```
+
+---
+# **Esempio di uno stack completo con Docker compose**
+
+```d
+services:
+	api:
+		build: ./api
+		depends_on:
+			db:
+				condition: service_healthy
+			redis:
+				condition: service_healthy
+		ports:
+			- "5000:5000"
+		environment:
+			DB_HOST: db
+			REDIS_HOST: redis
+		networks: [app-network]
+	db:
+		image: postgres:16-alpine
+		volumes:
+			- pgdata:/var/lib/postgresql/data
+		environment:
+			POSTGRES_PASSWORD: ${DB_PASSWORD}			
+		healthcheck:
+			test: ["CMD", "pg_isready"]
+			interval: 10s
+			networks: [app-network]
+	redis:
+		image: redis:7-alpine
+		volumes:
+			- redisdata:/data //named volume
+		healthcheck:
+			test: ["CMD", "redis-cli", "ping"]
+		networks: [app-network]
+volumes:
+	pgdata:
+	redisdata:
+
+networks:
+	app-network:
+	driver: bridge
+```

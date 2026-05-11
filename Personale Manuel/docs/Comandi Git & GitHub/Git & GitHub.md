@@ -1,3 +1,4 @@
+#GitHub #Git 
 # **Cosa Sono** ?
 
 >Git è un software per il controllo di versione locale utilizzabile da interfaccia a riga di comando.
@@ -24,14 +25,12 @@
    -  si fa facendo *git commit -m "Messaggio"*
    - si può fare anche con file non nello staging aggiungendo la flag -a prima di -m per il messaggio
    
-   
+---
+# **GitHub**
+>GitHub è la piattaforma che ospita i tuoi progetti Git (chiamati repository).
 
-#GitHub
+>Permette a migliaia di persone di lavorare sullo stesso progetto contemporaneamente senza sovrascrivere il lavoro altrui.
 
-GitHub è la piattaforma che ospita i tuoi progetti Git (chiamati repository).
-
-Permette a migliaia di persone di lavorare sullo stesso progetto contemporaneamente senza sovrascrivere il lavoro altrui.
-
-Se il tuo computer decide di morire il tuo codice è al sicuro sui server di GitHub
+>Se il tuo computer decide di morire il tuo codice è al sicuro sui server di GitHub
 
 

@@ -84,6 +84,8 @@ CMD ["ls", "-la", "/app"]
 # **📒 ESEMPIO COMPLETO DI DOCKERFILE**
 >Rappresentazione di un dockerfile tipico per una applicazione node.js
 
+>Si avvia andando all'interno della directory e lanciando il comando:
+>docker image build .
 ```Dockerfile
 # 1. Immagine di base
 FROM node:18

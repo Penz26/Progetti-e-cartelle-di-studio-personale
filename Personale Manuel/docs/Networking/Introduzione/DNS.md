@@ -15,7 +15,7 @@
 >Un TLD è la parte più a destra del dominio. Per esempio per tryhackme.com il TLD è .com.
 >Ci sono 2 tipi di TLD
 >- gTLD (Generic Top Level)
->  usato di solito per indicare il significato del dominio (.com   -commerciale. .gov   -governo, ecc...)
+>  usato di solito per indicare il significato del dominio (.com   commerciale. .gov   -governo, ecc...)
 >- ccTLD (Country Code Top Level Domain)
 >  usato per localizzazione geografica (.it  -italia)
 

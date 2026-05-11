@@ -1,4 +1,4 @@
-#Linux 
+#Bash #Linux 
 
 # **Cos'è uno Script bash?**
 >Uno script bash è un file di testo contenente una sequenza di comandi Linux che vengono eseguiti  automaticamente dalla shell bash.
@@ -53,9 +53,9 @@ chmod +x mio_script.sh
 
 ### Dichiarazione e Assegnazione
 ```Bash
-nome = "Manu"
+nome="Manu"
 eta=30
-percorso= "/var/www/html"
+percorso="/var/www/html"
 
 echo "Il mio nome è $nome"
 echo "Ho $eta anni"
@@ -245,7 +245,7 @@ if [ $eta -ge 18 ] && [ -f "$documento" ]; then
 fi
 ```
 
-### ORD (||) - Almeno Una Vera
+### OR ( | | ) - Almeno Una Vera
 >Basta che una delle condizioni sia soddisfatta
 ```Bash
 if [ "$EUID" -eq 0 ] || [ "$UID" -eq 0 ]; then
@@ -429,7 +429,6 @@ funzione_esempio() {
 	var_globale="Accessibile all'esterno"
 	echo "Dentro funzione: $var_locale"
 }
-funzione_esempio
 echo "Fuori funzione: $var_globale"
 # echo "$var_locale" # ERRORE: non definita
 ```

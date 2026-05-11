@@ -4,7 +4,7 @@
 >Docker è una piattaforma open-source che rivoluziona il modo di sviluppare, distribuire e gestire applicazioni attraverso la tecnologia dei container.
 
 # **COS'E' UN CONTAINER?**
->I container sono ambientati isolati che includono tutto il necessario per eseguire un applicazione: codice, runtime, librerie e dipendenze di sistema.
+>I container sono ambienti isolati che includono tutto il necessario per eseguire un applicazione: codice, runtime, librerie e dipendenze di sistema.
 
 >Questa tecnologia consente agli sviluppatori di "impacchettare" (containerizzare) un applicazione con tutte le sue dipendenze in un'unità standardizzata, garantendo che funzioni in modo identico su qualsiasi ambiente.
 
@@ -21,14 +21,15 @@
 
 
 >***Macchine Virtuali***
->**Sistema operativo completo:** ogni VM ha il proprio kernel
->**Pesanti:** dimensioni in GB, richiedono più risorse
->**Avvio lento:** tempi di boot in minuti
->**Minore densità:** decine di VM per host
->**Isolamento hardware:** emulazione completa dell' hardware
+>**- Sistema operativo completo:** ogni VM ha il proprio kernel
+>**- Pesanti:** dimensioni in GB, richiedono più risorse
+>**- Avvio lento:** tempi di boot in minuti
+>**- Minore densità:** decine di VM per host
+>**- Isolamento hardware:** emulazione completa dell' hardware
 
 >[!NOTE] I container Docker sono ideali per microservizi, sviluppo rapido e deployment agile, mentre le VM eccellono quando è necessario isolamento completo del sistema operativo o compatibilità con applicazioni legacy
 
+---
 # **Come installare Docker su Linux**
 >Consultare la guida ufficiale della documentazione di Docker dalla loro pagina.
 
@@ -80,19 +81,17 @@ sudo systemctl start docker
 sudo docker run hello-world   
 ```
 
-# **ARCHITETTURA DI DOCKER IN PILLOLE**
+---
+# **ARCHITETTURA DI DOCKER**
 
 **Docker Daemon:**
->il demone (dockerd) è un processo che continua a essere eseguito in background e
-attende i comandi dal client. Il demone è in grado di gestire vari oggetti Docker.
+>Il demone (dockerd) è un processo che continua a essere eseguito in background e attende i comandi dal client. Il demone è in grado di gestire vari oggetti Docker.
 
 **Docker Client:**
->Il client (docker) è un'interfaccia da riga di comando principalmente responsabile del
-trasporto dei comandi lanciati dagli utenti.
+>Il client (docker) è un'interfaccia da riga di comando principalmente responsabile del trasporto dei comandi lanciati dagli utenti.
 
 **REST API:**
-> l'API REST agisce come un ponte tra il demone e il client. Ogni comando lanciato usando il client passa per l'API per raggiungere il demone alla fine.predefinito per Docker.
-Un altro registro di immagini molto popolare è Quay di Red Hat.
+> L'API REST agisce come un ponte tra il demone e il client. Ogni comando lanciato usando il client passa per l'API per raggiungere il demone alla fine predefinito per Docker. Un altro registro di immagini molto popolare è Quay di Red Hat.
 
 
 ---
@@ -178,7 +177,7 @@ docker run -v /host/data:/container/data nginx
 ---
 
 ## Docker ps
->Il comando docker ps visualizza informazioni sui container in esecuzione, fornendo una panoramica dello stato del sistema Dockerr. E' uno degli strumenti più utilizzati per il monitoraggio dei container
+>Il comando docker ps visualizza informazioni sui container in esecuzione, fornendo una panoramica dello stato del sistema Docker. E' uno degli strumenti più utilizzati per il monitoraggio dei container
 
 >Container Attivi
 >- Mostra solo i container attualmente in esecuzione con informazioni essenziali
@@ -267,8 +266,7 @@ docker system prune -a
 ---
 
 ## Gestione delle immagini Docker
->Le immagini Docker sono template immutabili utilizzati per creare container. Comprendere come gestirle
-efficacemente è fondamentale per ottimizzare spazio disco e workflow di sviluppo.
+>Le immagini Docker sono template immutabili utilizzati per creare container. Comprendere come gestirle efficacemente è fondamentale per ottimizzare spazio disco e workflow di sviluppo.
 
 >Ogni immagine è composta da layer sovrapposti che rappresentano modifiche incrementali. 
 
@@ -278,7 +276,6 @@ efficacemente è fondamentale per ottimizzare spazio disco e workflow di svilupp
 
 - Elencare Immagini (visualizza tutte le immagini disponibili localmente con dimensioni e tag)
 ```D
-docker images
 docker image ls
 ```
 

@@ -5,7 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f51d684a-7b21-48d8-ac51-e4ba193d2096" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Personale Manuel/docs/Comandi Git &amp; GitHub/Cos'è un file .gitignore.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Personale Manuel/docs/Comandi Git &amp; GitHub/Cos'è un file .gitignore.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Personale Manuel/docs/Comandi Git &amp; GitHub/Git &amp; GitHub.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Personale Manuel/docs/Comandi Git &amp; GitHub/Git &amp; GitHub.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Personale Manuel/docs/Comandi Git &amp; GitHub/Issues e Pull Requests.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Personale Manuel/docs/Comandi Git &amp; GitHub/Issues e Pull Requests.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Personale Manuel/docs/ITS/Documentazione Efficace/CI CD.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Personale Manuel/docs/ITS/Documentazione Efficace/CI CD.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Personale Manuel/docs/ITS/Documentazione Efficace/MkDocs &amp; Mermaid.js.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Personale Manuel/docs/ITS/Documentazione Efficace/MkDocs &amp; Mermaid.js.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Personale Manuel/docs/ITS/System/Docker/Cos'è Docker.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Personale Manuel/docs/ITS/System/Docker/Cos'è Docker.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Personale Manuel/docs/ITS/System/Docker/Docker Compose.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Personale Manuel/docs/ITS/System/Docker/Docker Compose.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Personale Manuel/docs/ITS/System/Docker/DockerFile.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Personale Manuel/docs/ITS/System/Docker/DockerFile.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Personale Manuel/docs/ITS/System/Linux/Bash Scripting Advanced.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Personale Manuel/docs/ITS/System/Linux/Bash Scripting Advanced.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Personale Manuel/docs/ITS/System/Linux/Bash Scripting.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Personale Manuel/docs/ITS/System/Linux/Bash Scripting.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Personale Manuel/docs/ITS/System/Windows Server/Installazione Servizi  4° e 5° Slide.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Personale Manuel/docs/ITS/System/Windows Server/Installazione Servizi  4° e 5° Slide.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Personale Manuel/docs/Networking/Introduzione/DNS.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Personale Manuel/docs/Networking/Introduzione/DNS.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Personale Manuel/docs/Networking/Introduzione/Http.md" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +86,7 @@
       <workItem from="1775061830071" duration="765000" />
       <workItem from="1776097818441" duration="2695000" />
       <workItem from="1777148682407" duration="49000" />
+      <workItem from="1778331108604" duration="1000" />
     </task>
     <servers />
   </component>

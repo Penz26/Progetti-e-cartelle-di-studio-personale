@@ -45,6 +45,10 @@ name: material
 palette:
 scheme: slate
 primary: teal
+nav:
+  - Home: index.md
+  - Git & GitHub:
+      - Introduzione: "Comandi Git & GitHub/Comandi di Git Basilari.md"
 markdown_extensions:
 - pymdownx.superfences:
 custom_fences:
@@ -55,3 +59,27 @@ class: mermaid
 - site_name = titolo del sito di documentazione
 - scheme: slate = tema scuro
 - superfences = abilita il rendering dei blocchi Mermaid come immagini
+---
+# **Diagrammi Mermaid (mermaid.js)
+
+>Grazie a Mermaid possiamo definire le relazioni logiche e lui si crea i diagrammi. Tutto ciò che sta tra '''mermaid e ''' viene reinderizzato come immagine.
+
+>Sintassi Base:
+>- **graph TD / graph LR**
+>  Direzione del grafo: Top Down (Dall'alto al basso), Left or Right (Da sinistra a destra)
+>- **A-->B**
+>  Collegamento base
+>- **A(["Testo"])**
+>  Nodo a pillola
+>- **A{Decisione}**
+>  Nodo a diamante per i punti decisionali
+>- **A[testo]**
+>  Nodo rettangolare standard
+>- **subgraph**
+>- Per raggruppare componenti, ad esempio reti diverse
+
+>**Esempio 1 - Flowchart Logico:**
+![[flowchar_mermaid.png]]
+
+>**Esempio 2 - Network Diagram:**
+![[network_diagram_mermaid.png]]
