@@ -1,9 +1,8 @@
 # 🚀 Benvenuto nel mio Archivio Tech 
 >Benvenuto nella mia documentazione personale. Qui raccolgo appunti, configurazioni e guide rapide riguardanti il mio percorso di studi e i miei progetti personali. 
->
->--- 
+
+--- 
 ## 🗂️ Aree Tematiche Seleziona una categoria per iniziare a esplorare i contenuti: 
->
 
 ### 🛠️ Sviluppo & Controllo Versione 
 * **[Git & GitHub](Comandi Git %26 GitHub/Git %26 GitHub.md)**: 
