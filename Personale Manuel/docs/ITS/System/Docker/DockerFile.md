@@ -86,6 +86,7 @@ CMD ["ls", "-la", "/app"]
 
 >Si avvia andando all'interno della directory e lanciando il comando:
 >docker image build .
+>Con -t aggiungiamo un tag alla nostra immagine (come se fosse un nome)
 ```Dockerfile
 # 1. Immagine di base
 FROM node:18

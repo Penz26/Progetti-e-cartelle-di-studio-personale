@@ -13,7 +13,6 @@ nmap -sn SUBNET
 
 echo 1 | sudo tee /proc/sys/net/ipv4/ipforward 
 # oppure mettendo
-
 sysctl -w net.ipv4.ip_forward=1
 
 # Ora dobbiamo convincere il client ed il server che siamo il server per il client e che siamo il client per il server

@@ -2,6 +2,7 @@
 
 # **COS' E'?**
 >Docker Compose è uno strumento per definire e gestire applicazioni Docker multi-container usando un file **YAML** .
+>Nato all'inizio come progetto separato (docker-compose) è stato poi integrato all'interno di docker (docker compose)
 >E' il ponte tra i container individuali e un'applicazione completa e funzionante.
 
 # **Le sue funzioni principali**:
@@ -268,6 +269,9 @@ services:
 >Comunicazione tra Servizi
 
 >Docker compose crea automaticamente una rete per tutti i servizi. Ogni servizio è raggiungibile dagli altri usando il nome del servizio come hostname DNS.
+
+>[!NOTE] Crea le Network ma su una ipv4 2^16-2 quindi per creare un collegamento tra due container crea una rete che poi potrebbe creare problemi di overlapping di rete
+
 
 
 >[!IMPORTANT] Se non si specifica nulla tutti i servizi saranno collegati tra di loro perche docker compose crea automaticamente una rete default: 

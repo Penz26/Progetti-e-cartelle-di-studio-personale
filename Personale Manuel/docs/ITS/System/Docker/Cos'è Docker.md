@@ -296,3 +296,19 @@ docker history nginx
 docker image prune
 docker image prune -a
 ```
+
+---
+## **Docker exec**
+>Per entrare all'interno di un container e lanciare comandi usiamo il comando
+```sh
+docker exec -it nome_container bash
+```
+
+>In questo modo entriamo come root nel container e avviamo una bash interattiva (-it) da cui possiamo vedere tutto ciò che vi è all'interno del container docker
+
+---
+## **Docker logs
+>Permette di consultare i log del container. Utili i parametri -f e --since (stesso significato di journalctl)
+```sh
+docker log -f nome_container
+```

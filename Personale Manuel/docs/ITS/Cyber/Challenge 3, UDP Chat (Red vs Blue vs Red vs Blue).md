@@ -40,7 +40,7 @@ openssl req -newkey rsa:2048 -nodes -keyout server.key -x509 -days 365 -out serv
 # Crea una nuova chiave usando lo standard rsa:2048, un nuovo certificato che scade tra 365 giorni
 ```
 
->Client
+>Server
 ```shell
 ncat --ssl --ssl-cert server.crt --ssl-key server.key -lkv 4444
 ```
