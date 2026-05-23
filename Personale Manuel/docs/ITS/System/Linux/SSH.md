@@ -72,3 +72,17 @@ Host mioserver
 	Port 22               (Porta da usare)
 
 ```
+
+---
+
+# Se si cambia PC o si vuole aggiungere un altro Pc:
+
+>Generare ssh-key per verificare che siamo noi a github
+```
+ssh-keygen -t ed25519
+```
+
+>Successivamente andare nella directory di .ssh e trovare la public key
+>~/.ssh/id----.pub
+
+>Incollare questa chiave nelle impostazioni di chiavi ssh per il proprio profilo github
