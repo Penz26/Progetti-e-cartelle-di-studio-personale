@@ -81,6 +81,18 @@ sudo systemctl start docker
 sudo docker run hello-world   
 ```
 
+6. Per far girare docker senza usare sudo fare:
+```shell
+#Aggiunge lo user attuale al gruppo docker
+sudo usermod -aG docker $USER
+
+#applica le modifiche ai gruppi
+newgrp docker
+
+#verificare che funzioni
+docker ps
+
+```
 ---
 # **ARCHITETTURA DI DOCKER**
 
