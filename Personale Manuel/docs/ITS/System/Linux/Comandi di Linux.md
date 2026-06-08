@@ -62,7 +62,8 @@ grep  #cerca una stringa in un file, è case sensitive quindi cercherà solo l'e
         ESEMPIO: grep "CRITICAL"  2024-01-10.log
 	    #può anche cercare una stringa in più file alla volta (grep "hello" hello.txt hello2.txt)
         -r #può anche cercare nella cartella corrente e le subcartelle (grep -r "hello" .) (mentre con il . cerca nella directory in cui siamo
-
+		-o #cerca e mostra in base ad una cosa in specifico
+		ESEMPIO: ip addr | grep -o "192.*" #cerca le cose dal 192 in poi e con .* mostra tutto quello che c'è dopo
 find  #cerca files e directory attraverso il nome
         #esempi: 
         find some_directory -name "hello.txt"

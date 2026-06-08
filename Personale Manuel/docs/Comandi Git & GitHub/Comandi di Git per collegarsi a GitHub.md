@@ -25,3 +25,15 @@
  - git pull
    #scarica eventuali modifiche fatte da altri su GitHub. (Sempre meglio farlo quando si ha una repo condivisa)
 ```
+
+---
+
+## **Togliere la richiesta di login a Github per ogni push da Linux**
+
+>Dobbiamo modificare l'url di origine della nostra repo con:
+```shell
+git remote set-url origin git@github.com:username_github/repo_progetto.git
+
+#Controllare con
+git remote -v
+```
