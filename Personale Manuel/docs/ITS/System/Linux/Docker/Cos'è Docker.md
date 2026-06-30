@@ -282,7 +282,7 @@ docker system prune -a
 
 >Ogni immagine è composta da layer sovrapposti che rappresentano modifiche incrementali. 
 
-![Descrizione](../../../Images/layer_image.png)
+![Descrizione](layer_image.png)
 
 >Questo sistema a layer permette di condividere componenti comuni tra immagini diverse, riducendo duplicazioni e spazio utilizzato.
 

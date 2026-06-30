@@ -211,6 +211,17 @@ chmod #comando che permette di cambiare i permessi di un file o di una directory
         #Esempio: 
         chmod u-x prova.txt
 
+	#Si puà anche esprimere con dei numeri (oct)
+	# r = 4
+	# w = 2
+	# x = 1
+	#Esempio:
+	#owner: legge, scrive ed esegue (4 + 2 +1 = 7)
+	#group: legge ed esegue
+	#other; legge ed esegue
+	chmod 755 script.sh 
+	
+	
 #RICORDARSI CHE PER CAMBIARE I PERMESSI E SPOSTARE FILE LA CARTELLA IN CUI STIAMO CAMBIANDO/SPOSTANDO PERMESSI E FILE NON DEVE ESSERE LA NOSTRA WORKING DIRECTORY
 
 #L'user root è un amministratore, ha accesso a tutto nel sistema e può fare tutto, quando usiamo sudo agiamo come se fossimo la root

@@ -1,4 +1,4 @@
-#Linux
+ #Linux
 
 # **Filesystem Hierarchy Standard (FHS)**
 >La gerarchia del Filesystem linux si articola in varie directories ognuna con la propria funzione,  capire come è strutturato il sistema su Linux renderà possibile una migliore navigazione e comprensione di come si muove il sistema.
