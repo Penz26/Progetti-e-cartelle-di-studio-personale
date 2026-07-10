@@ -39,7 +39,7 @@
 
 >Esempio di richiesta:
 ```http
-GET 7 HTTP/1.1
+GET / HTTP/1.1
 
 Host: tryhackme.com
 User-Agent: Mozilla/5.0 Firefox/87.0

@@ -11,10 +11,14 @@
 
 1. Genereazione coppia di chiavi:
 	Viene creata una chiave privata (mantenuta segreta sul client) e una chiave pubblica (condivisa con il server)
-	Le Chiavi verrano salvate in tilde/.ssh/
+	Le Chiavi verrano salvate in tilde/.ssh/ **di default**
+
+>[!NOTE] Per cambiare il nome della chiave (es. verona_server) bisogna specificarlo quando si sta creando la chiave dal terminale quando si sta decidendo dove salvare la chiave
+
+
 ```Shell
 ssh-keygen -t ED25519 -C "Nome identificativo"
-#(-C ci permette di dare un nome al computer per identificarlo)
+#(-C ci permette di dare un commento alla chiave per identificarla)
 ```
 
 2. Distribuzione della chiave pubblica
