@@ -74,12 +74,26 @@ sudo apt install ansible
 >In questo file inseriamo tutti gli IP dei server che vorremo gestire con Ansible.
 
 ```sh
-#File con gli Ip dei server che vorremo gestire con Ansible
 192.168.1.111
 192.168.1.166
 ecc...
 ```
 
+>In questi file possiamo raggruppare determinati IP di macchine in modo che facciano parte di un gruppo.
+
+>Per farlo:
+```yml
+192.168.10.160
+
+[webservers]
+192.168.20.174
+192.168.10.153
+
+[databases]
+192.168.50.10
+```
+
+---
 ## **Creazione del ansible.cfg**
 >Creando questo file di configurazione ogni volta che facciamo partire un comando ansible leggerà questo file in modo da prendere in automatico certi dati come:
 ```sh
@@ -217,4 +231,218 @@ ansible all -m apt -a "name=apache2 state=latest" ---become --ask-become-pass
 >Aggiornare il sistema (**sudo apt upgrade**)
 ```sh
 ansible all -m apt -a upgrade=dist --become --ask-become-pass
+```
+
+---
+# **Variabili**
+>Possiamo rendere i nostri playbook più dinamici grazie alle variabili.
+
+>Le variabili possono essere inserite direttamente nel playbook:
+```yml
+- name: Configurazione server web
+  hosts: webservers
+  vars:
+    porta_web: 8080
+    utente_admin: "sistemista"
+  tasks:
+    - name: Saluto dal server
+      ansible.builtin.debug:
+	     msg: "ciao mondo io sono {{utente_admin}}"
+```
+
+>Altrimenti possiamo specificarle all'interno di una directory chiamata group_vars/nome_gruppo.yml
+>Oppure hosts/Ip.yml
+
+>In queste due cartelle Ansible va à cercare per il gruppo/host che gli abbiamo specificato nel playbook al parametro hosts: e troverà le variabili in automatico.
+
+>Esempio di webservers.yml
+```yml
+ansible_user: manu
+ansible_port: 22
+```
+
+---
+# **Condizionali**
+>I Condizionali servono a rendere i tuoi playbook ancora più dinamici permettendo ad Ansible di eseguire una task solo se quella condizione è rispettata.
+
+>Per farlo usiamo **when**
+
+>In base a variabili od altre informazioni che Ansible prende in automatico con Gather Facts possiamo fare controlli su molti campi.
+
+>Gli operatori logici per fare il confronto sono sempre i soliti:
+>- == ;                            uguale a                   ; when: stato == "attivo"
+>- != ;                             diverso da                ; when: ambiente != "test"
+>- and ;                          e (entrambe vere)   ;  when: ambiente == "prod" and                                                                                                  ansible_facts['distribution'] == "Debian"
+>- or ;                       oppure (almeno una vera)  ; when: ansible_facts['distribution'] ==                                                                             "Debian" or ansible_facts['distribution'] == Ubuntu
+>- is defined ;                 la variabile esiste   ; when: mia_variabile is defined
+
+>Esempio:
+```sh
+- name: Aggiorna cache pacchetti su Debian/Ubuntu
+  ansible.builtin.apt:
+    update_cache: yes
+  when: ansible_facts['distribution'] == "Ubuntu"
+
+- name: Aggiorna cache pacchetti su RedHat/CentOS
+  ansible.builtin.dnf:
+    update_cache: yes
+  when: ansible_facts['distribution'] == "CentOS"
+```
+
+---
+## **Register**
+
+>Register ci permette di registrare il risultato di un comando precedente creando una variabile temporanea sul momento contenente tutte le info estratte dal modulo stat
+
+>Esempio:
+```yml
+tasks:
+    # 1. Controlliamo se esiste un certo file di manutenzione
+    - name: Verifica presenza file di manutenzione
+      ansible.builtin.stat:
+        path: /etc/maintenance.lock
+      register: file_manutenzione
+
+    # 2. Rimuoviamo un servizio SOLO SE quel file esiste davvero
+    - name: Notifica inizio manutenzione
+      ansible.builtin.debug:
+        msg: "Manutenzione in corso trovata!"
+      when: file_manutenzione.stat.exists == true
+```
+
+---
+# **Moduli per i playbook**
+>I moduli dei playbook sono i campi che ci permettono di usare comandi all'interno di Ansible in modo che operi sul server che gli abbiamo specificato per quel playbook.
+
+## **apt**
+>Sincronizzazione repositories, aggiornamento pacchetti, gestione pacchetti
+
+```yaml
+- name: Install apache httpd (state=present is optional)
+  ansible.builtin.apt:
+	name: apache2             #specifica il pacchetto da installare
+    state: present            #indica lo stato del pacchetto da installare
+
+- name: Update repositories cache and install "foo" package
+  ansible.builtin.apt:
+    name: foo
+    update_cache: yes         #sincronizza con le repo 
+
+- name: Remove "foo" package
+  ansible.builtin.apt:
+    name: foo
+    state: absent             #rimuove il pacchetto specificato
+
+- name: Install the package "foo"
+  ansible.builtin.apt:
+    name: foo
+
+- name: Install a list of packages
+  ansible.builtin.apt:
+    pkg:
+    - foo
+    - foo-tools
+
+- name: Install the version '1.00' of package "foo"
+  ansible.builtin.apt:
+    name: foo=1.00
+
+- name: Update the repository cache and update package "nginx" to latest version using default release squeeze-backport
+  ansible.builtin.apt:
+    name: nginx
+    state: latest
+    default_release: squeeze-backports
+    update_cache: yes
+
+- name: Install the version '1.18.0' of package "nginx" and allow potential downgrades
+  ansible.builtin.apt:
+    name: nginx=1.18.0          #Installa una versione specifica del pacchetto
+    state: present
+    allow_downgrade: yes
+
+- name: Install zfsutils-linux with ensuring conflicted packages (e.g. zfs-fuse) will not be removed.
+  ansible.builtin.apt:
+    name: zfsutils-linux
+    state: latest
+    fail_on_autoremove: yes
+
+- name: Install latest version of "openjdk-6-jdk" ignoring "install-recommends"
+  ansible.builtin.apt:
+    name: openjdk-6-jdk
+    state: latest
+    install_recommends: no
+
+- name: Update all packages to their latest version
+  ansible.builtin.apt:
+    name: "*"
+    state: latest
+
+- name: Upgrade the OS (apt-get dist-upgrade)
+  ansible.builtin.apt:
+	upgrade: dist              #aggiorna il sistema
+
+- name: Run the equivalent of "apt-get update" as a separate step
+  ansible.builtin.apt:
+    update_cache: yes
+
+- name: Only run "update_cache=yes" if the last one is more than 3600 seconds ago
+  ansible.builtin.apt:
+    update_cache: yes
+    cache_valid_time: 3600
+
+- name: Pass options to dpkg on run
+  ansible.builtin.apt:
+    upgrade: dist
+    update_cache: yes
+    dpkg_options: 'force-confold,force-confdef'
+
+- name: Install a .deb package
+  ansible.builtin.apt:
+    deb: /tmp/mypackage.deb
+
+- name: Install the build dependencies for package "foo"
+  ansible.builtin.apt:
+    pkg: foo
+    state: build-dep
+
+- name: Install a .deb package from the internet
+  ansible.builtin.apt:
+    deb: https://example.com/python-ppq_0.1-1_all.deb
+
+- name: Remove useless packages from the cache
+  ansible.builtin.apt:
+    autoclean: yes
+
+- name: Remove dependencies that are no longer required
+  ansible.builtin.apt:
+    autoremove: yes
+
+- name: Remove dependencies that are no longer required and purge their configuration files
+  ansible.builtin.apt:
+    autoremove: yes
+    purge: true
+
+- name: Run the equivalent of "apt-get clean" as a separate step
+  ansible.builtin.apt:
+    clean: yes
+```
+
+## **service**
+>Gestione dei servizi (l'equivalente di systemctl)
+
+---
+# **Ruoli**
+
+>Un ruolo è una struttura standardizzata di cartelle in cui Ansible organizza in modo ordinato:
+>- Tasks
+>- Handlers
+>- Variabili
+>- Template Jinja2
+
+>Così da non avere un file yaml lunghissimo lo dividiamo in sottoparti più ordinate in base al ruolo (webserver, database, ecc...)
+
+## **Come si crea un ruolo**
+
+```shell
+ansible-galaxy role init roles/webserver
 ```

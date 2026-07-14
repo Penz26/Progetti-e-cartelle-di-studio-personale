@@ -1,0 +1,28 @@
+---
+
+- hosts: all
+  become: true
+  tasks: 
+
+  - name: Aggiornare repo packages
+    apt:
+      update_cache: true
+
+  - name: Aggiornare il sistema
+    apt:
+      upgrade: dist
+
+  - name: Install apache2 package
+    apt:
+      name: apache2
+      state: latest
+
+  - name: Aggiungere supporto php per apache2
+    apt:
+      name: libapache2-mod-php
+      state: latest
+
+  - name: Disinstallare supporto php per apache2
+    apt:
+      name: libapache2-mod-php
+      state: absent

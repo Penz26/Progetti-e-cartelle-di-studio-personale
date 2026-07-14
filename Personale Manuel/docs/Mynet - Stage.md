@@ -130,3 +130,172 @@ pdnsutil set-kind <zona> master
 pdnsutil set-meta <zona> SOA-EDIT-API-DEFAULT
 #Questa regola dice a PowerDNS che ogni volta che si cambia un record tramite API aggiorna e incrementa il Serial del SOA in automatico
 ```
+
+---
+# ==***10/07/2026***==
+>Diagnostica su un server Hp Ceph guasto
+
+## Cos'è Ceph:
+>Ceph è un sistema di archiviazione distribuito che fornisce servizi di archiviazione oggetti blocchi e file da un singolo cluster
+
+>Dopo una giornata passata a sovrascrivere gli hard disk con dati randomici abbiamo seguito la procedura cercando di capire cosa effettivamente non andasse sul server.
+
+## **1° Osservazione**
+>Attraverso l'ILO (software embedded per la gestione da un altro PC collegato con un cavo RJ45 del server con interfaccia grafica) abbiamo trovato i dati seriali dei vari dischi.
+>Questi dati sono stati comparati con quelli che ricevevamo con
+```sh
+sudo dmesg -T | grep -E -i "io error|failed|bad sector|rejecting I/O|buffer i/o" | awk '{print$6}' | sort | uniq
+```
+
+>Questo comando ci riportavo il disco (la sesta colonna del dmesg $6)che dava problemi ("io error ...) una sola volta (sort | uniq ci permette di vedere il disco una sola volta invece che per ogni errore che hanno mai dato)
+
+>All'inizio i dischi che davano errore sembravano essere solo quelli nella cage anteriore. Per riprovare abbiamo spostato altri dischi sulla prima cage e anche loro davano problemi.
+
+>Di conseguenza abbiamo pensato che il problema fosse dell'intero 1° cage (primi 12 dischi).
+
+## **2° Osservazione**
+>Dopo abbiamo provato con un altro metodo per verificare se effettivamente fosse un problema del cage o del controller o dei cavi.
+
+>Dopo aver spostato i cavi Sas abbiamo notato che non davano più problemi i dischi davanti ma bensì quelli dietro (2° Cage).
+>I cavi partivano dal controller in un unico posto da due da 8 che si divideva in 4 cavi da 2 Sas. 
+>2 andavano alla prima cage
+>gli altri 2 andavano alla seconda cage ed uno dei due tornava indietro per tornare alla scheda madre.
+
+>Di conseguenza abbiamo stabilito che il problema non era nella posizione dei dischi ma bensì nei cavi del controller che saranno da sostituire e controllare per eventuali danni smontando il case del server.
+
+---
+
+# ==***13/07/2026***==
+
+1. Prova di configurazione di un profilo di rete per un nuovo utente (IO)
+2. Rinnovo certificati ssl (CA godaddy) per un sito di un cliente per cui hostiamo il server web (apache2)
+
+## **Configurazione profilo di rete**
+>Una volta arrivato il mini pc che doveva fungere da workstation abbiamo provato ad aggiungere il mio utente come profilo di rete di dominio.
+
+>Arrivati alle impostazioni la password di root del proprietario di dominio che doveva abilitarmi la connessione LAN non funzionava.
+
+>Così abbiamo deciso di utilizzare un'istanza live di un ISO sullo stesso pc per cercare di cambiare la password di root.
+
+>Operazioni:
+>1. Flashata ISO sulla mia chiavetta con Ventoy
+>2. Inserita nel pc
+>3. Entrare nel BIOS e cambiato Boot Order (Secure boot già disabilitato)
+
+>Una volta dentro abbiamo:
+```sh
+sudo -i # Per diventare root per la sessione
+
+lsblk   #Per vedere i dischi e capire la partizione su cui operare (nvme0n1p3)
+
+cryptsetup luksOpen /dev/nvme0n1p3 cryptroot
+```
+
+>Abbiamo notato che il disco fosse protetto da crittografia LUKS.  Inserita la passphrase dopo lo sblocco comparirà la tipologia di filesystem (ext4)
+
+```sh
+sudo mount /dev/mapper/cryptroot /mnt
+```
+
+>Abbiamo poi montato i principali file del sistema per poterci entrare con chroot:
+```sh
+sudo mount --bind /dev /mnt/dev
+sudo mount --bind /dev/pts /mnt/dev/pts
+sudo mount --bind /proc /mnt/proc
+sudo mount --bind /sys /mnt/sys
+sudo mount --bind /run /mnt/run
+
+#Dopo aver copiato tutti i file che servivano abbiamo usato chroot per entrarci
+
+sudo chroot /mnt
+
+#Per vedere che utenti ci siano in quel sistema
+ls /home
+
+#una volta identificato l'utente amministratore cambiata la password con
+
+passwd nome_utente
+
+#Una volta cambiata la password controllare che essa sia stata salvata abbiamo guardato il file /etc/shadow che mantiene le password in modo criptato
+
+ls /etc/shadow
+```
+
+>Usciti abbiamo riprovato ma non ha funzionato :(
+
+---
+## **Rinnovo certificati SSL su un server web apache2**
+
+>Il sito di un nostro cliente aveva i certificati ssl che garantivano l' Https del sito in scadenza.
+
+>Abbiamo proceduto ad individuare i file di configurazione del Virtualhost del sito in
+>**/etc/apache2/sites-enabled**
+
+```html
+<VirtualHost *:80>
+    ServerName il-tuo-sito.it
+    ServerAlias www.il-tuo-sito.it
+
+    # 🛠️ Attivazione e regole di riscrittura (HTTP -> HTTPS)
+    RewriteEngine On
+    RewriteCond %{HTTPS} off
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    ErrorLog ${APACHE_LOG_DIR}/http_error.log
+    CustomLog ${APACHE_LOG_DIR}/http_access.log combined
+</VirtualHost>
+<VirtualHost *:443>
+    ServerName il-tuo-sito.it
+    ServerAlias www.il-tuo-sito.it
+    DocumentRoot /var/www/html/wordpress
+
+    #Attivazione del motore SSL
+    SSLEngine on
+
+    #1. Certificato principale del dominio (scaricato da GoDaddy)
+    SSLCertificateFile /etc/apache2/certificates/sito.crt
+
+    #2. Chiave privata associata alla richiesta CSR
+    SSLCertificateKeyFile /etc/apache2/certificates/sito.key
+
+    #3. Bundle intermedio di GoDaddy (es. gd_bundle-g2-g1.crt)
+    SSLCertificateChainFile /etc/apache2/certificates/gd_bundle.crt
+
+    <Directory /var/www/html/wordpress>
+        Options FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+```
+
+>Abbiamo trovato la directory in cui tenevamo i certificati ssl, abbiamo fatto un backup di questi vecchi ed abbiamo scaricato i certificati nuovi con godaddy dalla gestione dei nostri prodotti.
+
+>Una volta scaricati i file dei nuovi certificati abbiamo mandato i file al nostro server tramite scp:
+```sh
+scp sito.crt utente@indirizzo_ip_server:/tmp/
+```
+
+>E da lì li abbiamo spostati nella cartella specificata in VirtualHost entrando in ssh al server
+
+>Una volta fatto ciò abbiamo fatto 2 controlli finali:
+
+1. Controllo della sintassi sul file di configurazione con il comando
+```sh
+sudo apachectl -t
+
+#oppure su sistemi debian
+sudo apache2ctl configtest
+```
+
+2. Ricaricato il servizio Apache2
+```sh
+sudo systemctl reload apache2
+```
+
+>Fatto questo ci basterà cercare sul browser il dominio per cui abbiamo aggiornato i certificati e guardare con l'icona del lucchetto la CA emittente e la data di scadenza del certificato.
+
+---
