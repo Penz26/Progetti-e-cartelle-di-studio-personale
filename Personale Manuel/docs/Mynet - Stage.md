@@ -13,7 +13,7 @@
 >Samba è un software open source che permette di condividere file e stampanti all'interno di una stessa rete
 
 
-## Ansible
+## Ansible [[Ansible]]
 >Ansible è un tool di automazione IT open source che semplifica la configurazione dei server, il deployment delle applicazione e la gestione dell'infrastruttura.
 
 >Sulla macchina principale (nodo) risiede il software mentre le macchine remote non necessitano di agenti dedicati. La comunicazione avviene tramite canali sicuri e standard come SSH.
@@ -299,3 +299,18 @@ sudo systemctl reload apache2
 >Fatto questo ci basterà cercare sul browser il dominio per cui abbiamo aggiornato i certificati e guardare con l'icona del lucchetto la CA emittente e la data di scadenza del certificato.
 
 ---
+# ==***14/07/2026***==
+
+>Continuato studio di Ansible [[Ansible]]
+>- Ruoli
+>- modulo package
+>- gruppi, 
+>- variabili di gruppo, 
+>- vault Ansible
+>- tag,
+>- services
+
+## Task per il futuro:
+- Finire di studiare i ruoli e template
+- Controllare possibilità di automazione di Proxmox collegando Ansible
+- Guardare NetBox (e la relativa implementazione con Ansible)

@@ -1,6 +1,0 @@
-#Ignora i file dell'ambiente virtuale
-.venv/
-*.log
-.env
-venv/
-

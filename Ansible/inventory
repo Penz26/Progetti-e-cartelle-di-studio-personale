@@ -1,1 +1,8 @@
+[fileserver]
 192.168.1.176
+
+[webserver]
+192.168.1.176 #Solo per questa prova perchè non voglio rompere il mio sito wordpress
+
+[wordpress]
+192.168.1.83

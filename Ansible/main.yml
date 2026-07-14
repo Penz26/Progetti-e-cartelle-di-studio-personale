@@ -1,0 +1,69 @@
+---
+#In questo modo questi task verranno eseguiti a tutti gli hosts
+- hosts: all
+  become: true
+  tasks: 
+
+  - name: Aggiornare il sistema
+    tags: always
+    apt:
+      update_cache: true
+      upgrade: dist
+    when: ansible_facts["distribution"] in ["Debian", "Ubuntu"]
+
+#Mentre questi vengono eseguiti solo sugli hosts che sono nel gruppo di webserver
+- hosts: webserver
+  tags: apache2,php
+  become: true
+  tasks:
+  - name: Installazione apache2 package e supporto php
+    apt:
+      name: 
+      - apache2
+      - libapache2-mod-php
+      state: latest
+    when: ansible_facts["distribution"] in ["Debian", "Ubuntu"]
+  
+  - name: Spostamento file pagina html 
+    tags: apache2,html
+    copy:
+      src: sites/main.html
+      dest: /var/www/html/index.html
+      owner: root
+      group: root
+      mode: 0644
+  
+  - name: Prova services
+    ansible.builtin.service:
+      name: apache2
+      state: restarted
+
+  - name: Installazione unzip
+    ansible.builtin.package:
+      name: unzip
+      state: latest
+
+  - name: Install terraform
+    unarchive:                  #Lo unzippa in automatico
+      src: https://releases.hashicorp.com/terraform/1.15.8/terraform_1.15.8_linux_amd64.zip
+      dest: /usr/local/bin
+      remote_src: yes
+      mode: 0755
+      owner: root
+      group: root
+
+      
+  
+
+
+- hosts: fileserver
+  tags: samba
+  become: true
+  tasks:
+  - name: Installazione samba
+    apt:
+      name: samba
+      state: latest
+  
+      
+  

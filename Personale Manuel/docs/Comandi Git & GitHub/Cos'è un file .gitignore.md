@@ -1,4 +1,4 @@
-##Git [[Git & GitHub]]
+#Git [[Git & GitHub]]
 >I file .gitignore sono file molto importanti che permettono di far si che certi file vengano ignorati, in modo che non vengano caricati su GitHub e non tenga traccia delle sue modifiche.
 
 >Senza questi file, si finirebbe per caricare online dati spazzatura e peggio dati sensibili.

@@ -1,5 +1,4 @@
 #Linux 
-
 # **Cos' è?**
 >Ansible è un software open source che permette di  automatizzare la gestione di server remoti e ne controlla lo stato.
 
@@ -10,7 +9,7 @@
 > 1. Nodo di controllo
 >    Un sistema su cui Ansible è installato. Si fanno partire i comandi da qua
 > 2. Inventario
->    Una lista di node che verranno gestiti da Ansible. Lo si crea sul nodo di controllo per descrivere i deployment degli hosts
+>    Una lista di node che verranno gestiti da Ansible. Lo si crea sul nodo di controllo per descrivere i deployment degli hosts[[#**Per cosa è utile?**]]
 > 3. Macchina gestita
 >    Un sistema remoto che viene controllato da Ansible
 
@@ -253,7 +252,16 @@ ansible all -m apt -a upgrade=dist --become --ask-become-pass
 >Altrimenti possiamo specificarle all'interno di una directory chiamata group_vars/nome_gruppo.yml
 >Oppure hosts/Ip.yml
 
+```yaml
+mio_progetto
+|__main.yml
+|__group_vars
+	|_dbservers.yml
+	|_webserver.yml
+```
+
 >In queste due cartelle Ansible va à cercare per il gruppo/host che gli abbiamo specificato nel playbook al parametro hosts: e troverà le variabili in automatico.
+
 
 >Esempio di webservers.yml
 ```yml
@@ -279,12 +287,12 @@ ansible_port: 22
 >Esempio:
 ```sh
 - name: Aggiorna cache pacchetti su Debian/Ubuntu
-  ansible.builtin.apt:
+  apt:
     update_cache: yes
   when: ansible_facts['distribution'] == "Ubuntu"
 
 - name: Aggiorna cache pacchetti su RedHat/CentOS
-  ansible.builtin.dnf:
+  dnf:
     update_cache: yes
   when: ansible_facts['distribution'] == "CentOS"
 ```
@@ -311,11 +319,64 @@ tasks:
 ```
 
 ---
+# **Tags**
+>I Tag sono etichette che si possono identificare delle task sotto un nome, la loro funzione principale è quella di dare controllo su cosa eseguire.
+
+>Esempio:
+```YAML
+---
+- name: Configurazione Server
+  hosts: all
+  tasks:
+    - name: Installa il server web Nginx
+      ansible.builtin.apt:
+        name: nginx
+        state: present
+      tags: 
+        - install
+        - web
+
+    - name: Copia la configurazione di Nginx
+      ansible.builtin.template:
+        src: nginx.conf.j2
+        dest: /etc/nginx/nginx.conf
+      tags: 
+        - configure
+        - web
+
+    - name: Configura il database MySQL
+      ansible.builtin.apt:
+        name: mysql-server
+        state: present
+      tags: 
+        - install
+        - db
+```
+
+>Per eseguire task con solo il tag "web" si usa la flag --tag:
+```
+ansible-playbook playbook.yml --tags "web"
+```
+
+>Per invece saltare task specifiche:
+```shell
+ansible-playbook playbook.yml --skip-tags "db"
+```
+
+>Esistono dei tag specifici:
+>- **always:** una task con questo tag verrà eseguito sempre se non viene esclusa esplicitamente
+>- **never:** una task con questo tag non verrà mai eseguita se non esplicitamente
+>- **tagged:** esegue solo le task che possiedono almeno un tag personalizzato
+>- **untagged** esegue solo le task che non hanno alcun tag associato
+
+---
 # **Moduli per i playbook**
 >I moduli dei playbook sono i campi che ci permettono di usare comandi all'interno di Ansible in modo che operi sul server che gli abbiamo specificato per quel playbook.
 
 ## **apt**
 >Sincronizzazione repositories, aggiornamento pacchetti, gestione pacchetti
+>==***PER DISTRO BASATE SU DEBIAN***==
+
 
 ```yaml
 - name: Install apache httpd (state=present is optional)
@@ -427,8 +488,110 @@ tasks:
     clean: yes
 ```
 
+## **packages**
+>Permette ad Ansible di rilevare in automatico il package manager utilizzato dalla macchina su cui opera.
+
+>(Sono un po' gli stessi comandi di apt. )
 ## **service**
 >Gestione dei servizi (l'equivalente di systemctl)
+
+```yml
+- name: Fa partire il servizio httpd se non era già avviato
+  ansible.builtin.service:
+    name: httpd
+    state: started
+
+- name: Ferma il servizio httpd se in funzione
+  ansible.builtin.service:
+    name: httpd
+    state: stopped
+
+- name: Riavvia il servixe httpd in ogni caso 
+    ansible.builtin.service:
+    name: httpd
+    state: restarted
+
+- name: Ricarica le configurazioni del servizio in ogni caso  httpd
+  ansible.builtin.service:
+    name: httpd
+    state: reloaded
+
+- name: Abilita il servizio httpd, non tocca attuale stato
+  ansible.builtin.service:
+    name: httpd
+    enabled: yes
+
+- name: Start service foo, based on running process /usr/bin/foo
+  ansible.builtin.service:
+    name: foo
+    pattern: /usr/bin/foo
+    state: started
+
+- name: Restart network service for interface eth0
+  ansible.builtin.service:
+    name: network
+    state: restarted
+    args: eth0
+```
+
+## **Copy**
+
+>Permette di copiare un file dalla macchina host di Ansible al client su cui stiamo facendo agire il playbook
+```yml
+- hosts: webservers
+  become: true
+  tag: apache2
+  - name: Copiare file predefinito di index.html
+    copy:
+	  src: path/al/nuovo/file
+	  dest: /var/www/html/index.html
+	  owner: root          #opzionali
+	  group: root          #opzionali
+	  mode: 0644           #opzionali
+```
+
+## **unarchive**
+
+>Permette di unzippare1
+---
+# **Template**
+>Un template in Ansible non è altro che un file di configurazione (es. .conf .ini .html) che contiene delle variabili e delle logiche
+
+## **Cosa fa?**
+1. Legge il file di partenza sul computer locale (il file ha l'estensione .j2)
+2. Sostituisce le variabili con i valori reali specificati per quel determinato server o gruppo
+3. Invia il file "compilato" e personalizzato sul server remoto
+
+## **Sintassi**
+
+>Le {{}}  servono a inserire il valore di una variabile definita in group_vars/ , nei /defaults del ruolo o estratta dai facts di Ansible
+```yml
+Port {{ ansible_port }}
+ListenAddress {{ ansible_default_ipv4.address }}
+```
+
+>Le {%  ...  %} servono a introdurre della logica
+```yml
+{% if ambiente == "produzione" %}
+LogLevel ERROR
+{% else %}
+LogLevel DEBUG
+{% endif %}
+```
+
+## **Come si usano nei task**
+
+```yml
+- name: Genera il file di configurazione
+  ansible.builtin.template:
+    src: site.conf.j2                 # Nome del file di origine (nella cartella templates/)
+    dest: /etc/nginx/sites-available/default  # Percorso di destinazione sul server remoto
+    owner: root                       # Proprietario del file (opzionale)
+    group: root                       # Gruppo del file (opzionale)
+    mode: '0644'                      # Permessi del file (opzionale)
+  notify: Riavvia Nginx               
+```
+
 
 ---
 # **Ruoli**
@@ -439,10 +602,94 @@ tasks:
 >- Variabili
 >- Template Jinja2
 
->Così da non avere un file yaml lunghissimo lo dividiamo in sottoparti più ordinate in base al ruolo (webserver, database, ecc...)
+>Così da non avere un file yaml lunghissimo e dividderlo in sottoparti più ordinate in base al ruolo (webserver, database, ecc...)
 
+>La struttura che andrà a creare Ansible sarà:
+```
+roles/
+└── webserver/
+    ├── tasks/
+    │   └── main.yml      # I task principali da eseguire
+    ├── handlers/
+    │   └── main.yml      # Gli handler (es. restart di Nginx)
+    ├── templates/
+    │   └── site.conf.j2  # I file Jinja2 da elaborare
+    ├── vars/
+    │   └── main.yml      # Variabili ad alta priorità per il ruolo
+    ├── defaults/
+    │   └── main.yml      # Variabili di default (a bassa priorità, sovrascrivibili)
+    └── meta/
+        └── main.yml      # Dipendenze del ruolo e metadati
+```
+
+## **Gerarchia delle variabili**
+
+1. **roles/nome_ruolo/vars**
+2. roles/
 ## **Come si crea un ruolo**
 
 ```shell
 ansible-galaxy role init roles/webserver
 ```
+
+>Quando si esegue un playbook come:
+```
+- name: Deploy dell'infrastruttura web
+  hosts: webservers
+  become: true
+  roles:
+    - webserver
+```
+
+>Ansible va nella cartella roles/webserver/tasks/main.yml esegue i task, prende le variabili da defaults/main.yml  e gestisce gli handers/main.yml in automatico.
+
+---
+# **Vault Ansible**
+
+>Un vault di Ansible ci permette di crittografare dati sensibili (es. become-pass per uno dei nostri nodi gestiti ,ansible_user, ecc...)
+
+>Quando cifriamo un file con un vault il suo contenuto diventa illegibile a noi ma per Ansible è chiara. All' esecuzione di un playbook che necessita una delle variabili all'interno del vault li decifra al volo **chiedendo però la password del vault**.
+
+## **Come si usa:**
+
+>[!IMPORTANT] Alla creazione di un nuovo vault oppure della cifratura di un file già esistente chiederà un password per tale cifratura**
+
+>Creare un file cifrato:
+```shell
+ansible-vault create group_vars/nome_gruppo/vault.yml
+```
+
+>Cifrare un file già esistente:
+```sh
+ansible-vault encrypt group_vars/all/secrets.yml
+```
+
+>Modificare un file criptato:
+```sh
+ansible-vault edit group_vars/all/secrets.yml
+```
+
+>Eseguire un playbook che richiede delle variabili protette da un vault:
+```
+ansible-playbook playbook.yml --ask-vault-pass
+```
+
+>Se non si vuole dover inserire la password del vault ogni volta si può far leggere ad Ansible la password del vault in 2 modi:
+
+1. Eseguire il playbook con:
+```sh
+ansible-playbook -i inventory.ini playbook.yml --vault-password-file ~/.ansible_vault_pass   
+```
+2. **VERA AUTOMAZIONE (dentro ansible.cfg)**
+```shell
+[defaults]
+inventory = inventory.ini
+vault_password_file = ~/.ansible_vault_pass   
+```
+>In questo modo Ansible leggendo la sua configurazione troverà il percorso del file con la password e la potrà leggere direttamente da lì.
+>E si potrà eseguire semplicemente:
+```shell
+ansible-playbook playbook.yml
+```
+
+>[!ATTENTION] Se il file con la Password è all'interno di una repo github includere il file dentro il .gitignore
