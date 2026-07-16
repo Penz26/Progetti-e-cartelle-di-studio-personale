@@ -1,3 +1,4 @@
+
 #Linux 
 # **Cos' è?**
 >Ansible è un software open source che permette di  automatizzare la gestione di server remoti e ne controlla lo stato.
@@ -552,7 +553,44 @@ ansible-playbook playbook.yml --skip-tags "db"
 
 ## **unarchive**
 
->Permette di unzippare1
+>Permette di unzippare
+
+
+## **assert**
+
+>Funziona come un if della programmazione
+```yml
+- name: Verifica se la VM esiste su NetBox
+	ansible.builtin.assert: #ansible.builtin.assert funziona come un if nella programmazione
+		that:
+			- netbox_api_response.json.results | length > 0 #condizione da controllare
+		fail_msg: "ERRORE: La VM '{{ target_vm_name }}' non è stata trovata su NetBox!" #Risposta di errore
+		success_msg: "Sincronizzazione completata: VM trovata con successo su NetBox." #Risposta di successo
+```
+## **uri**
+
+>Permette di fare richieste HTTP
+```yml
+- name: Recupera i dettagli della VM da NetBox tramite API REST
+	ansible.builtin.uri: #Con questo modulo possiamo fare delle richieste HTTP alla nostra dashboard di Netbox
+		url: "{{ netbox_api_url }}/api/virtualization/virtual-machines/?name={{ target_vm_name }}" #specifichiamo l'url del nostro menù con la nostra variabile, e poi passiamo anche il PATH
+#in cui va a cercare la nostra vm con ?name={{ target_vm_name }}
+		method: GET
+		headers:
+			Authorization: "Token {{ netbox_token }}" #Qui diamo i parametri per poter accedere a questo PATH
+			Accept: "application/json" #Bash Specifichiamo il tipo di formato che richiediamo
+		status_code: 200
+	register: netbox_api_response #Salva TUTTA la risposta JSON in questa variabile
+```
+## **set_fact**
+
+>Crea o modifica una variabile
+```yml
+- name: Estrai e salva i dati utili della VM
+	ansible.builtin.set_fact: #Crea o aggiorna una variabile (in questo caso crea)
+		vm_details: "{{ netbox_api_response.json.results[0] }}"
+```
+
 ---
 # **Template**
 >Un template in Ansible non è altro che un file di configurazione (es. .conf .ini .html) che contiene delle variabili e delle logiche
@@ -664,9 +702,9 @@ ansible-vault create group_vars/nome_gruppo/vault.yml
 ansible-vault encrypt group_vars/all/secrets.yml
 ```
 
->Modificare un file criptato:
+>Modificare un file criptato usando neovim:
 ```sh
-ansible-vault edit group_vars/all/secrets.yml
+EDITOR=nvim ansible-vault edit group_vars/all/secrets.yml
 ```
 
 >Eseguire un playbook che richiede delle variabili protette da un vault:

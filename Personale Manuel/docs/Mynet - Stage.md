@@ -314,3 +314,17 @@ sudo systemctl reload apache2
 - Finire di studiare i ruoli e template
 - Controllare possibilità di automazione di Proxmox collegando Ansible
 - Guardare NetBox (e la relativa implementazione con Ansible)
+
+---
+
+# ==***15/07/2026***==
+
+>Studiato come implementare Ansible con Netbox e Proxmox [[Automazione Netbox ---> Proxmox via Ansible]]
+
+>Creata documentazione a riguardo, continuata implementazione con gli appunti.
+
+---
+# ==***16/07/2026***==
+
+>Continuato studio dell'implementazione tra i 3 tool
+
