@@ -159,3 +159,8 @@ git nome_comando --help
 ![Descrizione](../Images/immagine_rebase.png)
 
 >Una volta al suo interno mettiamo al posto di pick squash (oppure s per abbreviare) salviamo il file, chiudiamo l'editor e tornando nella shell ci verrà chiesto il nuovo messaggio per il nuovo commit unito.
+
+>Per aggiornare anche su Github:
+```shell
+git push origin <nome-del-tuo-branch> --force-with-lease
+```

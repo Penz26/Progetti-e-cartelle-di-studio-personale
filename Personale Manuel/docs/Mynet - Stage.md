@@ -26,7 +26,7 @@
 
 ---
 # ==***08/07/2026***==
-# Aggiornamento server mail
+## Aggiornamento server mail
 >E' stata rilasciata una nuova versione di un client web  che patcha determinate vulnerabilità
 
 1. Controllare le CVE e cosa effettivamente veniva fixato
@@ -46,7 +46,7 @@
 ```
 7.  Controllare che sia andato tutto liscio
 
-# **Pulizia dischi rigidi e ssd**
+## **Pulizia dischi rigidi e ssd**
 
 ## **shred (dischi HDD)**
 >Sovrascrive il disco più volte con dati casuali per rendere impossibile il recupero magnetico ed infine scrive una passata finale di zeri per nascondere il processo
@@ -328,3 +328,14 @@ sudo systemctl reload apache2
 
 >Continuato studio dell'implementazione tra i 3 tool
 
+
+---
+# ==***17/07/2026***==
+
+>Aggiunti record per delle macchine su Netbox
+
+# ==***20/07/2026***==
+>Installato nuovo controller per il server di cui avevamo fatto la diagnosi i primi giorni
+
+## **Repository Debian/Ubuntu con aptly e firme GPG** [[Repository Debian-Ubuntu]]
+---
