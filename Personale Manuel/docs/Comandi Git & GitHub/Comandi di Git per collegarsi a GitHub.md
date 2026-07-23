@@ -27,8 +27,7 @@
 ```
 
 ---
-
-## **Togliere la richiesta di login a Github per ogni push da Linux**
+## **Togliere la richiesta di login a Github per ogni push via ssh da Linux**
 
 >Dobbiamo modificare l'url di origine della nostra repo con:
 ```shell

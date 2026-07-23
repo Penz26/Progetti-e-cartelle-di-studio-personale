@@ -339,3 +339,13 @@ sudo systemctl reload apache2
 
 ## **Repository Debian/Ubuntu con aptly e firme GPG** [[Repository Debian-Ubuntu]]
 ---
+
+# ==***21/07/2026***==
+>Continuato lavoro della repository locale ubuntu, ora funziona in TLS
+
+---
+# ==***22/07/2026***==
+>Continuato lavoro della repository locale ubuntu, ora funziona in mTLS , snapshot di istanze aptly niziato basic auth con password
+
+---
+# ==***23/07/2026***==

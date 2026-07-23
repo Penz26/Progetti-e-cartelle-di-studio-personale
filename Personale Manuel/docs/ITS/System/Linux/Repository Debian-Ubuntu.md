@@ -53,7 +53,7 @@ sudo apt update
    >Piccoli script che vengono eseguiti automaticamente prima o dopo l'installazione o la rimozione del pacchetto
 
 ---
-## **Sicurezza dei file**
+## **Sicurezza dei file (GPG Key)**
 >Linux usa GPG (GNU Privacy Guard) che utilizza la crittografia asimmetrica.
 
 >**Private Key:**
@@ -83,48 +83,8 @@ gpg --export --armor password-HEX > my-repo-key.asc
 ```
 
 ---
-# **Come possiamo creare la nostra Repo?**
->Dopo aver il timbro GPG installiamo il gestore delle repository
-
-```sh
-sudo apt update && sudo apt install aptly -y
-```
-
->Creiamo la struttura locale (nel DB di aptly) prima di operare:
->Questo comando aggiunge i metadati nel database interno (~/.aptly/db/)
-```sh
-aptly repo create -comment="Repository Interna Manuel Prod" -distribution="noble" -component="main" nome-repo
-```
-
->Aggiungere un file:
->Copia i file .deb in ~/.aptly/pool/
-```sh
-aptly repo add nome-repo /path/al/software_1.0_amd64.deb
-```
-
->Come rendere la repo pubblica ed accessibile:
->Prende tutto il materiale nel database, genera la mappa e crea la repository reale nella cartella ~/.aptly/public/
-```sh
-aptly publish repo -gpg-key="password-hex" -distribution="codename-distro" -component="main" nome-repo
-```
->Distribution serve a specificare la versione del sistema per dividere gli ambienti nella struttura
->Mentre component rappresenta la categoria del software
-
-
->Per aggiornare una pubblicazione esistente dopo aver aggiunto/rimosso nuovi pacchetti .deb:
-```sh
-aptly publish update <distribution>  #Es. noble per Ubuntu 24.04
-									 #oppure stable per pacchetti testati e                                            pronti e testing per in fase di prova
-```
-
->Una volta lanciata la pubblicazione/aggiornamento chiederà la passphrase che si ha usato per la chiave GPG.
->Una volta inserita darà come risultato questo messaggio:
-
-![[aptly-publish.png]]
-
----
 # **Trasformazione del software in pacchetti Debian**
->Nell repositories aptly essendo basate su debian/Ubuntu i pacchetti dovranno essere in formato .deb per farlo useremo il tool **dpkg-deb --build**
+>Nelle repositories aptly essendo basate su debian/Ubuntu i pacchetti dovranno essere in formato .deb per farlo useremo il tool **dpkg-deb --build**
 
 >Una volta finito di creare il software in sè dovremo creare questa struttura per far funzionare il comando:
 ```
@@ -153,7 +113,101 @@ dpkg-deb --build nome-software_1.0
 ```
 
 >Se non ci sono errori creerà un file chiamato mio-script_1.0.deb
+
 ---
+# **Come possiamo creare la nostra Repo?**
+>Dopo aver il timbro GPG installiamo il gestore delle repository aptly
+
+```sh
+sudo apt update && sudo apt install aptly -y
+```
+
+## **Crezione della repo con la  sua struttura locale** 
+>(nel DB di aptly) prima di operare:
+>Questo comando aggiunge i metadati nel database interno (~/.aptly/db/)
+```sh
+aptly repo create -comment="Repository Interna Manuel Prod" -distribution="noble" -component="main" nome-repo
+```
+
+>La configurazione di aptly risiede nel file ~/.aptly.conf, dove si possono specificare vari campi tra cui la directory in cui verranno salvati i dati al momento della pubblicazione.
+
+>**Aggiungere un file:**
+>Copia i file .deb in ~/.aptly/pool/
+```sh
+aptly repo add nome-repo /path/al/software_1.0_amd64.deb
+```
+
+---
+## **Come rendere la repo pubblica ed accessibile**:
+
+>Ci sono 2 metodi
+>- aptly publish repo , veloce ma senza tracciamento nel tempo
+>- aptly publish snapshot, immutabile col tempo e rollback facile
+
+### **Repo normale**
+
+>Prima di tutto aggiungere il pacchetto alla repo
+```shell
+aptly repo add nome-repo /path/al/software_1.0_amd64.deb
+```
+
+>**aptly publish update**
+>Prende tutto il materiale nel database, genera la mappa e crea la repository reale nella cartella ~/.aptly/public/
+```sh
+aptly publish repo -gpg-key="password-hex" -distribution="codename-distro" -component="main" nome-repo
+```
+>Distribution serve a specificare la versione del sistema per cui sono stati compilati i pacchetti e per dividere gli ambienti nella struttura
+>Mentre component rappresenta la categoria del software
+
+>Per aggiornare una pubblicazione esistente dopo aver aggiunto/rimosso nuovi pacchetti .deb:
+```sh
+aptly publish update <distribution>  #Es. noble per Ubuntu 24.04
+									 #oppure stable per pacchetti testati e                                            pronti e testing per in fase di prova
+```
+
+---
+### **Snapshot**
+
+>Prima di tutto aggiungere il pacchetto alla repo
+```shell
+aptly repo add nome-repo /path/al/software_1.0_amd64.deb
+```
+
+>Creazione dello snapshot
+```shell
+#Creazione dello snapshot della repo DOPO aver aggiunto i file
+aptly snapshot create <nome-snapshot> from repo <nome-repo>
+
+#Vedere tutti gli snapshot che abbiamo fatto fino ad oggi
+aptly snapshot list
+```
+
+>Pubblicazione della repo con metodo snapshot:
+```shell
+aptly publish snapshot -gpg-key"ID-chiave" -distribution="noble" nome-snapshot internal
+```
+> - distribution: distribuzione target per i client APT
+> - internal: sottocartella nell' URL web
+
+>Aggiornamento della repo basata su snapshot
+```shell
+aptly publish switch -batch -gpg-key="" noble internal "nome-snapshot"
+```
+> - aptly publish switch: prende una pubblicazione esistente la fa puntare ad un nuovo snapshot
+> - batch, dice a GPG di eseguire la firma in modo non interattivo
+> - gpg-key: specifica l'ID della chiave GPG da usare per firmare
+> - bookworm: distribuzione target della pubblicazione
+> - internal: è la sottocartella in cui vive il repository
+> - nome-snapshot: il nuovo snapshot appena creato che vogliamo pubblicare
+
+
+>Una volta lanciata la pubblicazione/aggiornamento chiederà la passphrase che si ha usato per la chiave GPG.
+>Una volta inserita darà come risultato questo messaggio:
+
+![[aptly-publish.png]]
+
+---
+
 # **Creazione dei certificati per il sito Nginx e i client**
 
 >Prima di creare i certificati del server web e del client bisogna creare la CA (interna per questo caso) che si preoccupa di rilasciare  e firmarei certificati sia per il server web che per il client.
@@ -169,18 +223,20 @@ dpkg-deb --build nome-software_1.0
 6. Common Name (e.g. server FQDN or YOUR name) (nome del dominio oppure IP)
 7. Email Address
 
+---
 
-8. **Creare la CA**
+1. **Creare la CA**
 ```sh
-openssl genrsa -aes256 -out ca.key 4096 #Crea la firma con cui la CA firmerà i certificati 
-   
+#Crea la firma con cui la CA firmerà i certificati 
+openssl genrsa -aes256 -out ca.key 4096 
+
+#Crea il certificato Root pubblico (il template su cui si dovranno basare gli altri)   
 openssl req -new -x509 -days 3650 -key ca.key -out ca.crt
-#Crea il certificato Root pubblico (il template su cui si dovranno basare gli altri)
 ```
 2. **Certificato per il server web**
 ```sh
 #Crea la chiave del server 
-openssl genrsa -out server.key 2048 
+openssl genrsa -out server.key 4096 
 
 #Usa la chiave di prima per creare la richiesta di certificato al CA
 openssl req -new -key server.key -out server.csr
@@ -188,11 +244,11 @@ openssl req -new -key server.key -out server.csr
 #Firma del certificato tramite la CA (genera anche il registro della ca, il file si chiamerà ca.srl)
 openssl x509 -req -days 365 -in server.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out server.crt
 ```
-3. **Certificato per il client (Se si vuole abilitare la mutua autenticazione)**
+3. **Certificato per il client (Se si vuole abilitare la mutua autenticazione MTLS)**
+   Dentro la cartella /etc/apt/certs/ del CLIENT 
 ```sh
-
 #Crea la chiave per il client
-openssl genrsa -out client.key 2048
+openssl genrsa -out client.key 4096
 
 #Crea la richiesta di certificato al CA firmando con la chiave appena creata
 openssl req -new -key client.key -out client.csr
@@ -204,31 +260,33 @@ openssl x509 -req -days 365 -in client.csr -CA ca.crt -CAkey ca.key -CAcreateser
 ---
 # **Configurazione di Nginx per controllare  i certificati:**
 
->Per comodità del percorso e ordine abbiamo spostato i certificati nella cartella /etc/nginx/ssl
-```.conf
+>Per comodità del percorso e ordine abbiamo spostato i certificati del server e della CA nella cartella /etc/nginx/ssl
+```shell
 server {
     listen 443 ssl;
-    server_name repo.azienda.local;
+    server_name 192.168.1.196;    #IP del server aptly oppure FQDN
 
     # 1. Radice dei file (Punta alla cartella che contiene i file di Aptly)
     root /var/www/apt-repo/public;
-    index index.html;
+    #index index.html;    di default va a cercare questo file se non lo trova fa vedere il contenuto della cartella
 
-    # __ 2. Configurazione SSL Standard (Il server dimostra chi è)
+    # 2. Configurazione SSL Standard (Il server dimostra chi è)
     ssl_certificate     /etc/nginx/ssl/server.crt;
     ssl_certificate_key /etc/nginx/ssl/server.key;
 
-    # __ 3. Configurazione mTLS (Il server pretende di sapere chi è il client)
+    # 3. Configurazione mTLS (Il server pretende di sapere chi è il client)
     ssl_client_certificate /etc/nginx/ssl/ca.crt; # La CA aziendale di cui Nginx si fida
-    #ssl_verify_client      on;               # Forza la mutua autenticazione
+    ssl_verify_client      on;               # Forza la mutua autenticazione
 
-    # __ 4. Permetti il browsing delle cartelle (APT ne ha bisogno)
+    # 4. Permetti il browsing delle cartelle (APT ne ha bisogno)
     location / {
         autoindex on;
         try_files $uri $uri/ =404;
     }
 }
 ```
+
+>[!NOTE] Se si vuole abilitare un autenticazione tramite IP o password ---> [[#**IP allow-list e basic auth**]]
 
 >Una volta finita la configurazione linkare/spostare/copiare il .conf ai siti abilitati:
 ```shell
@@ -249,7 +307,7 @@ systemctl reload nginx
 # **Installazione della chiave GPG della repo sul client**
 >Nelle nuove versioni di Ubuntu (dalla 22.04) il vecchio comando apt-key add è stato discontinuato per motivi di sicurezza.
 
->Ora le chiavi gpg non vengono aggiunte ad un unico grande file globale (/etc/apt/trusted.gpg) invece la singola chiave di una repository viene salvata nel proprio file in /etc/apt/keyrings/nome-repo.gpg
+>Ora le chiavi gpg non vengono aggiunte ad un unico grande file globale (/etc/apt/trusted.gpg) invece la singola chiave di una repository viene salvata nel proprio file in /etc/apt/keyrings/nome-repo.pub
 
 ## **Sul server aptly**
 
@@ -269,7 +327,7 @@ gpg --armor --export password > /tmp/nome-password.pub
 
 >Spostare la chiave nel keyrings:
 ```shell
-cp manuel-repo.pub /etc/apt/keyrings/
+cp nome-password.pub /etc/apt/keyrings/manuel-repo.pub
 ```
 
 >Dare i giusti permessi:
@@ -278,7 +336,7 @@ chmod 644 /etc/apt/keyrings/manuel-repo.pub
 ```
 
 ---
-# **Installazione della CA sui client**
+# **Installazione del certificato della CA sui client**
 >Per far sì che il client si possa sincronizzare con quella repo dobbiamo aggiungerlo alla lista delle repositories raggiungibili e dargli anche il certificato in modo che si possa fidare di questo
 
 ## **Trasferimento del certificato**
@@ -293,10 +351,40 @@ cp ca.crt /usr/local/share/ca-certificates/ca-aziendale.crt
 sudo update-ca-certificates
 ```
 
+---
+# **Creare il collegamento mTLS tra client e server**
+>Per far in modo che il server si fidi del client quest'ultimo deve mostrare il suo certificato e la chiave al server e verificare che il certificato della CA che mostra il server combaci con quello che ha.
 
-## **Aggiungere la repo ad apt**
+>APT ha una directory dedicata ai suoi metodi da seguire in ordine (/etc/apt/apt.conf.d)
+>Per farlo ci serve un file per apt che gli specifica la regola per il nostro client e connettersi al server con la nostra repo locale.
 
->In Debian/Ubuntu, le sorgenti personalizzate non si mettono nel file principale (/etc/apt/sources.list) ma si crea un file dedicato dentro la cartella /etc/apt/sources.list.d
+>In questo file specifichiamo cosa deve passare al momento della connessione con il server aptly
+>- **CAInfo**, indica il path per il certificato della CA in modo che il client si possa fidare del server
+>- **SSLCert**, indica il path per il proprio certificato in modo che il server si possa fidare
+>- **SLLKey**, indica il path per la propria chiave in modo che il server si possa fidare
+>Gli ultimi due forza i controlli
+```shell
+Acquire::https::IP/FQDN::CAInfo "/usr/local/share/ca-certificates/ca.crt";
+Acquire::https::IP/FQDN::SSLCert "/etc/apt/certs/repo-client.crt";
+Acquire::https::IP/FQDN::SSLKey "/etc/apt/certs/repo-client.key";
+Acquire::https::IP/FQDN::Verify-Peer "true";
+Acquire::https::IP/FQDN::Verify-Host "true";
+```
+
+>[!IMPORTANT] La chiave del client deve essere decifrata altrimenti apt non riesce a leggerla
+
+>Decifrazione della chiave del client
+```shell
+cp /etc/apt/certs/repo-client.key /etc/apt/certs/repo-client.key.bak
+openssl rsa -in /etc/apt/certs/repo-client.key.bak -out /etc/apt/certs/repo-client.key
+```
+
+---
+# **Aggiungere la repo ad apt**
+
+>In Debian/Ubuntu, le sorgenti personalizzate non si mettono nel file principale (/etc/apt/sources.list) ma si crea un file dedicato dentro la cartella /etc/apt/sources.list.d.
+
+>**Prima il file era in formato .list ma Debian e Ubuntu hanno detto che questo formato dava problemi di sicurezza quini fino al 2029 sarà uttilizzabile una configurazione su una singola riga, ma successivamente bisgonerà passare ad un formato .sources** 
 
 >Creazione del file all'interno della cartella personale:
 ```shell
@@ -306,7 +394,7 @@ sudo nano /etc/apt/sources.list.d/apt-repo.sources
 >Contenuto del file:
 ```shell
 Types: deb
-URIs: https://192.168.1.195/
+URIs: https://192.168.1.196/
 Suites: noble
 Components: main
 Signed-By: /etc/apt/keyrings/manuel-repo.pub
@@ -316,3 +404,88 @@ Signed-By: /etc/apt/keyrings/manuel-repo.pub
 >- https:// , indirizzo dove si trova la repo (sia IP che FQDN)
 >- noble, indica il codename (nome-versione) della distribuzione su cui si basa la repo aptly
 >- main, indica lo stato della repo e dei packages
+
+---
+# **IP allow-list e basic auth**
+>Per ora "basta" avere il certificato della CA che convalida quello che ci mostra il server, una chiave ed un certificato personale firmato dalla CA per entrare.
+>Ora vogliamo mettere altri controlli sull' IP, e se questo non combacia ha un'ultima possibilità per autenticarsi grazie ad una password.
+
+```mermaid.js
+flowchart TD
+A[Server] <--Scambio certificati--> B[Client]
+B --> C{I certificati corrispondono?}
+C --Sì-->D{Rientra negli IP/Subnet Impostata?}
+C --No--> E[X FUORI]
+D --Sì-->F[Bene Entra Pure!]
+D --No-->G{Conosce la password?}
+G --Sì-->H[Ok non sei in sede, ma sappiamo che sei te!]
+G --No-->I[Non sappiamo chi tu sia!]
+```
+
+>Per fare questa operazione dobbiamo scaricare dei pacchetti:
+```shell
+apt install apache2-utils
+```
+
+>Creazione del file per il login con il nuovo comando:
+```shell
+htpasswd -c /path/in/cui/salvarla nome-user
+
+#Chiederà la password che si userà per il login
+```
+
+>Configurazione Aggiornata del sito nginx **SUL SERVER** (/etc/nginx/sites-enabled/apt-repo.conf)
+```shell
+server {
+    listen 443 ssl;
+    server_name 192.168.1.196;
+
+    # 1. Radice dei file (Punta alla cartella pubblica di Aptly)
+    root /var/www/apt-repo/public;
+
+    # 2. Configurazione SSL Standard (Il server dimostra chi è)
+    ssl_certificate     /etc/nginx/ssl/server.crt;
+    ssl_certificate_key /etc/nginx/ssl/server.key;
+
+    # 3. Configurazione mTLS (Il server pretende di sapere chi è il client)
+    # La CA aziendale di cui Nginx si fida
+    ssl_client_certificate /etc/nginx/ssl/ca.crt; 
+    ssl_verify_client      on;                 # Forza la mutua autenticazione!
+
+    # 4. Controllo Accessi HTTP (IP Allowlist + Basic Auth)
+    location / {
+        # Regola di soddisfazione: basta passare l'IP OPPURE la password
+        satisfy any;
+
+        # --- IP Allowlist ---
+        allow 192.168.1.0/24;  # Consente tutta la subnet locale
+        allow 127.0.0.1;       # Consente il loopback del server stesso
+        deny all;              # Blocca tutti gli altri IP non esplicitati sopra
+
+        # --- Basic Authentication ---
+        auth_basic "Accesso Riservato Repository Aptly";
+        auth_basic_user_file /etc/nginx/.htpasswd;
+
+        # --- Permetti il browsing delle cartelle per APT ---
+        autoindex on;
+        try_files $uri $uri/ =404;
+    }
+}
+```
+
+>Ricaricare la configurazione del server nginx
+```shell
+systemctl reload nginx
+```
+
+---
+
+>Sul client adesso dibbiamo dargli le credenziali che dovrà usare per l'autenticazione base 
+>nel caso non rientra nella subnet/IP abilitati.
+
+>Su Debian/Ubuntu c'è una directory creata proprio per questo scopo **(/etc/apt/auth.conf.d)**:
+```shell
+machine 192.168.1.196 login nome-utente password password usata per .htpasswd
+```
+> - machine 192.168.1.196, identifica su che macchina queste credenziali possono esssere utilizzate
+> - login nome-utente

@@ -19,7 +19,7 @@ git nome_comando --help
 ```Shell
 - git init #crea una nuova repository Git locale NELLA CARTELLA IN CUI TI TROVI
 
-- git clone URL #scarica un progetto esistente da GitHub sul tuo computer
+- git clone HTTPS/SSHq #scarica un progetto esistente da GitHub sul tuo computer
 ```
 
 ---
