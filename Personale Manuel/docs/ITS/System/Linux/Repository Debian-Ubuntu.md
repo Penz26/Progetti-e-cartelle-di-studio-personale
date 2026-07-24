@@ -182,7 +182,7 @@ aptly snapshot create <nome-snapshot> from repo <nome-repo>
 aptly snapshot list
 ```
 
->Pubblicazione della repo con metodo snapshot:
+>Pubblicazione della repo con metodo snapshot (**PRIMA VOLTA E BASTA**):
 ```shell
 aptly publish snapshot -gpg-key"ID-chiave" -distribution="noble" nome-snapshot internal
 ```
@@ -196,7 +196,7 @@ aptly publish switch -batch -gpg-key="" noble internal "nome-snapshot"
 > - aptly publish switch: prende una pubblicazione esistente la fa puntare ad un nuovo snapshot
 > - batch, dice a GPG di eseguire la firma in modo non interattivo
 > - gpg-key: specifica l'ID della chiave GPG da usare per firmare
-> - bookworm: distribuzione target della pubblicazione
+> - noble: distribuzione target della pubblicazione
 > - internal: è la sottocartella in cui vive il repository
 > - nome-snapshot: il nuovo snapshot appena creato che vogliamo pubblicare
 
@@ -485,7 +485,8 @@ systemctl reload nginx
 
 >Su Debian/Ubuntu c'è una directory creata proprio per questo scopo **(/etc/apt/auth.conf.d)**:
 ```shell
-machine 192.168.1.196 login nome-utente password password usata per .htpasswd
+machine 192.168.1.196 login nome-utente password password_usata_per_.htpasswd
 ```
-> - machine 192.168.1.196, identifica su che macchina queste credenziali possono esssere utilizzate
-> - login nome-utente
+> - machine: identifica su che macchina queste credenziali possono esssere utilizzate
+> - login: va ad indicare il nome utente specificato al momento della creazione del file .htpasswd
+> - password: indica la password specificata per .htpasswd

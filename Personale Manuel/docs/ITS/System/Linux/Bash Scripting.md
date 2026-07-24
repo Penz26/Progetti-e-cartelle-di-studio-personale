@@ -1,4 +1,4 @@
-#Bash #Linux 
+1#Bash #Linux 
 
 # **Cos'è uno Script bash?**
 >Uno script bash è un file di testo contenente una sequenza di comandi Linux che vengono eseguiti  automaticamente dalla shell bash.

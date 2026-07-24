@@ -349,3 +349,10 @@ sudo systemctl reload apache2
 
 ---
 # ==***23/07/2026***==
+>Il server Aptly funziona con basic auth, iniziato a studiare [[Cos'è Gitlab]].
+
+---
+# ==***24/07/2026***==
+>Continuato con Gitlab, installazione su macchina del server con prime configurazioni e test per il server aptly per un flusso CI/CD.
+
+---

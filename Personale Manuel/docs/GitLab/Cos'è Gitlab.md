@@ -46,7 +46,7 @@ D --Ritorna risulati --> E[Report]
 
 
 >Esempio di una pipeline:
->esempio.gitlab-ci.yml
+>.gitlab-ci.yml
 ```yml
 stages:
   - build
@@ -86,6 +86,27 @@ job-pubblicazione:
 
 >Continua a chiedere al server GitLab se ci sono job da eseguire, quindi è già integrato nella rete.
 
+## **Installazione di un gitlab-runner su di un server debian/ubuntu**
+>[Link alla documentazione](https://docs.gitlab.com/runner/install/linux-repository/)
+
+1. Andare sulle impostazioni della repository
+2. Entrare nella sezione CI/CD
+3. Cliccare su Runners --> Create runners
+4. Indicare il TAG del runner
+
+>Una volta creato ci darà l'URL ed il token per registare il runner sulla macchina host.
+
+>Seguire la documentazione e seguire i passi dell'installazione.
+>L'installer permette di eseguire uno script .sh che fa partire la configurazione.
+```shell
+gitlab-runner register
+```
+
+>Durante la configurazione bisognerà inserire:
+> - **URL:** dato dalla creazione del runner sul sito della repo (es. https://gitlab.com)
+> - **TOKEN:** anche questo dato dalla creazione del runner sul sito della repo
+
+
 >Ogni runner ha la sua configurazione in un unico file sul server:
 >/etc/gitlab-runner/config.toml
 
@@ -108,3 +129,61 @@ concurrent = 4 # ⚡ Numero massimo di job eseguibili in parallelo
     "https_proxy=http://proxy.azienda.local:8080"
   ]
 ```
+
+## **Abiliare il runner a usare comandi sudo senza password**
+>Visto che i Job vengono eseguiti dall' utente del runner di Gitlab (gitlab-runner) i comandi che richiedono l'utlizzo di sudo non possono essere eseguiti.
+>Ammenochè l'utente gitlab-runner non venga abilitato all'utilizzo di determinati comandi con privilegi root.
+
+>Per farlo andremo a creare un file dedicato a questo user per abilitarlo.
+>Questo file sarà nella directory /etc/sudoers.d/.
+
+>[!IMPORTANT] Il file che abilita gli utenti ad usare sudo è /etc/sudoers. Ma questo file alla sua fine include tutti i file nella directory /etc/sudoers.d.                                                           Di conseguenza per non andare a toccare il file principale e mantere ordine per tutti gli utenti possiamo creare file specifici per essi.
+
+```shell
+gitlab-runner ALL = (root) NOPASSWD: /usr/bin/systemctl status nginx, /usr/bin/systemctl reload nginx, /usr/bin/ss -tulpn, ecc...
+```
+
+>[!NOTE] Per controllare il path in cui abitano i comandi usare **which**
+
+---
+# **Cosa fa il runner di GitLab quando entra nel server**
+>Quando si fa un push sulla repository di GitLab, parte la pipeline. Il runner di GitLab riceve il job dai server cloud di GitLab ed esegue i comandi impersonando l'utente sul nodo su cui l'abbiamo registrato (gitlab-runner).
+
+>I file del progetto non finiscono nella home dell' utente gitlab-runner ma in una struttura di cartelle creata da lui.
+
+```
+/home/gitlab-runner/
+└── builds/
+    └── <id-runner>/
+        └── 0/
+            └── <tuo-gruppo-o-utente>/
+                └── <nome-progetto>/    <-- QUESTA È LA DIRECTORY DI LAVORO                                                  ($CI_PROJECT_DIR)
+```
+
+>Tutti i comandi scritti nella sezione script della pipeline vengono eseguiti automaticamente all'interno dellla cartella dedicata (nome-progetto)
+
+## **Sequenza di esecuzione della pipeline**
+
+```mermaid
+graph TD
+A[Clean pulizia ambiente] --> B[Fetch prende i file della repo]
+B --> C[Script temporale  Esegue i jobs]
+C ---> I{I jobs sono andati a buon fine?}
+I --Sì--> D[Artifacts  invio dei file a GiLab Web]
+D--> F[EXIT]
+I --No-->G[Stop con tutto]
+```
+1
+
+
+
+---
+#### Opzione B (Consigliata in Produzione): Snapshot con Nome Dinamico
+
+>Invece di sovrascrivere sempre lo stesso snapshot fisso (pipeline-snapshot), è buona norma usare un nome univoco legato al commit di Git usando la variabile ${CI_COMMIT_SHORT_SHA}:
+
+```Bash
+NOME_SNAPSHOT="snapshot-${NOME_REPO}-${CI_COMMIT_SHORT_SHA}"
+```
+
+>In questo modo ogni pipeline crea lo snapshot esatto di quel push (es. snapshot-Manuel-prod-a1b2c3d4), mantenendo uno storico delle release e senza mai andare in conflitto con i nomi vecchi!
