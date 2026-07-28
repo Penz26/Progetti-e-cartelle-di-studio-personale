@@ -1,3 +1,6 @@
+### Vscode ###
+.vscode 
+
 ### Python ###
 __pycache__/
 *.py[cod]
@@ -7,6 +10,7 @@ venv/
 env/
 .env
 *.log
+
 
 ###C++###
 .out

@@ -337,7 +337,7 @@ sudo systemctl reload apache2
 # ==***20/07/2026***==
 >Installato nuovo controller per il server di cui avevamo fatto la diagnosi i primi giorni
 
-## **Repository Debian/Ubuntu con aptly e firme GPG** [[Repository Debian-Ubuntu]]
+## **Repository Debian/Ubuntu con aptly e firme GPG** [[aptly Repository Debian-Ubuntu]]
 ---
 
 # ==***21/07/2026***==
@@ -356,3 +356,18 @@ sudo systemctl reload apache2
 >Continuato con Gitlab, installazione su macchina del server con prime configurazioni e test per il server aptly per un flusso CI/CD.
 
 ---
+# ==***27/07/2026***==
+>Continuato lavoro repository CI/CD, spostato su container Docker per compilazione più pulita. Separato spazio di compilazione e di pubblicazione. Unico runner che compila in un container docker dentro una VM. Sposta i file tramite SCP e poi si collega in ssh sul server aptly con un utente abilitato solamente ai comandi aptly.
+
+>Flashati Google Pixel 9a e 10a con GrapheneOS seguendo wiki 
+>[Documentazione Installazione CLI per GrapheneOS](https://grapheneos.org/install/cli)
+
+---
+
+
+# ==***28/07/2026***==
+>Automazione con GitLab CI/CD + Docker.
+>- Finalizzato connessioni ssh ed scp senza password,
+>- configurazione di rete per docker,
+>- configurazione del runner per usare docker come executor,
+>- 

@@ -2,23 +2,23 @@ from tkinter import *  #importa tutto il modulo tkinter
 
 #ELEMENTI DELLA GUI:
 
-#WIDGETS = elementi della GUI: bottoni, caselle di testo, etichette, immagini
+#WIDGETS = elementi della GUI: bottoni, caselle di testo, etichette, immagini, ecc...
 #WINDOWS = serve come contenitore  per conservare questi widget
 
 window = Tk() # inizializzata un istanza di una finestra
-window.geometry("420x420") #impostiamo la larghezza e l'altezza della nostra finestra
+window.geometry("1920x1080") #impostiamo la larghezza e l'altezza della nostra finestra
 window.title("Prima GUI")
 
 #Per usare un' immagine come icona dobbiamo prima trasformarla in una PhotoImage
-icon = PhotoImage(file='logo.png') 
+#icon = PhotoImage(file='logo.png') 
 #e poi metterla come argomento nella funzione:
-window.iconphoto(True,icon)
-window.config(background="white")
+#window.iconphoto(True,icon)
+window.config(background="azure")
 
 
 #ETICHETTA: un area widget che contiene testo e/o un immagine all' interno di una finestra
 
-photo = PhotoImage(file="logo.png")
+#photo = PhotoImage(file="logo.png")
 label = Label(window,text = "Prima etichetta di Manuel", #funziona come un costruttore (finestra,testo/img, altri argomenti (colore,font,ecc))
               font = ("Arial", 20, "italic"), 
               fg="red",bg="black", #fg = colore testo , bg = colore background
@@ -26,7 +26,7 @@ label = Label(window,text = "Prima etichetta di Manuel", #funziona come un costr
               bd=10,   #bordo spessore
               padx=20, #diamo dello spazio sull' asse x per il testo
               pady=50, #diamo dello spazio sull' asse y per il testo
-              image=photo,
+              #image=photo,
               compound="bottom") #posizione dell'immagine rispetto al testo
 
 #Per mostrare effettivamente l'etichetta nella nostra GUI dobbiamo usare pack oppure place
@@ -51,7 +51,7 @@ button = Button(window,         #stessa roba per label, funziona come costruttor
                 activeforeground="#00FF00",     #colore del testo quando viene premuto il bottone (stato ACTIVE)
                 activebackground= "Black",        #colore del background quando viene premuto il bottone (stato ACTIVE)
                 #state = DISABLED,                 #SE volessimo disattivare un bottono mettiamo state DISABLED
-                image = photo,
+                #image = photo,
                 compound = "bottom"
                 )                 
 button.pack()
@@ -60,7 +60,7 @@ button.pack()
 
 def submit():
     username = entry.get()
-    print("Hello" + username)
+    print("Hello " + username)
     entry.config(state=DISABLED) #possiamo fare in modo che dopo che l'utente ha inserito il suo nome venga disattivata la casella di testo
 def delete():
     entry.delete(0, END) #per eliminare tutto il testo all'interno di una entrybox usiamo
@@ -87,5 +87,51 @@ delete_button.pack(side=RIGHT)
 
 backspace_button = Button(window,text="backspace", command=backspace)
 backspace_button.pack(side=RIGHT)
+
+#CHECK BOX:
+def messaggio():
+    if (x.get()==1):
+        print("Hai dato il tuo consenso")
+    else:
+        print("Non hai dato il tuo consenso")
+x = IntVar()
+check_button = Checkbutton(window,
+                        text="Consento",
+                        variable=x,
+                        onvalue=1,   #Quando è stato cliccato la checkbox
+                        offvalue=0,  #Quando non è stato cliccata la checkbox
+                        command=messaggio,
+                        fg="black",
+                        bg="white",
+                        padx=25,
+                        pady=10
+                        )   
+check_button.pack()
+
+#RADIO BUTTON: 
+food = ["pizza", "pasta", "salame"]
+y = IntVar()
+
+def order():
+    if(y.get()==0):
+        print("Hai ordinato una pizza")
+    elif(y.get()==1):
+        print("Hai ordinato la pasta")
+    else:
+        print("Hai ordinato il salame")
+for index in range(len(food)):
+    radio_button = Radiobutton(window,
+    text=food[index],
+    value=index,  #assegna ad ogni bottone radio una valore diverso
+    variable=y,  
+    padx=25,
+    pady=10,
+    font=("Impact", 20),
+    width=275,        #larghezza del bottone su cui cliccare
+    indicatoron=0,     #0 equivale a niente pallino del bottone
+    command=order
+    )
+    radio_button.pack(anchor=W)
+
 
 window.mainloop() # mostra la finestra sullo schermo e ascolta per eventi

@@ -40,6 +40,15 @@ docker compose up --build
 ```
 
 ---
+
+## Aggiornamento Immagini
+
+```shell
+#Guarda il docker-compose.yml e controlla sulla repo di docker se sono disponibili nuove versioni delle immagini specificate
+docker compose pull
+```
+
+---
 ## Stop e Rimozione
 
 ```Shell

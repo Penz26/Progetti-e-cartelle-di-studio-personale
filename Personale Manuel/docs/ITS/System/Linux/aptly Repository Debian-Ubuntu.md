@@ -10,7 +10,6 @@
 >- successivamente lo passa al sistema che lo installa e configura le dipendenze necessarie.
  
 ---
-
 # **La Struttura**
 >Una repository è semplicemente un server web (come Apache o nginx) che ospita una struttura di cartelle pubblica e ben definita.
 
@@ -125,11 +124,19 @@ sudo apt update && sudo apt install aptly -y
 ## **Crezione della repo con la  sua struttura locale** 
 >(nel DB di aptly) prima di operare:
 >Questo comando aggiunge i metadati nel database interno (~/.aptly/db/)
+
+>La configurazione di aptly risiede nel file ~/.aptly.conf, dove si possono specificare vari campi tra cui la directory in cui verranno salvati i dati al momento della pubblicazione.
+
+>[!ATTENTION] Ogni distribution (TARGET) deve avere la sua repo
 ```sh
 aptly repo create -comment="Repository Interna Manuel Prod" -distribution="noble" -component="main" nome-repo
 ```
 
->La configurazione di aptly risiede nel file ~/.aptly.conf, dove si possono specificare vari campi tra cui la directory in cui verranno salvati i dati al momento della pubblicazione.
+## **Spiegazione delle flag**
+>**- comment** : descrizione della repo
+>**- distribution**: release per cui sono compilati i pacchetti (servono come valori predefiniti)
+>**- main**: sezione a cui appartengono i pacchetti                 (servono come valori predefiniti)
+
 
 >**Aggiungere un file:**
 >Copia i file .deb in ~/.aptly/pool/
@@ -144,6 +151,7 @@ aptly repo add nome-repo /path/al/software_1.0_amd64.deb
 >- aptly publish repo , veloce ma senza tracciamento nel tempo
 >- aptly publish snapshot, immutabile col tempo e rollback facile
 
+>[!ATTENTION] Ogni prefix DEVE avere una pubblicazione
 ### **Repo normale**
 
 >Prima di tutto aggiungere il pacchetto alla repo
@@ -151,18 +159,22 @@ aptly repo add nome-repo /path/al/software_1.0_amd64.deb
 aptly repo add nome-repo /path/al/software_1.0_amd64.deb
 ```
 
->**aptly publish update**
->Prende tutto il materiale nel database, genera la mappa e crea la repository reale nella cartella ~/.aptly/public/
+>**aptly publish repo**
+>Prende tutto il materiale nel database, genera la mappa e crea la repository reale nella cartella ~/.aptly/public/  (**PER LA PRIMA VOLTA E BASTA**)
 ```sh
-aptly publish repo -gpg-key="password-hex" -distribution="codename-distro" -component="main" nome-repo
+aptly publish repo -gpg-key="ID-chiave-gpg" -passphrase="password-repo" -distribution="codename-distro" -component="main" nome-repo .
 ```
->Distribution serve a specificare la versione del sistema per cui sono stati compilati i pacchetti e per dividere gli ambienti nella struttura
->Mentre component rappresenta la categoria del software
+
+## **Spiegazione delle flag**
+>**-gpg-key**: ID (non intera chiave) della chiave GPG
+>**- passphrase**: pasphrase che protegge la repo
+>**-distribution**: distribuzione/release per cui sono stati compilati i pacchetti
+>**-component**: a che sezione devono appartenere i file
+>**- .  :** indica il prefisso sotto cui pubblicarla (il punto indica nell'indirizzo principale della repo `http://server-aptly/dists/...`.) 
 
 >Per aggiornare una pubblicazione esistente dopo aver aggiunto/rimosso nuovi pacchetti .deb:
 ```sh
-aptly publish update <distribution>  #Es. noble per Ubuntu 24.04
-									 #oppure stable per pacchetti testati e                                            pronti e testing per in fase di prova
+aptly publish update -gpg-key="ID-chiave-gpg" -passphrase="password-repo" -distribution="noble" .
 ```
 
 ---
@@ -182,16 +194,21 @@ aptly snapshot create <nome-snapshot> from repo <nome-repo>
 aptly snapshot list
 ```
 
->Pubblicazione della repo con metodo snapshot (**PRIMA VOLTA E BASTA**):
+>Pubblicazione della repo con metodo snapshot (==**PRIMA VOLTA E BASTA**==):
 ```shell
-aptly publish snapshot -gpg-key"ID-chiave" -distribution="noble" nome-snapshot internal
+aptly publish snapshot -gpg-key="ID-chiave" -passphrase="passphrase" -distribution="noble" -component="main" nome-snapshot internal
 ```
-> - distribution: distribuzione target per i client APT
-> - internal: sottocartella nell' URL web
+
+## **Spiegazione delle flag**
+>**-gpg-key**: ID (non intera chiave) della chiave GPG
+>**- passphrase**: pasphrase che protegge la repo
+>**-distribution**: distribuzione/release per cui sono stati compilati i pacchetti
+>**-component**: a che sezione devono appartenere i file
+>**- internal  :** indica il prefisso sotto cui pubblicarla (il punto indica nell'indirizzo principale della repo `http://server-aptly/dists/...`., in questo caso `http://server-aptly/internal`) 
 
 >Aggiornamento della repo basata su snapshot
 ```shell
-aptly publish switch -batch -gpg-key="" noble internal "nome-snapshot"
+aptly publish switch -batch -gpg-key="" -passphrase="" noble internal "nome-snapshot"
 ```
 > - aptly publish switch: prende una pubblicazione esistente la fa puntare ad un nuovo snapshot
 > - batch, dice a GPG di eseguire la firma in modo non interattivo
@@ -207,7 +224,6 @@ aptly publish switch -batch -gpg-key="" noble internal "nome-snapshot"
 ![[aptly-publish.png]]
 
 ---
-
 # **Creazione dei certificati per il sito Nginx e i client**
 
 >Prima di creare i certificati del server web e del client bisogna creare la CA (interna per questo caso) che si preoccupa di rilasciare  e firmarei certificati sia per il server web che per il client.
@@ -304,6 +320,16 @@ systemctl reload nginx
 ```
 
 ---
+# ==***Di cosa necessita il client per poter usare la repository***==
+
+>1. **Chiave GPG della repository** [[#**Installazione della chiave GPG della repo sul client**]]
+>2. **Certificato della CA** [[#**Installazione del certificato della CA sui client**]]
+>3. **Aggiungere la repository ad APT** [[#**Aggiungere la repo ad apt**]]
+>4. **Certificati del client** [[#**Creazione dei certificati per il sito Nginx e i client**]]
+>5. **Attivare il MTLS** [[#**Creare il collegamento mTLS tra client e server**]]
+>6. **Avere le credenziali per il Basic Auth** [[#**Basic-Auth Lato client**]]
+
+---
 # **Installazione della chiave GPG della repo sul client**
 >Nelle nuove versioni di Ubuntu (dalla 22.04) il vecchio comando apt-key add è stato discontinuato per motivi di sicurezza.
 
@@ -318,7 +344,7 @@ gpg --list-keys
 
 >Esportare la chiave in formato ASCII/armored (leggbile) per poterla passare ad apt:
 ```shell
-gpg --armor --export password > /tmp/nome-password.pub
+gpg --armor --export ID-chiave-gpg > /tmp/nome-password.pub
 ```
 
 >Successivamente condividere la chiave al client tramite metodo personale (rsync/scp/ecc...)
@@ -394,7 +420,7 @@ sudo nano /etc/apt/sources.list.d/apt-repo.sources
 >Contenuto del file:
 ```shell
 Types: deb
-URIs: https://192.168.1.196/
+URIs: https://192.168.1.196/prefix
 Suites: noble
 Components: main
 Signed-By: /etc/apt/keyrings/manuel-repo.pub
@@ -421,6 +447,8 @@ D --No-->G{Conosce la password?}
 G --Sì-->H[Ok non sei in sede, ma sappiamo che sei te!]
 G --No-->I[Non sappiamo chi tu sia!]
 ```
+
+## **Basic-Auth Lato server**
 
 >Per fare questa operazione dobbiamo scaricare dei pacchetti:
 ```shell
@@ -479,7 +507,7 @@ systemctl reload nginx
 ```
 
 ---
-
+## **Basic-Auth Lato client**
 >Sul client adesso dibbiamo dargli le credenziali che dovrà usare per l'autenticazione base 
 >nel caso non rientra nella subnet/IP abilitati.
 
@@ -490,3 +518,7 @@ machine 192.168.1.196 login nome-utente password password_usata_per_.htpasswd
 > - machine: identifica su che macchina queste credenziali possono esssere utilizzate
 > - login: va ad indicare il nome utente specificato al momento della creazione del file .htpasswd
 > - password: indica la password specificata per .htpasswd
+
+---
+# **Integrazione con GitLab**
+[[Esempio pipeline per aptly]]

@@ -1,4 +1,4 @@
-#GitLab [[Repository Debian-Ubuntu]]
+#GitLab [[aptly Repository Debian-Ubuntu]]
 ```YML
 stages:
   - update
