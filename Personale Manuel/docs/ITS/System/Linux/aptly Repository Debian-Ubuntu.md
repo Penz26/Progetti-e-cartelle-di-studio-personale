@@ -73,12 +73,12 @@ gpg --full-generate-key
 gpg --list-secret-keys --keyid-format LONG
 
 #La chiave sarà nella riga:
-sec rsa4096/password_HEX 2026-07-20
+sec rsa4096/ID-Chiave 2026-07-20
 ```
 
 >Esportare la chiave pubblica in un file di testo (sarà il file che distribuiamo ai client):
 ```sh
-gpg --export --armor password-HEX > my-repo-key.asc
+gpg --export --armor ID_Chiave > my-repo-key.pub
 ```
 
 ---
@@ -108,10 +108,10 @@ Description: Descrizione di cosa fa il pacchetto
 
 >Ora creiamo il pacchetto .deb:
 ```sh
-dpkg-deb --build nome-software_1.0
+dpkg-deb --build nome-software_1.0 
 ```
 
->Se non ci sono errori creerà un file chiamato mio-script_1.0.deb
+>Se non ci sono errori creerà un file chiamato nome-software_1.0.deb
 
 ---
 # **Come possiamo creare la nostra Repo?**
@@ -381,7 +381,7 @@ sudo update-ca-certificates
 # **Creare il collegamento mTLS tra client e server**
 >Per far in modo che il server si fidi del client quest'ultimo deve mostrare il suo certificato e la chiave al server e verificare che il certificato della CA che mostra il server combaci con quello che ha.
 
->APT ha una directory dedicata ai suoi metodi da seguire in ordine (/etc/apt/apt.conf.d)
+>APT ha una directory dedicata ai suoi metodi da seguire in ordine (**/etc/apt/apt.conf.d**)
 >Per farlo ci serve un file per apt che gli specifica la regola per il nostro client e connettersi al server con la nostra repo locale.
 
 >In questo file specifichiamo cosa deve passare al momento della connessione con il server aptly
@@ -463,6 +463,8 @@ htpasswd -c /path/in/cui/salvarla nome-user
 ```
 
 >Configurazione Aggiornata del sito nginx **SUL SERVER** (/etc/nginx/sites-enabled/apt-repo.conf)
+
+## **Configurazione Nginx completa**
 ```shell
 server {
     listen 443 ssl;

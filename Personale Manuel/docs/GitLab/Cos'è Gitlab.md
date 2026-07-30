@@ -115,22 +115,29 @@ concurrent = 4 # ⚡ Numero massimo di job eseguibili in parallelo
 
 [[runners]]
   name = "runner-aziendale-01"
-  url = "https://gitlab.azienda.local/" # 🌐 URL del server GitLab
-  token = "glrt-xxxxxxxxxxxx"            # 🔑 Token di autenticazione
-  executor = "docker"                    # 🐳 Modalità di esecuzione
+  url = "https://gitlab.azienda.local/"  # URL del server GitLab
+  token = "glrt-xxxxxxxxxxxx"            # Token di autenticazione
+  executor = "docker"                    # Modalità di esecuzione
 
   [runners.docker]
-    image = "ubuntu:22.04"               # 🖼️ Immagine predefinita
-    privileged = false
+    tls_verify = false
+    image = "alpine:latest"                        # Immagine di fallback predefinita
+    privileged = true                             # Permette di eseguire docker build
+    network_mode = "host"
+    disable_entrypoint_overwrite = false
+    oom_kill_disable = false
+    disable_cache = false
+    volumes = ["/cache", "/var/run/docker.sock:/var/run/docker.sock"]
+    dns = ["8.8.8.8", "1.1.1.1"]
 
-  # 🌐 Iniezione delle variabili di rete/proxy nei container
+  # Iniezione delle variabili di rete/proxy nei container
   environment = [
     "http_proxy=http://proxy.azienda.local:8080",
     "https_proxy=http://proxy.azienda.local:8080"
   ]
 ```
 
-## **Abiliare il runner a usare comandi sudo senza password**
+## **Abilitare il runner a usare comandi sudo senza password**
 >Visto che i Job vengono eseguiti dall' utente del runner di Gitlab (gitlab-runner) i comandi che richiedono l'utlizzo di sudo non possono essere eseguiti.
 >Ammenochè l'utente gitlab-runner non venga abilitato all'utilizzo di determinati comandi con privilegi root.
 

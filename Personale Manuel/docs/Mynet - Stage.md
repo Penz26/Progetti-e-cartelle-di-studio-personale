@@ -363,11 +363,31 @@ sudo systemctl reload apache2
 >[Documentazione Installazione CLI per GrapheneOS](https://grapheneos.org/install/cli)
 
 ---
-
-
 # ==***28/07/2026***==
 >Automazione con GitLab CI/CD + Docker.
 >- Finalizzato connessioni ssh ed scp senza password,
 >- configurazione di rete per docker,
 >- configurazione del runner per usare docker come executor,
->- 
+
+---
+# ==***29/07/2026***==
+>Automazione CI-CD con GitLab:
+>- aggiunto controllo su esistenza della repo
+>- aggiunto controllo su esistenza della pubblicazione
+>- aggiunta possibilità di compilare specifici pacchetti e pubblicare specifici pacchetti
+>- aggiunto pacchetto più complicato per prove dell'esecuzione di comandi come programmi (eseguibili da ovunque)
+>- creata documentazione MarkDown + mermaid.js per spiegazione della procedura dell'intera creazione e gestione della repository locale tra GitLab e Ansible [[Struttura  repo Aptly]]
+
+---
+# ==***30/07/2026***==
+>Automazione CI-CD con GitLab:
+>-fixato problema per compilazione e pubblicazione con diverse distro (nome-repo, distro, prefix e component)
+>- aggiunta VERA possibilità di pubblicare pacchetti per diverse distribuzioni allo stesso momento
+>- configurati diverse docker images per vari linguaggi di programmazione e la loro compilazione diversa
+>- controlli su versione del linguaggio
+>- aggiunto job per pulire da vecchi .deb file
+>- aggiunte note sull'uso della pipeline
+>- Iniziata automazione con Ansible
+
+---
+# ==***31/07/2026***==

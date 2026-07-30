@@ -139,6 +139,24 @@ ansible all -m gather_facts --limit IP-Server
 ```
 
 ---
+# **Collezioni della Community (Librerie di comandi)**
+>In Ansible esistono gli equivalenti delle librerie della programmazione e sono chiamate collezioni.
+
+>Per vedere quali sono installate:
+```shell
+ansible galaxy collection list
+```
+
+>Per leggere la documentazione di questa collezione:
+```shell
+ansible-doc nome-collection.comando
+```
+
+>Per scaricarne una:
+```shell
+ansible galaxy collection install
+```
+---
 # **Playbooks**
 >I playbook sono piani di automazione scritti in yaml che Ansible usa per configurare i nodi gestiti. 
 >Sono composti da:
@@ -268,6 +286,23 @@ mio_progetto
 ```yml
 ansible_user: manu
 ansible_port: 22
+```
+
+## **Gerarchia delle variabili**
+>Come vedremo più tardi usando i roles per dividere i vari soggetti del playbook Ansible dobbiamo distingure cosa ha più importanta e cosa invece viene per ultimo
+
+```
+[22] Extra Vars da riga di comando (`ansible-playbook -e "port=8080"`)  <-- VINCE SU TUTTO
+   ▲
+  [15] roles/nginx_server/vars/main.yml                                 <-- MOLTO FORTE (Difficile da sovrascrivere, VARIABILI COSTANTI pacchetti da installare ecc...)
+   ▲
+  [12] host_vars/server01.yml                                           <-- Specifico per singolo server
+   ▲
+  [6]  group_vars/aptly_servers.yml                                     <-- Specifico per gruppo     (cose che servono al singolo gruppo)
+   ▲
+  [3]  group_vars/all.yml                                               <-- Globale del tuo progetto (cose che servono a tutti)
+   ▲
+  [1]  roles/nginx_server/defaults/main.yml                             <-- DEBOLE (Facile da sovrascrivere, usate in caso lo user si dimentica di definire dei valori dentro group_var/nome_ruolo)
 ```
 
 ---
@@ -660,10 +695,7 @@ roles/
         └── main.yml      # Dipendenze del ruolo e metadati
 ```
 
-## **Gerarchia delle variabili**
 
-1. **roles/nome_ruolo/vars**
-2. roles/
 ## **Come si crea un ruolo**
 
 ```shell
