@@ -734,9 +734,9 @@ ansible-vault create group_vars/nome_gruppo/vault.yml
 ansible-vault encrypt group_vars/all/secrets.yml
 ```
 
->Modificare un file criptato usando neovim:
+>Modificare un file criptato usando l'editor default:
 ```sh
-EDITOR=nvim ansible-vault edit group_vars/all/secrets.yml
+ansible-vault edit group_vars/all/secrets.yml
 ```
 
 >Eseguire un playbook che richiede delle variabili protette da un vault:

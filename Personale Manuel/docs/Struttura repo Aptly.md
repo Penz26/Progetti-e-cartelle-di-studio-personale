@@ -125,6 +125,8 @@ mindmap
 				machine 192.168.1.196 login nome-utente password password_usata_per_.htpasswd
 ```
 
+>[!IMPORTANT] Il client dovrà avere tra le authorized keys la chiave pubblica di Ansible in modo che esso possa operare su tale client
+
 ---
 # **CI/CD Packages**
 
@@ -144,7 +146,26 @@ mindmap
 2. Variabili su gitlab per autenticazione (CHIAVI SSH, ID-chiave-GPG, Passphrase chiave gpg)
 ```
 
-## **Compilazione**
+---
+
+# ==**WORKFLOW SYS-DEV**==
+
+## Dev:
+>Una volta finito il progetto ==**PRIMA**== di pusharlo usando la pipeline di GitLab dovrà notificare l'amministratore di Sistema. 
+
+## Sys-Admin
+>Ricevuta la notifica del Dev cambierà le variabili relative alla repository nel ruolo Ansible:
+>- **repo_comment** (group_vars/aptly):
+>- **repo_name**(group_vars/aptly):
+>- **repo_distribution**(group_vars/all):
+>- **repo_component**(group_vars/all):
+>- **enabled_prefixes**(group_vars/all):
+
+## Playbook
+>Il playbook Ansible si occuperà della creazione della repository e della pubblicazione di un primo snapshot per rendere già funzionante la repository.
+
+## Pipeline
+### **Compilazione**
 >- Developer sviluppa un nuovo pacchetto in src/
 >- Developer ha accesso alla repo di GitLab
 >- Developer cambia valori delle variabili: (Nome package, versione, architettura, Maintainer, Descrizione pacchetto e prefisso)
@@ -153,7 +174,7 @@ mindmap
 >- Compila il pacchetto in .deb e lo salva come artefatto
 >- Uccide il container di compilazione
 
-##  **Pubblicazione**
+###  **Pubblicazione**
 > - GitLab runner prende l'artefatto del job di compilazione
 > - Crea un container per il trasferimento dei file sul server della repository aptly
 > - Configura la connessione 
@@ -174,21 +195,21 @@ a[Container su VM1 scarica e configura ssh]
 a --scp file compilati in /tmp-->b[User Deployer su Server Aptly]
 
 a --ssh-->b
-b -->c[Controllo esistenza repo per quella release OR Creazione repo]
+b -->c[Controllo esistenza repo per quella release]
 c -->d[Inserimento pacchetti compilati e Creazione Snapshot univoco]
-d --> e[Controllo esistenza pubblicazione sotto prefix indicato OR Creazione pubblicazione]
+d --> e[Controllo esistenza pubblicazione sotto prefix indicato]
 e --> f[Controllo lista delle pubblicazioni]
 ```
 ---
 
 # **Passi/Ruoli per l'automazione con Ansible**
 
-### **Cosa è già gestito da GitLab**
+## **Cosa è già gestito da GitLab**
 >1. Creazione Immagini Docker per la compilazione
 >2. Pubblicazione sul registry di GitLab
 >3. Compilazione e Pubblicazione dei packages
 
-### **Cosa deve essere gestito da Ansible**
+## **Cosa deve essere gestito da Ansible**
 >1. Installazione dei requisiti [[#Requisiti repo server]]
 >2. Configurazione del server web nginx [[aptly Repository Debian-Ubuntu#**Configurazione Nginx completa**]]
 >3. Creazione chiavi e certificati SSL (CA/Server/Client) [[aptly Repository Debian-Ubuntu#**Creazione dei certificati per il sito Nginx e i client**]]
@@ -196,8 +217,47 @@ e --> f[Controllo lista delle pubblicazioni]
 >5. Installazione e configurazione( uso di docker ) GitLab runner sulla macchina di compilazione [[Cos'è Gitlab#**Installazione di un gitlab-runner su di un server debian/ubuntu**]]
 >6. Trasferimento dei file necessari al client [[#Requisiti repo client]]
 
-#### *Ruoli di Ansible*
-1. Installazione, configurazione di Nginx
-2. Installazione e configurazione directory di aptly
-3. Creazione certificati e chiavi
-4. 
+## ***Ruoli di Ansible***
+1. [x] Installazione, configurazione di Nginx 
+2. [x] Installazione e configurazione directory di aptly
+3. [x] Creazione certificati e chiavi
+4. [x] Spostamento sui client dei file
+5. [x] Installazione e registrazione gitlab runner
+
+### **Struttura generale Ansible***
+
+```mermaid
+--- 
+config: 
+  theme: 'dark' 
+
+---
+mindmap
+aptly-automatation
+	playbook
+		orchestratore dei ruoli (divisi per tag)
+	ansible.cfg
+		Variabili di default (inventory, private_key_file, remote_user, vault_password_file)
+	inventory.ini
+		Specificati vari gruppi del playbook (pki_gpg, aptly, web-server, gitlab-runner, apt-client)
+	group_vars/
+		all
+			all.yml (IP server, distribuzione repo, component repo, prefissi abilitati, user per aptly, path ai certs, root_dir di aptly)
+		gruppo/
+			vars.yml (variabili dei singoli gruppi)
+	host_vars/
+		IP.yml (se i singoli host dei gruppi hanno diversi user e password si possono specificare per ogni file)
+	
+	roles/
+		aptly (Gestione repo, server 1)
+		apt_client (client repo, singolo client)
+		web_server (server web della repo, server 1)
+		gitlab_runner (compilatore / pubblicatore dei pacchetti, singola VM di compilazione)
+		pki_gpg (Certificati/Chiavi, server 1)
+		
+```
+
+## *Procedure NON automatizzabili*
+1. Creazione Token e URL per il GitLab runner [[Cos'è Gitlab]]
+2. Copiare la chiave pubblica di Ansible su vari client (per la prima volta a causa della passphrase)
+3. Inserimento delle variabile per la CI/CD di GitLab (Chiave privata ssh per collegarsi allo user sul server aptly per pubblicare i pacchetti. Mail associata alal chiave GPG )

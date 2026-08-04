@@ -137,11 +137,41 @@ aptly repo create -comment="Repository Interna Manuel Prod" -distribution="noble
 >**- distribution**: release per cui sono compilati i pacchetti (servono come valori predefiniti)
 >**- main**: sezione a cui appartengono i pacchetti                 (servono come valori predefiniti)
 
-
 >**Aggiungere un file:**
 >Copia i file .deb in ~/.aptly/pool/
 ```sh
 aptly repo add nome-repo /path/al/software_1.0_amd64.deb
+```
+
+## **Cosa succede alla creazione della Repository**
+
+>1.  Al momento della creazione Aptly crea un record nel suo database interno (.aptly/db) con i metadati della repository (Nome repo, distribuzione di default, componente di default)
+>   
+>2. Quando inseriamo un pacchetto Aptly legge il file interno control ed estrae tutti i metadati.
+>   - Il file .deb viene copiato nella cartella centrale di archiviazione di aptly (.aptly/pool/m/mio-software)
+>   - Aptly crea una relazione nel suo database collegando l'ID del pacchetto alla repository
+>
+>1. Quando pubblichiamo il pacchetto Aptly genera la struttura di cartelle Debian all'interno della Web Root di Nginx (specificata nella configurazione del sito)
+>   - Genera il file Packages (contiene l'elenco completo di tutti i pacchetti disponibili con le relative versioni, dimensioni e hash)
+>   - Genera il file Release (contiene i metadati della distribuzione)
+>   - Firma il file Release (genera InRelease) 
+>   - Aptly crea un symlink dalla sua pool interna alla cartella pubblica (.aptly/pool ---> .aptly/public/) 
+
+>Quando il client esegue apt update:
+>- Scarica InRelease e ne verifica la firma GPG
+>- Scarica Packages.gz per aggiornare la lista dei software disponibili
+>- Scarica il file .deb via HTTPs con mTLS
+---
+## **Come vedere le repo esistenti**
+
+>Mostra tutte le repo esistenti
+```shell
+aptly repo list
+```
+
+>Mostra le informazioni della repo con i pacchetti di quella repo in particolare
+```shell
+aptly repo show -with-packages Manuel-prod
 ```
 
 ---

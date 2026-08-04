@@ -376,7 +376,7 @@ sudo systemctl reload apache2
 >- aggiunto controllo su esistenza della pubblicazione
 >- aggiunta possibilità di compilare specifici pacchetti e pubblicare specifici pacchetti
 >- aggiunto pacchetto più complicato per prove dell'esecuzione di comandi come programmi (eseguibili da ovunque)
->- creata documentazione MarkDown + mermaid.js per spiegazione della procedura dell'intera creazione e gestione della repository locale tra GitLab e Ansible [[Struttura  repo Aptly]]
+>- creata documentazione MarkDown + mermaid.js per spiegazione della procedura dell'intera creazione e gestione della repository locale tra GitLab e Ansible [[Struttura repo Aptly]]
 
 ---
 # ==***30/07/2026***==
@@ -391,3 +391,24 @@ sudo systemctl reload apache2
 
 ---
 # ==***31/07/2026***==
+>Automazione Ansible:
+>1. Creazione CA,Server e client keys e certificates
+>2. Installazione e configurazione di Aptly
+>3. Installazione e configurazione (mTLS e Basic Auth) di Nginx
+
+>Continuata documentazione [[Struttura repo Aptly#**Passi/Ruoli per l'automazione con Ansible**]]
+
+---
+# ==***03/08/2026***==
+>Automazione Ansible:
+>Manca solo l'automazione dello spostamento dei file dal server ai client, di conseguenza anche la configurazione del mTLS .htpasswd e configutazione repo
+
+---
+
+# ==***04/08/2026***==
+
+>Prima versione dell'automazione Ansible completata.
+>Modificata gestione della creazione della repository e della prima pubblicazione (spostata da GitLab a Ansible)
+
+---
+
