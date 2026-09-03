@@ -1,7 +1,6 @@
-
 # Da fare:
  - [x] Aggiungere controllo dell'esistenza della repository aptly
- - [ ] **automazione della configurazione del server aptly con Ansible**
+ - [x] **automazione della configurazione del server aptly con Ansible**
  - [x] Creare DOC How-To per spiegare in modo chiaro il funzionamento e l'utilizzo della pipeline
  - [x] Specificare diversi Dockerfile per ogni versione ISO (pacchetti per la compilazione, comandi di update, ecc...)
  - [x] Velocizzare creazione delle immagini docker per la compilazione

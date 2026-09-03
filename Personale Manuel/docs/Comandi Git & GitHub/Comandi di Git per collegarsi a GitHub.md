@@ -1,4 +1,5 @@
 #Git  #GitHub [[Git & GitHub]]
+# Metodo HTTPs
 ```Shell
 - git remote add origin URLREPOGITHUB.git
   
@@ -24,6 +25,26 @@
 
  - git pull
    #scarica eventuali modifiche fatte da altri su GitHub. (Sempre meglio farlo quando si ha una repo condivisa)
+```
+
+# Metodo SSH
+```shell
+#Inizializzare in locale la repository
+#Fare il primo commit
+git init 
+git add .
+git commit -m "First Commit"
+
+#Cambiare il nome del branch principale in main (segue standard GitHub)
+git branch -M main
+
+#ANDARE SU GITHUB CREARE NUOVA REPOSITORY
+#LASCIARE DESELEZIONATO IL README.md ED IL .gitignore
+#Selezionare visibilità repo
+git remote add origin git@github.com:UTENTE/NOME-REPOSITORY.git
+
+#Effettuare il primo push
+git push -u origin main
 ```
 
 ---

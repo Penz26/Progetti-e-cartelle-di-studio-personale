@@ -10,7 +10,7 @@
 > 1. Nodo di controllo
 >    Un sistema su cui Ansible è installato. Si fanno partire i comandi da qua
 > 2. Inventario
->    Una lista di node che verranno gestiti da Ansible. Lo si crea sul nodo di controllo per descrivere i deployment degli hosts[[#**Per cosa è utile?**]]
+>    Una lista di node che verranno gestiti da Ansible. Lo si crea sul nodo di controllo per descrivere i deployment degli hosts
 > 3. Macchina gestita
 >    Un sistema remoto che viene controllato da Ansible
 
@@ -56,13 +56,14 @@ git clone git@github.com:Nome_Utente/Nome_della_Repo.git
 
 ```sh
 #1 Ansible Repo
+Dalla repository ufficiale seguendo le istruzioni
 
-#2 Python pip
+#2 Python pip dentro un venv (CONSIGLIATO)
 
 python -m venv ansible_venv 
 pip install ansible
 
-#3
+#3 Direttamente a livello di sistema (SCONSIGLIATO)
 #Aggiornare sempre le repo dei pacchetti
 sudo apt update
 
@@ -71,7 +72,7 @@ sudo apt install ansible
 ```
 
 ## **Creazione del file inventory**
->In questo file inseriamo tutti gli IP dei server che vorremo gestire con Ansible.
+>In questo file inseriamo tutti gli IP/FQDN dei server che vorremo gestire con Ansible.
 
 ```sh
 192.168.1.111
@@ -80,6 +81,8 @@ ecc...
 ```
 
 >In questi file possiamo raggruppare determinati IP di macchine in modo che facciano parte di un gruppo.
+>A questi gruppi potremo associare le relative variabili sotto la cartella group_vars/nome_gruppo.yml oppure con un nesting di cartelle
+>Oppure dentro host_vars/fqdn.yml (oppure creando varie sottocartelle per i singoli ruoli che operano dentro quel nodo)
 
 >Per farlo:
 ```yml
@@ -138,6 +141,10 @@ ansible all -m gather_facts
 ansible all -m gather_facts --limit IP-Server
 ```
 
+>Leggere la documentazione dei comandi
+```shell
+ansible-doc ansible.builtin.NOMECOMANDO
+```
 ---
 # **Collezioni della Community (Librerie di comandi)**
 >In Ansible esistono gli equivalenti delle librerie della programmazione e sono chiamate collezioni.
@@ -219,6 +226,11 @@ PLAY RECAP *********************************************************************
 
 >Il riepilogo riassume i risultati di tutte le attività, 3 ok (1 Gather, 1 ping, 1 msg)
 
+>Per eseguire solo dei test e vedere cosa verrebbe cambiato senza fare effettive modifiche al server possiamo fare:
+```shell
+ansible-playbook --check --diff playbook.yaml
+```
+
 ----
 # **Comandi con privilegi elevati**
 >Se noi provassimo ad aggiornare il sistema con Ansible questo fallirebbe perchè non ha i privilegi di root. 
@@ -258,7 +270,7 @@ ansible all -m apt -a upgrade=dist --become --ask-become-pass
 >Le variabili possono essere inserite direttamente nel playbook:
 ```yml
 - name: Configurazione server web
-  hosts: webservers
+  hosts: webserver
   vars:
     porta_web: 8080
     utente_admin: "sistemista"
@@ -268,7 +280,7 @@ ansible all -m apt -a upgrade=dist --become --ask-become-pass
 	     msg: "ciao mondo io sono {{utente_admin}}"
 ```
 
->Altrimenti possiamo specificarle all'interno di una directory chiamata group_vars/nome_gruppo.yml
+>Altrimenti possiamo specificarle all'interno di una directory chiamata group_vars/nome_gruppo_nell'inventario.yml
 >Oppure hosts/Ip.yml
 
 ```yaml
@@ -292,17 +304,17 @@ ansible_port: 22
 >Come vedremo più tardi usando i roles per dividere i vari soggetti del playbook Ansible dobbiamo distingure cosa ha più importanta e cosa invece viene per ultimo
 
 ```
-[22] Extra Vars da riga di comando (`ansible-playbook -e "port=8080"`)  <-- VINCE SU TUTTO
-   ▲
-  [15] roles/nginx_server/vars/main.yml                                 <-- MOLTO FORTE (Difficile da sovrascrivere, VARIABILI COSTANTI pacchetti da installare ecc...)
-   ▲
-  [12] host_vars/server01.yml                                           <-- Specifico per singolo server
-   ▲
-  [6]  group_vars/aptly_servers.yml                                     <-- Specifico per gruppo     (cose che servono al singolo gruppo)
-   ▲
-  [3]  group_vars/all.yml                                               <-- Globale del tuo progetto (cose che servono a tutti)
-   ▲
-  [1]  roles/nginx_server/defaults/main.yml                             <-- DEBOLE (Facile da sovrascrivere, usate in caso lo user si dimentica di definire dei valori dentro group_var/nome_ruolo)
+  [6] Extra Vars da riga di comando (`ansible-playbook -e "port=8080"`)
+   
+  [5] roles/nginx_server/vars/main.yml                                  (Difficile da sovrascrivere, VARIABILI COSTANTI pacchetti da installare ecc...)
+  
+  [4] host_vars/server01.yml                                             Specifico per singolo server
+   
+  [3]  group_vars/aptly_servers.yml                                      Specifico per gruppo     (cose che servono al singolo gruppo)
+   
+  [2]  group_vars/all.yml                                                 Globale del tuo progetto (cose che servono a tutti)
+   
+  [1]  roles/nginx_server/defaults/main.yml                                (Facile da sovrascrivere, usate in caso lo user si dimentica di definire dei valori dentro group_var/nome_ruolo)
 ```
 
 ---
@@ -618,15 +630,30 @@ ansible-playbook playbook.yml --skip-tags "db"
 	register: netbox_api_response #Salva TUTTA la risposta JSON in questa variabile
 ```
 ## **set_fact**
-
 >Crea o modifica una variabile
 ```yml
 - name: Estrai e salva i dati utili della VM
 	ansible.builtin.set_fact: #Crea o aggiorna una variabile (in questo caso crea)
 		vm_details: "{{ netbox_api_response.json.results[0] }}"
 ```
+## **register**
 
+>Registra l'esito di un comando dentro una variabile
+
+```yaml
+- name: 2.1 Verifica se la chiave GPG esiste già nel keyring di deployer
+  command: gpg --list-secret-keys "{{ gpg_user_email }}"
+  become: true
+  become_user: "{{ aptly_user }}"
+  register: gpg_check #Registra l'esito del job (= 0 True la chiave esiste ; !=0 False la chiave non esiste)
+  failed_when: false
+  changed_when: false
+```
 ---
+
+
+ 
+
 # **Template**
 >Un template in Ansible non è altro che un file di configurazione (es. .conf .ini .html) che contiene delle variabili e delle logiche
 
@@ -634,7 +661,6 @@ ansible-playbook playbook.yml --skip-tags "db"
 1. Legge il file di partenza sul computer locale (il file ha l'estensione .j2)
 2. Sostituisce le variabili con i valori reali specificati per quel determinato server o gruppo
 3. Invia il file "compilato" e personalizzato sul server remoto
-
 ## **Sintassi**
 
 >Le {{}}  servono a inserire il valore di una variabile definita in group_vars/ , nei /defaults del ruolo o estratta dai facts di Ansible
@@ -695,7 +721,7 @@ roles/
         └── main.yml      # Dipendenze del ruolo e metadati
 ```
 
-
+---
 ## **Come si crea un ruolo**
 
 ```shell
@@ -763,3 +789,34 @@ ansible-playbook playbook.yml
 ```
 
 >[!ATTENTION] Se il file con la Password è all'interno di una repo github includere il file dentro il .gitignore
+
+## **Usare più vault**
+>Se si necessita di più vault si può dare un ID univoco ad ogni vault per distringuerli:
+
+>Scriviamo i segreti dentro i diversi file:
+```shell
+vim group_vars/all/vault.yml
+vim host_vars/gitlab.server.local/vault.yml
+```
+
+>Creiamo i file con le relative password del vault in chiaro:
+```shell
+echo "password_vault_globale" > .vault_global_pass
+echo "password_vault_gitlab" > .vault_gitlab_pass
+```
+
+>Criptiamo con il relativo ID:
+```shell
+# Cifri il vault condiviso con l'ID 'global'
+ansible-vault encrypt --vault-id global@.vault_global_pass group_vars/all/vault.yml
+
+# Cifri il vault di GitLab con l'ID 'gitlab'
+ansible-vault encrypt --vault-id gitlab@.vault_gitlab_pass group_vars/gitlab_runner/vault.yml
+```
+
+>Per far sì che non ci richieda ogni volta la password di ciascun vault mettiamo in ansible.cfg:
+```shell
+[defaults]
+ecc...
+vault_identity_list = global@.vault_global_pass, gitlab@.vault_gitlab_pass
+```

@@ -223,6 +223,12 @@ e --> f[Controllo lista delle pubblicazioni]
 3. [x] Creazione certificati e chiavi
 4. [x] Spostamento sui client dei file
 5. [x] Installazione e registrazione gitlab runner
+6. [ ] **Suddividere Macchina server aptly+nginx e macchina CA?**
+7. [x] Creare CA-intermediate (lasciare la CA principale segreta) creazione fullchain.pem
+8. [ ] **Creare utente dedicato ad Ansible su ogni nodo del client?**
+9. [ ] **???Utilizzo certificati con CA autorizzata (Certbot, ecc..)???**
+10. [x] Controllo della possibilità di inserire variabili per rendere più dinamico il playbook (nomi file chiavi e certificati, )
+
 
 ### **Struttura generale Ansible***
 
@@ -243,6 +249,7 @@ aptly-automatation
 	group_vars/
 		all
 			all.yml (IP server, distribuzione repo, component repo, prefissi abilitati, user per aptly, path ai certs, root_dir di aptly)
+			vault.yml (vault ansible per criptare credenziali di accesso, autenticazione htpasswd e token gitlab)
 		gruppo/
 			vars.yml (variabili dei singoli gruppi)
 	host_vars/
@@ -257,7 +264,15 @@ aptly-automatation
 		
 ```
 
-## *Procedure NON automatizzabili*
+## ==*Procedure NON automatizzabili*==
 1. Creazione Token e URL per il GitLab runner [[Cos'è Gitlab]]
-2. Copiare la chiave pubblica di Ansible su vari client (per la prima volta a causa della passphrase)
-3. Inserimento delle variabile per la CI/CD di GitLab (Chiave privata ssh per collegarsi allo user sul server aptly per pubblicare i pacchetti. Mail associata alal chiave GPG )
+2. **Copiare la chiave pubblica di Ansible su vari client (per la prima volta a causa della passphrase)**
+3. Inserimento delle variabile per la CI/CD di GitLab (Chiave privata ssh per collegarsi allo user sul server aptly per pubblicare i pacchetti. 
+   Mail associata alal chiave GPG )
+
+---
+# **Funzionamento Playbook**
+
+## Playbook Principale
+>Il playbook principale si occupa della **suddivisione del compito in 3 step (setup server repository, setup runner di compilazione, setup clients)**.
+>OgniUsare più vault

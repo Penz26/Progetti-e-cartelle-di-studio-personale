@@ -25,7 +25,7 @@ ssh-keygen -t ED25519 -C "Nome identificativo"
 	La chiave pubblica viene copiata sul server remoto nel file authorized_keys
 ```Shell
 #Di default ssh gira sulla porta 22 quindi quando non si specifica userà quella
-ssh-copyid nomeUtenteServer@IP
+ssh-copy-id nomeUtenteServer@IP
 
 #Se si vuole cambiare la porta fare
 ssh-copy-id -p 2222 nomeUtenteServer@IP
@@ -63,6 +63,16 @@ AllowUsers user1 user2
 - Cambiare Porta 
 ```Shell
 Port 2222
+```
+
+##  Creazione di file configurazione ssh apposta per un utente
+>Possiamo creare una configurazione apposita per dei campi di un utente inserendo un file dentro /etc/ssh/sshd_config.d/nomeutente.conf
+
+```shell
+Match User nomeutente 
+    PasswordAuthentication no 
+    PubkeyAuthentication yes 
+    AuthenticationMethods publickey
 ```
 
 >**Possiamo inoltre evitare di scriver ogni volta nomepc@IP facendo:

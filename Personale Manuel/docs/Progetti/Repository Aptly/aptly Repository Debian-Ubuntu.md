@@ -127,7 +127,15 @@ sudo apt update && sudo apt install aptly -y
 
 >La configurazione di aptly risiede nel file ~/.aptly.conf, dove si possono specificare vari campi tra cui la directory in cui verranno salvati i dati al momento della pubblicazione.
 
->[!ATTENTION] Ogni distribution (TARGET) deve avere la sua repo
+## **Campi di una repository**
+1. **comment**: commento descrittivo della repository
+2. **distribution**: distribuzione per cui sono stati compilati quei pacchetti
+3. **component**: suddivisione interna a cui deve appartenere il pacchetto all' interno di una **SEZIONE** (es. main, stable, networking_script, configur_ation_scripts nome_software, )
+4. **prefix**: prefisso sotto cui viene pubblicata una **SEZIONE** di pacchetti. Da pensare come un settore (web, finanza, system, development, ecc...) 
+>[!IMPORTANT] Il prefix influenza l'URL a cui deve puntare il client
+
+
+>[!ATTENTION] Ogni coppia distribution-component deve avere la sua repo
 ```sh
 aptly repo create -comment="Repository Interna Manuel Prod" -distribution="noble" -component="main" nome-repo
 ```
@@ -224,29 +232,34 @@ aptly snapshot create <nome-snapshot> from repo <nome-repo>
 aptly snapshot list
 ```
 
+## Prima pubblicazione
 >Pubblicazione della repo con metodo snapshot (==**PRIMA VOLTA E BASTA**==):
 ```shell
 aptly publish snapshot -gpg-key="ID-chiave" -passphrase="passphrase" -distribution="noble" -component="main" nome-snapshot internal
 ```
 
-## **Spiegazione delle flag**
 >**-gpg-key**: ID (non intera chiave) della chiave GPG
 >**- passphrase**: pasphrase che protegge la repo
 >**-distribution**: distribuzione/release per cui sono stati compilati i pacchetti
 >**-component**: a che sezione devono appartenere i file
 >**- internal  :** indica il prefisso sotto cui pubblicarla (il punto indica nell'indirizzo principale della repo `http://server-aptly/dists/...`., in questo caso `http://server-aptly/internal`) 
 
->Aggiornamento della repo basata su snapshot
+## Aggiornamento degli snapshot
+>Aggiornamento della repo basata su snapshot 
 ```shell
-aptly publish switch -batch -gpg-key="" -passphrase="" noble internal "nome-snapshot"
+aptly publish switch -batch -gpg-key="ID-chiave" -passphrase="" noble internal "nome-snapshot"
 ```
+
 > - aptly publish switch: prende una pubblicazione esistente la fa puntare ad un nuovo snapshot
 > - batch, dice a GPG di eseguire la firma in modo non interattivo
 > - gpg-key: specifica l'ID della chiave GPG da usare per firmare
 > - noble: distribuzione target della pubblicazione
-> - internal: è la sottocartella in cui vive il repository
+> - internal: è la sottocartella in cui vive il repository 
 > - nome-snapshot: il nuovo snapshot appena creato che vogliamo pubblicare
 
+```shell
+aptly publish switch -gpg-key="deployer@azienda.local" DISTRIBUTION PREFIX nome_snapshot
+```
 
 >Una volta lanciata la pubblicazione/aggiornamento chiederà la passphrase che si ha usato per la chiave GPG.
 >Una volta inserita darà come risultato questo messaggio:

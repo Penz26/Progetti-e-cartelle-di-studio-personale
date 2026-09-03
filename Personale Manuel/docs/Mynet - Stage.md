@@ -236,7 +236,7 @@ ls /etc/shadow
     ServerName il-tuo-sito.it
     ServerAlias www.il-tuo-sito.it
 
-    # 🛠️ Attivazione e regole di riscrittura (HTTP -> HTTPS)
+    # Attivazione e regole di riscrittura (HTTP -> HTTPS)
     RewriteEngine On
     RewriteCond %{HTTPS} off
     RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
@@ -411,4 +411,150 @@ sudo systemctl reload apache2
 >Modificata gestione della creazione della repository e della prima pubblicazione (spostata da GitLab a Ansible)
 
 ---
+# ==***05/08/2026***==
+>Continuata documentazione e ritocchi al playbook
 
+# ==***06/08/2026***==
+>**Considerata procedura per CA intermediate per lasciare la Root CA libera e al sicuro**
+>
+
+# ==***07/08/2026***==
+>Configurazione Access Point per fiera delle Grazie
+
+>Flashato e aggiornato Firmware di tutti e 20 gli access point.
+>Configurazione Rete Wifi, (SSID, password, ecc...)
+
+>Continuata automazione tra Ansible e Aptly
+
+>Considerata l'introduzione di una **CA intermedia** per non esporre la Root CA **(da chiedere al ritorno dalle ferie)**
+---
+# ==***19/08/2026***==
+>Ritorno dalle vacanze 🇪🇸.
+>Server delle settimana precedenti di nuovo in datacenter
+
+>PROBLEMA: Compilazione di pacchetti scritti in più linguaggi.
+
+>Nuova gestione del lavoro per la repository (suppongo finale):
+>- compilazione dei pacchetti direttamente dai developer 
+>- compilazione dei pacchetti in .deb ed anche .tarGz
+
+---
+# ==***20/08/2026***==
+>Continuata versione unix compliant dell' automazione ansible per aptly
+>**Iniziata introduzione della CA intermediate**
+
+---
+# ==***21/08/2026***==
+>**Introdotta CA Intermediate** 
+
+>Questa CA si occuperà di elargire i certificati e chiavi del server web e del client senza mai esporre la Root CA.
+
+>Sicurezza in caso della compromissione.
+>Se viene compromessa la Root CA è finita 💀
+>Mentre se viene compromessa solo la Intermediate (solitamente usata solo per un obiettivo specifico) **il danno si limita a quell'area**
+
+---
+# ==***24/08/2026***==
+>**PRIMO TEST su server Aziendale**
+
+>Cose da cambiare:
+>- integrazione con API di EJBCA per CSR di web_server e client
+>- gitlab_runner prende solo i file .deb già compilati e si occupa di pubblicarli
+
+---
+# ==***25/08/2026***==
+>**Inizializzata integrazione con API di EJBCA**
+
+>Modificato ruolo pki_tls:
+>- NIENTE GENERAZIONE CA ROOT O CA INTERMEDIA
+>- NIENTE GENERAZIONE WEB SERVER
+>- Invio CSR per CRT del client via API EJBCA
+>- variabili apposite per connessione ad EJBCA
+>  - ejbca_url (FQDN)
+>  - ejbca_caname (Nome della CA)
+>  - ejbca_client_cert_profiles (certificate profile)
+>  - ejbca_client_key_profile (end entitity profile)
+>  - ejbca_username (user per la connessione https)
+>  - ejbca_password (password user connessione)
+>  - ejbca_admin_cert (certificato per dimostrare di essere abilitati)
+>  - ejbca_admin_key (chiave per dimostrare di essere abilitati)
+
+>Prima prova di raggiungimento: **FALLITA❌️** (non abilitato sulla rete a raggiungere il server di ejbca)
+
+---
+# ==***26/08/2026***==
+>Integrazione con API di EJBCA semi conclusa
+
+>**Abilitato raggiungimento del server dalla mia macchina**
+
+### **Interruzione servizio EJBCA causa manutenzione ⚙️**
+
+>**Modifiche ruole web_server:**
+>- prende il suo certificato e chiave direttamente dalla cartella sul control node
+>- prende il certificato della CA dalla cartella sul control node
+
+>Seconda prova di raggiungimento: **SUCCESSO✅️**
+
+>**Richieste variabili:** 
+>- ejbca_client_cert_profiles
+>- ejbca_client_key_profiles
+
+
+---
+
+# ==***27/08/2026***==
+
+>**Ottenuto valore delle variabili necessarie per la connessione alle API di EJBCA**
+
+>Spostati file necessari al collegamento dentro directory all'interno del progetto per una migliore agevolazione e modularità del playbook
+>
+>Primo test con tag solamente per i certificati: FALLITO ❌️
+```shell
+ansible-playbook --tags "certs" playbook.yaml --check --diff -v
+```
+
+>Richiede autorizzazione alla sezione admin/ per la creazione di certificati tramite pkcs10enroll
+
+---
+# ==***28/08/2026***==
+
+>Ottenuto accesso alla sezione admin/
+
+>Una volta lanciato il playbook questo si aspettava i campi DNSNAME per la richiesta CSR.
+>Abbiamo dovuto controllare quanti campi erano obbligatori per la request della nostra end_entity. Abbiamo disabilittato l'autenticazione tramite DNSNAME per risolvere l'errore.
+
+>Una volta trovati i giusti campi da inserire per il client sulla dashboard admin di EJBCA siamo riusciti a lanciare il nostro playbook con successo ✅️.
+>Stiamo eseguendo il playbook un ruolo alla volta lanciando il comando:
+```shell
+ansible-playbook --tags "pki" --check -diff playbook.yaml
+```
+
+>Siamo riusciti di conseguenza nella creazione del primo client di prova per la nostra repository e della creazione della repository in sè, mantenendo un ambiente diviso tra gli utenti di ansible-user e l'utente di servizio per il ruolo aptly.
+
+---
+# ==***31/08/2026***==
+
+>Controllata l'esistenza della repository noble creata come test ✅️
+
+>Continuata l'esecuzione del playbook con il ruolo del web-server. 
+
+>Primo test con l'esecuzione esclusivamente del tag "web": FALLITO❌️
+>Dà un problema relativo alla lunghezza della chiave. SSL ee:key:toosmall
+
+>Notificato il tutor ha controllato subito il tipo di chiave generata e rigenerata con una lunghezza maggiore.
+
+>Test successivo **SUCCESSO**
+
+>Continuata documentazione del progetto e successivi controlli dell'effettiva esistenza in rete della repository.
+>Manca il primo test di configurazione del client
+
+---
+# ==***01/09/2026***==
+
+>Primo test di configurazione sui client
+>Continuata documentazione
+
+---
+# ==***02/09/2026***==
+
+>
