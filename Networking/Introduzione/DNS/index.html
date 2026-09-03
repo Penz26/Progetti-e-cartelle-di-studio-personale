@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Networking - Documentazione di Manuel</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/color-brewer.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">Documentazione di Manuel</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Git & GitHub</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../Comandi%20Git%20%26%20GitHub/Comandi%20di%20Git%20Basilari/" class="dropdown-item">Introduzione</a>
+</li>
+                                    
+<li>
+    <a href="../../../Comandi%20Git%20%26%20GitHub/Comandi%20di%20Git%20per%20collegarsi%20a%20GitHub/" class="dropdown-item">Connessioni a GitHub</a>
+</li>
+                                    
+<li>
+    <a href="../../../Comandi%20Git%20%26%20GitHub/Cos%27%C3%A8%20un%20file%20.gitignore/" class="dropdown-item">Gitignore</a>
+</li>
+                                    
+<li>
+    <a href="../../../Comandi%20Git%20%26%20GitHub/Git%20%26%20GitHub/" class="dropdown-item">Generale</a>
+</li>
+                                    
+<li>
+    <a href="../../../Comandi%20Git%20%26%20GitHub/Issues%20e%20Pull%20Requests/" class="dropdown-item">Issues e Pull Requests</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">ITS</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Cyber</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../ITS/Cyber/Nmap/Nmap%20Introduction/" class="dropdown-item">Nmap</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Ncat</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../ITS/Cyber/Ncat/Ncat%20Introduction/" class="dropdown-item">Introduzione</a>
+</li>
+            
+<li>
+    <a href="../../../ITS/Cyber/Ncat/Ncat%20Advanced/" class="dropdown-item">Avanzato</a>
+</li>
+    </ul>
+  </li>
+            
+<li>
+    <a href="../../../ITS/Cyber/Challenge%203%2C%20UDP%20Chat%20%28Red%20vs%20Blue%20vs%20Red%20vs%20Blue%29/" class="dropdown-item">Challenge UDP</a>
+</li>
+            
+<li>
+    <a href="../../../ITS/Cyber/RaspBerry%20Pi%20Server/" class="dropdown-item">Raspberry Pi</a>
+</li>
+            
+<li>
+    <a href="../../../ITS/Cyber/Vulnerabilit%C3%A0%20locali%20-%20Programmazione/" class="dropdown-item">Vulnerabilità</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">System</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Docker</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../ITS/System/Docker/Cos'è Docker.md" class="dropdown-item">Cos'è Docker</a>
+</li>
+            
+<li>
+    <a href="../../../ITS/System/Docker/Docker Compose.md" class="dropdown-item">Docker Compose</a>
+</li>
+            
+<li>
+    <a href="../../../ITS/System/Docker/DockerFile.md" class="dropdown-item">Dockerfile</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Linux</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../ITS/System/Linux/Comandi%20di%20Linux/" class="dropdown-item">Comandi Base</a>
+</li>
+            
+<li>
+    <a href="../../../ITS/System/Linux/Bash%20Scripting/" class="dropdown-item">Bash Scripting</a>
+</li>
+            
+<li>
+    <a href="../../../ITS/System/Linux/Bash%20Scripting%20Advanced/" class="dropdown-item">Bash Avanzato</a>
+</li>
+            
+<li>
+    <a href="../../../ITS/System/Linux/SSH/" class="dropdown-item">SSH</a>
+</li>
+            
+<li>
+    <a href="../../../ITS/System/Linux/FileTree/" class="dropdown-item">File Tree</a>
+</li>
+    </ul>
+  </li>
+            
+<li>
+    <a href="../../../ITS/System/Windows%20Server/Installazione%20Servizi%20%204%C2%B0%20e%205%C2%B0%20Slide/" class="dropdown-item">Windows Server</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">PostgreSQL</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../PostgreSQL/Introduzione%20a%20PostgreSQL/" class="dropdown-item">Introduzione</a>
+</li>
+                                    
+<li>
+    <a href="../../../PostgreSQL/Installazione/" class="dropdown-item">Installazione</a>
+</li>
+                                    
+<li>
+    <a href="../../../PostgreSQL/Inserimento%20Dati/" class="dropdown-item">Inserimento Dati</a>
+</li>
+                                    
+<li>
+    <a href="../../../PostgreSQL/Queries/" class="dropdown-item">Queries</a>
+</li>
+                                    
+<li>
+    <a href="../../../PostgreSQL/Joins/" class="dropdown-item">Joins</a>
+</li>
+                                    
+<li>
+    <a href="../../../PostgreSQL/pgAdmin%204/" class="dropdown-item">pgAdmin 4</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Altro</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../MkDocs & Mermaid.js.md" class="dropdown-item">Mermaid e MkDocs</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#networking" class="nav-link">Networking</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#cose" class="nav-link">Cos'è?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#gerarchia-dei-domini" class="nav-link">Gerarchia dei Domini</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#root-domain" class="nav-link">Root Domain</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#tld-top-level-domain" class="nav-link">TLD (Top Level Domain)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#second-level-domain" class="nav-link">Second Level Domain</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#subdomains" class="nav-link">Subdomains</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#tipi-di-record-dns" class="nav-link">Tipi di record DNS</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#cosa-succede-quando-si-fa-una-richiesta-dns" class="nav-link">Cosa succede quando si fa una richiesta DNS ?</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#1-cache-locale-e-file-hosts" class="nav-link">1. Cache locale e file Hosts</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#2-dns-ricorsivo-resolver" class="nav-link">2. DNS Ricorsivo (Resolver)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#3root-servers" class="nav-link">3.Root Servers</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#4-tld-servers" class="nav-link">4. TLD Servers</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#5-server-autoritativo-name-server" class="nav-link">5. Server autoritativo (Name Server)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#6-ritorno-al-client" class="nav-link">6. Ritorno al client</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#il-comando-per-interrogare-i-server-dns" class="nav-link">Il comando per interrogare i server DNS</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#sintassi-comune-del-comando-dig" class="nav-link">Sintassi comune del comando dig</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#scoprire-lindirizzo-ipv4-di-un-dominio" class="nav-link">Scoprire l'indirizzo IPv4 di un dominio:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#interrogare-un-server-dns-in-specifico-per-un-dominio" class="nav-link">Interrogare un server DNS in specifico per un dominio</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#reverse-dns-ptr" class="nav-link">Reverse DNS (PTR)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#file-di-zona" class="nav-link">File di Zona</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#soa-start-of-authority" class="nav-link">SOA (Start of Authority)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#record-di-risorsa" class="nav-link">Record di Risorsa</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#ns" class="nav-link">NS</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#a-e-aaaa" class="nav-link">A e AAAA</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#cname-alias" class="nav-link">CNAME (Alias)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#mx-mail-exchanger" class="nav-link">MX (Mail Exchanger)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#txt-testo-spf-e-dmarc" class="nav-link">TXT (Testo, SPF e DMARC)</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#sottodomini-di-terzo-livello" class="nav-link">Sottodomini di Terzo livello</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#bind-e-powerdns" class="nav-link">BIND e PowerDNS</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#bind-berkeley-internet-name-domain" class="nav-link">BIND (Berkeley Internet Name Domain)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#configurazione" class="nav-link">Configurazione</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#powerdns" class="nav-link">PowerDNS</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#configurazione_1" class="nav-link">Configurazione</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="networking">Networking</h1>
+<h1 id="cose"><strong>Cos'è?</strong></h1>
+<blockquote>
+<p>Un DNS (Domain Name System) permette un semplice modo per comunicare con altri dispositivi su Internet senza dover ricordare sequenze di numeri complicati (IP address).
+Invece di ricordarsi 104.26.10.229 ci ricordiamo il nome che il DNS gli ha associato, in questo caso tryhackme.com</p>
+<p>Funziona sulla porta 53 e utilizza sia UDP che TCP</p>
+</blockquote>
+<hr />
+<h1 id="gerarchia-dei-domini"><strong>Gerarchia dei Domini</strong></h1>
+<p>![[gerarchia_domini.png]]</p>
+<h2 id="root-domain"><strong>Root Domain</strong></h2>
+<blockquote>
+<p>Omesso nella scrittura comune, la gerarchia parte da un . che indica la radice gestita dai 13 root server globali.</p>
+</blockquote>
+<h2 id="tld-top-level-domain"><strong>TLD (Top Level Domain)</strong></h2>
+<blockquote>
+<p>Un TLD è la parte più a destra del dominio. Per esempio per tryhackme.com il TLD è .com.
+Ci sono 2 tipi di TLD
+- gTLD (Generic Top Level)
+ usato di solito per indicare il significato del dominio (.com   commerciale. .gov   -governo, ecc...)
+- ccTLD (Country Code Top Level Domain)
+ usato per localizzazione geografica (.it  -italia)</p>
+</blockquote>
+<h2 id="second-level-domain"><strong>Second Level Domain</strong></h2>
+<blockquote>
+<p>Se il .com è il TLD il resto è il Second Level Domain (es. tryhackme).
+Quando si registra un dominio, l'intero "nome del dominio" (FQDN = Fully Qualified Domain Name) non può superare i 253 caratteri,  il second-level-domain non può superare i 63 caratteri + TLD e può usare solo caratteri da a-z e 0-9 e il - ma non può iniziare o finire con esso.</p>
+</blockquote>
+<h2 id="subdomains"><strong>Subdomains</strong></h2>
+<blockquote>
+<p>Un sottodominio è alla sinistra del second level domain e separato da un . (es. admin.tryhackme.com) la parte admin è il subdomain. 
+Devono seguire gli stessi limiti di caratteri dei subdomain.
+Non ci sono limiti alla quantità di subdomain che si possano creare per il tuo dominio finchè il FQDN non superi i 253 caratteri.</p>
+</blockquote>
+<hr />
+<h1 id="tipi-di-record-dns"><strong>Tipi di record DNS</strong></h1>
+<blockquote>
+<p>Il DNS non è solo per siti web, e molteplici tipi di record DNS esistono. I più comuni sono:
+- <strong>A record:</strong>
+  Questi risolvono indirizzi IPv4
+- <strong>AAAA record:</strong>
+   Questi risolvono indirizzi IPv6
+- <strong>CNAME record:</strong> (Canonical Name)
+   Mappa un nome alias su un altro nome di dominio, (es. il subdomain store.tryhackme.com ritorna un CNAME record shop.shopify.com)
+   Un'altra chiamata DNS sarà fatta all'altro dominio per trovarne l'IP
+- <strong>MX record (Mail Exchanger):</strong>
+    Questo risolve l'indirizzo del server che si occupa delle mail per il dominio che si sta cercando (es. una risposta MX per tryhackme.com sarebbe alt1.aspmx.google.com)
+- <strong>TXT record:</strong>
+    Sono record con un campo di inserimento libero dove ogni text-based data può essere conservato.
+- <strong>NS record (Name Server):</strong>
+    Delega una zona DNS all'utilizzo di specifici server autoritativi. Indica quali server contengono i record effettivi di quel dominio
+- <strong>SOA record (Start of Authority):</strong>
+    Contiene informazioni cruciali sulla zona DNS, tra cui il name server primario, l'email dell'amministratore, il numero di serie e timer di refresh
+- <strong>PTR record (Pointer):</strong>
+    Il contrario del record A. Risolve un indirizzo IP in un nome di dominio (reverse DNS lookup)</p>
+</blockquote>
+<hr />
+<h1 id="cosa-succede-quando-si-fa-una-richiesta-dns"><strong>Cosa succede quando si fa una richiesta DNS ?</strong></h1>
+<p>![[DNS_request.png]]</p>
+<h2 id="1-cache-locale-e-file-hosts">1.  <strong>Cache locale e file Hosts</strong></h2>
+<p>Quando si richiede un nome di un dominio il sistema operativo prima cerca nella cache locale e nel file hosts di sistema per vedere se l'avessi cercato prima, se non è così, una richiesta viene mandata al Server DNS ricorsivo.</p>
+<h2 id="2-dns-ricorsivo-resolver">2. <strong>DNS Ricorsivo (Resolver)</strong></h2>
+<p>Un Server DNS ricorsivo è solitamente dato dal proprio ISP. Questo server ha una cache locale per domini visitati di recente. Se un risultato è trovato localmente questo viene mandato indietro al tuo Pc e la richiesta finisce qui (spesso avviene per siti popolari come Google, Facebook, Twitter, ecc...) Se la richiesta non si trova localmente inizia la ricerca con gli Internet root DNS servers</p>
+<h2 id="3root-servers">3.<strong>Root Servers</strong></h2>
+<p>I root servers sono la spina dorsale di Internet. Non conoscono l'IP del sito ,il loro compito è quello di indirizzarti al TLD corretto. Se riconosce un .com ti indirizzerà al server che si occupa di indirizzi .com</p>
+<h2 id="4-tld-servers">4. <strong>TLD Servers</strong></h2>
+<p>Mantengono i riferimenti per i server autoritativi di tutti i domini registrati sotto quella specifica estensione. Indirizzeranno il Resolver verso il Name server corretto per quel dominio specifico</p>
+<h2 id="5-server-autoritativo-name-server">5. <strong>Server autoritativo (Name Server)</strong></h2>
+<p>Il Server autoritativo è responsabile per conservare i record DNS . Dipendendo dal tipo di record, il DNS record viene rimandato al Server DNS ricorsivo che mantiene una copia in locale per richieste future e successivamente indietro al client che ha fatto la richiesta. I record DNS hanno un TTL (Time To Live) che rappresenta in secondi quanto tempo dovrebbe essere salvata localmente fino a quando dovresti ricercarla ancora.</p>
+<h2 id="6-ritorno-al-client"><strong>6. Ritorno al client</strong></h2>
+<p>Il DNS ricorsivo memorizza il record nella propria cache per il tempo specificato dal TTL (Time to Live) (espresso in secondi) in modo da velocizzare le richieste future e infine consegna la risposta al client.</p>
+<hr />
+<h1 id="il-comando-per-interrogare-i-server-dns"><strong>Il comando per interrogare i server DNS</strong></h1>
+<blockquote>
+<p>Questo comando ci permette di interrogare server DNS e verificare la propagazione o la correttezza dei record</p>
+<p><strong>Di default risolverà il suo indirizzo IPv4</strong>
+Per altri tipologie di record DNS</p>
+</blockquote>
+<h2 id="sintassi-comune-del-comando-dig">Sintassi comune del comando dig</h2>
+<pre><code class="language-sh">dig @[server_dns] [nome_dominio] [tipo_record]
+</code></pre>
+<hr />
+<h2 id="scoprire-lindirizzo-ipv4-di-un-dominio">Scoprire l'indirizzo IPv4 di un dominio:</h2>
+<pre><code class="language-sh">dig example.com
+</code></pre>
+<blockquote>
+<p>Questo comando restituisce un output completo di varie sezioni (HEADER, QUESTION SECTION, ANSWER SECTION, tempi di risposta, ecc...)</p>
+<p>Per pulire l'output e mostrare esclusivamente la risposta essenziale usiamo</p>
+</blockquote>
+<pre><code class="language-sh">dig example.com +short
+</code></pre>
+<blockquote>
+<p>Se vogliamo seguire come un nome viene risolto partendo dal Root server usiamo:</p>
+</blockquote>
+<pre><code class="language-sh">dig example.com +trace
+</code></pre>
+<blockquote>
+<p>In questo modo dig bypassa la cache del resolver locale ed effettua una risoluzione partendo dall'alto della gerarchia DNS
+1. Root server
+2. TLD server
+3. Authoritative Server (Name Server)</p>
+</blockquote>
+<hr />
+<h2 id="interrogare-un-server-dns-in-specifico-per-un-dominio">Interrogare un server DNS in specifico per un dominio</h2>
+<pre><code class="language-sh">--- Controllare indirizzo Ipv4 ---
+dig @8.8.8.8 example.com 
+
+--- per il server di posta ---
+dig @8.8.8.8 example.com MX
+</code></pre>
+<hr />
+<h2 id="reverse-dns-ptr">Reverse DNS (PTR)</h2>
+<blockquote>
+<p>Se abbiamo un indirizzo IP di cui vogliamo sapere il dominio a cui è associato facciamo una richiesta per un record PTR.</p>
+<p>Questa operazione viene eseguita con dig:</p>
+</blockquote>
+<pre><code class="language-sh">dig -x [ip_da_cercare]
+</code></pre>
+<hr />
+<h1 id="file-di-zona"><strong>File di Zona</strong></h1>
+<blockquote>
+<p>Configurazione standard per un dominio in un file di zona:</p>
+</blockquote>
+<pre><code class="language-sh">$TTL 86400
+@   IN   SOA   ns1.example.com admin.example.com (
+                2026070901 #Serial Number (YYYYMMDDnn)
+                3600       #Refresh
+                1800       #Retry
+                604800     #Expire
+                86400)     #Minimum Time to Live
+
+; --- Server dei Nomi (Nameservers) ---
+@       IN   NS   ns1.example.com.
+@       IN   NS   ns2.example.com.
+
+; --- Record Principali (IP del dominio) ---
+@       IN   A       192.0.2.1
+@       IN   A       2001:db8::1
+ns1     IN   A       192.0.2.2
+ns2     IN   A       192.0.2.3
+
+; --- Alias e Servizi Web ---   
+web     IN   CNAME   @
+www     IN   CNAME   @
+app     IN   A       192.0.2.5
+cdn     IN   CNAME   static.provider.net
+
+; --- Gestione Posta Elettronica (Mail server) ---
+mail    IN  A       192.0.2.10
+@       IN  MX  10  mail.example.com
+
+; --- Sicurezza e Autenticazione ---
+@       IN  TXT     &quot;v=spf1 ipv4:192.0.2.10 -all&quot;
+_dmarc  IN  TXT     &quot;v=DMARC1; p=reject;&quot;
+
+; --- Sottodomini Complessi ---
+staging.dev IN A    192.0.2.99
+</code></pre>
+<h2 id="soa-start-of-authority"><strong>SOA (Start of Authority)</strong></h2>
+<blockquote>
+<p>Indica  il server dns autoritativo, chi è l'amministratore (admin.example.com sarebbe admin@example.com solo che non si può mettere @ per problemi). Il resto dei numeri sono la configurazione dei vari tempi tranne il primo che è il seriale.</p>
+<p>Spiegati di seguito:
+$TTL 86400 = definisce il TTL di default per tutti i record che non ne specificano uno proprio
+<strong>IN:</strong> classe del record (INTERNET)
+<strong>SOA:</strong> Indica il tipo di record
+<strong>ns1.example.com.:</strong> Il server DNS primario e autoritativo per questo dominio
+<strong>admin.example.com:</strong> Indirizzo email dell'amministratore responsabiile. La @ viene sostituita da un punto per evitare errori di sintassi</p>
+<p>All' interno delle parentesi () troviamo i parametri:
+<strong>Serial:</strong> la versione del file che avverte i server dns secondari se la versione che hanno è aggiornata o meno
+<strong>Refresh:</strong> Ogni quanto i server secondari controllano se il Serial è cambiato
+<strong>Retry:</strong> Quanto aspettare prima di riprovare se il primario non risponde
+<strong>Expire:</strong> Dopo quanto tempo di assenza del primario il secondario smette di di rispondere
+<strong>Minimum TTL:</strong> Il tempo di cache per le risposte negative</p>
+</blockquote>
+<hr />
+<h2 id="record-di-risorsa"><strong>Record di Risorsa</strong></h2>
+<blockquote>
+<p>Elencano le risorse che dovranno essere risulti dai DNS server</p>
+</blockquote>
+<h1 id="ns"><strong>NS</strong></h1>
+<pre><code class="language-D">@   IN   NS   ns1.example.com
+</code></pre>
+<blockquote>
+<p>Dice che ns1.example.com è il NameServer per il dominio principale (example.com)</p>
+</blockquote>
+<pre><code class="language-D">@   IN   NS   ns2.example.com
+</code></pre>
+<blockquote>
+<p>In pratica questi due record dicono che:
+example.com viene gestito dai server ns1.example.com e ns2.example.com.</p>
+</blockquote>
+<hr />
+<h2 id="a-e-aaaa"><strong>A e AAAA</strong></h2>
+<pre><code class="language-D">@       IN  A       192.0.2.1 
+</code></pre>
+<blockquote>
+<p>Dice che example.com. corrisponde all' IPv4 192.0.2.1</p>
+</blockquote>
+<pre><code class="language-D">@       IN  AAAA    2001:db8::1
+</code></pre>
+<blockquote>
+<p>Dice che example.com. corrisponde all' IPv6 2001:db8::1</p>
+</blockquote>
+<pre><code class="language-D">ns1     IN  A       192.0.2.2
+</code></pre>
+<blockquote>
+<p>Dice che ns1.example.com. corrisponde all' IPv4 192.0.2.2</p>
+</blockquote>
+<hr />
+<h2 id="cname-alias"><strong>CNAME (Alias)</strong></h2>
+<pre><code class="language-D">web     IN  CNAME   @
+</code></pre>
+<blockquote>
+<p>Dice che web.example.com è un alias di example.com</p>
+</blockquote>
+<pre><code class="language-D">cdn     IN  CNAME   static.provider.net.
+</code></pre>
+<blockquote>
+<p>Dice che cdn.example.com è un alias di static.provider.net</p>
+</blockquote>
+<hr />
+<h2 id="mx-mail-exchanger"><strong>MX (Mail Exchanger)</strong></h2>
+<pre><code class="language-D">@        IN  MX   10   mail.example.com.
+</code></pre>
+<blockquote>
+<p>La posta diretta a example.com deve essere inviata a mail.example.com. con priorità 10</p>
+<p>Quando qualcuno scrive info@example.com, il suo server postale cerca il record MX example.com per sapere quale server consegnare la lettera. 
+Il numero 10 indica la priorità (<strong>numeri più bassi = priorità più alta</strong>)</p>
+</blockquote>
+<hr />
+<h1 id="txt-testo-spf-e-dmarc"><strong>TXT (Testo, SPF e DMARC)</strong></h1>
+<pre><code class="language-D">@       IN  TXT     &quot;v=spf1 ip4:192.0.2.10 -all&quot;
+</code></pre>
+<blockquote>
+<p>Dice che example.com ha questo testo associato "v=spf1 ipv4:192.0.2.10 -all"</p>
+<p>SPF dice al mondo "solo il server con IP 192.0.2.10" può inviare email a nome @example.com. Se le ricevi da altri IP, sono false (-all)</p>
+</blockquote>
+<pre><code class="language-D">_dmarc  IN  TXT     &quot;v=DMARC1; p=reject;&quot;
+</code></pre>
+<blockquote>
+<p>DMARC dice al server riceventi (come Gmail) cosa fare se l'SPF fallisce (in questo caso p=reject ovvero di bloccare ed eliminare l'email sospetta) </p>
+</blockquote>
+<hr />
+<h2 id="sottodomini-di-terzo-livello"><strong>Sottodomini di Terzo livello</strong></h2>
+<pre><code class="language-d">staging.dev   IN   A   192.0.2.99
+</code></pre>
+<blockquote>
+<p>Dice che staging.dev.example.com. corrisponde all' IP 192.0.2.99</p>
+</blockquote>
+<hr />
+<h1 id="bind-e-powerdns"><strong>BIND e PowerDNS</strong></h1>
+<blockquote>
+<p>Sono due Software server DNS autoritativi. Hanno lo stesso compito, tradurre i nomi di dominio nei rispettivi IP per permettere ai computer di trovarsi tra loro.</p>
+</blockquote>
+<h2 id="bind-berkeley-internet-name-domain"><strong>BIND (Berkeley Internet Name Domain)</strong></h2>
+<blockquote>
+<p>E' il software più vecchio e utilizzato al mondo (ancora in costante aggiornamento).</p>
+<p>E' file-based. Ogni configurazione e ogni record di ogni zona sono file di testo statici</p>
+<p>Quando si modifica qualcosa bisogna far ricaricare il servizio con:</p>
+</blockquote>
+<pre><code class="language-sh">rdnc reload
+
+--- oppure ---
+
+systemctl reload named
+</code></pre>
+<h2 id="configurazione"><strong>Configurazione</strong></h2>
+<blockquote>
+<p>Il server DNS si configura tramite un singolo file chiamato named.conf situato in /etc/bind/</p>
+<p>Esempio di configurazione:</p>
+</blockquote>
+<pre><code>options {
+    directory &quot;/var/cache/bind&quot;;
+
+    // Su quali interfacce di rete ascoltare (es. tutte)
+    listen-on port 53 { any; };
+    listen-on-v6 { any; };
+
+    //Chi può fare domande a questo server?
+    allow-query { any; }; 
+
+    // I Forwarders (Inoltratori) 
+    forwarders {
+        1.1.1.1;   // Cloudflare
+        8.8.8.8;   // Google
+    };
+
+    dnssec-validation auto;
+};
+
+--- Definizione della zona come Primario (MASTER) ---
+zone &quot;example.com&quot; {
+    type master;
+    file &quot;/etc/bind/db.example.com&quot;; # Il file .txt di configurazione della zona
+    allow-transfer { 192.0.2.3; };    # IP del server secondario (sicurezza)
+};
+
+--- Se fosse stato un server dns secondario (SLAVE)---
+
+zone &quot;example.com&quot; {
+    type slave;
+    file &quot;/var/cache/bind/db.example.com.slave&quot;;
+    masters { 192.0.2.2; };          # IP del server primario da cui copiare
+};
+
+
+</code></pre>
+<hr />
+<h2 id="powerdns"><strong>PowerDNS</strong></h2>
+<blockquote>
+<p>E' la soluzione moderna progettata per la scalabilità, l'automazione e l'integrazione con il cloud</p>
+<p>E' Database driven. Non usa file di testo bensì usa Database SQL</p>
+<p>Quando si modifica qualcosa (direttamente dal terminale del server oppure con interfaccia web o API ) il DNS risponde immediatamente con il nuovo dato</p>
+</blockquote>
+<h2 id="configurazione_1"><strong>Configurazione</strong></h2>
+<blockquote>
+<p>PowerDNS concentra tutte le sue configurazioni in un unico file principale situato in /etc/powerdns/pdns.conf</p>
+<p>PowerDNS non crea da solo il DB quindi prima di configurare bisogna creare il database con:
+- utente che si specifica nel conf
+- password che si specifica nel conf
+- nome del db che si specifica nel conf</p>
+<p>Inoltre PowerDNS ha bisogno di tabelle specifiche chiamate:
+- domains
+- records
+- cryptokeys
+- ecc...
+Fortunatamente quando si installa il pachetto PowerDNS su Linux il sistema fornisce già il file SQL pronto con tutta la struttura</p>
+</blockquote>
+<pre><code class="language-sh">mysql -u pdns_user -p powerdns_db &lt; /usr/share/doc/pdns-backend-mysql/schema.mysql.sql
+</code></pre>
+<blockquote>
+<p>Esempio di una configurazione:</p>
+</blockquote>
+<pre><code class="language-TOML">#################################
+# Configurazione Rete e Identità
+#################################
+# IP su cui il server si mette in ascolto (0.0.0.0 = tutte le interfacce)
+local-address=0.0.0.0
+local-port=53
+
+# Diventa primario (Master) per inviare i NOTIFY ai secondari
+master=yes
+slave=no
+
+#################################
+# Configurazione del Backend (Database)
+#################################
+# Diciamo a PowerDNS di usare il motore MySQL/MariaDB
+launch=gmysql
+
+# Coordinate per connettersi al database dove risiedono le zone
+gmysql-host=127.0.0.1
+gmysql-user=pdns_user
+gmysql-password=PasswordSicura123!
+gmysql-dbname=powerdns_db
+
+#################################
+# Sicurezza e Performance
+#################################
+# Utente non privilegiato con cui gira il servizio dopo l'avvio
+setuid=pdns
+setgid=pdns
+
+# Per quanti secondi tenere in cache le risposte nel server stesso
+cache-ttl=20
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js"></script>
+        <script src="../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

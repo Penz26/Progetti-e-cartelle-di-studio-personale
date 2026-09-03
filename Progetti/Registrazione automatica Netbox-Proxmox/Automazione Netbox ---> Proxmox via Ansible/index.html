@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Linux - Documentazione di Manuel</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/color-brewer.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">Documentazione di Manuel</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Git & GitHub</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../Comandi%20Git%20%26%20GitHub/Comandi%20di%20Git%20Basilari/" class="dropdown-item">Introduzione</a>
+</li>
+                                    
+<li>
+    <a href="../../../Comandi%20Git%20%26%20GitHub/Comandi%20di%20Git%20per%20collegarsi%20a%20GitHub/" class="dropdown-item">Connessioni a GitHub</a>
+</li>
+                                    
+<li>
+    <a href="../../../Comandi%20Git%20%26%20GitHub/Cos%27%C3%A8%20un%20file%20.gitignore/" class="dropdown-item">Gitignore</a>
+</li>
+                                    
+<li>
+    <a href="../../../Comandi%20Git%20%26%20GitHub/Git%20%26%20GitHub/" class="dropdown-item">Generale</a>
+</li>
+                                    
+<li>
+    <a href="../../../Comandi%20Git%20%26%20GitHub/Issues%20e%20Pull%20Requests/" class="dropdown-item">Issues e Pull Requests</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">ITS</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Cyber</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../ITS/Cyber/Nmap/Nmap%20Introduction/" class="dropdown-item">Nmap</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Ncat</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../ITS/Cyber/Ncat/Ncat%20Introduction/" class="dropdown-item">Introduzione</a>
+</li>
+            
+<li>
+    <a href="../../../ITS/Cyber/Ncat/Ncat%20Advanced/" class="dropdown-item">Avanzato</a>
+</li>
+    </ul>
+  </li>
+            
+<li>
+    <a href="../../../ITS/Cyber/Challenge%203%2C%20UDP%20Chat%20%28Red%20vs%20Blue%20vs%20Red%20vs%20Blue%29/" class="dropdown-item">Challenge UDP</a>
+</li>
+            
+<li>
+    <a href="../../../ITS/Cyber/RaspBerry%20Pi%20Server/" class="dropdown-item">Raspberry Pi</a>
+</li>
+            
+<li>
+    <a href="../../../ITS/Cyber/Vulnerabilit%C3%A0%20locali%20-%20Programmazione/" class="dropdown-item">Vulnerabilità</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">System</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Docker</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../ITS/System/Docker/Cos'è Docker.md" class="dropdown-item">Cos'è Docker</a>
+</li>
+            
+<li>
+    <a href="../../../ITS/System/Docker/Docker Compose.md" class="dropdown-item">Docker Compose</a>
+</li>
+            
+<li>
+    <a href="../../../ITS/System/Docker/DockerFile.md" class="dropdown-item">Dockerfile</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Linux</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../ITS/System/Linux/Comandi%20di%20Linux/" class="dropdown-item">Comandi Base</a>
+</li>
+            
+<li>
+    <a href="../../../ITS/System/Linux/Bash%20Scripting/" class="dropdown-item">Bash Scripting</a>
+</li>
+            
+<li>
+    <a href="../../../ITS/System/Linux/Bash%20Scripting%20Advanced/" class="dropdown-item">Bash Avanzato</a>
+</li>
+            
+<li>
+    <a href="../../../ITS/System/Linux/SSH/" class="dropdown-item">SSH</a>
+</li>
+            
+<li>
+    <a href="../../../ITS/System/Linux/FileTree/" class="dropdown-item">File Tree</a>
+</li>
+    </ul>
+  </li>
+            
+<li>
+    <a href="../../../ITS/System/Windows%20Server/Installazione%20Servizi%20%204%C2%B0%20e%205%C2%B0%20Slide/" class="dropdown-item">Windows Server</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">PostgreSQL</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../PostgreSQL/Introduzione%20a%20PostgreSQL/" class="dropdown-item">Introduzione</a>
+</li>
+                                    
+<li>
+    <a href="../../../PostgreSQL/Installazione/" class="dropdown-item">Installazione</a>
+</li>
+                                    
+<li>
+    <a href="../../../PostgreSQL/Inserimento%20Dati/" class="dropdown-item">Inserimento Dati</a>
+</li>
+                                    
+<li>
+    <a href="../../../PostgreSQL/Queries/" class="dropdown-item">Queries</a>
+</li>
+                                    
+<li>
+    <a href="../../../PostgreSQL/Joins/" class="dropdown-item">Joins</a>
+</li>
+                                    
+<li>
+    <a href="../../../PostgreSQL/pgAdmin%204/" class="dropdown-item">pgAdmin 4</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Altro</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../MkDocs & Mermaid.js.md" class="dropdown-item">Mermaid e MkDocs</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#linux" class="nav-link">Linux</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#obiettivo-dellautomazione" class="nav-link">Obiettivo dell'automazione</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#installazione-delle-dipendenze" class="nav-link">Installazione delle dipendenze</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#struttura-delle-cartelle-ed-inizializzazione" class="nav-link">Struttura delle cartelle ed inizializzazione</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#group_varsall" class="nav-link">group_vars/all</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#roles" class="nav-link">roles</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#ansiblecfg" class="nav-link">ansible.cfg</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#direzione-del-playbook-con-i-ruoli" class="nav-link">Direzione del playbook con i ruoli</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#netbox_retrieve_conf" class="nav-link">netbox_retrieve_conf</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#autenticazione" class="nav-link">Autenticazione</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#proxmox_ops" class="nav-link">proxmox_ops</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#autenticazione_1" class="nav-link">Autenticazione</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="linux">Linux</h1>
+<h1 id="obiettivo-dellautomazione"><strong>Obiettivo dell'automazione</strong></h1>
+<blockquote>
+<p><strong>1. Pianificare la VM/Container su Netbox</strong>
+Vogliamo poter stabilire su Netbox una macchina virtuale / Container (assieme alle sue risorse e configurazioni di rete) su Planned.</p>
+<p><strong>2. Ansible recupera Info</strong>
+La configurazione della macchina da Netbox  viene recuperata da Ansible tramite API. Ansible ne controlla la configurazione per evitare di creare VM/Container con una configurazione errata
+Con un playbook.</p>
+<p><strong>3. Proxmox hypervisor</strong>
+Riceve le informazioni dal playbook di Ansible, clona il template e configura l'hardware e la rete.</p>
+<p><strong>4. Chiusura del Ciclo</strong>
+Ansible controlla la VM se è stata avviata con successo e solo in questo caso aggiorna lo stato della macchina su Netbox in Attivo.</p>
+</blockquote>
+<pre><code class="language-mermaid">graph TD
+    A[Netbox: Configurazione VM] &lt;--&gt;|Stato: Planned| B(Ansible: Query API Netbox)
+    B --&gt; C{Validazione Dati}
+    C --&gt;|Dati Mancanti| D[Log Errore &amp; Interruzione Playbook]
+    C --&gt;|Dati OK| E(Ansible: Estrazione Parametri)
+    E --&gt; F(Proxmox: Chiamata API Creazione VM)
+    F --&gt; G[Proxmox: Applicazione Cloud-Init &amp; Avvio]
+    G --&gt;|Ansible torna indietro| H[Netbox: Aggiornamento Stato in 'Active']
+
+    style A fill:#1e293b,stroke:#38bdf8,stroke-width:2px,color:#fff
+    style F fill:#1e293b,stroke:#a855f7,stroke-width:2px,color:#fff
+    style H fill:#1e293b,stroke:#22c55e,stroke-width:2px,color:#fff
+</code></pre>
+<hr />
+<h1 id="installazione-delle-dipendenze"><strong>Installazione delle dipendenze</strong></h1>
+<blockquote>
+<p>Per far funzionare il tutto avremo bisogno di moduli creati e mantenuti dalla community di Ansible.</p>
+<p>Inizializzazione di un venv e relativa attivazione:</p>
+</blockquote>
+<pre><code class="language-shell">python -m venv .env
+
+source .env/bin/activate
+</code></pre>
+<blockquote>
+<p>Installazione di Ansible e la libreria pynetbox e proxmoxer:</p>
+</blockquote>
+<pre><code class="language-shell">pip install ansible pynetbox proxmoxer
+</code></pre>
+<blockquote>
+<p>Installazione del modulo Ansible per netbox e per proxmox:</p>
+</blockquote>
+<pre><code class="language-shell">ansible-galaxy collection install netbox.netbox
+ansible-galaxy collection install community.proxmox
+</code></pre>
+<hr />
+<h1 id="struttura-delle-cartelle-ed-inizializzazione"><strong>Struttura delle cartelle ed inizializzazione</strong></h1>
+<blockquote>
+<p>Abbiamo ordinato la directory del progetto in questo modo:</p>
+</blockquote>
+<pre><code class="language-txt">ansible-proxmox-netbox-automatation/
+├── group_vars/
+│   └── all/
+│       ├── vars.yml
+│       └── vault.yml
+├── roles/                     # 📁 Contenitore di tutti i ruoli del progetto
+│   └── netbox_manage_vm/      # 🏷️ Ruolo specifico per la gestione delle VM
+│       ├── tasks/
+│       │   └── main.yml       # ⚙️ Qui sposteremo i nostri task di creazione
+│       └── defaults/
+│           └── main.yml       # 📊 Valori di default specifici per questo ruolo
+├── ansible.cfg
+├── site.yml                   # 🗺️ Il nuovo playbook principale che richiama i ruoli
+└── test.yml                   # 🧪 Il file di test che abbiamo usato finora
+
+</code></pre>
+<h2 id="group_varsall"><strong>group_vars/all</strong></h2>
+<blockquote>
+<p>Al suo interno teniamo le variabili che servono ad ogni ruolo.</p>
+<p>Dentro <strong>vars.yml</strong> teniamo quelle che non sono private e sensibili:</p>
+</blockquote>
+<pre><code class="language-yml"># Variabili per Proxmox
+
+netbox_api_url: &quot;https://aghv4513.cloud.netboxapp.com/&quot;
+
+netbox_token: &quot;{{ vault_netbox_token }}&quot;
+
+#########################################################
+
+#Variabili clietn Mail
+
+smtp_server: &quot;smtp.azienda.it&quot;
+
+smtp_user: &quot;ansible-alerts@azienda.it&quot;
+
+##########################################################  
+
+# Variabili per Proxmox
+
+proxmox_api_host: &quot;192.168.1.200&quot;
+
+proxmox_api_user: &quot;root@pam&quot;
+
+proxmox_api_token_id: &quot;ansible-auto&quot;
+
+proxmox_node: &quot;pve&quot;
+
+proxmox_api_token_val: &quot;{{ vault_proxmox_api_password }}&quot; # Richiama il valore cifrato nel vault
+
+##########################################################
+
+#Vm
+
+target_vm_name: &quot;automazione-netbox&quot;
+</code></pre>
+<blockquote>
+<p>Dentro  <strong>vault.yml</strong> teniamo i dati sensibili che devono essere accessibili solo a noi.
+Questi dati sono protetti da un vault di Ansible che cripta ed offusca i dati richiedendo una password per decriptare.</p>
+<p>Questo file conterrà le chiavi API del nostro playbook, in questo caso quelle di Netbox e di Proxmox e la password del client mail.
+<strong>==devono avere gli stessi nomi che vengono ripresi in vars.yml==</strong></p>
+</blockquote>
+<h2 id="roles"><strong>roles</strong></h2>
+<blockquote>
+<p>Abbiamo creato 3 ruoli:
+- mail_sender:
+ contiene tutto quello che riguarda la parte di notifica al sysadmin con il relativo client SMTP
+- netbox_retrieveconf:
+ contiene tutto quello che riguarda il pescaggio delle info da Netbox
+- proxmox_ops:
+ contiene tutto quello che riguarda la creazione e la configurazione delle macchina proxmox</p>
+</blockquote>
+<h2 id="ansiblecfg"><strong>ansible.cfg</strong></h2>
+<blockquote>
+<p>Al suo interno abbiamo inserito il path del file che contiene la password del vault.
+Questo file si trova all'esterno della repo in modo che quando si pusha un cambiamento non c'è alcun modo in cui esso possa essere coinvolto.</p>
+</blockquote>
+<pre><code class="language-yml">[defaults]
+vault_password_file = path/segreto/al/file/
+</code></pre>
+<blockquote>
+<p>La sua funzione principale è quella di permettere ad Ansible di eseguire il playbook senza dover richiedere la password del vault.</p>
+</blockquote>
+<hr />
+<h1 id="direzione-del-playbook-con-i-ruoli"><strong>Direzione del playbook con i ruoli</strong></h1>
+<blockquote>
+<p>Visto che abbiamo creato un organizzazione basata sui ruoli ci servirà un file di orchestrazione dei vari ruoli.</p>
+<p>site.yml</p>
+</blockquote>
+<pre><code class="language-yml">- name: Orchestratore dei ruoli
+  hosts: localhost      #Macchina su cui eseguire il codice
+
+  roles:
+    - role: netbox_retrieve_conf
+    - role: proxmox_ops
+    - role: mail_sender
+</code></pre>
+<hr />
+<h1 id="netbox_retrieve_conf"><strong>netbox_retrieve_conf</strong></h1>
+<blockquote>
+<p>Questo ruolo si occuperà di salvare le informazioni che abbiamo inserito su Netbox per poterle passare successivamente a Proxmox per la creazione vera e propria sul nodo.</p>
+</blockquote>
+<h2 id="autenticazione"><strong>Autenticazione</strong></h2>
+<blockquote>
+<p>Per autenticarci useremo le API di netbox</p>
+<p>**Procedure per creare il proprio token API:
+1. Visitare la propria pagina di Netbox
+2. Cliccare sulla sezione col proprio username e andare sulla sezione API Tokens
+3. Cliccare su Add tokens e configurarlo come si voglia (descrizione e IP ammessi)</p>
+<p>[!ATTENTION] Salvare il token API in un vault Ansible</p>
+<p>Non ci sono moduli della collezione netbox.netbox che permettono di ottenere direttamente le specifiche di una macchina .
+Quindi abbiamo proceduto con una richiesta GET HTTP che va a prendere la configurazione in base al nome della macchina (in questo caso una VM) e ci riporta le informazioni in formato JSON.</p>
+<p>Risposta JSON dall' URL:</p>
+</blockquote>
+<pre><code class="language-json">{
+  &quot;count&quot;: 1,
+  &quot;next&quot;: null,
+  &quot;previous&quot;: null,
+  &quot;results&quot;: [                       //Prendiamo solo i valori all'interno della                                       lista results, perchè sono qua dentro i                                          dati di interesse
+    {
+      &quot;id&quot;: 2,
+      &quot;name&quot;: &quot;vm-test-stagista&quot;,
+      &quot;status&quot;: { &quot;value&quot;: &quot;planned&quot; },
+      ...
+    }
+  ]
+}
+</code></pre>
+<blockquote>
+<p>main.yml</p>
+</blockquote>
+<pre><code class="language-yml">---
+- name: Recupera i dettagli della VM da NetBox tramite API REST
+    ansible.builtin.uri: #Con questo modulo possiamo fare delle chiamate API alla nostra dashboard di Netbox
+        url: &quot;{{ netbox_api_url }}/api/virtualization/virtual-machines/?name={{ target_vm_name }}&quot; #specifichiamo l'url del nostro menù con la nostra variabile, e poi passiamo anche il PATH
+#in cui va a cercare la nostra vm con ?name={{ target_vm_name }}
+        method: GET
+        headers:
+            Authorization: &quot;Token {{ netbox_token }}&quot; #Qui diamo i parametri per poter accedere a questo PATH
+            Accept: &quot;application/json&quot; #Specifichiamo il tipo di formato che richiediamo
+        status_code: 200
+    register: netbox_api_response #Salva TUTTA la risposta JSON in questa variabile
+
+- name: Verifica se la VM esiste su NetBox
+    ansible.builtin.assert: #ansible.builtin.assert funziona come un if nella programmazione
+        that:
+            - netbox_api_response.json.results | length &gt; 0 #condizione da controllare
+        fail_msg: &quot;ERRORE: La VM '{{ target_vm_name }}' non è stata trovata su NetBox!&quot; #Risposta di errore
+    success_msg: &quot;Sincronizzazione completata: VM trovata con successo su NetBox.&quot; #Risposta di successo
+
+- name: Estrai e salva i dati utili della VM
+    ansible.builtin.set_fact: #Crea o aggiorna una variabile (in questo caso crea)
+        vm_details: &quot;{{ netbox_api_response.json.results[0] }}&quot; #Salva SOLO la sezione dei risultati in questa variabile
+- name: Mostra un riepilogo dei dati principali estratti
+    ansible.builtin.debug:
+        msg:
+        - &quot;Nome VM: {{ vm_details.name }}&quot; #Visto che abbiamo salvato SOLO la sezione .results possiamo accedere ai valori che necessitiamo senza problemi
+        - &quot;Stato: {{ vm_details.status.value }}&quot;
+        - &quot;vCPU: {{ vm_details.vcpus | default('Non definite') }}&quot;
+        - &quot;RAM (MB): {{ vm_details.memory | default('Non definita') }}&quot;
+</code></pre>
+<hr />
+<h1 id="proxmox_ops"><strong>proxmox_ops</strong></h1>
+<blockquote>
+<p>Questo ruolo si occupa di interagire con Proxmox e creare e configurare le macchine.</p>
+</blockquote>
+<h2 id="autenticazione_1"><strong>Autenticazione</strong></h2>
+<blockquote>
+<p>Per autenticarsi usermo le API di Proxmox</p>
+</blockquote>
+<h3 id="come-creare-il-token-api-per-proxmox-e-dare-laccesso">Come creare il token API per Proxmox e dare l'accesso</h3>
+<blockquote>
+<p><strong>1. Andare sulla pagina del proprio datacenter</strong>
+<strong>2. Navigare nel menù del datacenter fino alla voce Permissions</strong>
+<strong>3. Aprirla e selezionare API Tokens</strong>
+<strong>4. Fare Add e dire</strong>
+  <strong>- user: lo user con cui Ansible entrerà (root oppure per sicurezza utente dedicato)</strong>
+  <strong>- token ID: dare un nome a questo token</strong>
+  <strong>- privilege separation: togliere la spunta</strong>
+  <strong>- commento per definirne l'uso</strong></p>
+<p>[!ATTENTION] Una volta creata uscirà solo per quella volta il token, una volta usciti non sarà più visibile</p>
+<ul>
+<li><strong>Andare sulla sezione Permissions cliccare su Add --&gt; API Token Permissions</strong></li>
+<li><strong>Path = /</strong> </li>
+<li><strong>API Token = token ID</strong></li>
+<li><strong>Role = Administrator</strong></li>
+</ul>
+<p>[!IMPORTANT] Salvare l'API (volendo anche il token ID) in un vault Ansible</p>
+<p>main.yml</p>
+</blockquote>
+<pre><code class="language-yml">---
+- name: Verifica la connessione a Proxmox e recupera le VM esistenti
+    community.proxmox.proxmox_vm_info:
+        api_host: &quot;{{ proxmox_api_host }}&quot;
+        api_user: &quot;{{ proxmox_api_user }}&quot;
+        api_token_id: &quot;{{ proxmox_api_token_id }}&quot;
+        api_token_secret: &quot;{{ proxmox_api_token_val }}&quot;
+        validate_certs: false
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js"></script>
+        <script src="../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

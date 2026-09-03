@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Queries - Documentazione di Manuel</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/color-brewer.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Documentazione di Manuel</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Git & GitHub</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../Comandi%20Git%20%26%20GitHub/Comandi%20di%20Git%20Basilari/" class="dropdown-item">Introduzione</a>
+</li>
+                                    
+<li>
+    <a href="../../Comandi%20Git%20%26%20GitHub/Comandi%20di%20Git%20per%20collegarsi%20a%20GitHub/" class="dropdown-item">Connessioni a GitHub</a>
+</li>
+                                    
+<li>
+    <a href="../../Comandi%20Git%20%26%20GitHub/Cos%27%C3%A8%20un%20file%20.gitignore/" class="dropdown-item">Gitignore</a>
+</li>
+                                    
+<li>
+    <a href="../../Comandi%20Git%20%26%20GitHub/Git%20%26%20GitHub/" class="dropdown-item">Generale</a>
+</li>
+                                    
+<li>
+    <a href="../../Comandi%20Git%20%26%20GitHub/Issues%20e%20Pull%20Requests/" class="dropdown-item">Issues e Pull Requests</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">ITS</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Cyber</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../ITS/Cyber/Nmap/Nmap%20Introduction/" class="dropdown-item">Nmap</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Ncat</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../ITS/Cyber/Ncat/Ncat%20Introduction/" class="dropdown-item">Introduzione</a>
+</li>
+            
+<li>
+    <a href="../../ITS/Cyber/Ncat/Ncat%20Advanced/" class="dropdown-item">Avanzato</a>
+</li>
+    </ul>
+  </li>
+            
+<li>
+    <a href="../../ITS/Cyber/Challenge%203%2C%20UDP%20Chat%20%28Red%20vs%20Blue%20vs%20Red%20vs%20Blue%29/" class="dropdown-item">Challenge UDP</a>
+</li>
+            
+<li>
+    <a href="../../ITS/Cyber/RaspBerry%20Pi%20Server/" class="dropdown-item">Raspberry Pi</a>
+</li>
+            
+<li>
+    <a href="../../ITS/Cyber/Vulnerabilit%C3%A0%20locali%20-%20Programmazione/" class="dropdown-item">Vulnerabilità</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">System</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Docker</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../ITS/System/Docker/Cos'è Docker.md" class="dropdown-item">Cos'è Docker</a>
+</li>
+            
+<li>
+    <a href="../../ITS/System/Docker/Docker Compose.md" class="dropdown-item">Docker Compose</a>
+</li>
+            
+<li>
+    <a href="../../ITS/System/Docker/DockerFile.md" class="dropdown-item">Dockerfile</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Linux</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../ITS/System/Linux/Comandi%20di%20Linux/" class="dropdown-item">Comandi Base</a>
+</li>
+            
+<li>
+    <a href="../../ITS/System/Linux/Bash%20Scripting/" class="dropdown-item">Bash Scripting</a>
+</li>
+            
+<li>
+    <a href="../../ITS/System/Linux/Bash%20Scripting%20Advanced/" class="dropdown-item">Bash Avanzato</a>
+</li>
+            
+<li>
+    <a href="../../ITS/System/Linux/SSH/" class="dropdown-item">SSH</a>
+</li>
+            
+<li>
+    <a href="../../ITS/System/Linux/FileTree/" class="dropdown-item">File Tree</a>
+</li>
+    </ul>
+  </li>
+            
+<li>
+    <a href="../../ITS/System/Windows%20Server/Installazione%20Servizi%20%204%C2%B0%20e%205%C2%B0%20Slide/" class="dropdown-item">Windows Server</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">PostgreSQL</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../Introduzione%20a%20PostgreSQL/" class="dropdown-item">Introduzione</a>
+</li>
+                                    
+<li>
+    <a href="../Installazione/" class="dropdown-item">Installazione</a>
+</li>
+                                    
+<li>
+    <a href="../Inserimento%20Dati/" class="dropdown-item">Inserimento Dati</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Queries</a>
+</li>
+                                    
+<li>
+    <a href="../Joins/" class="dropdown-item">Joins</a>
+</li>
+                                    
+<li>
+    <a href="../pgAdmin%204/" class="dropdown-item">pgAdmin 4</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Altro</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../MkDocs & Mermaid.js.md" class="dropdown-item">Mermaid e MkDocs</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../Inserimento%20Dati/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../Joins/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#grande-recap-delle-queries" class="nav-link">Grande recap delle Queries</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#1-operatori" class="nav-link">1. Operatori</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#2-proiezione-dati" class="nav-link">2. Proiezione dati</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#3-selezione-dati" class="nav-link">3. Selezione Dati</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#4-ordinare-i-dati-in-ordine-crescente-o-decrescente" class="nav-link">4. Ordinare i dati in ordine crescente o decrescente</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#5-funzioni-integrate-per-filtrare" class="nav-link">5. Funzioni Integrate per filtrare</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#6-controlli-in-base-a-stringhe" class="nav-link">6. Controlli in base a stringhe</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p>[[Introduzione a PostgreSQL]]</p>
+<h1 id="grande-recap-delle-queries"><strong>Grande recap delle Queries</strong></h1>
+<blockquote>
+<p>Operatori, clausole, funzioni ecc...</p>
+</blockquote>
+<h2 id="1-operatori"><strong>1. Operatori</strong></h2>
+<table>
+<thead>
+<tr>
+<th><strong>Comando</strong></th>
+<th><strong>Descrizione</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><code>=</code></strong></td>
+<td>Uguale a</td>
+</tr>
+<tr>
+<td><strong><code>&lt;</code></strong></td>
+<td>Minore di</td>
+</tr>
+<tr>
+<td><strong><code>&gt;</code></strong></td>
+<td>Maggiore di</td>
+</tr>
+<tr>
+<td><strong><code>&lt;=</code></strong></td>
+<td>Minore uguale di</td>
+</tr>
+<tr>
+<td><strong><code>&gt;=</code></strong></td>
+<td>Maggiore uguale di</td>
+</tr>
+<tr>
+<td><strong><code>&lt;&gt;</code></strong></td>
+<td>Diverso da</td>
+</tr>
+<tr>
+<td><strong><code>!=</code></strong></td>
+<td>Diverso da</td>
+</tr>
+<tr>
+<td><strong>||</strong></td>
+<td>Usato per concatenare i testi di due colonne assieme</td>
+</tr>
+<tr>
+<td><strong><code>LIKE</code></strong></td>
+<td>Controlla se un valore rispetta un pattern (<em>CASE SENSITIVE</em>)</td>
+</tr>
+<tr>
+<td><strong><code>ILIKE</code></strong></td>
+<td>Controlla se un valore rispetta un pattern (<em>CASE INSENSITIVE</em>)</td>
+</tr>
+<tr>
+<td><strong><code>AND</code></strong></td>
+<td>Operatore logico e</td>
+</tr>
+<tr>
+<td><strong><code>OR</code></strong></td>
+<td>Operatore logico o</td>
+</tr>
+<tr>
+<td><strong><code>IN</code></strong></td>
+<td>Guarda se il valore della colonna rientra in una lista di valori</td>
+</tr>
+<tr>
+<td><strong><code>BETWEEN</code></strong></td>
+<td>Guarda se il valore della colonna è tra 2 valori</td>
+</tr>
+<tr>
+<td><strong><code>IS NULL</code></strong></td>
+<td>Controlla il valore della colonna dove è nullo</td>
+</tr>
+<tr>
+<td><strong><code>NOT</code></strong></td>
+<td>Ritorna il contrario di altri operatori</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="2-proiezione-dati"><strong>2. Proiezione dati</strong></h1>
+<blockquote>
+<p>Comando <strong>SELECT</strong> per proiettare dati dalle tabelle in base alle specifiche che si fanno</p>
+</blockquote>
+<pre><code class="language-SQL">--Proietta i dati delle colonne customer_name e country dalla Tabella customers
+SELECT customer_name, country FROM customers;
+
+--Proietta tutti i dati delle colonne della tabella customers
+SELECT * FROM customers;
+</code></pre>
+<ul>
+<li><strong>SELECT DISTINCT</strong><blockquote>
+<p>Permette di filtrare via i doppioni
+In questo caso ci mostrerà i paesi una sola volta senza i vari doppioni se ci sono dei clienti che vengono dallo stesso paese</p>
+</blockquote>
+</li>
+</ul>
+<pre><code class="language-SQL">SELECT DISTINCT country FROM customers;  
+</code></pre>
+<ul>
+<li><strong>SELECT COUNT(DISTINCT)</strong><blockquote>
+<p>Conta quanti diversi dati ci sono
+Esempio: numero dei diversi paesi da cui vengono i clienti</p>
+</blockquote>
+</li>
+</ul>
+<pre><code class="language-SQL">SELECT COUNT(DISTINCT country) FROM customers;
+</code></pre>
+<hr />
+<h1 id="3-selezione-dati"><strong>3. Selezione Dati</strong></h1>
+<blockquote>
+<p>Per filtrare i dati in base a una condizione specifica usiamo la clausola WHERE</p>
+</blockquote>
+<pre><code class="language-SQL">--Il testo va tra &quot;&quot;
+SELECT * FROM customers WHERE city = 'London';
+
+--I valori numerici non vanno tra &quot;&quot;
+SELECT * FROM customers WHERE customer_id = 19;
+
+--Possiamo usare i vari operatori con la WHERE clause
+SELECT * FROM customers WHERE customer_id &gt; 80;
+</code></pre>
+<hr />
+<h1 id="4-ordinare-i-dati-in-ordine-crescente-o-decrescente"><strong>4. Ordinare i dati in ordine crescente o decrescente</strong></h1>
+<blockquote>
+<p><strong>ORDER BY</strong> per ordinare i risultati in ordine crescente o decrescente. 
+Di default è crescente per farlo in modo decrescente mettiamo DESC</p>
+</blockquote>
+<pre><code class="language-SQL">-- Crescente (Numeri)
+SELECT * FROM products ORDER BY price;
+
+-- Decrescente (Numeri)
+SELECT * FROM products ORDER BY price DESC;
+
+-- Ordine Alfabetico (Testo)
+SELECT * FROM products ORDER BY product_name;
+
+-- Ordine Non Alfabetico (Testo)
+SELECT * FROM products ORDER BY product_name DESC;
+</code></pre>
+<blockquote>
+<p>Clausola <strong>LIMIT</strong>
+Usato per limitare il numero di righe da ritornare</p>
+</blockquote>
+<pre><code class="language-SQL">SELECT * FROM customers LIMIT 20;
+</code></pre>
+<blockquote>
+<p>Clausola <strong>OFFSET</strong>
+Permette di decidere da che righe iniziare a ritornare le righe</p>
+</blockquote>
+<pre><code class="language-SQL">SELECT * FROM customers LIMIT 20 OFFSET 40;
+</code></pre>
+<hr />
+<h1 id="5-funzioni-integrate-per-filtrare"><strong>5. Funzioni Integrate per filtrare</strong></h1>
+<blockquote>
+<p><strong>MIN, MAX, COUNT, SUM, AVG</strong></p>
+</blockquote>
+<pre><code class="language-SQL">--MIN() ritorna il valore più basso della colonna selezionata
+SELECT MIN(price) FROM products;
+
+--MAX() ritorna il valore più alto della colonna selezionata
+SELECT MAX(price) FROM products;
+
+--QUANDO SI FA MIN() MAX() LA COLONNA CHE RITORNA SI CHIAMERA' max o min di default per dargli un nome usiamo AS
+
+SELECT MIN(price) AS lowest_price  
+FROM products;
+</code></pre>
+<blockquote>
+<p><strong>COUNT</strong>, ritorna il numero di righe che soddisfano i filtri inseriti o semplicemente senza filtri conta le righe</p>
+</blockquote>
+<pre><code class="language-SQL">--Conta quanti customer ci sono e ne stampa il numero
+SELECT COUNT(customer_id) FROM customers;
+
+--Conta quanti customer ci sono la cui città corrisponde a London
+SELECT COUNT(customer_id) FROM customers WHERE city = 'London';
+</code></pre>
+<blockquote>
+<p><strong>SUM</strong>, ritorna la somma numerica di una colonna con valori numerici</p>
+</blockquote>
+<pre><code class="language-SQL">SELECT SUM(quantity) FROM order_details;
+</code></pre>
+<blockquote>
+<p><strong>AVG</strong>, ritorna la media numerica di una colonna con valori numerici</p>
+</blockquote>
+<pre><code class="language-SQL">SELECT AVG(price) FROM products;
+
+--Per arrotondare a solo 2 numeri decimali
+SELECT AVG(price)::NUMERIC(10,2) FROM products; 
+</code></pre>
+<blockquote>
+<p><strong>LIKE</strong>, usato con l'operatore WHERE per cercare un preciso pattern in una colonna
+Il simbolo % rappresenta zero, uno o più caratteri
+Il simbolo _ rappresenta un singolo carattere
+<strong>LIKE E' CASE SENSITIVE</strong></p>
+</blockquote>
+<pre><code class="language-SQL">--Ritorna il nome dei customer il cui nome inizia con la lettera A
+SELECT * FROM customers WHERE customer_name LIKE 'A%';
+
+--Ritorna il nome dei customer il cui nome inizia ha al suo interno la lettera A
+SELECT * FROM customers WHERE customer_name LIKE '%A%';
+</code></pre>
+<blockquote>
+<p><strong>ILIKE</strong>, è la stessa roba di LIKE ma è CASE INSENSITIVE quindi cerca sia con lettere maiuscole o minuscole</p>
+</blockquote>
+<pre><code class="language-SQL">--Ritorna tutti i customer il cui nome contiene A oppure a
+SELECT * FROM customers WHERE customer_name ILIKE '%A%';
+
+--Ritorna tutti i customer il cui nome finisce con en
+SELECT * FROM customers WHERE customer_name LIKE '%en';
+</code></pre>
+<hr />
+<h1 id="6-controlli-in-base-a-stringhe"><strong>6. Controlli in base a stringhe</strong></h1>
+<blockquote>
+<p>IN, permette di specificare una lista di possibili valori per la clausola WHERE
+(Evita di concatenare più clausole OR)</p>
+</blockquote>
+<pre><code class="language-SQL">SELECT * FROM customers WHERE country IN ('Germany', 'France', 'UK');
+
+--Può anche essere utilizzato per prendere in input i risultati di una query
+
+--Ritorna tutti i customer che hanno un ordine nella tabella ordini
+SELECT * FROM customers WHERE customer_id IN (SELECT customer_id FROM orders);
+</code></pre>
+<blockquote>
+<p>NOTIN, permette di ritornare tutti i record che non sono in quella lista</p>
+</blockquote>
+<pre><code class="language-SQL">SELECT * FROM customers WHERE country NOT IN ('Germany', 'France', 'UK');
+
+--Può anche essere utilizzato per prendere in input i risultati di una query
+
+--Ritorna tutti i customer che NON hanno un ordine nella tabella ordini
+SELECT * FROM customers WHERE customer_id NOT IN (SELECT customer_id FROM orders);
+</code></pre>
+<blockquote>
+<p>BETWEEN, permette di vedere i valori in un range di valori che siano stringhe, numeri o date</p>
+</blockquote>
+<pre><code class="language-SQL">--Valori Numerici
+SELECT * FROM Products WHERE Price BETWEEN 10 AND 15;
+
+--Stringhe (ritorna i valori che in ordina alfabetico sono tra quei due valori)
+SELECT * FROM Products WHERE product_name BETWEEN 'Pavlova' AND 'Tofu';
+
+--Date (YY-MM-DD)
+SELECT * FROM orders WHERE order_date BETWEEN '2023-04-12' AND '2023-05-05';
+</code></pre>
+<blockquote>
+<p>AS, crea Alias per dare nomi temporanei che esistono solo per quella query</p>
+</blockquote>
+<pre><code class="language-SQL">SELECT customer_id AS id FROM customers;
+
+--Viene anche usato nella concatenazione per unire più colonne sotto una con un singolo nome
+
+--Proietta i nomi dei prodotti e le loro unità in una singola riga nella colonna che verrà chiamata product
+SELECT product_name || unit AS product
+FROM products;      
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

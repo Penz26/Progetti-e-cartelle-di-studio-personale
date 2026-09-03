@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Networking - Documentazione di Manuel</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/color-brewer.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">Documentazione di Manuel</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Git & GitHub</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../Comandi%20Git%20%26%20GitHub/Comandi%20di%20Git%20Basilari/" class="dropdown-item">Introduzione</a>
+</li>
+                                    
+<li>
+    <a href="../../../Comandi%20Git%20%26%20GitHub/Comandi%20di%20Git%20per%20collegarsi%20a%20GitHub/" class="dropdown-item">Connessioni a GitHub</a>
+</li>
+                                    
+<li>
+    <a href="../../../Comandi%20Git%20%26%20GitHub/Cos%27%C3%A8%20un%20file%20.gitignore/" class="dropdown-item">Gitignore</a>
+</li>
+                                    
+<li>
+    <a href="../../../Comandi%20Git%20%26%20GitHub/Git%20%26%20GitHub/" class="dropdown-item">Generale</a>
+</li>
+                                    
+<li>
+    <a href="../../../Comandi%20Git%20%26%20GitHub/Issues%20e%20Pull%20Requests/" class="dropdown-item">Issues e Pull Requests</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">ITS</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Cyber</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../ITS/Cyber/Nmap/Nmap%20Introduction/" class="dropdown-item">Nmap</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Ncat</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../ITS/Cyber/Ncat/Ncat%20Introduction/" class="dropdown-item">Introduzione</a>
+</li>
+            
+<li>
+    <a href="../../../ITS/Cyber/Ncat/Ncat%20Advanced/" class="dropdown-item">Avanzato</a>
+</li>
+    </ul>
+  </li>
+            
+<li>
+    <a href="../../../ITS/Cyber/Challenge%203%2C%20UDP%20Chat%20%28Red%20vs%20Blue%20vs%20Red%20vs%20Blue%29/" class="dropdown-item">Challenge UDP</a>
+</li>
+            
+<li>
+    <a href="../../../ITS/Cyber/RaspBerry%20Pi%20Server/" class="dropdown-item">Raspberry Pi</a>
+</li>
+            
+<li>
+    <a href="../../../ITS/Cyber/Vulnerabilit%C3%A0%20locali%20-%20Programmazione/" class="dropdown-item">Vulnerabilità</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">System</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Docker</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../ITS/System/Docker/Cos'è Docker.md" class="dropdown-item">Cos'è Docker</a>
+</li>
+            
+<li>
+    <a href="../../../ITS/System/Docker/Docker Compose.md" class="dropdown-item">Docker Compose</a>
+</li>
+            
+<li>
+    <a href="../../../ITS/System/Docker/DockerFile.md" class="dropdown-item">Dockerfile</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Linux</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../ITS/System/Linux/Comandi%20di%20Linux/" class="dropdown-item">Comandi Base</a>
+</li>
+            
+<li>
+    <a href="../../../ITS/System/Linux/Bash%20Scripting/" class="dropdown-item">Bash Scripting</a>
+</li>
+            
+<li>
+    <a href="../../../ITS/System/Linux/Bash%20Scripting%20Advanced/" class="dropdown-item">Bash Avanzato</a>
+</li>
+            
+<li>
+    <a href="../../../ITS/System/Linux/SSH/" class="dropdown-item">SSH</a>
+</li>
+            
+<li>
+    <a href="../../../ITS/System/Linux/FileTree/" class="dropdown-item">File Tree</a>
+</li>
+    </ul>
+  </li>
+            
+<li>
+    <a href="../../../ITS/System/Windows%20Server/Installazione%20Servizi%20%204%C2%B0%20e%205%C2%B0%20Slide/" class="dropdown-item">Windows Server</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">PostgreSQL</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../PostgreSQL/Introduzione%20a%20PostgreSQL/" class="dropdown-item">Introduzione</a>
+</li>
+                                    
+<li>
+    <a href="../../../PostgreSQL/Installazione/" class="dropdown-item">Installazione</a>
+</li>
+                                    
+<li>
+    <a href="../../../PostgreSQL/Inserimento%20Dati/" class="dropdown-item">Inserimento Dati</a>
+</li>
+                                    
+<li>
+    <a href="../../../PostgreSQL/Queries/" class="dropdown-item">Queries</a>
+</li>
+                                    
+<li>
+    <a href="../../../PostgreSQL/Joins/" class="dropdown-item">Joins</a>
+</li>
+                                    
+<li>
+    <a href="../../../PostgreSQL/pgAdmin%204/" class="dropdown-item">pgAdmin 4</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Altro</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../MkDocs & Mermaid.js.md" class="dropdown-item">Mermaid e MkDocs</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#networking" class="nav-link">Networking</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#come-operano-i-siti-web" class="nav-link">Come operano i Siti Web</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#da-cosa-sono-formati-i-siti-web" class="nav-link">Da cosa sono formati i siti web</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#html" class="nav-link">Html:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#javascript" class="nav-link">JavaScript</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#html-injection" class="nav-link">HTML Injection</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#load-balancing" class="nav-link">Load balancing</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#cdn-content-delivery-networks" class="nav-link">CDN (Content Delivery Networks)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#database" class="nav-link">Database</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#waf-web-application-firewall" class="nav-link">Waf (Web Application Firewall)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#static-vs-dynamic-content" class="nav-link">Static vs Dynamic Content</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#scripting-e-linguaggi-di-backend" class="nav-link">Scripting e linguaggi di Backend</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="networking">Networking</h1>
+<h1 id="come-operano-i-siti-web"><strong>Come operano i Siti Web</strong></h1>
+<blockquote>
+<p>Quando visitiamo un sito web il nostro browser fa una richiesta ad un web server chiedendo per informazioni riguardo la pagina che vogliamo visitare. Questo risponderà con i dati che il browser userà per mostrare la pagina.
+Un Web Server è un computer da qualche parte nel mondo che si occupa di risolvere le tue richieste.</p>
+<p>Ci sono 2 principali componenti di un sito web:
+1. Front-end (Lato Client) il modo in cui il browser visualizza il sito
+2. Back-end (Server Side) il server che processa le richieste e risponde con i dati che il browser usa per mostrare le informazioni.</p>
+</blockquote>
+<hr />
+<h1 id="da-cosa-sono-formati-i-siti-web"><strong>Da cosa sono formati i siti web</strong></h1>
+<blockquote>
+<p>I siti web sono creati usando:
+- HTML, per creare siti e definirne la struttura
+- CSS, per rendere il sito più bello aggiungendo opzioni di stile
+- Javascript, per implementare features interattive alla pagina</p>
+</blockquote>
+<h2 id="html"><strong>Html:</strong></h2>
+<blockquote>
+<p>HyperText Markup Language (HTML) è il linguaggio con cui i siti sono scritti. Gli elementi che compongono la pagina sono chiamati TAG e dicono al browser come mostrare il contenuto della pagina.</p>
+<p>Struttura tipica di una pagina:</p>
+</blockquote>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;, definisce che la pagina è un documento HTML5. Aiuta il browser a capire come interpretare la pagina
+&lt;html&gt; elemento di root, senza esso non funziona
+&lt;head&gt; contiene informazioni riguardo la pagina (es. titolo)
+&lt;body&gt; all'interno del body vengono messi tutto quello che deve essere visualizzato dall'utente
+&lt;h1&gt; Titoli
+&lt;p&gt; paragrafi
+
+Ce ne sono molti altri ecc...
+</code></pre>
+<blockquote>
+<p>I Tag possono anche contenere delle istruzioni per lo stile degli elementi
+p class="bold-text" , raggruppa degli elementi che avranno stesse configurazioni di stile
+img src="img/cat.jpg" , dice il path dell'immagine
+ecc...</p>
+</blockquote>
+<h2 id="javascript"><strong>JavaScript</strong></h2>
+<blockquote>
+<p>JavaScript è uno dei linguaggi di programmazione più popolari al mondo e permette alla pagina di diventare interattive.
+L'HTML è usato per creare la struttura mentre javascript viene usato per controllare le funzionalità della pagina. 
+JS può aggiornare dinamicamente la pagina in tempo reale.</p>
+<p>Javascript è aggiunto all'interno del codice della pagina aprendo il tag script e scriverlo direttamente lì, ma ciò crea molto disordine e si preferisce aprire il tag ed aggiungere src="path/dello/script"</p>
+<p>Esempi:</p>
+</blockquote>
+<pre><code class="language-JS">//Questo script trova un elemento nell'html con l'id demo e ne cambia il contenuto con quello dopo l'uguale
+document.getElementById(&quot;demo&quot;).innerHTML = &quot;Hack the Planet&quot;;
+
+//
+</code></pre>
+<hr />
+<h1 id="html-injection"><strong>HTML Injection</strong></h1>
+<blockquote>
+<p>L'html injection è una vulnerabilità che avviene quando input dell'utente non filtrato viene mostrato sulla pagina.</p>
+</blockquote>
+<p>![[html-injection.png]]</p>
+<blockquote>
+<p>La regola generale è non fidarsi mai di quello che l'utente possa inserire. 
+Per prevenirlo i dev dovrebbero sanitizzare tutto quello che l'utente inserisce prima di usarlo nella funzione JavaScript, in questo caso l'utente potrebbe rimuovere tag html.</p>
+</blockquote>
+<hr />
+<h1 id="load-balancing"><strong>Load balancing</strong></h1>
+<blockquote>
+<p>Quando il traffico di un sito web inizia ad essere abbastanza pesante o fa girare una web application che necessita di grande raggiungibilità un solo server web potrebbero essere poco.
+I bilanciatori di traffico (load balancers) ricevono la tua request e successivamente la mandano ad uno dei molteplici web server che esistono per quella task.. Usano diversi algoritmi che aiutano a decidere a che web server reinderizzare la richiesta.
+Esempi:
+<strong>round-robin:</strong> manda la request ad ogni web server a turno
+<strong>weighted:</strong> che controlla quante richieste stia gestendo ogni server e manda la richiesta a quello più  libero.</p>
+<p>I Load balancers inoltre effettuano dei controlli periodici ad ogni server per rassicurare che stiano girando correttamente, questi controlli sono chiamti <strong>health checks</strong>, se il balancer vede che un server non risponde smetterà di reinderizzare il traffico a quel server.</p>
+</blockquote>
+<h2 id="cdn-content-delivery-networks"><strong>CDN (Content Delivery Networks)</strong></h2>
+<blockquote>
+<p>Un CDN può essere un ottimo modo per tagliare traffico ad un sito molto visitato. Permette di hostare file statici dal tuo sito, come Javascript, Immagini, Video, ecc... e hostarli tra mille altri server nel mondo. Quando un utente fà una richiesta a uno di quei file, il CDN controlla dove sia il server più vicino e gli manda la richiesta.</p>
+</blockquote>
+<h2 id="database"><strong>Database</strong></h2>
+<blockquote>
+<p>Quasi sempre un sito ha bisogno di un modo per conservare informazioni dei loro utenti. I server web possono comunicare con i Database per conservare o richiamare dati da loro. Possono essere semplici file di testo o cluster di molteplici server che aiutano con velocità e resilienza.</p>
+</blockquote>
+<h2 id="waf-web-application-firewall"><strong>Waf (Web Application Firewall)</strong></h2>
+<blockquote>
+<p>Il WAF sta tra il server web e la richiesta dell'utente, la sua principale funzione è quella di proteggere il web server da tentativi di hacking o DOS (denial of service). Analizza la richiesta per attacchi comuni, se la richiesta è fatta da un vero browser o da un bot. Può anche controllare se un eccessiva quantità di richiesta siano fatte attraverso il <strong>rate limiting</strong>, che permetterà solo un determinato numero di richieste al secondo da un IP. Se una richiesta viene interpretata come un potenziale attacco non verrà passata al server.</p>
+</blockquote>
+<hr />
+<p># <strong>COS'E' UN WEB SERVER</strong></p>
+<blockquote>
+<p>Un server web è software che ascolta per connessioni in arrivo e dopo utilizza il protocollo HTTP per inviare il contenuto del sito al cliente (es. Apache, Nginx, NodeJs, ecc...). </p>
+<p>Un server web invia i file che sono contenuti nella <strong>root directory</strong>, che è definita nelle impostazioni del software.
+In Linux (/var/www/html)
+In Windows (C:\inetpub\wwwroot)
+Se per esempio si richiede il file https:\www.esempio.com/picture.jpg, questo manderebbe il file contenuto localmente nel server alla directory /var/www/html/picture.jpg</p>
+</blockquote>
+<p>## <strong>Virtual Hosts:</strong></p>
+<blockquote>
+<p>Un web server può hostare molteplici siti web con diversi nomi di dominio, per farlo usano i virtual hosts (configurazioni text-based nei file di configurazione).
+Il server Web controlla per l'hostname che viene richiesto dagli header della richiesta HTTP e lo fa combaciare con i suoi virtual hosts. Se ne trova uno che combacia lo mostra, altrimenti verrà mostrato quello di default.</p>
+<p>I Virtual Hosts possono avere diverse root directory sul disco.
+Esempio:
+one.com - /var/www/website_one (con all'interno i relativi file HTML, ec...)
+two.com - /var/www/website_two
+Non c'è un limite alla quantità di virtual host che si possono configurare</p>
+</blockquote>
+<hr />
+<h1 id="static-vs-dynamic-content"><strong>Static vs Dynamic Content</strong></h1>
+<blockquote>
+<p>Contenuto statico = contenuto che non cambia nulla.
+Immagini, javascript, CSS, HTML che non cambia. Sono file che sono direttamente serviti al client senza cambiamenti</p>
+<p>Contenuto Dinamico = contenuto che cambia in base alle varie richieste. Pagine che cambiano in base ad aggiornamenti, ricerche, ecc...
+Questo viene gestito dal backend.</p>
+</blockquote>
+<h2 id="scripting-e-linguaggi-di-backend"><strong>Scripting e linguaggi di Backend</strong></h2>
+<blockquote>
+<p>Questi linguaggi interagiscono con database, servizi esterni, processare dati dall'utente e molto altro. 
+Si può fare di tutto con essi.
+Esempi di linguaggi backend: PHP, Python, Ruby, NodeJS, Perl, ecc...</p>
+</blockquote></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js"></script>
+        <script src="../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

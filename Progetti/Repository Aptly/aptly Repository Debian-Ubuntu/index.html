@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Linux - Documentazione di Manuel</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/color-brewer.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">Documentazione di Manuel</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Git & GitHub</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../Comandi%20Git%20%26%20GitHub/Comandi%20di%20Git%20Basilari/" class="dropdown-item">Introduzione</a>
+</li>
+                                    
+<li>
+    <a href="../../../Comandi%20Git%20%26%20GitHub/Comandi%20di%20Git%20per%20collegarsi%20a%20GitHub/" class="dropdown-item">Connessioni a GitHub</a>
+</li>
+                                    
+<li>
+    <a href="../../../Comandi%20Git%20%26%20GitHub/Cos%27%C3%A8%20un%20file%20.gitignore/" class="dropdown-item">Gitignore</a>
+</li>
+                                    
+<li>
+    <a href="../../../Comandi%20Git%20%26%20GitHub/Git%20%26%20GitHub/" class="dropdown-item">Generale</a>
+</li>
+                                    
+<li>
+    <a href="../../../Comandi%20Git%20%26%20GitHub/Issues%20e%20Pull%20Requests/" class="dropdown-item">Issues e Pull Requests</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">ITS</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Cyber</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../ITS/Cyber/Nmap/Nmap%20Introduction/" class="dropdown-item">Nmap</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Ncat</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../ITS/Cyber/Ncat/Ncat%20Introduction/" class="dropdown-item">Introduzione</a>
+</li>
+            
+<li>
+    <a href="../../../ITS/Cyber/Ncat/Ncat%20Advanced/" class="dropdown-item">Avanzato</a>
+</li>
+    </ul>
+  </li>
+            
+<li>
+    <a href="../../../ITS/Cyber/Challenge%203%2C%20UDP%20Chat%20%28Red%20vs%20Blue%20vs%20Red%20vs%20Blue%29/" class="dropdown-item">Challenge UDP</a>
+</li>
+            
+<li>
+    <a href="../../../ITS/Cyber/RaspBerry%20Pi%20Server/" class="dropdown-item">Raspberry Pi</a>
+</li>
+            
+<li>
+    <a href="../../../ITS/Cyber/Vulnerabilit%C3%A0%20locali%20-%20Programmazione/" class="dropdown-item">Vulnerabilità</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">System</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Docker</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../ITS/System/Docker/Cos'è Docker.md" class="dropdown-item">Cos'è Docker</a>
+</li>
+            
+<li>
+    <a href="../../../ITS/System/Docker/Docker Compose.md" class="dropdown-item">Docker Compose</a>
+</li>
+            
+<li>
+    <a href="../../../ITS/System/Docker/DockerFile.md" class="dropdown-item">Dockerfile</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Linux</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../ITS/System/Linux/Comandi%20di%20Linux/" class="dropdown-item">Comandi Base</a>
+</li>
+            
+<li>
+    <a href="../../../ITS/System/Linux/Bash%20Scripting/" class="dropdown-item">Bash Scripting</a>
+</li>
+            
+<li>
+    <a href="../../../ITS/System/Linux/Bash%20Scripting%20Advanced/" class="dropdown-item">Bash Avanzato</a>
+</li>
+            
+<li>
+    <a href="../../../ITS/System/Linux/SSH/" class="dropdown-item">SSH</a>
+</li>
+            
+<li>
+    <a href="../../../ITS/System/Linux/FileTree/" class="dropdown-item">File Tree</a>
+</li>
+    </ul>
+  </li>
+            
+<li>
+    <a href="../../../ITS/System/Windows%20Server/Installazione%20Servizi%20%204%C2%B0%20e%205%C2%B0%20Slide/" class="dropdown-item">Windows Server</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">PostgreSQL</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../PostgreSQL/Introduzione%20a%20PostgreSQL/" class="dropdown-item">Introduzione</a>
+</li>
+                                    
+<li>
+    <a href="../../../PostgreSQL/Installazione/" class="dropdown-item">Installazione</a>
+</li>
+                                    
+<li>
+    <a href="../../../PostgreSQL/Inserimento%20Dati/" class="dropdown-item">Inserimento Dati</a>
+</li>
+                                    
+<li>
+    <a href="../../../PostgreSQL/Queries/" class="dropdown-item">Queries</a>
+</li>
+                                    
+<li>
+    <a href="../../../PostgreSQL/Joins/" class="dropdown-item">Joins</a>
+</li>
+                                    
+<li>
+    <a href="../../../PostgreSQL/pgAdmin%204/" class="dropdown-item">pgAdmin 4</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Altro</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../MkDocs & Mermaid.js.md" class="dropdown-item">Mermaid e MkDocs</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#linux" class="nav-link">Linux</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#che-cose-una-repository-debianubuntu" class="nav-link">Che cos'è una Repository Debian/Ubuntu?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#la-struttura" class="nav-link">La Struttura</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#file-allinterno" class="nav-link">File all'interno</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#sicurezza-dei-file-gpg-key" class="nav-link">Sicurezza dei file (GPG Key)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#trasformazione-del-software-in-pacchetti-debian" class="nav-link">Trasformazione del software in pacchetti Debian</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#come-possiamo-creare-la-nostra-repo" class="nav-link">Come possiamo creare la nostra Repo?</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#crezione-della-repo-con-la-sua-struttura-locale" class="nav-link">Crezione della repo con la sua struttura locale</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#campi-di-una-repository" class="nav-link">Campi di una repository</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#spiegazione-delle-flag" class="nav-link">Spiegazione delle flag</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#cosa-succede-alla-creazione-della-repository" class="nav-link">Cosa succede alla creazione della Repository</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#come-vedere-le-repo-esistenti" class="nav-link">Come vedere le repo esistenti</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#come-rendere-la-repo-pubblica-ed-accessibile" class="nav-link">Come rendere la repo pubblica ed accessibile:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#spiegazione-delle-flag_1" class="nav-link">Spiegazione delle flag</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#prima-pubblicazione" class="nav-link">Prima pubblicazione</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#aggiornamento-degli-snapshot" class="nav-link">Aggiornamento degli snapshot</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#creazione-dei-certificati-per-il-sito-nginx-e-i-client" class="nav-link">Creazione dei certificati per il sito Nginx e i client</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#configurazione-di-nginx-per-controllare-i-certificati" class="nav-link">Configurazione di Nginx per controllare i certificati:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#di-cosa-necessita-il-client-per-poter-usare-la-repository" class="nav-link">==Di cosa necessita il client per poter usare la repository==</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#installazione-della-chiave-gpg-della-repo-sul-client" class="nav-link">Installazione della chiave GPG della repo sul client</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#sul-server-aptly" class="nav-link">Sul server aptly</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#sul-client" class="nav-link">Sul client</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#installazione-del-certificato-della-ca-sui-client" class="nav-link">Installazione del certificato della CA sui client</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#trasferimento-del-certificato" class="nav-link">Trasferimento del certificato</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#creare-il-collegamento-mtls-tra-client-e-server" class="nav-link">Creare il collegamento mTLS tra client e server</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#aggiungere-la-repo-ad-apt" class="nav-link">Aggiungere la repo ad apt</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#ip-allow-list-e-basic-auth" class="nav-link">IP allow-list e basic auth</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#basic-auth-lato-server" class="nav-link">Basic-Auth Lato server</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#configurazione-nginx-completa" class="nav-link">Configurazione Nginx completa</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#basic-auth-lato-client" class="nav-link">Basic-Auth Lato client</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#integrazione-con-gitlab" class="nav-link">Integrazione con GitLab</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="linux">Linux</h1>
+<h1 id="che-cose-una-repository-debianubuntu"><strong>Che cos'è una Repository Debian/Ubuntu?</strong></h1>
+<blockquote>
+<p>Una repository in generale è il magazzino dove sono conservati tutti i software, programmi e gli aggiornamenti per un sistema operativo.
+Quando si prova ad installare un software su debian/ubuntu il nostro package manager funge da commesso che:
+- controlla che noi non abbiamo già questo software
+- controlla e aggiorna la lista degli indirizzi di dove trovare l'oggetto
+- contatta il server che ha il software (verifica che sia autentico con una chiave GPG) e scarica il pacchetto il formato .deb
+- successivamente lo passa al sistema che lo installa e configura le dipendenze necessarie.</p>
+</blockquote>
+<hr />
+<h1 id="la-struttura"><strong>La Struttura</strong></h1>
+<blockquote>
+<p>Una repository è semplicemente un server web (come Apache o nginx) che ospita una struttura di cartelle pubblica e ben definita.</p>
+<p>All'interno troveremo due cartelle principali:
+1. <strong>pool/:</strong> all'interno ci sono i file fisici dei programmi, ovvero i pacchetti .deb. Ogni lettera ha la sua sottocartella in cui ogni programma ha la sua sottocartella con le sue varie versioni disponibili.
+2. <strong>dists/:</strong> Contiene i file indice (metadati). Dice al package manager quali pacchetti sono disponibili, quali sono le loro versioni, le dipendeze e il percorso esatto per trovarli dentro <strong>pool/</strong>.</p>
+<p>Quando si esegue il comando:</p>
+</blockquote>
+<pre><code class="language-sh">sudo apt update
+</code></pre>
+<blockquote>
+<p>Non si fa altro che dire al package manager di scaricare la mappa aggiornata della cartella dists/</p>
+<p>Il sistema controlla i suoi file di configurazione locali (/etc/apt/sources.list.d) per vedere dove si trova il magazzino (URL del server)</p>
+<p>Su arch sarebbe un poco diverso (/etc/pacman.d/arch-mirrorlist) e non sono categorizzati in base alla lettera ma ci sono direttamente tutti i file all'interno ammassati</p>
+<p>Esempio organizzazione di una repository debina/ubuntu:</p>
+</blockquote>
+<p>![[repo_ubuntu.png]]</p>
+<blockquote>
+<p>pool/:
+![[pool.png]]</p>
+<p>dists/:
+![[dists.png]]</p>
+</blockquote>
+<hr />
+<h1 id="file-allinterno"><strong>File all'interno</strong></h1>
+<blockquote>
+<p>I pacchetti che scarichiamo da queste repositories non sono semplici eseguibili e sono sempre formati da 3 componenti fondamentali:</p>
+</blockquote>
+<ol>
+<li>
+<p><strong>I File del programma</strong></p>
+<blockquote>
+<p>I binari, i file di configurazione di default, le icone e la documentazione che verranno copiati nelle cartelle del sistema</p>
+</blockquote>
+</li>
+<li>
+<p><strong>I Metadati</strong></p>
+<blockquote>
+<p>Un file di testo che descrive il pacchetto. Nome, versione, pacchetto e l'elenco delle dipendenze </p>
+</blockquote>
+</li>
+<li>
+<p><strong>Script di manutenzione</strong></p>
+<blockquote>
+<p>Piccoli script che vengono eseguiti automaticamente prima o dopo l'installazione o la rimozione del pacchetto</p>
+</blockquote>
+</li>
+</ol>
+<hr />
+<h2 id="sicurezza-dei-file-gpg-key"><strong>Sicurezza dei file (GPG Key)</strong></h2>
+<blockquote>
+<p>Linux usa GPG (GNU Privacy Guard) che utilizza la crittografia asimmetrica.</p>
+<p><strong>Private Key:</strong>
+Serve a noi come amministratore per firmare il file di indice dei pacchetti (dists/)</p>
+<p><strong>Public key:</strong>
+Serve ai client per verificare che il timbro fatto con la chiave privata sia autentico</p>
+<p>Come generare la chiave GPG:</p>
+</blockquote>
+<pre><code class="language-sh">gpg --full-generate-key
+
+#Scegliere RSA, 4096 bit, scadenza a scelta (0 per non farla mai scadere), nome dell'organizzazione che sta creando la repository ed infine una passphrase per proteggerla
+</code></pre>
+<blockquote>
+<p>Vedere la chiave:</p>
+</blockquote>
+<pre><code class="language-sh">gpg --list-secret-keys --keyid-format LONG
+
+#La chiave sarà nella riga:
+sec rsa4096/ID-Chiave 2026-07-20
+</code></pre>
+<blockquote>
+<p>Esportare la chiave pubblica in un file di testo (sarà il file che distribuiamo ai client):</p>
+</blockquote>
+<pre><code class="language-sh">gpg --export --armor ID_Chiave &gt; my-repo-key.pub
+</code></pre>
+<hr />
+<h1 id="trasformazione-del-software-in-pacchetti-debian"><strong>Trasformazione del software in pacchetti Debian</strong></h1>
+<blockquote>
+<p>Nelle repositories aptly essendo basate su debian/Ubuntu i pacchetti dovranno essere in formato .deb per farlo useremo il tool <strong>dpkg-deb --build</strong></p>
+<p>Una volta finito di creare il software in sè dovremo creare questa struttura per far funzionare il comando:</p>
+</blockquote>
+<pre><code>nome-software_1.0/                #Nome cartella in cui il tool andrà a cercare
+|_DEBIAN/                         #Cartella speciale riservata per i metadati
+|       |_control                 #Info generali del file
+|
+|_usr/                            #Intero percorso in cui verrà installato il sw
+     |_local/
+            |_bin/
+                |_mio-script.sh
+</code></pre>
+<blockquote>
+<p>Il file control che contiene i metadati del pacchetto dovrà avere una struttura che segue questa:</p>
+</blockquote>
+<pre><code>Package: nome-software
+Version: 1.0.0
+Architecture: tra amd64/86 o arm64/86 (oppure all)
+Maintainer: Nome sviluppatore &lt;email&gt;
+Description: Descrizione di cosa fa il pacchetto
+</code></pre>
+<blockquote>
+<p>Ora creiamo il pacchetto .deb:</p>
+</blockquote>
+<pre><code class="language-sh">dpkg-deb --build nome-software_1.0 
+</code></pre>
+<blockquote>
+<p>Se non ci sono errori creerà un file chiamato nome-software_1.0.deb</p>
+</blockquote>
+<hr />
+<h1 id="come-possiamo-creare-la-nostra-repo"><strong>Come possiamo creare la nostra Repo?</strong></h1>
+<blockquote>
+<p>Dopo aver il timbro GPG installiamo il gestore delle repository aptly</p>
+</blockquote>
+<pre><code class="language-sh">sudo apt update &amp;&amp; sudo apt install aptly -y
+</code></pre>
+<h2 id="crezione-della-repo-con-la-sua-struttura-locale"><strong>Crezione della repo con la  sua struttura locale</strong></h2>
+<blockquote>
+<p>(nel DB di aptly) prima di operare:
+Questo comando aggiunge i metadati nel database interno (~/.aptly/db/)</p>
+<p>La configurazione di aptly risiede nel file ~/.aptly.conf, dove si possono specificare vari campi tra cui la directory in cui verranno salvati i dati al momento della pubblicazione.</p>
+</blockquote>
+<h2 id="campi-di-una-repository"><strong>Campi di una repository</strong></h2>
+<ol>
+<li><strong>comment</strong>: commento descrittivo della repository</li>
+<li><strong>distribution</strong>: distribuzione per cui sono stati compilati quei pacchetti</li>
+<li><strong>component</strong>: suddivisione interna a cui deve appartenere il pacchetto all' interno di una <strong>SEZIONE</strong> (es. main, stable, networking_script, configur_ation_scripts nome_software, )</li>
+<li><strong>prefix</strong>: prefisso sotto cui viene pubblicata una <strong>SEZIONE</strong> di pacchetti. Da pensare come un settore (web, finanza, system, development, ecc...) <blockquote>
+<p>[!IMPORTANT] Il prefix influenza l'URL a cui deve puntare il client</p>
+</blockquote>
+</li>
+</ol>
+<blockquote>
+<p>[!ATTENTION] Ogni coppia distribution-component deve avere la sua repo</p>
+</blockquote>
+<pre><code class="language-sh">aptly repo create -comment=&quot;Repository Interna Manuel Prod&quot; -distribution=&quot;noble&quot; -component=&quot;main&quot; nome-repo
+</code></pre>
+<h2 id="spiegazione-delle-flag"><strong>Spiegazione delle flag</strong></h2>
+<blockquote>
+<p><strong>- comment</strong> : descrizione della repo
+<strong>- distribution</strong>: release per cui sono compilati i pacchetti (servono come valori predefiniti)
+<strong>- main</strong>: sezione a cui appartengono i pacchetti                 (servono come valori predefiniti)</p>
+<p><strong>Aggiungere un file:</strong>
+Copia i file .deb in ~/.aptly/pool/</p>
+</blockquote>
+<pre><code class="language-sh">aptly repo add nome-repo /path/al/software_1.0_amd64.deb
+</code></pre>
+<h2 id="cosa-succede-alla-creazione-della-repository"><strong>Cosa succede alla creazione della Repository</strong></h2>
+<blockquote>
+<ol>
+<li>
+<p>Al momento della creazione Aptly crea un record nel suo database interno (.aptly/db) con i metadati della repository (Nome repo, distribuzione di default, componente di default)</p>
+</li>
+<li>
+<p>Quando inseriamo un pacchetto Aptly legge il file interno control ed estrae tutti i metadati.</p>
+</li>
+<li>Il file .deb viene copiato nella cartella centrale di archiviazione di aptly (.aptly/pool/m/mio-software)</li>
+<li>
+<p>Aptly crea una relazione nel suo database collegando l'ID del pacchetto alla repository</p>
+</li>
+<li>
+<p>Quando pubblichiamo il pacchetto Aptly genera la struttura di cartelle Debian all'interno della Web Root di Nginx (specificata nella configurazione del sito)</p>
+</li>
+<li>Genera il file Packages (contiene l'elenco completo di tutti i pacchetti disponibili con le relative versioni, dimensioni e hash)</li>
+<li>Genera il file Release (contiene i metadati della distribuzione)</li>
+<li>Firma il file Release (genera InRelease) </li>
+<li>Aptly crea un symlink dalla sua pool interna alla cartella pubblica (.aptly/pool ---&gt; .aptly/public/) </li>
+</ol>
+<p>Quando il client esegue apt update:
+- Scarica InRelease e ne verifica la firma GPG
+- Scarica Packages.gz per aggiornare la lista dei software disponibili
+- Scarica il file .deb via HTTPs con mTLS</p>
+</blockquote>
+<hr />
+<h2 id="come-vedere-le-repo-esistenti"><strong>Come vedere le repo esistenti</strong></h2>
+<blockquote>
+<p>Mostra tutte le repo esistenti</p>
+</blockquote>
+<pre><code class="language-shell">aptly repo list
+</code></pre>
+<blockquote>
+<p>Mostra le informazioni della repo con i pacchetti di quella repo in particolare</p>
+</blockquote>
+<pre><code class="language-shell">aptly repo show -with-packages Manuel-prod
+</code></pre>
+<hr />
+<h2 id="come-rendere-la-repo-pubblica-ed-accessibile"><strong>Come rendere la repo pubblica ed accessibile</strong>:</h2>
+<blockquote>
+<p>Ci sono 2 metodi
+- aptly publish repo , veloce ma senza tracciamento nel tempo
+- aptly publish snapshot, immutabile col tempo e rollback facile</p>
+<p>[!ATTENTION] Ogni prefix DEVE avere una pubblicazione</p>
+</blockquote>
+<h3 id="repo-normale"><strong>Repo normale</strong></h3>
+<blockquote>
+<p>Prima di tutto aggiungere il pacchetto alla repo</p>
+</blockquote>
+<pre><code class="language-shell">aptly repo add nome-repo /path/al/software_1.0_amd64.deb
+</code></pre>
+<blockquote>
+<p><strong>aptly publish repo</strong>
+Prende tutto il materiale nel database, genera la mappa e crea la repository reale nella cartella ~/.aptly/public/  (<strong>PER LA PRIMA VOLTA E BASTA</strong>)</p>
+</blockquote>
+<pre><code class="language-sh">aptly publish repo -gpg-key=&quot;ID-chiave-gpg&quot; -passphrase=&quot;password-repo&quot; -distribution=&quot;codename-distro&quot; -component=&quot;main&quot; nome-repo .
+</code></pre>
+<h2 id="spiegazione-delle-flag_1"><strong>Spiegazione delle flag</strong></h2>
+<blockquote>
+<p><strong>-gpg-key</strong>: ID (non intera chiave) della chiave GPG
+<strong>- passphrase</strong>: pasphrase che protegge la repo
+<strong>-distribution</strong>: distribuzione/release per cui sono stati compilati i pacchetti
+<strong>-component</strong>: a che sezione devono appartenere i file
+<strong>- .  :</strong> indica il prefisso sotto cui pubblicarla (il punto indica nell'indirizzo principale della repo <code>http://server-aptly/dists/...</code>.) </p>
+<p>Per aggiornare una pubblicazione esistente dopo aver aggiunto/rimosso nuovi pacchetti .deb:</p>
+</blockquote>
+<pre><code class="language-sh">aptly publish update -gpg-key=&quot;ID-chiave-gpg&quot; -passphrase=&quot;password-repo&quot; -distribution=&quot;noble&quot; .
+</code></pre>
+<hr />
+<h3 id="snapshot"><strong>Snapshot</strong></h3>
+<blockquote>
+<p>Prima di tutto aggiungere il pacchetto alla repo</p>
+</blockquote>
+<pre><code class="language-shell">aptly repo add nome-repo /path/al/software_1.0_amd64.deb
+</code></pre>
+<blockquote>
+<p>Creazione dello snapshot</p>
+</blockquote>
+<pre><code class="language-shell">#Creazione dello snapshot della repo DOPO aver aggiunto i file
+aptly snapshot create &lt;nome-snapshot&gt; from repo &lt;nome-repo&gt;
+
+#Vedere tutti gli snapshot che abbiamo fatto fino ad oggi
+aptly snapshot list
+</code></pre>
+<h2 id="prima-pubblicazione">Prima pubblicazione</h2>
+<blockquote>
+<p>Pubblicazione della repo con metodo snapshot (==<strong>PRIMA VOLTA E BASTA</strong>==):</p>
+</blockquote>
+<pre><code class="language-shell">aptly publish snapshot -gpg-key=&quot;ID-chiave&quot; -passphrase=&quot;passphrase&quot; -distribution=&quot;noble&quot; -component=&quot;main&quot; nome-snapshot internal
+</code></pre>
+<blockquote>
+<p><strong>-gpg-key</strong>: ID (non intera chiave) della chiave GPG
+<strong>- passphrase</strong>: pasphrase che protegge la repo
+<strong>-distribution</strong>: distribuzione/release per cui sono stati compilati i pacchetti
+<strong>-component</strong>: a che sezione devono appartenere i file
+<strong>- internal  :</strong> indica il prefisso sotto cui pubblicarla (il punto indica nell'indirizzo principale della repo <code>http://server-aptly/dists/...</code>., in questo caso <code>http://server-aptly/internal</code>) </p>
+</blockquote>
+<h2 id="aggiornamento-degli-snapshot">Aggiornamento degli snapshot</h2>
+<blockquote>
+<p>Aggiornamento della repo basata su snapshot </p>
+</blockquote>
+<pre><code class="language-shell">aptly publish switch -batch -gpg-key=&quot;ID-chiave&quot; -passphrase=&quot;&quot; noble internal &quot;nome-snapshot&quot;
+</code></pre>
+<blockquote>
+<ul>
+<li>aptly publish switch: prende una pubblicazione esistente la fa puntare ad un nuovo snapshot</li>
+<li>batch, dice a GPG di eseguire la firma in modo non interattivo</li>
+<li>gpg-key: specifica l'ID della chiave GPG da usare per firmare</li>
+<li>noble: distribuzione target della pubblicazione</li>
+<li>internal: è la sottocartella in cui vive il repository </li>
+<li>nome-snapshot: il nuovo snapshot appena creato che vogliamo pubblicare</li>
+</ul>
+</blockquote>
+<pre><code class="language-shell">aptly publish switch -gpg-key=&quot;deployer@azienda.local&quot; DISTRIBUTION PREFIX nome_snapshot
+</code></pre>
+<blockquote>
+<p>Una volta lanciata la pubblicazione/aggiornamento chiederà la passphrase che si ha usato per la chiave GPG.
+Una volta inserita darà come risultato questo messaggio:</p>
+</blockquote>
+<p>![[aptly-publish.png]]</p>
+<hr />
+<h1 id="creazione-dei-certificati-per-il-sito-nginx-e-i-client"><strong>Creazione dei certificati per il sito Nginx e i client</strong></h1>
+<blockquote>
+<p>Prima di creare i certificati del server web e del client bisogna creare la CA (interna per questo caso) che si preoccupa di rilasciare  e firmarei certificati sia per il server web che per il client.</p>
+<p>[!NOTE] Ricordarsi il campo SAN (Subject Alternative Name) al momento dell'inserimento dei dati del certificato.</p>
+<p>OpenSSL ti apre una procedura guidata nel terminale che ti chiede in sequenza:
+1. Country Name (2  lettere IT)
+2. State or Province Name (Mantova)
+3. Locality Name (Volta Mantovana) 
+4. Organization Name (es. Nome Azienda) 
+5. Organizational Unit Name (IT)
+6. Common Name (e.g. server FQDN or YOUR name) (nome del dominio oppure IP)
+7. Email Address</p>
+</blockquote>
+<hr />
+<ol>
+<li><strong>Creare la CA</strong></li>
+</ol>
+<pre><code class="language-sh">#Crea la firma con cui la CA firmerà i certificati 
+openssl genrsa -aes256 -out ca.key 4096 
+
+#Crea il certificato Root pubblico (il template su cui si dovranno basare gli altri)   
+openssl req -new -x509 -days 3650 -key ca.key -out ca.crt
+</code></pre>
+<ol>
+<li><strong>Certificato per il server web</strong></li>
+</ol>
+<pre><code class="language-sh">#Crea la chiave del server 
+openssl genrsa -out server.key 4096 
+
+#Usa la chiave di prima per creare la richiesta di certificato al CA
+openssl req -new -key server.key -out server.csr
+
+#Firma del certificato tramite la CA (genera anche il registro della ca, il file si chiamerà ca.srl)
+openssl x509 -req -days 365 -in server.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out server.crt
+</code></pre>
+<ol>
+<li><strong>Certificato per il client (Se si vuole abilitare la mutua autenticazione MTLS)</strong>
+   Dentro la cartella /etc/apt/certs/ del CLIENT </li>
+</ol>
+<pre><code class="language-sh">#Crea la chiave per il client
+openssl genrsa -out client.key 4096
+
+#Crea la richiesta di certificato al CA firmando con la chiave appena creata
+openssl req -new -key client.key -out client.csr
+
+#Firma del certificato del client con la chiave della CA
+openssl x509 -req -days 365 -in client.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out client.crt
+</code></pre>
+<hr />
+<h1 id="configurazione-di-nginx-per-controllare-i-certificati"><strong>Configurazione di Nginx per controllare  i certificati:</strong></h1>
+<blockquote>
+<p>Per comodità del percorso e ordine abbiamo spostato i certificati del server e della CA nella cartella /etc/nginx/ssl</p>
+</blockquote>
+<pre><code class="language-shell">server {
+    listen 443 ssl;
+    server_name 192.168.1.196;    #IP del server aptly oppure FQDN
+
+    # 1. Radice dei file (Punta alla cartella che contiene i file di Aptly)
+    root /var/www/apt-repo/public;
+    #index index.html;    di default va a cercare questo file se non lo trova fa vedere il contenuto della cartella
+
+    # 2. Configurazione SSL Standard (Il server dimostra chi è)
+    ssl_certificate     /etc/nginx/ssl/server.crt;
+    ssl_certificate_key /etc/nginx/ssl/server.key;
+
+    # 3. Configurazione mTLS (Il server pretende di sapere chi è il client)
+    ssl_client_certificate /etc/nginx/ssl/ca.crt; # La CA aziendale di cui Nginx si fida
+    ssl_verify_client      on;               # Forza la mutua autenticazione
+
+    # 4. Permetti il browsing delle cartelle (APT ne ha bisogno)
+    location / {
+        autoindex on;
+        try_files $uri $uri/ =404;
+    }
+}
+</code></pre>
+<blockquote>
+<p>[!NOTE] Se si vuole abilitare un autenticazione tramite IP o password ---&gt; [[#<strong>IP allow-list e basic auth</strong>]]</p>
+<p>Una volta finita la configurazione linkare/spostare/copiare il .conf ai siti abilitati:</p>
+</blockquote>
+<pre><code class="language-shell">ln -s /etc/nginx/sites-available/site.conf /etc/nginx/sites-enabled/.
+</code></pre>
+<blockquote>
+<p>Fare il check della sintassi:</p>
+</blockquote>
+<pre><code class="language-shell">nginx -t
+</code></pre>
+<blockquote>
+<p>Se la sintassi è ok allora fare il reload delle configurazioni:</p>
+</blockquote>
+<pre><code class="language-shell">systemctl reload nginx
+</code></pre>
+<hr />
+<h1 id="di-cosa-necessita-il-client-per-poter-usare-la-repository">==<strong><em>Di cosa necessita il client per poter usare la repository</em></strong>==</h1>
+<blockquote>
+<ol>
+<li><strong>Chiave GPG della repository</strong> [[#<strong>Installazione della chiave GPG della repo sul client</strong>]]</li>
+<li><strong>Certificato della CA</strong> [[#<strong>Installazione del certificato della CA sui client</strong>]]</li>
+<li><strong>Aggiungere la repository ad APT</strong> [[#<strong>Aggiungere la repo ad apt</strong>]]</li>
+<li><strong>Certificati del client</strong> [[#<strong>Creazione dei certificati per il sito Nginx e i client</strong>]]</li>
+<li><strong>Attivare il MTLS</strong> [[#<strong>Creare il collegamento mTLS tra client e server</strong>]]</li>
+<li><strong>Avere le credenziali per il Basic Auth</strong> [[#<strong>Basic-Auth Lato client</strong>]]</li>
+</ol>
+</blockquote>
+<hr />
+<h1 id="installazione-della-chiave-gpg-della-repo-sul-client"><strong>Installazione della chiave GPG della repo sul client</strong></h1>
+<blockquote>
+<p>Nelle nuove versioni di Ubuntu (dalla 22.04) il vecchio comando apt-key add è stato discontinuato per motivi di sicurezza.</p>
+<p>Ora le chiavi gpg non vengono aggiunte ad un unico grande file globale (/etc/apt/trusted.gpg) invece la singola chiave di una repository viene salvata nel proprio file in /etc/apt/keyrings/nome-repo.pub</p>
+</blockquote>
+<h2 id="sul-server-aptly"><strong>Sul server aptly</strong></h2>
+<blockquote>
+<p>Verificare che la chiave si presente:</p>
+</blockquote>
+<pre><code class="language-shell">gpg --list-keys
+</code></pre>
+<blockquote>
+<p>Esportare la chiave in formato ASCII/armored (leggbile) per poterla passare ad apt:</p>
+</blockquote>
+<pre><code class="language-shell">gpg --armor --export ID-chiave-gpg &gt; /tmp/nome-password.pub
+</code></pre>
+<blockquote>
+<p>Successivamente condividere la chiave al client tramite metodo personale (rsync/scp/ecc...)</p>
+</blockquote>
+<h2 id="sul-client"><strong>Sul client</strong></h2>
+<blockquote>
+<p>Spostare la chiave nel keyrings:</p>
+</blockquote>
+<pre><code class="language-shell">cp nome-password.pub /etc/apt/keyrings/manuel-repo.pub
+</code></pre>
+<blockquote>
+<p>Dare i giusti permessi:</p>
+</blockquote>
+<pre><code class="language-shell">chmod 644 /etc/apt/keyrings/manuel-repo.pub
+</code></pre>
+<hr />
+<h1 id="installazione-del-certificato-della-ca-sui-client"><strong>Installazione del certificato della CA sui client</strong></h1>
+<blockquote>
+<p>Per far sì che il client si possa sincronizzare con quella repo dobbiamo aggiungerlo alla lista delle repositories raggiungibili e dargli anche il certificato in modo che si possa fidare di questo</p>
+</blockquote>
+<h2 id="trasferimento-del-certificato"><strong>Trasferimento del certificato</strong></h2>
+<blockquote>
+<p>Copiare il certificato della CA aziendale sul client nella cartella:</p>
+</blockquote>
+<pre><code class="language-sh">cp ca.crt /usr/local/share/ca-certificates/ca-aziendale.crt
+</code></pre>
+<blockquote>
+<p>Aggiornare il database dei certificati fidati del sistema:</p>
+</blockquote>
+<pre><code class="language-shell">sudo update-ca-certificates
+</code></pre>
+<hr />
+<h1 id="creare-il-collegamento-mtls-tra-client-e-server"><strong>Creare il collegamento mTLS tra client e server</strong></h1>
+<blockquote>
+<p>Per far in modo che il server si fidi del client quest'ultimo deve mostrare il suo certificato e la chiave al server e verificare che il certificato della CA che mostra il server combaci con quello che ha.</p>
+<p>APT ha una directory dedicata ai suoi metodi da seguire in ordine (<strong>/etc/apt/apt.conf.d</strong>)
+Per farlo ci serve un file per apt che gli specifica la regola per il nostro client e connettersi al server con la nostra repo locale.</p>
+<p>In questo file specifichiamo cosa deve passare al momento della connessione con il server aptly
+- <strong>CAInfo</strong>, indica il path per il certificato della CA in modo che il client si possa fidare del server
+- <strong>SSLCert</strong>, indica il path per il proprio certificato in modo che il server si possa fidare
+- <strong>SLLKey</strong>, indica il path per la propria chiave in modo che il server si possa fidare
+Gli ultimi due forza i controlli</p>
+</blockquote>
+<pre><code class="language-shell">Acquire::https::IP/FQDN::CAInfo &quot;/usr/local/share/ca-certificates/ca.crt&quot;;
+Acquire::https::IP/FQDN::SSLCert &quot;/etc/apt/certs/repo-client.crt&quot;;
+Acquire::https::IP/FQDN::SSLKey &quot;/etc/apt/certs/repo-client.key&quot;;
+Acquire::https::IP/FQDN::Verify-Peer &quot;true&quot;;
+Acquire::https::IP/FQDN::Verify-Host &quot;true&quot;;
+</code></pre>
+<blockquote>
+<p>[!IMPORTANT] La chiave del client deve essere decifrata altrimenti apt non riesce a leggerla</p>
+<p>Decifrazione della chiave del client</p>
+</blockquote>
+<pre><code class="language-shell">cp /etc/apt/certs/repo-client.key /etc/apt/certs/repo-client.key.bak
+openssl rsa -in /etc/apt/certs/repo-client.key.bak -out /etc/apt/certs/repo-client.key
+</code></pre>
+<hr />
+<h1 id="aggiungere-la-repo-ad-apt"><strong>Aggiungere la repo ad apt</strong></h1>
+<blockquote>
+<p>In Debian/Ubuntu, le sorgenti personalizzate non si mettono nel file principale (/etc/apt/sources.list) ma si crea un file dedicato dentro la cartella /etc/apt/sources.list.d.</p>
+<p><strong>Prima il file era in formato .list ma Debian e Ubuntu hanno detto che questo formato dava problemi di sicurezza quini fino al 2029 sarà uttilizzabile una configurazione su una singola riga, ma successivamente bisgonerà passare ad un formato .sources</strong> </p>
+<p>Creazione del file all'interno della cartella personale:</p>
+</blockquote>
+<pre><code class="language-shell">sudo nano /etc/apt/sources.list.d/apt-repo.sources
+</code></pre>
+<blockquote>
+<p>Contenuto del file:</p>
+</blockquote>
+<pre><code class="language-shell">Types: deb
+URIs: https://192.168.1.196/prefix
+Suites: noble
+Components: main
+Signed-By: /etc/apt/keyrings/manuel-repo.pub
+</code></pre>
+<blockquote>
+<ul>
+<li>signed-by , indica dove si trova la chiave gpg della repo su questo pc (oppure su un url)</li>
+<li>https:// , indirizzo dove si trova la repo (sia IP che FQDN)</li>
+<li>noble, indica il codename (nome-versione) della distribuzione su cui si basa la repo aptly</li>
+<li>main, indica lo stato della repo e dei packages</li>
+</ul>
+</blockquote>
+<hr />
+<h1 id="ip-allow-list-e-basic-auth"><strong>IP allow-list e basic auth</strong></h1>
+<blockquote>
+<p>Per ora "basta" avere il certificato della CA che convalida quello che ci mostra il server, una chiave ed un certificato personale firmato dalla CA per entrare.
+Ora vogliamo mettere altri controlli sull' IP, e se questo non combacia ha un'ultima possibilità per autenticarsi grazie ad una password.</p>
+</blockquote>
+<pre><code class="language-mermaid.js">flowchart TD
+A[Server] &lt;--Scambio certificati--&gt; B[Client]
+B --&gt; C{I certificati corrispondono?}
+C --Sì--&gt;D{Rientra negli IP/Subnet Impostata?}
+C --No--&gt; E[X FUORI]
+D --Sì--&gt;F[Bene Entra Pure!]
+D --No--&gt;G{Conosce la password?}
+G --Sì--&gt;H[Ok non sei in sede, ma sappiamo che sei te!]
+G --No--&gt;I[Non sappiamo chi tu sia!]
+</code></pre>
+<h2 id="basic-auth-lato-server"><strong>Basic-Auth Lato server</strong></h2>
+<blockquote>
+<p>Per fare questa operazione dobbiamo scaricare dei pacchetti:</p>
+</blockquote>
+<pre><code class="language-shell">apt install apache2-utils
+</code></pre>
+<blockquote>
+<p>Creazione del file per il login con il nuovo comando:</p>
+</blockquote>
+<pre><code class="language-shell">htpasswd -c /path/in/cui/salvarla nome-user
+
+#Chiederà la password che si userà per il login
+</code></pre>
+<blockquote>
+<p>Configurazione Aggiornata del sito nginx <strong>SUL SERVER</strong> (/etc/nginx/sites-enabled/apt-repo.conf)</p>
+</blockquote>
+<h2 id="configurazione-nginx-completa"><strong>Configurazione Nginx completa</strong></h2>
+<pre><code class="language-shell">server {
+    listen 443 ssl;
+    server_name 192.168.1.196;
+
+    # 1. Radice dei file (Punta alla cartella pubblica di Aptly)
+    root /var/www/apt-repo/public;
+
+    # 2. Configurazione SSL Standard (Il server dimostra chi è)
+    ssl_certificate     /etc/nginx/ssl/server.crt;
+    ssl_certificate_key /etc/nginx/ssl/server.key;
+
+    # 3. Configurazione mTLS (Il server pretende di sapere chi è il client)
+    # La CA aziendale di cui Nginx si fida
+    ssl_client_certificate /etc/nginx/ssl/ca.crt; 
+    ssl_verify_client      on;                 # Forza la mutua autenticazione!
+
+    # 4. Controllo Accessi HTTP (IP Allowlist + Basic Auth)
+    location / {
+        # Regola di soddisfazione: basta passare l'IP OPPURE la password
+        satisfy any;
+
+        # --- IP Allowlist ---
+        allow 192.168.1.0/24;  # Consente tutta la subnet locale
+        allow 127.0.0.1;       # Consente il loopback del server stesso
+        deny all;              # Blocca tutti gli altri IP non esplicitati sopra
+
+        # --- Basic Authentication ---
+        auth_basic &quot;Accesso Riservato Repository Aptly&quot;;
+        auth_basic_user_file /etc/nginx/.htpasswd;
+
+        # --- Permetti il browsing delle cartelle per APT ---
+        autoindex on;
+        try_files $uri $uri/ =404;
+    }
+}
+</code></pre>
+<blockquote>
+<p>Ricaricare la configurazione del server nginx</p>
+</blockquote>
+<pre><code class="language-shell">systemctl reload nginx
+</code></pre>
+<hr />
+<h2 id="basic-auth-lato-client"><strong>Basic-Auth Lato client</strong></h2>
+<blockquote>
+<p>Sul client adesso dibbiamo dargli le credenziali che dovrà usare per l'autenticazione base 
+nel caso non rientra nella subnet/IP abilitati.</p>
+<p>Su Debian/Ubuntu c'è una directory creata proprio per questo scopo <strong>(/etc/apt/auth.conf.d)</strong>:</p>
+</blockquote>
+<pre><code class="language-shell">machine 192.168.1.196 login nome-utente password password_usata_per_.htpasswd
+</code></pre>
+<blockquote>
+<ul>
+<li>machine: identifica su che macchina queste credenziali possono esssere utilizzate</li>
+<li>login: va ad indicare il nome utente specificato al momento della creazione del file .htpasswd</li>
+<li>password: indica la password specificata per .htpasswd</li>
+</ul>
+</blockquote>
+<hr />
+<h1 id="integrazione-con-gitlab"><strong>Integrazione con GitLab</strong></h1>
+<p>[[Esempio pipeline per aptly]]</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js"></script>
+        <script src="../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

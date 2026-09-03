@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Nmap - Documentazione di Manuel</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/color-brewer.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">Documentazione di Manuel</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Git & GitHub</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../../Comandi%20Git%20%26%20GitHub/Comandi%20di%20Git%20Basilari/" class="dropdown-item">Introduzione</a>
+</li>
+                                    
+<li>
+    <a href="../../../../Comandi%20Git%20%26%20GitHub/Comandi%20di%20Git%20per%20collegarsi%20a%20GitHub/" class="dropdown-item">Connessioni a GitHub</a>
+</li>
+                                    
+<li>
+    <a href="../../../../Comandi%20Git%20%26%20GitHub/Cos%27%C3%A8%20un%20file%20.gitignore/" class="dropdown-item">Gitignore</a>
+</li>
+                                    
+<li>
+    <a href="../../../../Comandi%20Git%20%26%20GitHub/Git%20%26%20GitHub/" class="dropdown-item">Generale</a>
+</li>
+                                    
+<li>
+    <a href="../../../../Comandi%20Git%20%26%20GitHub/Issues%20e%20Pull%20Requests/" class="dropdown-item">Issues e Pull Requests</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">ITS</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Cyber</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Nmap</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Ncat</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../Ncat/Ncat%20Introduction/" class="dropdown-item">Introduzione</a>
+</li>
+            
+<li>
+    <a href="../../Ncat/Ncat%20Advanced/" class="dropdown-item">Avanzato</a>
+</li>
+    </ul>
+  </li>
+            
+<li>
+    <a href="../../Challenge%203%2C%20UDP%20Chat%20%28Red%20vs%20Blue%20vs%20Red%20vs%20Blue%29/" class="dropdown-item">Challenge UDP</a>
+</li>
+            
+<li>
+    <a href="../../RaspBerry%20Pi%20Server/" class="dropdown-item">Raspberry Pi</a>
+</li>
+            
+<li>
+    <a href="../../Vulnerabilit%C3%A0%20locali%20-%20Programmazione/" class="dropdown-item">Vulnerabilità</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">System</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Docker</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../System/Docker/Cos'è Docker.md" class="dropdown-item">Cos'è Docker</a>
+</li>
+            
+<li>
+    <a href="../../../System/Docker/Docker Compose.md" class="dropdown-item">Docker Compose</a>
+</li>
+            
+<li>
+    <a href="../../../System/Docker/DockerFile.md" class="dropdown-item">Dockerfile</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Linux</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../System/Linux/Comandi%20di%20Linux/" class="dropdown-item">Comandi Base</a>
+</li>
+            
+<li>
+    <a href="../../../System/Linux/Bash%20Scripting/" class="dropdown-item">Bash Scripting</a>
+</li>
+            
+<li>
+    <a href="../../../System/Linux/Bash%20Scripting%20Advanced/" class="dropdown-item">Bash Avanzato</a>
+</li>
+            
+<li>
+    <a href="../../../System/Linux/SSH/" class="dropdown-item">SSH</a>
+</li>
+            
+<li>
+    <a href="../../../System/Linux/FileTree/" class="dropdown-item">File Tree</a>
+</li>
+    </ul>
+  </li>
+            
+<li>
+    <a href="../../../System/Windows%20Server/Installazione%20Servizi%20%204%C2%B0%20e%205%C2%B0%20Slide/" class="dropdown-item">Windows Server</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">PostgreSQL</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../../PostgreSQL/Introduzione%20a%20PostgreSQL/" class="dropdown-item">Introduzione</a>
+</li>
+                                    
+<li>
+    <a href="../../../../PostgreSQL/Installazione/" class="dropdown-item">Installazione</a>
+</li>
+                                    
+<li>
+    <a href="../../../../PostgreSQL/Inserimento%20Dati/" class="dropdown-item">Inserimento Dati</a>
+</li>
+                                    
+<li>
+    <a href="../../../../PostgreSQL/Queries/" class="dropdown-item">Queries</a>
+</li>
+                                    
+<li>
+    <a href="../../../../PostgreSQL/Joins/" class="dropdown-item">Joins</a>
+</li>
+                                    
+<li>
+    <a href="../../../../PostgreSQL/pgAdmin%204/" class="dropdown-item">pgAdmin 4</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Altro</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../../MkDocs & Mermaid.js.md" class="dropdown-item">Mermaid e MkDocs</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../../../../Comandi%20Git%20%26%20GitHub/Issues%20e%20Pull%20Requests/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../../Ncat/Ncat%20Introduction/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#cybersecurity" class="nav-link">CyberSecurity</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#cos-e-nmap" class="nav-link">Cos' è Nmap?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#1-elencare-tutti-gli-host-di-una-determinate-rete" class="nav-link">1. Elencare tutti gli host di una determinate rete</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#2-vedere-effettivamente-quali-macchine-sono-online" class="nav-link">2. Vedere effettivamente quali macchine sono online</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#3-salvare-i-dati-delle-nostre-scan" class="nav-link">3. Salvare i dati delle nostre scan</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#4-vedere-che-porte-sono-aperte" class="nav-link">4. Vedere che porte sono aperte</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#5-scannerizzare-le-porte-tcp-e-udp-piu-usate" class="nav-link">5. Scannerizzare le porte TCP e UDP più usate</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#6-usare-degli-script-di-default-di-nmap" class="nav-link">6. Usare degli script di default di Nmap</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#7-usare-lo-script-vulners-per-vedere-che-vulnerabilita-ci-siano-sul-target" class="nav-link">7. Usare lo script vulners per vedere che vulnerabilità ci siano sul target</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="cybersecurity">CyberSecurity</h1>
+<h1 id="cos-e-nmap"><strong>Cos' è Nmap?</strong></h1>
+<blockquote>
+<p>Nmap è un software Open Source per l'esplorazione della rete che permette di rilevare macchine sulla rete, macchine online, porte aperte, servizi in esecuzione e relativi versioni assieme anche ad eventuali vulnerabilità.</p>
+</blockquote>
+<h1 id="1-elencare-tutti-gli-host-di-una-determinate-rete"><strong>1. Elencare tutti gli host di una determinate rete</strong></h1>
+<blockquote>
+<p>Non invia alcun pacchetto ai dispositivi ma parla solo con il server DNS
+Genera l'elenco degli IP della subnet con i relativi nomi HOST</p>
+</blockquote>
+<pre><code class="language-Shell">nmap -sL subnet_mask
+</code></pre>
+<h1 id="2-vedere-effettivamente-quali-macchine-sono-online"><strong>2. Vedere effettivamente quali macchine sono online</strong></h1>
+<blockquote>
+<p>Questo comando farà un <em>ping sweep</em> ovvero manderà contemporaneamente pacchetti ICMP Echo Request (ping) a una serie di indirizzi IP. Viene utilizzato per avere un idea della mappatura della rete</p>
+</blockquote>
+<pre><code class="language-Shell">nmap -sn --open subnet_mask
+
+#si possono escludere anche degli ip con --exclude
+nmap -sn --open subnet_mask --exclude 192.168.1.1
+
+#si può usare anche un file .txt per fargli cercare solo gli IP specificati al suo interno
+nmap -sn --open -iL iplist.txt
+</code></pre>
+<h1 id="3-salvare-i-dati-delle-nostre-scan"><strong>3. Salvare i dati delle nostre scan</strong></h1>
+<blockquote>
+<p>Una volta fatte le nostre scannerizzazioni possiamo salvare il loro output con delle semplici flag</p>
+</blockquote>
+<pre><code class="language-Shell">nmap -sn --open subnet_mask -oA output_scan
+#Questo comando farà la scannerizzazione dei dispositivi online sulla rete e salverà il suo output in tutte le versioni (A) ovvero .nmap (come si vede da linea di comando) .gnamp (formato &quot;greppabile&quot;) e .xml (un file di testo il cui contenuto è organizzato in modo da contenere dati strutturati che possomno essere interpretati da vari programmi)
+</code></pre>
+<h1 id="4-vedere-che-porte-sono-aperte"><strong>4. Vedere che porte sono aperte</strong></h1>
+<blockquote>
+<p>Con il prossimo comando potremmo vedere che porte ha aperte la macchina di cui specifichiamo l'ip o il nome sulla rete</p>
+</blockquote>
+<pre><code class="language-Shell">nmap nome_server #(oppure IP)
+
+#mentre se vogliamo anche la versione di cosa ci sia su quella porta usiamo:
+nmap -sV nome_server #(Oppure IP)
+
+#Per esempio se il server ha ssh aperto vedremo
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 9.6...
+
+</code></pre>
+<h1 id="5-scannerizzare-le-porte-tcp-e-udp-piu-usate"><strong>5. Scannerizzare le porte TCP e UDP più usate</strong></h1>
+<blockquote>
+<p>Ci sono delle flag che permettono di scannerizzare le porte TCP e UDP più utilizzate generalmente. 
+Vedremo anche come far sì che il computer ci parli mentre fa la scan e incrementare la velocità dello scan</p>
+</blockquote>
+<pre><code class="language-Shell">sudo nmap -sT -sU -sV -v -T5 nome_server
+
+#sT scannerizza per le porte TCP più comuni
+#sU scannerizza per le porte UDP più comuni (serve sudo per le UDP)
+#-v abilita il verbose (il computer ci parla mentre fa le cose)
+#-T setta la velocità della nostra scannerizzazione (di default è 3, più alto il numero più veloce è lo scan) T5 è il massimo
+
+</code></pre>
+<h1 id="6-usare-degli-script-di-default-di-nmap"><strong>6. Usare degli script di default di Nmap</strong></h1>
+<blockquote>
+<p>Nmap ci dà anche degli script che possiamo usare durante le nostre scan. Questi script sono all'interno di /usr/share/nmap/scripts</p>
+</blockquote>
+<pre><code class="language-Shell">#sC userà tutti i default script
+nmap -sV -sC -v nome_server
+
+#se vogliamo usare degli script nello specifico usiamo        --script
+nmap -sV --script=nome_script -p porta_da_attaccare nome_server
+</code></pre>
+<h1 id="7-usare-lo-script-vulners-per-vedere-che-vulnerabilita-ci-siano-sul-target"><strong>7. Usare lo script vulners per vedere che vulnerabilità ci siano sul target</strong></h1>
+<blockquote>
+<p>Dopo aver fatto lo scan con -sV il comando da in pasto il risultato al database di vulnerabilità di vulners.com che restituisce un elenco di vulnerabilità note associate a quelle specifiche versioni includendo un punteggio di gravità CVSS.</p>
+<p><strong>Molte volte però nmap dice che ci sono delle vulnerabilità solo basandosi sul numero della versione ufficiale del servizio, ma non controlla eventuali backporting eseguiti da sviluppatori per il proprio OS che corregono eventuali debolezze. 
+Ciò risulta in "falsi positivi" che quindi ti allertano di eventuali debolezze quando in verità è tutto a posto :)</strong></p>
+</blockquote>
+<pre><code class="language-Shell">#darà tutte le vulnerabilità trovate in base ai vari servizi
+nmap -sV --script=vulners -v nome_server
+
+#possiamo anche filtrare in base al valore CVSS (in questo caso dal 7 in su)
+nmap -sV --script=vulners --script-args mincvss=7.0 -v nome_server
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js"></script>
+        <script src="../../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

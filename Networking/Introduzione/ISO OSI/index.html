@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Networking - Documentazione di Manuel</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/color-brewer.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">Documentazione di Manuel</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Git & GitHub</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../Comandi%20Git%20%26%20GitHub/Comandi%20di%20Git%20Basilari/" class="dropdown-item">Introduzione</a>
+</li>
+                                    
+<li>
+    <a href="../../../Comandi%20Git%20%26%20GitHub/Comandi%20di%20Git%20per%20collegarsi%20a%20GitHub/" class="dropdown-item">Connessioni a GitHub</a>
+</li>
+                                    
+<li>
+    <a href="../../../Comandi%20Git%20%26%20GitHub/Cos%27%C3%A8%20un%20file%20.gitignore/" class="dropdown-item">Gitignore</a>
+</li>
+                                    
+<li>
+    <a href="../../../Comandi%20Git%20%26%20GitHub/Git%20%26%20GitHub/" class="dropdown-item">Generale</a>
+</li>
+                                    
+<li>
+    <a href="../../../Comandi%20Git%20%26%20GitHub/Issues%20e%20Pull%20Requests/" class="dropdown-item">Issues e Pull Requests</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">ITS</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Cyber</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../ITS/Cyber/Nmap/Nmap%20Introduction/" class="dropdown-item">Nmap</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Ncat</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../ITS/Cyber/Ncat/Ncat%20Introduction/" class="dropdown-item">Introduzione</a>
+</li>
+            
+<li>
+    <a href="../../../ITS/Cyber/Ncat/Ncat%20Advanced/" class="dropdown-item">Avanzato</a>
+</li>
+    </ul>
+  </li>
+            
+<li>
+    <a href="../../../ITS/Cyber/Challenge%203%2C%20UDP%20Chat%20%28Red%20vs%20Blue%20vs%20Red%20vs%20Blue%29/" class="dropdown-item">Challenge UDP</a>
+</li>
+            
+<li>
+    <a href="../../../ITS/Cyber/RaspBerry%20Pi%20Server/" class="dropdown-item">Raspberry Pi</a>
+</li>
+            
+<li>
+    <a href="../../../ITS/Cyber/Vulnerabilit%C3%A0%20locali%20-%20Programmazione/" class="dropdown-item">Vulnerabilità</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">System</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Docker</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../ITS/System/Docker/Cos'è Docker.md" class="dropdown-item">Cos'è Docker</a>
+</li>
+            
+<li>
+    <a href="../../../ITS/System/Docker/Docker Compose.md" class="dropdown-item">Docker Compose</a>
+</li>
+            
+<li>
+    <a href="../../../ITS/System/Docker/DockerFile.md" class="dropdown-item">Dockerfile</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Linux</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../ITS/System/Linux/Comandi%20di%20Linux/" class="dropdown-item">Comandi Base</a>
+</li>
+            
+<li>
+    <a href="../../../ITS/System/Linux/Bash%20Scripting/" class="dropdown-item">Bash Scripting</a>
+</li>
+            
+<li>
+    <a href="../../../ITS/System/Linux/Bash%20Scripting%20Advanced/" class="dropdown-item">Bash Avanzato</a>
+</li>
+            
+<li>
+    <a href="../../../ITS/System/Linux/SSH/" class="dropdown-item">SSH</a>
+</li>
+            
+<li>
+    <a href="../../../ITS/System/Linux/FileTree/" class="dropdown-item">File Tree</a>
+</li>
+    </ul>
+  </li>
+            
+<li>
+    <a href="../../../ITS/System/Windows%20Server/Installazione%20Servizi%20%204%C2%B0%20e%205%C2%B0%20Slide/" class="dropdown-item">Windows Server</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">PostgreSQL</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../PostgreSQL/Introduzione%20a%20PostgreSQL/" class="dropdown-item">Introduzione</a>
+</li>
+                                    
+<li>
+    <a href="../../../PostgreSQL/Installazione/" class="dropdown-item">Installazione</a>
+</li>
+                                    
+<li>
+    <a href="../../../PostgreSQL/Inserimento%20Dati/" class="dropdown-item">Inserimento Dati</a>
+</li>
+                                    
+<li>
+    <a href="../../../PostgreSQL/Queries/" class="dropdown-item">Queries</a>
+</li>
+                                    
+<li>
+    <a href="../../../PostgreSQL/Joins/" class="dropdown-item">Joins</a>
+</li>
+                                    
+<li>
+    <a href="../../../PostgreSQL/pgAdmin%204/" class="dropdown-item">pgAdmin 4</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Altro</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../MkDocs & Mermaid.js.md" class="dropdown-item">Mermaid e MkDocs</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#networking" class="nav-link">Networking</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#a-cosa-serve" class="nav-link">A cosa serve?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#layer" class="nav-link">Layer</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#layer-1-fisico" class="nav-link">Layer 1 (Fisico)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#layer-2-data-link" class="nav-link">Layer 2 (Data Link)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#layer-3-indirizzamento-ip-subnetting-routing-ip-forwarding" class="nav-link">Layer 3 (Indirizzamento IP, Subnetting, Routing, Ip Forwarding)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#layer-4-trasporto-tcp-udp-socket-e-porte" class="nav-link">Layer 4 (Trasporto TCP, UDP, Socket e Porte)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#layer-5-sessione" class="nav-link">Layer 5 (Sessione)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#layer-6-presentation" class="nav-link">Layer 6 (Presentation)</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#estrazione-data-di-scadenza-del-certificato" class="nav-link">Estrazione Data di Scadenza del certificato</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#certificati" class="nav-link">Certificati</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#layer-7-application-http-dns-ssh-e-log" class="nav-link">**Layer 7 (Application, HTTP, DNS, SSH e log)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="networking">Networking</h1>
+<h1 id="a-cosa-serve"><strong>A cosa serve?</strong></h1>
+<blockquote>
+<p>Il modello ISO OSI è una mappa concettuale a <strong>7 livelli</strong> creata per standardizzare le comunicazioni in rete. Serve a capire dove vivono i dati e chi gestisce cosa.</p>
+</blockquote>
+<h1 id="layer"><strong>Layer</strong></h1>
+<h2 id="layer-1-fisico">Layer 1 (Fisico)</h2>
+<blockquote>
+<p>Questo layer si occupa di gestire il mezzo trasmissivo (cavi e segnale). Riguarda lo stato elettrico/ottico del link, la velocità della scheda di rete, il duplex e la negoziazione Hardware.</p>
+<p><strong>Diagnostica Hardware e Stato fisico</strong>
+Interroghiamo i driver di rete e il chip PHY</p>
+</blockquote>
+<pre><code class="language-shell">ethtool eth0
+</code></pre>
+<blockquote>
+<p>Output importante:
+- Speed: X Mb/se Duplex: Full (prestazione del cavo)
+- Link Detected: yes (conferma che il cavo è collegato e c'è segnale elettrico/ottico)
+- Auto-negotation: on (indica se la velocità è stata negoziata automaticamente con lo switch)</p>
+</blockquote>
+<hr />
+<h2 id="layer-2-data-link">Layer 2 (Data Link)</h2>
+<blockquote>
+<p>A questo livello non esistono gli indirizzi IP. La comunicazione avviene esclusivamente tra nodi adiacenti nello stesso dominio di broadcast  utilizzando i <strong>MAC Address</strong></p>
+<p>Si occupa dell'incapsulamento dei pacchetti in Frame Ethernet, l' assegnazione dei MAC address, la gestione del MTU (Maximum Transmission Unit) e la risoluzion degli indirizzi tramite ARP.</p>
+<p><strong>Gestione Interfacce e Mac Address</strong>
+Visualizza lo stato dell'interfaccia</p>
+</blockquote>
+<pre><code class="language-shell">ip link show dev eth0
+</code></pre>
+<blockquote>
+<ul>
+<li><strong>state</strong> (indica lo stato dell'interfaccia UP=attiva DOWN=inattiva)</li>
+<li><strong>link/ether</strong> (indica il MAC address es. 52:54:00:12:34:56)</li>
+</ul>
+<p>Come gestire l'interfaccia via software:</p>
+</blockquote>
+<pre><code class="language-shell"># Attiva l'interfaccia (Administrative UP)
+sudo ip link set dev eth0 up
+
+# Disattiva l'interfaccia (Administrative DOWN)
+sudo ip link set dev eth0 down
+
+# Modifica il MAC address (utile per test di sicurezza o bypass filtri L2)
+sudo ip link set dev eth0 down
+sudo ip link set dev eth0 address 00:11:22:33:44:55
+sudo ip link set dev eth0 up
+
+# Modifica la MTU (es. per abilitare i Jumbo Frame in reti SAN/Storage)
+sudo ip link set dev eth0 mtu 9000
+</code></pre>
+<blockquote>
+<p>Usare anche dmesg per verificare errori:</p>
+</blockquote>
+<pre><code class="language-shell">sudo dmesg -T | grep -iE &quot;eth0|link&quot;
+</code></pre>
+<blockquote>
+<p>Per inviare un pacchetto a un host nella stessa LAN il kernel deve conoscere il suo MAC address</p>
+</blockquote>
+<pre><code class="language-shell">ip n
+</code></pre>
+<blockquote>
+<p><strong>Stati ARP</strong>:
+- <strong>REACHABLE</strong>: l'associazione IP&lt;-&gt;MAC è confermata e valida
+- <strong>STALE</strong>: l'associazione è valida ma non usata di recente, verrà verificata al prossimo traffico
+- <strong>FAILED</strong>: il kernel ha inviato richieste ARP ma nessuno ha risposto (nessun host con quell'IP  nella LAN)</p>
+<p>Invia frame ARP request direttamente all'IP specificato (verificare se un host è acceso anche se ha un firewall che blocca i ping)</p>
+</blockquote>
+<pre><code class="language-shell">arping -I eth0 192.168.x.x
+</code></pre>
+<hr />
+<h2 id="layer-3-indirizzamento-ip-subnetting-routing-ip-forwarding">Layer 3 (Indirizzamento IP, Subnetting, Routing, Ip Forwarding)</h2>
+<h3 id="indirizzo-ip-e-netmask"><strong>Indirizzo IP e NetMask:</strong></h3>
+<blockquote>
+<ul>
+<li>Indirizzo IP, identifica univocamente un dispositivo sulla rete.</li>
+<li>NetMask (/24) serbe al kernel per dividere la porzione di rete (192.168.1) da quella dell'host (.50). Quei 24 indica i numero di bit che identificano l'HOST</li>
+</ul>
+</blockquote>
+<h3 id="tabella-di-routing"><strong>Tabella di Routing:</strong></h3>
+<blockquote>
+<p>Quando un processo vuole inviare un pacchetto a un IP target il kernel legge la tabella per capire da quale interfaccia far uscire questo pacchetto e a quale Gateway deve consegnarlo.</p>
+</blockquote>
+<h3 id="default-gateway-00000"><strong>Default Gateway (0.0.0.0/0)</strong></h3>
+<blockquote>
+<p>Se la destinazione non appartiene a nessuna delle sottoreti note direttamente al server il pacchetto viene spedito qui. (Solitamente è il router della LAN)</p>
+</blockquote>
+<h3 id="ip-forwarding-netipv4ip_forward"><strong>IP Forwarding (net.ipv4.ip_forward</strong></h3>
+<blockquote>
+<p>Di default se una macchina Linux riceve un pacchetto che non è destinato a se stesso lo scarta. Abilitando invece l'IP forwarding gli diciamo di agire da Router, smistando i pacchetti tra interfaccie diverse. Di default è uguale a 0</p>
+</blockquote>
+<h3 id="gestione-indirizzi-ip"><strong>Gestione indirizzi IP</strong></h3>
+<pre><code class="language-shell">#Mostra tutti gli IP configurati con notazione CIDR
+ip -c addr show
+
+#Assegna un IP a un'interfaccia (modifica volatile)
+sudo ip addr add 10.0.0.5/24 dev ens33
+
+#Rimuove un IP da un'interfaccia
+sudo ip addr del 10.0.0.5/24 dev ens33
+</code></pre>
+<h3 id="ispezione-tabella-routing"><strong>Ispezione Tabella routing</strong></h3>
+<pre><code class="language-shell">#Visualizza la tabella di routing principale
+ip r
+</code></pre>
+<blockquote>
+<p>Output tipico del comando:</p>
+</blockquote>
+<pre><code class="language-shell">default via 10.30.20.1 dev wlan0 proto dhcp src 10.30.20.182 metric 600 
+10.30.20.0/24 dev wlan0 proto kernel scope link src 10.30.20.182 metric 600 
+172.17.0.0/16 dev docker0 proto kernel scope link src 172.17.0.1 linkdown 
+</code></pre>
+<blockquote>
+<p>Qualsiasi traffico non mappato va verso il default (10.30.20.1) tramite wlan0</p>
+<p>Aggiunta di una route</p>
+</blockquote>
+<pre><code class="language-shell"># Aggiungere una rotta statica verso una rete remota raggiungibile tramite un router interno
+sudo ip route add 172.16.0.0/16 via 192.168.1.254 dev ens33
+
+# Eliminare una rotta
+sudo ip route del 172.16.0.0/16
+</code></pre>
+<h3 id="ip-forwarding"><strong>Ip Forwarding</strong></h3>
+<pre><code class="language-shell"># Verificare lo stato attuale (0 = disabilitato, 1 = abilitato)
+sysctl net.ipv4.ip_forward
+
+# Abilitare temporaneamente in memoria
+sudo sysctl -w net.ipv4.ip_forward=1
+</code></pre>
+<h3 id="masquerading"><strong>Masquerading</strong></h3>
+<blockquote>
+<p>Quando un pacchetto di un client parte da una rete privata (10.0.0.50) e deve arrivare ad un router in un'altra rete oppure Internet il server linux deve riscrivere l'intestazione del pacchetto in uscita (Masquerade / Source NAT).
+Sostituisce l'IP del client (10.0.0.50) con il proprio IP (192.168.1.100) si segna l'operazione su un registro interno (CTT, Connection Tracking Table) ed invia il pacchetto.
+Al ritorno fa il contrario. Controlla il CTT e cambia il suo IP in quello del client.</p>
+</blockquote>
+<pre><code class="language-shell"># 1. Ispeziona le regole attive
+sudo nft list ruleset
+
+# 2. Crea la tabella e la catena NAT se non presenti
+sudo nft add table ip nat
+sudo nft add chain ip nat postrouting '{ type nat hook postrouting priority 100 ; }'
+
+# 3. Aggiunge la regola di Masquerade sull'interfaccia WAN
+sudo nft add rule ip nat postrouting oifname &quot;ens33&quot; masquerade
+</code></pre>
+<blockquote>
+<p>Spiegazione:
+- table ip nat: crea lo spazio per la manipolazione degli indirizzi
+- type nat hook postrouting: lega questa catena al momento esatto in cui il pacchetto sta per abbandonare la scheda di rete
+- priority 100: definisce l'ordine di esecuzione rispetto ad altre regole
+- oifname = "ens33": applica la regola solo ai pacchetti che escono tramite l'interfaccia ens33
+- masquerade: sovrascrive l'IP sorgente originale con l'IP attuale di ens33</p>
+</blockquote>
+<hr />
+<h2 id="layer-4-trasporto-tcp-udp-socket-e-porte"><strong>Layer 4 (Trasporto TCP, UDP, Socket e Porte)</strong></h2>
+<blockquote>
+<p>Il Layer 4 garantisce che il traffico arrivi allo specifico programma in esecuzione sul server (Process to Process)</p>
+</blockquote>
+<h3 id="port"><strong>Port</strong></h3>
+<blockquote>
+<p>Un numero compreso tra 1 e 65535 che identifica il punto di accesso per uno specifico servizio software
+- well-known: riservate ai servizi di sistema (ssh 22, http 80, ecc...)
+- registered: usate da servizi applicativi (PostgreSQL 5432, Redis 6379, Docker 2375)
+- Ephemeral: porte temporanee allocate dinamicamente dal kernel per le connessioni</p>
+</blockquote>
+<h3 id="socket"><strong>Socket</strong></h3>
+<blockquote>
+<p>E' l'astrazione del software definita dalla combinazione univoca di:</p>
+</blockquote>
+<pre><code class="language-shell">Socket = IP Sorgente : Porta Sorgente &lt;-&gt; IP Destinazione : Porta Destinazione + Protocollo
+</code></pre>
+<h3 id="tcp-e-udp"><strong>TCP e UDP</strong></h3>
+<blockquote>
+<p><strong>TCP</strong>
+Orientato alla connessione. Prima di scambiare dati esegue il 3-Way Handshake:
+1. Client --&gt; <strong>SYN</strong> (Voglio connettermi)
+2. Server --&gt; <strong>SYN ACK</strong> (RIcevuto sono pronto)
+3. Client --&gt; <strong>ACK</strong> (Mi connetto)</p>
+<p><strong>UDP</strong>
+Non orientato alla connessione. Nessun handshake, zero controlli o garanzia di consegna. Massima velocità</p>
+</blockquote>
+<h3 id="ispezione-dei-socket-attivi"><strong>Ispezione dei socket attivi</strong></h3>
+<pre><code class="language-shell">sudo ss -tulpn
+</code></pre>
+<blockquote>
+<ul>
+<li>t : protocollo TCP</li>
+<li>u: protoccolo UDP</li>
+<li>l: mostra soltanto i socket in ascolto</li>
+<li>p: mostra il nome del processo e il relativo PID</li>
+<li>n mostra i numeri di porta e IP</li>
+</ul>
+</blockquote>
+<hr />
+<h2 id="layer-5-sessione"><strong>Layer 5 (Sessione)</strong></h2>
+<blockquote>
+<p>Stabilisce, coordina, sincronizza e termina le sessioni di comunicazione logica tra due processi applicativi.</p>
+</blockquote>
+<h3 id="gestione-del-controllo-di-dialogo"><strong>Gestione del Controllo di Dialogo</strong></h3>
+<blockquote>
+<p>Stabilisce chi può trasmettere e quando all'interno della sessione applicativa</p>
+</blockquote>
+<h3 id="sincronizzazione-e-checkpointing"><strong>Sincronizzazione e Checkpointing</strong></h3>
+<blockquote>
+<p>Inserisce checkpoint all'interno di un flusso di dati prolungato.</p>
+</blockquote>
+<h3 id="session-persistence-e-recovery"><strong>Session Persistence e Recovery</strong></h3>
+<blockquote>
+<p>Mantiene valida l'identità dell'utente o la sessione di lavoro anche quando la connessione di rete cambia (di conseguenza anche l'IP) o va giù.</p>
+</blockquote>
+<h3 id="rpc-remote-protocol-call"><strong>RPC (Remote Protocol Call)</strong></h3>
+<blockquote>
+<p>Permette a un programma su un server di eseguire codice su un server remoto come se fosse una funzione locale.</p>
+</blockquote>
+<h3 id="strace"><strong>strace</strong></h3>
+<blockquote>
+<p>Permette di intercettare le chiamate che un processo fa al kernel per creare e gestire i file descriptor</p>
+</blockquote>
+<pre><code class="language-shell">sudo strace -e trace=network -p PID
+</code></pre>
+<blockquote>
+<p>Output tipico:</p>
+</blockquote>
+<pre><code class="language-shell">accept4(3, {sa_family=AF_INET, sin_port=htons(54321), sin_addr=inet_addr(&quot;192.168.1.10&quot;)}, ...) = 4
+</code></pre>
+<hr />
+<h1 id="layer-6-presentation"><strong>Layer 6 (Presentation)</strong></h1>
+<blockquote>
+<p>Garantisce che i dati siano formattati, decodificati e cifrati correttamente prima di essere consegnati all'applicazione</p>
+</blockquote>
+<h3 id="cifratura-e-decifratura-ssltls"><strong>Cifratura e Decifratura (SSL/TLS)</strong></h3>
+<blockquote>
+<p>Si assicura che il traffico sia cifrato e verifica l'identità del server tramite certificati digitali.</p>
+</blockquote>
+<h3 id="serializzazione-e-formattazione-dei-dati"><strong>Serializzazione e Formattazione dei dati</strong></h3>
+<blockquote>
+<p>Converte strutture dati in memoria in un formato idoneo alla trasmissione sulla rete e viceversa</p>
+</blockquote>
+<h3 id="handshake-tls"><strong>Handshake TLS</strong></h3>
+<p>![[tls_handshake.png.png]]</p>
+<h3 id="ispezione-del-handshake-tls-e-del-certificato"><strong>Ispezione del Handshake TLS e del certificato</strong></h3>
+<pre><code class="language-shell">openssl s_client -connect app.azienda.local:443 -servername app.azienda.local
+</code></pre>
+<h2 id="estrazione-data-di-scadenza-del-certificato"><strong>Estrazione Data di Scadenza del certificato</strong></h2>
+<pre><code class="language-shell">openssl s_client -connect app.azienda.local:443 -servername app.azienda.local 2&gt;/dev/null | openssl x509 -noout -dates
+</code></pre>
+<h2 id="certificati"><strong>Certificati</strong></h2>
+<blockquote>
+<p>Le CA fidate di sistema risiedono in directory standard:</p>
+<p>Debian/Ubuntu:</p>
+</blockquote>
+<pre><code class="language-shell">/etc/ssl/certs/
+</code></pre>
+<blockquote>
+<p>Mentre per le CA private che devono essere riconosciute SOLO da determinati sistemi dovranno depositare i loro certificati all'interno della directory:</p>
+</blockquote>
+<pre><code class="language-shell">/usr/local/share/ca-certificates/
+
+#E successivamente aggionare la lista delle CA di sistema con:
+sudo update-ca-certificates
+</code></pre>
+<blockquote>
+<p>Quando ci connettiamo ad un sito HTTPS:
+1. Il server invia al tuo client il proprio certificato di dominio insieme ai certifiacti intermedi (<strong>fullchain.pem</strong>)
+2. Il tuo sistema operativo risale la catena usandone le firme matematiche
+   - verifica che il certificato di dominio sia stato firmato dall'intermediate CA
+   - verifica che l'intermediate CA sia stato firmato dalla Root CA
+   - controlla che la Root CA è presente nel proprio store locale</p>
+</blockquote>
+<hr />
+<h2 id="layer-7-application-http-dns-ssh-e-log">**Layer 7 (Application, HTTP, DNS,  SSH e log)</h2>
+<blockquote>
+<p>Verifica la logica del software e la sinstassi del protocollo</p>
+<p>A questo layer i software comunicano utilizzando regole definite dalle rispettive RFC.</p>
+<p><strong>I 3 principali protocolli sono:</strong></p>
+</blockquote>
+<h3 id="1-http-https">1. **HTTP / HTTPs</h3>
+<blockquote>
+<p>Request - Response</p>
+<p><strong>REQUESTS:</strong>
+- GET (lettura)
+- POST (creazione)
+- PUT (modifica)
+- DELETE (elimazione)</p>
+<p><strong>RESPONSE</strong>
+- 2XX (OK)
+- 3XX (REINDIRIZZAMENTO)
+- 4XX (CLIENT ERROR)
+- 5XX (SERVER ERROR)</p>
+</blockquote>
+<h3 id="2-dns"><strong>2.  DNS</strong></h3>
+<blockquote>
+<ul>
+<li>Mappa i nomi leggibili dagli umani (FQDN) in indirizzi IP</li>
+<li>Lavora sulla porta 53</li>
+<li>Records:
+ A (IPv4)
+ AAAA (IPv6)
+ CNAME (Alias)
+ MX (Mail)
+ TXT (SPF/Verifiche)
+ PTR (Reverse DNS)</li>
+</ul>
+</blockquote>
+<h3 id="3-ssh"><strong>3. SSH</strong></h3>
+<blockquote>
+<p>Protocollo per l'accesso e la gestione remota sicura.
+Porta 22</p>
+</blockquote></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js"></script>
+        <script src="../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

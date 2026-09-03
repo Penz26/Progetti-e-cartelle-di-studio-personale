@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Bash Avanzato - Documentazione di Manuel</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/color-brewer.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">Documentazione di Manuel</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Git & GitHub</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../../Comandi%20Git%20%26%20GitHub/Comandi%20di%20Git%20Basilari/" class="dropdown-item">Introduzione</a>
+</li>
+                                    
+<li>
+    <a href="../../../../Comandi%20Git%20%26%20GitHub/Comandi%20di%20Git%20per%20collegarsi%20a%20GitHub/" class="dropdown-item">Connessioni a GitHub</a>
+</li>
+                                    
+<li>
+    <a href="../../../../Comandi%20Git%20%26%20GitHub/Cos%27%C3%A8%20un%20file%20.gitignore/" class="dropdown-item">Gitignore</a>
+</li>
+                                    
+<li>
+    <a href="../../../../Comandi%20Git%20%26%20GitHub/Git%20%26%20GitHub/" class="dropdown-item">Generale</a>
+</li>
+                                    
+<li>
+    <a href="../../../../Comandi%20Git%20%26%20GitHub/Issues%20e%20Pull%20Requests/" class="dropdown-item">Issues e Pull Requests</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">ITS</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Cyber</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../Cyber/Nmap/Nmap%20Introduction/" class="dropdown-item">Nmap</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Ncat</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../Cyber/Ncat/Ncat%20Introduction/" class="dropdown-item">Introduzione</a>
+</li>
+            
+<li>
+    <a href="../../../Cyber/Ncat/Ncat%20Advanced/" class="dropdown-item">Avanzato</a>
+</li>
+    </ul>
+  </li>
+            
+<li>
+    <a href="../../../Cyber/Challenge%203%2C%20UDP%20Chat%20%28Red%20vs%20Blue%20vs%20Red%20vs%20Blue%29/" class="dropdown-item">Challenge UDP</a>
+</li>
+            
+<li>
+    <a href="../../../Cyber/RaspBerry%20Pi%20Server/" class="dropdown-item">Raspberry Pi</a>
+</li>
+            
+<li>
+    <a href="../../../Cyber/Vulnerabilit%C3%A0%20locali%20-%20Programmazione/" class="dropdown-item">Vulnerabilità</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">System</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Docker</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../Docker/Cos'è Docker.md" class="dropdown-item">Cos'è Docker</a>
+</li>
+            
+<li>
+    <a href="../../Docker/Docker Compose.md" class="dropdown-item">Docker Compose</a>
+</li>
+            
+<li>
+    <a href="../../Docker/DockerFile.md" class="dropdown-item">Dockerfile</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Linux</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../Comandi%20di%20Linux/" class="dropdown-item">Comandi Base</a>
+</li>
+            
+<li>
+    <a href="../Bash%20Scripting/" class="dropdown-item">Bash Scripting</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Bash Avanzato</a>
+</li>
+            
+<li>
+    <a href="../SSH/" class="dropdown-item">SSH</a>
+</li>
+            
+<li>
+    <a href="../FileTree/" class="dropdown-item">File Tree</a>
+</li>
+    </ul>
+  </li>
+            
+<li>
+    <a href="../../Windows%20Server/Installazione%20Servizi%20%204%C2%B0%20e%205%C2%B0%20Slide/" class="dropdown-item">Windows Server</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">PostgreSQL</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../../PostgreSQL/Introduzione%20a%20PostgreSQL/" class="dropdown-item">Introduzione</a>
+</li>
+                                    
+<li>
+    <a href="../../../../PostgreSQL/Installazione/" class="dropdown-item">Installazione</a>
+</li>
+                                    
+<li>
+    <a href="../../../../PostgreSQL/Inserimento%20Dati/" class="dropdown-item">Inserimento Dati</a>
+</li>
+                                    
+<li>
+    <a href="../../../../PostgreSQL/Queries/" class="dropdown-item">Queries</a>
+</li>
+                                    
+<li>
+    <a href="../../../../PostgreSQL/Joins/" class="dropdown-item">Joins</a>
+</li>
+                                    
+<li>
+    <a href="../../../../PostgreSQL/pgAdmin%204/" class="dropdown-item">pgAdmin 4</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Altro</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../../MkDocs & Mermaid.js.md" class="dropdown-item">Mermaid e MkDocs</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../Bash%20Scripting/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../SSH/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#bash-linux" class="nav-link">Bash #Linux</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#1-script-per-copiare-un-file-sorgente-in-una-destinazione" class="nav-link">1. Script per copiare un file sorgente in una destinazione</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#best-practice-1" class="nav-link">Best Practice #1</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#best-practice-2" class="nav-link">Best Practice #2</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#best-practice-3" class="nav-link">Best Practice #3</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#best-practice-4" class="nav-link">Best Practice #4</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#best-practice-5" class="nav-link">Best Practice #5</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#best-practice-6" class="nav-link">Best Practice #6</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#best-practice-7" class="nav-link">Best Practice #7</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#best-practice-8" class="nav-link">Best Practice #8</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#best-practice-9" class="nav-link">Best Practice #9</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#best-practice-10" class="nav-link">Best Practice #10</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#best-pratice-11" class="nav-link">Best Pratice #11</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#best-practice-12" class="nav-link">Best Practice #12</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#best-practice-13" class="nav-link">Best Practice #13</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#best-practice-14" class="nav-link">Best practice #14</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#best-practice-15" class="nav-link">Best Practice #15</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#best-practice-16" class="nav-link">Best Practice #16</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#template-bash-riutilizzabile" class="nav-link">TEMPLATE BASH RIUTILIZZABILE</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="bash-linux">Bash #Linux</h1>
+<blockquote>
+<p>Lungo questi appunti partiremo da uno script minimale e lo arrichiremo passo dopo passo, introducendo ogni volta una best practice concreta, spiegata e immediatamente applicabile.</p>
+<p>Il risultato finale sarà un <strong>template standard riutilizzabile</strong> come punto di partenza per automazioni, task di sistema e utility interne.</p>
+</blockquote>
+<h2 id="1-script-per-copiare-un-file-sorgente-in-una-destinazione">1. Script per copiare un file sorgente in una destinazione</h2>
+<blockquote>
+<p>1.1. Versione fragile e incompleta</p>
+</blockquote>
+<pre><code class="language-Bash">#!/bin/bash
+cp $1 $2
+</code></pre>
+<blockquote>
+<p>In questa versione se mancano argomenti, se i percorsi contengono spazi, o se il file sorgente non esiste, il comportamento sarà imprevedibile o direttamente sbagliato. </p>
+</blockquote>
+<ul>
+<li><strong>Ecco i problemi concreti che sono da risolvere in questo script:</strong></li>
+<li><strong>Nessuna validazione dei parametri</strong>
+     &gt;Lo script non verifica quanti argomenti riceve, nè se sono del tipo corretto.</li>
+<li><strong>Nessuna gestione degli errori</strong>
+     &gt;File inesistenti, percorsi con spazi e permessi mancanti vengono ignorati silenziosamente</li>
+<li><strong>Nessun help o messaggi chiari</strong>
+     &gt;L'utente non sa come usare lo script nè cosa è andato storto in caso di fallimento</li>
+<li><strong>Nessun supporto per flag e opzioni</strong>
+     &gt;Non è previsto alcun meccanismo per opzioni come -h, -v o -f.</li>
+</ul>
+<h1 id="best-practice-1"><strong>Best Practice #1</strong></h1>
+<blockquote>
+<p><strong>Shebang Corretto e Portabile</strong></p>
+<p>La forma consigliata è /usr/bin/env bash, perchè cerca Bash nel PATH ed è più portabile rispetto a un path hardcoded come /bin/bash.</p>
+<p>Questa scelta rende lo script robusto su ambienti diversi: macOS, Ubuntu, Alpine, NixOS e qualsiasi distribuzione con Bash installato in un percorso non standard.</p>
+</blockquote>
+<pre><code class="language-Bash">#!/urs/bin/env bash
+cp $1 $2
+</code></pre>
+<blockquote>
+<p>[!IMPORTANT] Portabilità 
+Funziona su macOS, Linux e ambienti con Bash in posizioni non standard.</p>
+<p>[!IMPORTANT] Riutilizzabile
+Meno dipendenze dalla specifica dalla specifica distribuzione o piattaforma</p>
+</blockquote>
+<h1 id="best-practice-2"><strong>Best Practice #2</strong></h1>
+<blockquote>
+<p>Fail Fast con set -euo pipefail</p>
+<p>Una delle pratiche più diffuse in Bash è attivare set -euo pipefail all'inizio dello script per intercettare errori prima che si propaghino causando comportamenti imprevedibili.</p>
+</blockquote>
+<pre><code class="language-Bash">#!/usr/bin/env bash
+set -euo pipefail
+cp $1 $2
+</code></pre>
+<blockquote>
+<p>[!NOTE] -e
+Termina lo scipt se un qualsiasi comando fallisce (exit code diverso da 0).</p>
+<p>[!NOTE] -u 
+Segnala l'uso di variabili non definite, intercettando typo e variabili dimenticate</p>
+<p>[!NOTE] -o
+Introduce l'opzione pipefail</p>
+<p>[!NOTE] pipefail
+Fa fallire l'intera pipeline se fallisce un comando interno, non solo l'ultimo</p>
+<p>[!ATTENTION] IL SET -EUO PIPEFAIL NON FUNZIONA PER CONDIZIONI DENTRO DEGLI IF PERCHE' QUESTI SI COMPORTANO COME BLOCCHI DI CODICE AUTONOMI E GESTISCONO I PROPRI ERRORI MANUALMENTE exit 0 oppure exit 1</p>
+</blockquote>
+<hr />
+<h1 id="best-practice-3"><strong>Best Practice #3</strong></h1>
+<blockquote>
+<p>Quotare sempre le variabili</p>
+<p>In bash, quasi sempre le variabili vanno racchiuse tra doppi apici. Questo evita problemi con spazi, wildcard e word splitting, che sono tra le cause più frequenti di bug sileziosi.</p>
+</blockquote>
+<pre><code class="language-Bash">#!/usr/bin/env bash
+set -euo pipefail
+cp &quot;$1&quot; &quot;$2&quot;
+</code></pre>
+<blockquote>
+<p>Senza quoting un path come /temp/file con spazi.txt viene interpretato come tre argomenti separati. Questo causa errori oscuri difficili da diagnosticare.</p>
+</blockquote>
+<h1 id="best-practice-4"><strong>Best Practice #4</strong></h1>
+<blockquote>
+<p>Verificare il numero dei Parametri</p>
+<p>Prima di eseguire la logica principale, lo script deve verificare che l'utente abbia passato i parametri attesi. Questo migliora sia l'usabilità che la robustezza $# rappresenta il numero di argomenti ricevuti dallo script.</p>
+</blockquote>
+<pre><code class="language-Bash">#!usr/bin/env bash
+set -euo pipefail
+
+if [[$# -ne 2]]; then
+    echo &quot;Uso: $0 INPUT OUTPUT&quot; &gt;&amp;2
+    exit 1
+fi
+
+cp &quot;$1&quot; &quot;$2&quot;
+</code></pre>
+<blockquote>
+<p>[!NOTE]  <strong>Interrompi subito</strong>
+Se i parametri non sono corretti, non eseguire mai la logica principale. Meglio fallire presto e in modo chiaro.</p>
+<p>[!IMPORTANT] Scrivi su stderr
+I messaggi di errore vanno su stderr con &gt;&amp;2, non su stdout. Questo rispetta le convenzioni Unix e facilita il piping.</p>
+</blockquote>
+<h1 id="best-practice-5"><strong>Best Practice #5</strong></h1>
+<blockquote>
+<p>Separare la Logica dall' Help</p>
+<p>Invece di stampare messaggi inline separati nello script, conviene una funzione usage() dedicata. Questo rende il codice più pulito, facilita la manutenzione e garantisce coerenza tra tutti i punti in cui l'help viene mostrato.</p>
+</blockquote>
+<pre><code class="language-Bash">Usage(){
+cat &lt;&lt;'EOF'
+
+Uso:
+    nome_script [OPZIONI] [ARGOMENTI]
+
+Opzioni corte:
+    -h    Mostra questo help
+    -v    Verbose
+    ecc..
+
+Esempi:
+    ecc...
+
+EOF
+}
+</code></pre>
+<blockquote>
+<p>[!NOTE] <strong>Riuso</strong>
+La stessa funzione viene chiamata per errori di utilizzo che per l'opzione -h.</p>
+<p>[!NOTE] <strong>Manutentibilità</strong>
+Modificare il testo dell' help richiede un solo intervento, in un punto del codice</p>
+<p>[!NOTE] <strong>Leggibilità</strong>
+Il codice della logica principale rimane pulito e non intasato da testo di supporto</p>
+</blockquote>
+<hr />
+<h1 id="best-practice-6"><strong>Best Practice #6</strong></h1>
+<blockquote>
+<p>Help Inline e Uscita Corretta</p>
+<p>Uno script usabile dovrebbe supportare una modalità help esplicita con -h. L'help non è solo una comodità: è parte dell'interfaccia dello script.</p>
+</blockquote>
+<h3 id="exit-0"><strong>Exit 0</strong></h3>
+<blockquote>
+<p>Se l'utente chiede l'help l'exit code deve essere 0
+<strong>exit code 0</strong></p>
+</blockquote>
+<h3 id="exit-1"><strong>Exit 1</strong></h3>
+<blockquote>
+<p>Se l'help deve essere mostrato per un errore, l'exit code deve essere 1, affinchè gli script chiamanti lo rilevino</p>
+</blockquote>
+<hr />
+<h1 id="best-practice-7"><strong>Best Practice #7</strong></h1>
+<blockquote>
+<p><strong>Verificare che l'input Esista davvero</strong>*</p>
+<p>Non basta controllare il numero di parametri: bisogna anche validare ciò che i parametri rappresentano. Nel nostro caso, il file sorgente deve effettivamente esistere prima di tentare la copia.</p>
+<p>La validazione preventiva riduce gli errori ambigui e rende lo script molto più affidabile in produzione.</p>
+</blockquote>
+<pre><code class="language-Bash">[[ -f &quot;$1&quot; ]] || {
+    echo &quot;Errore: file sorgente non trovato: $1&quot; &gt;&amp;2
+exit 1
+}
+</code></pre>
+<blockquote>
+<p><strong>Principio generale:</strong>
+- File e directory
+  Esistenza, tipo e permessi di lettura/scrittura
+- Valori ammessi
+  Range numerici, formati attesi, liste di valori validi
+- Comandi esterni
+  Presenza nel sistema prima di invocarli </p>
+</blockquote>
+<hr />
+<h1 id="best-practice-8"><strong>Best Practice #8</strong></h1>
+<blockquote>
+<p>Introdurre funzioni di supporto log() e die()</p>
+<p>Quando uno script cresce, conviene incapsulare i comportamenti ricorrenti in funzioni riutilizzabili. Le più utili fin dall'inizio sono log() per i messaggi operativi e die() per i fallimenti fatali</p>
+<p>La funzione log() centralizza tutti i messaggi operativi con un timestamp coerente. Ogni messaggio va su stderr, lasciando stdout libero per l'output effettivo dello script</p>
+</blockquote>
+<pre><code class="language-Shell">log(){
+    printf '[%s]%s\n' &quot;$(date '+%Y-%m-%d %H:%M:%S')&quot; &quot;$*&quot; &gt;&amp;2)
+}
+</code></pre>
+<blockquote>
+<p>La funzione die() centralizza il fallimento: stampa un messaggio di errore formattato e termina con codice 1.
+Sostituisce tanti echo &gt;&2; exit 1 sparsi nel codice</p>
+</blockquote>
+<pre><code class="language-Shell">die(){
+    log &quot;ERRORE: $*&quot;
+    exit
+}
+</code></pre>
+<hr />
+<h1 id="best-practice-9"><strong>Best Practice #9</strong></h1>
+<blockquote>
+<p>Logging chiaro e Orientato all'operatività</p>
+<p>Uno script utile non dovrebbe limitarsi a fallire o riuscire: dovrebbe anche raccontare cosa sta facendo. Il logging è fondamentale per il troubleshooting, per i cron job e per le automazioni in ambienti di produzione.</p>
+</blockquote>
+<ol>
+<li>Avvio dello script</li>
+</ol>
+<pre><code class="language-Shell">log &quot;Avvio script $SCRIPT_NAME&quot;   
+</code></pre>
+<ol>
+<li>Parametri ricevuti</li>
+</ol>
+<pre><code class="language-Shell">log &quot;Sorgente: $src | Destinazione $dst&quot;   
+</code></pre>
+<ol>
+<li>Validazioni superate</li>
+</ol>
+<pre><code class="language-Shell">log &quot;File sorgente verificato&quot;   
+</code></pre>
+<ol>
+<li>Operazione eseguita</li>
+</ol>
+<pre><code class="language-Shell">log &quot;Copia completata con successo&quot;   
+</code></pre>
+<hr />
+<h1 id="best-practice-10"><strong>Best Practice #10</strong></h1>
+<blockquote>
+<p>Dare nomi espliciti ai Parametri</p>
+<p>Appena possibile, conviene assegnare i parametri posizionali a variabili con nomi descrittivi.
+Leggere src e dest è molto più chiaro di $1 e $2 in ogni riga della logica</p>
+</blockquote>
+<p>❌Prima</p>
+<pre><code class="language-Shell">[[ -f &quot;$1&quot; ]] || die &quot;Non trovato: $1&quot;
+cp &quot;$1&quot; &quot;$2&quot;
+log &quot;Copiato $1 in $2&quot;
+</code></pre>
+<p>✅Dopo</p>
+<pre><code class="language-Shell">src=&quot;$1&quot;
+dst=&quot;$2&quot;
+[[ -f &quot;$src&quot; ]] || die &quot;File sorgente non trovato: $src&quot;
+cp &quot;$src&quot; &quot;$dst&quot;
+log &quot;Copiato $src in $dst&quot;
+</code></pre>
+<hr />
+<h1 id="best-pratice-11"><strong>Best Pratice #11</strong></h1>
+<blockquote>
+<p>Gestire le opzioni con getopts</p>
+<p>Quando uno script inizia ad avere flag come -h, -v o -f è meglio usare getopts.
+getopts è il modo standard POSIX in Bash per gestire opzioni brevi in modo robusto</p>
+</blockquote>
+<pre><code class="language-Shell">verbose=0
+force=0
+while getopts &quot;:hvf&quot; opt; do
+    case &quot;$opt&quot; in
+        h) 
+            usage; 
+            exit 0 
+            ;;
+        v) 
+            verbose=1 
+            ;;
+        f) 
+            force=1 
+            ;;
+        :) 
+            die &quot;L'opzione -$OPTARG richiede un valore&quot; 
+            ;;
+        \?) 
+            die &quot;Opzione non valida: -$OPTARG&quot; 
+            ;;
+    esac
+done
+shift $((OPTIND - 1)
+</code></pre>
+<blockquote>
+<p>[!NOTE] <strong>Gestione errori integrata</strong>
+:) e \?) coprono opzioni con valore mancante e flag sconosciute</p>
+<p>[!NOTE] <strong>Pulizia finale</strong>
+shif$((OPTIND - 1)) rimuove le opzioni già elaborate, lasciando solo gli argomenti reali.</p>
+</blockquote>
+<hr />
+<h1 id="best-practice-12"><strong>Best Practice #12</strong></h1>
+<blockquote>
+<p>Modalità Verbose e Force</p>
+<p>Le flag non servono solo a "fare scena": servono a esporre comportamento controllato e prevedibile.
+-v è utile per il debug e il troubleshooting
+-f consente la sovrascrittura esplicita della destinazione, rendendo l'azione intenzionale e non accidentale</p>
+</blockquote>
+<pre><code class="language-Shell">if [[ $verbose -eq 1 ]]; then
+    set -x
+fi
+
+if [[ -e &quot;$dst&quot; &amp;&amp; $force -ne 1 ]]; then
+    die &quot;Il file di destinazione esiste già. Usa -f per sovrascrivere.&quot;
+fi
+</code></pre>
+<ul>
+<li>-v -Verbose<blockquote>
+<p>Attiva set -x per tracciare ogni comando eseguito. Indispensabile durante il debug di script complessi.</p>
+</blockquote>
+</li>
+<li>-f -Force<blockquote>
+<p>Permette di sovrascrivere un file di destinazione già esistente. Senza questo flag, lo script e conservativo per default: non sovrascrive mai silenziosamente</p>
+</blockquote>
+</li>
+<li>-h -Help<blockquote>
+<p>Mostra l'help e termina con exit(). Disponibile in qualsiasi momento, anche senza altri argomenti
+</p>
+</blockquote>
+</li>
+</ul>
+<hr />
+<h1 id="best-practice-13"><strong>Best Practice #13</strong></h1>
+<blockquote>
+<p>Verificare le Dipendenze Esterne</p>
+<p>Se uno script usa comandi estermi come jq, curl, awk, sed o rsync, deve verificarne la presenza prima di iniziare. Questo evita fallimenti a metà esecuzione, che possono lasciare il sistema in uno stato inconsistente.</p>
+</blockquote>
+<pre><code class="language-Shell">
+require_cmd() {
+    command -v &quot;$1&quot; &gt;/dev/null 2&gt;&amp;1 \
+    || die &quot;Comando mancante: $1&quot;
+}
+</code></pre>
+<blockquote>
+<p>Come usarla</p>
+</blockquote>
+<pre><code class="language-Shell"># All'inizio dello script, dopo le funzioni:
+require_cmd cp
+require_cmd rsync
+require_cmd jq
+</code></pre>
+<hr />
+<h1 id="best-practice-14"><strong>Best practice #14</strong></h1>
+<blockquote>
+<p>Cleanup e trap</p>
+<p>Se lo script crea file temporanei o risorse intermedie, dovrebbe ripulire sempre, anche in caso di errore o interruzione con Ctrl+C. Per questo trap è uno strumento fondamentale in qualsiasi script robusto.</p>
+<p>Questo script elimina la directory temporanea in $tmpdir se trova un errore tra quelli in trap</p>
+</blockquote>
+<pre><code class="language-Bash">#!/bin/bash
+set -e
+tmpdir=/tmp/myscript
+mkdir -p $tmpdir
+cleanup(){
+    echo &quot;Pulizia per segnale $1 (codice $?): rimuovo $tmpdir&quot;
+    rm -rf $tmpdir
+}
+trap 'cleanup INT' INT    #quando si chiude il programma con Ctrl+c
+trap 'cleanup ERR' ERR    #Scatta ogni volta che un comando all'interno dello script fallisce
+trap 'cleanup TERM' TERM  #quando si chiude con un kill generico
+trap 'cleanup EXIT' EXIT #EXIT quando muore naturalmente
+echo &quot;Test: sleep 20, Ctrl+c o kill $BASHPID&quot;  #restituisce il pid dello script
+sleep 20
+echo &quot;Fatto.&quot;
+</code></pre>
+<blockquote>
+<p>Se si usa un kill -9 (SIGKILL) muore subito (e male) e non finisce nemmeno il codice, quindi non cancella nemmeno la directory temporanea (/tmp/myscript)</p>
+</blockquote>
+<hr />
+<h1 id="best-practice-15"><strong>Best Practice #15</strong></h1>
+<blockquote>
+<p>Linting, Sintassi e Debug</p>
+<p>Scrivere bene Bash non significa solo far girare lo script: significa anche verificarlo con strumenti dedicati. ShellCheck è uno standard de facto nella community per individuare errori comuni e migliorare la qualità del codice Bash in modo sistematico.</p>
+<p><strong>Validazione sintattica</strong>
+Controlla la sintasi senza eseguire lo script.</p>
+</blockquote>
+<pre><code class="language-Shell">bash -n nome_script.sh
+</code></pre>
+<blockquote>
+<p><strong>Tracciamento esecuzione</strong>
+Stampa ogni comando prima di eseguirlo</p>
+</blockquote>
+<pre><code class="language-Shell">bash -x nome_script.sh
+</code></pre>
+<blockquote>
+<p><strong>Analisi Statistica</strong>
+Analizza approfonditamente lo script con suggerimenti su quoting, test, variabili e pattern pericolosi</p>
+</blockquote>
+<pre><code class="language-Shell">shellcheck script.sh
+</code></pre>
+<hr />
+<h1 id="best-practice-16"><strong>Best Practice #16</strong></h1>
+<blockquote>
+<p>IFS</p>
+<p>IFS è una variabile di shell che permette di ignorare gli spazi come separatori e usare come separatori solo quelli specificati</p>
+</blockquote>
+<pre><code class="language-Shell">IFS=$'\n\t'
+#Dice alla bash che come separatori solo l'invio \n e tab \t
+
+# Senza l' IFS NOMI=&quot;Mario Rossi&quot; for persona in $NOMI; do echo &quot;Ciao $persona&quot; done # Output: # Ciao Mario # Ciao Rossi (Sbagliato!) # Con IFS=$'\n\t' IFS=$'\n\t' for persona in $NOMI; do echo &quot;Ciao $persona&quot; done # Output: # Ciao Mario Rossi (Corretto!)
+</code></pre>
+<hr />
+<h1 id="template-bash-riutilizzabile"><strong>TEMPLATE BASH RIUTILIZZABILE</strong></h1>
+<pre><code class="language-Shell">#!/usr/bin/env bash
+set -euo pipefail
+
+SCRIPT_NAME=&quot;$(basename &quot;$0&quot;)&quot;
+
+usage() {
+    cat &lt;&amp;2; 
+}
+
+die() { 
+    log &quot;ERRORE: $*&quot;; 
+    exit 1; 
+}
+
+require_cmd() { 
+    command -v &quot;$1&quot; &gt;/dev/null 2&gt;&amp;1 || die &quot;Comando mancante: $1&quot;; 
+}
+
+cleanup() { : }
+
+main() {
+    local verbose=0 force=0
+    while getopts &quot;:hvf&quot; opt; do
+        case &quot;$opt&quot; in
+            h) 
+                usage; 
+                exit 0 ;;
+            v) 
+                verbose=1 ;;
+            f) 
+                force=1 ;;
+            :) 
+                die &quot;L'opzione -$OPTARG richiede un parametro&quot; ;;
+            \?) 
+                die &quot;Opzione non valida: -$OPTARG&quot; ;;
+        esac
+    done
+    shift $((OPTIND - 1))
+    [[ $# -eq 2 ]] || { usage; exit 1; }
+    local src=&quot;$1&quot; dst=&quot;$2&quot;
+    [[ $verbose -eq 1 ]] &amp;&amp; set -x
+    [[ -f &quot;$src&quot; ]] || die &quot;File sorgente non trovato: $src&quot;
+    [[ -e &quot;$dst&quot; &amp;&amp; $force -ne 1 ]] &amp;&amp; die &quot;Output esistente: $dst (usa -f)&quot;
+    require_cmd cp
+    log &quot;Copia da $src a $dst&quot;
+    cp &quot;$src&quot; &quot;$dst&quot;
+    log &quot;Operazione completata&quot;
+}
+
+trap cleanup EXIT
+main &quot;$@
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js"></script>
+        <script src="../../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

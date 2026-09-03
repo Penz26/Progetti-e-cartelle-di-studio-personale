@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>==07/07/2026== - Documentazione di Manuel</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/color-brewer.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Documentazione di Manuel</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Git & GitHub</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../Comandi%20Git%20%26%20GitHub/Comandi%20di%20Git%20Basilari/" class="dropdown-item">Introduzione</a>
+</li>
+                                    
+<li>
+    <a href="../Comandi%20Git%20%26%20GitHub/Comandi%20di%20Git%20per%20collegarsi%20a%20GitHub/" class="dropdown-item">Connessioni a GitHub</a>
+</li>
+                                    
+<li>
+    <a href="../Comandi%20Git%20%26%20GitHub/Cos%27%C3%A8%20un%20file%20.gitignore/" class="dropdown-item">Gitignore</a>
+</li>
+                                    
+<li>
+    <a href="../Comandi%20Git%20%26%20GitHub/Git%20%26%20GitHub/" class="dropdown-item">Generale</a>
+</li>
+                                    
+<li>
+    <a href="../Comandi%20Git%20%26%20GitHub/Issues%20e%20Pull%20Requests/" class="dropdown-item">Issues e Pull Requests</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">ITS</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Cyber</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../ITS/Cyber/Nmap/Nmap%20Introduction/" class="dropdown-item">Nmap</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Ncat</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../ITS/Cyber/Ncat/Ncat%20Introduction/" class="dropdown-item">Introduzione</a>
+</li>
+            
+<li>
+    <a href="../ITS/Cyber/Ncat/Ncat%20Advanced/" class="dropdown-item">Avanzato</a>
+</li>
+    </ul>
+  </li>
+            
+<li>
+    <a href="../ITS/Cyber/Challenge%203%2C%20UDP%20Chat%20%28Red%20vs%20Blue%20vs%20Red%20vs%20Blue%29/" class="dropdown-item">Challenge UDP</a>
+</li>
+            
+<li>
+    <a href="../ITS/Cyber/RaspBerry%20Pi%20Server/" class="dropdown-item">Raspberry Pi</a>
+</li>
+            
+<li>
+    <a href="../ITS/Cyber/Vulnerabilit%C3%A0%20locali%20-%20Programmazione/" class="dropdown-item">Vulnerabilità</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">System</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Docker</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../ITS/System/Docker/Cos'è Docker.md" class="dropdown-item">Cos'è Docker</a>
+</li>
+            
+<li>
+    <a href="../ITS/System/Docker/Docker Compose.md" class="dropdown-item">Docker Compose</a>
+</li>
+            
+<li>
+    <a href="../ITS/System/Docker/DockerFile.md" class="dropdown-item">Dockerfile</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Linux</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../ITS/System/Linux/Comandi%20di%20Linux/" class="dropdown-item">Comandi Base</a>
+</li>
+            
+<li>
+    <a href="../ITS/System/Linux/Bash%20Scripting/" class="dropdown-item">Bash Scripting</a>
+</li>
+            
+<li>
+    <a href="../ITS/System/Linux/Bash%20Scripting%20Advanced/" class="dropdown-item">Bash Avanzato</a>
+</li>
+            
+<li>
+    <a href="../ITS/System/Linux/SSH/" class="dropdown-item">SSH</a>
+</li>
+            
+<li>
+    <a href="../ITS/System/Linux/FileTree/" class="dropdown-item">File Tree</a>
+</li>
+    </ul>
+  </li>
+            
+<li>
+    <a href="../ITS/System/Windows%20Server/Installazione%20Servizi%20%204%C2%B0%20e%205%C2%B0%20Slide/" class="dropdown-item">Windows Server</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">PostgreSQL</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../PostgreSQL/Introduzione%20a%20PostgreSQL/" class="dropdown-item">Introduzione</a>
+</li>
+                                    
+<li>
+    <a href="../PostgreSQL/Installazione/" class="dropdown-item">Installazione</a>
+</li>
+                                    
+<li>
+    <a href="../PostgreSQL/Inserimento%20Dati/" class="dropdown-item">Inserimento Dati</a>
+</li>
+                                    
+<li>
+    <a href="../PostgreSQL/Queries/" class="dropdown-item">Queries</a>
+</li>
+                                    
+<li>
+    <a href="../PostgreSQL/Joins/" class="dropdown-item">Joins</a>
+</li>
+                                    
+<li>
+    <a href="../PostgreSQL/pgAdmin%204/" class="dropdown-item">pgAdmin 4</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Altro</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../MkDocs & Mermaid.js.md" class="dropdown-item">Mermaid e MkDocs</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#07072026" class="nav-link">==07/07/2026==</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#imap-e-smtp" class="nav-link">Imap e Smtp</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#samba-file-server" class="nav-link">Samba file server</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#ansible-ansible" class="nav-link">Ansible [[Ansible]]</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#08072026" class="nav-link">==08/07/2026==</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#aggiornamento-server-mail" class="nav-link">Aggiornamento server mail</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#pulizia-dischi-rigidi-e-ssd" class="nav-link">Pulizia dischi rigidi e ssd</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#shred-dischi-hdd" class="nav-link">shred (dischi HDD)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#dmesg" class="nav-link">dmesg</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#dd" class="nav-link">dd</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#09072026" class="nav-link">==09/07/2026==</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#fatta-procedura-esplicativa-di-come-applicare-la-firma-digitale-file-htm" class="nav-link">Fatta procedura esplicativa di come applicare la firma digitale (file .htm)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#aggiornamento-di-zone-dns-sul-server-dns-mynet" class="nav-link">Aggiornamento di Zone dns sul server dns Mynet</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#10072026" class="nav-link">==10/07/2026==</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#cose-ceph" class="nav-link">Cos'è Ceph:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1-osservazione" class="nav-link">1° Osservazione</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#2-osservazione" class="nav-link">2° Osservazione</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#13072026" class="nav-link">==13/07/2026==</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#configurazione-profilo-di-rete" class="nav-link">Configurazione profilo di rete</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#rinnovo-certificati-ssl-su-un-server-web-apache2" class="nav-link">Rinnovo certificati SSL su un server web apache2</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#14072026" class="nav-link">==14/07/2026==</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#task-per-il-futuro" class="nav-link">Task per il futuro:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#15072026" class="nav-link">==15/07/2026==</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#16072026" class="nav-link">==16/07/2026==</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#17072026" class="nav-link">==17/07/2026==</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#20072026" class="nav-link">==20/07/2026==</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#repository-debianubuntu-con-aptly-e-firme-gpg-aptly-repository-debian-ubuntu" class="nav-link">Repository Debian/Ubuntu con aptly e firme GPG [[aptly Repository Debian-Ubuntu]]</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#21072026" class="nav-link">==21/07/2026==</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#22072026" class="nav-link">==22/07/2026==</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#23072026" class="nav-link">==23/07/2026==</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#24072026" class="nav-link">==24/07/2026==</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#27072026" class="nav-link">==27/07/2026==</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#28072026" class="nav-link">==28/07/2026==</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#29072026" class="nav-link">==29/07/2026==</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#30072026" class="nav-link">==30/07/2026==</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#31072026" class="nav-link">==31/07/2026==</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#03082026" class="nav-link">==03/08/2026==</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#04082026" class="nav-link">==04/08/2026==</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#05082026" class="nav-link">==05/08/2026==</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#06082026" class="nav-link">==06/08/2026==</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#07082026" class="nav-link">==07/08/2026==</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#considerata-lintroduzione-di-una-ca-intermedia-per-non-esporre-la-root-ca-da-chiedere-al-ritorno-dalle-ferie" class="nav-link">&gt;Considerata l'introduzione di una CA intermedia per non esporre la Root CA (da chiedere al ritorno dalle ferie)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#19082026" class="nav-link">==19/08/2026==</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#20082026" class="nav-link">==20/08/2026==</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#21082026" class="nav-link">==21/08/2026==</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#24082026" class="nav-link">==24/08/2026==</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#25082026" class="nav-link">==25/08/2026==</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#26082026" class="nav-link">==26/08/2026==</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#27082026" class="nav-link">==27/08/2026==</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#28082026" class="nav-link">==28/08/2026==</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#31082026" class="nav-link">==31/08/2026==</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#01092026" class="nav-link">==01/09/2026==</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#02092026" class="nav-link">==02/09/2026==</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="07072026">==<strong><em>07/07/2026</em></strong>==</h1>
+<h2 id="imap-e-smtp">Imap e Smtp</h2>
+<blockquote>
+<p>Imap (Internet Message Access Protocol):
+protocollo per gestire la ricezione e la sincronizzazione della posta su più dispositivi</p>
+<p>Smtp (Simple Mail Transfer Protocol):
+protocollo standard utilizzato dai client di posta per inviare</p>
+</blockquote>
+<h2 id="samba-file-server">Samba file server</h2>
+<blockquote>
+<p>Samba è un software open source che permette di condividere file e stampanti all'interno di una stessa rete</p>
+</blockquote>
+<h2 id="ansible-ansible">Ansible [[Ansible]]</h2>
+<blockquote>
+<p>Ansible è un tool di automazione IT open source che semplifica la configurazione dei server, il deployment delle applicazione e la gestione dell'infrastruttura.</p>
+<p>Sulla macchina principale (nodo) risiede il software mentre le macchine remote non necessitano di agenti dedicati. La comunicazione avviene tramite canali sicuri e standard come SSH.</p>
+<p>Tramite i <strong>playbook</strong> Ansible stabilisce lo stato desiderato dell'infrastruttura. E' idempotente, ovvero ripete l'azione solo se necessario per evitare modifiche accidentali o indesiderate.</p>
+</blockquote>
+<ul>
+<li>inventario</li>
+<li>playbook</li>
+<li>ruoli</li>
+</ul>
+<hr />
+<h1 id="08072026">==<strong><em>08/07/2026</em></strong>==</h1>
+<h2 id="aggiornamento-server-mail">Aggiornamento server mail</h2>
+<blockquote>
+<p>E' stata rilasciata una nuova versione di un client web  che patcha determinate vulnerabilità</p>
+</blockquote>
+<ol>
+<li>Controllare le CVE e cosa effettivamente veniva fixato</li>
+<li>Entrati ssh sulla vm con il servermail</li>
+<li>controllata versione installata e su cosa si girasse e su che webserver (apache o ngnix) sudo apt policy nome_pacchetto</li>
+<li>Entrati nelle configurazione /etc/nginx/sites-enabled che ci diceva il path dove sono contenuti il software</li>
+<li>Scaricato ed estratto il pacchetto</li>
+<li>FATTO BACKUP dell'attuale database e dei file della versione precedente del software</li>
+</ol>
+<pre><code class="language-sh">   pg_dump nome_database &gt; path/file/di/salvataggio
+   stessa roba per altri db
+
+   --- Oppure se fosse stato un altro DB ci sarebbero comandi come: ---
+   mysqldump
+
+   cp -Ra html html_1.6.16
+</code></pre>
+<ol>
+<li>Controllare che sia andato tutto liscio</li>
+</ol>
+<h2 id="pulizia-dischi-rigidi-e-ssd"><strong>Pulizia dischi rigidi e ssd</strong></h2>
+<h2 id="shred-dischi-hdd"><strong>shred (dischi HDD)</strong></h2>
+<blockquote>
+<p>Sovrascrive il disco più volte con dati casuali per rendere impossibile il recupero magnetico ed infine scrive una passata finale di zeri per nascondere il processo</p>
+</blockquote>
+<pre><code class="language-sh">sudo shred -v -n 3 -z /dev/sdX
+-v: verbose
+-n 3: esegue 3 passaggi di sovrascrittura con dati casuali
+-z: esegue un ultima passata scrivendo solo zeri
+/dev/sdX: HDD di cui eseguire la sovrascrittura
+</code></pre>
+<p><strong>blkdiscard (SSD)</strong></p>
+<blockquote>
+<p>Ripulisce velocemente senza passare dai controller. Questo comando invia un segnale TRIM a ogni blocco del disco dicendo al controller che tutte le celle sono vuote. In questo modo (visto che blkdiscard non esegue cicli di scrittura) preserviamo anche l'integrità dei dischi</p>
+</blockquote>
+<pre><code class="language-sh">sudo blkdiscard -v /dev/sdX
+</code></pre>
+<h2 id="dmesg"><strong>dmesg</strong></h2>
+<blockquote>
+<p>Legge le chiamate del kernel</p>
+</blockquote>
+<h2 id="dd"><strong>dd</strong></h2>
+<blockquote>
+<p>Riempe l'intero disco di zeri</p>
+</blockquote>
+<pre><code class="language-sh">sudo dd if=/dev/zero of=/dev/sdX bs=4M status=progress
+
+if=/dev/zero : #la sorgente dei dati
+of=/dev/sdX : #il disco di destinazione
+bs=4M : #scrive in blocchi da 4 Megabyte per velocizzare il processo
+status=progress : #mostra la velocità e il tempo rimanente
+</code></pre>
+<blockquote>
+<p>Può anche essere usato per flashare delle  ISO su una chiavetta</p>
+</blockquote>
+<pre><code class="language-sh">sudo dd if=percorso/file.iso of=/dev/sdX bs=4M status=progress conv=fdatasync
+
+if=percorso/file.iso : #è la sorgente (il file ISO che si ha scaricato)
+of=/dev/sdX #la destinazione (chiavetta USB)
+bs=4M #velocità di scrittura
+status=progress #mostra in tempo reale quanti dati sono stati scritti e la velocità di trasferimento
+conv=fdatasync : #costringe linux a svuotare la cache e scrivere fisicamente l'ultimo bit prima di chiudere il comando
+</code></pre>
+<hr />
+<h1 id="09072026">==<strong><em>09/07/2026</em></strong>==</h1>
+<p>dns autoritativi, record dns, tipi di dns</p>
+<p>generari chiavi ssh, usare passphrase per la chiave per proteggerla</p>
+<h2 id="fatta-procedura-esplicativa-di-come-applicare-la-firma-digitale-file-htm">Fatta procedura esplicativa di come applicare la firma digitale (file .htm)</h2>
+<blockquote>
+<ol>
+<li>Entrato con remmina in una VM Windows10 per fare le prove con Outlook.</li>
+<li>Scaricato il file in estensione .htm della firma digitale dell'azienda</li>
+<li>Inserito il file nella cartella "%AppData%\Microsoft\Signatures\"</li>
+<li>Andare in File, Options, Mail, SIgnatures, e mettere come firma di ricezione e risposta</li>
+</ol>
+</blockquote>
+<h2 id="aggiornamento-di-zone-dns-sul-server-dns-mynet"><strong>Aggiornamento di Zone dns sul server dns Mynet</strong></h2>
+<blockquote>
+<p>Abbiamo dovuto cambiare le configurazioni delle zone DNS di alcuni clienti.</p>
+</blockquote>
+<p>==<strong>Fatto un snapshot del server dns in caso venga cambiato qualcosa in modo errato</strong>==
+- Procedura 
+1. Sanificato campi TXT che non erano conformi agli standard (il testo andava messo tra "")
+2. Cambiato il SOA (Start of Authority) per far sì che d'ora in poi il dominio principale venga risolto dal dns autoritativo di Mynet con il suo TTL, Serial, Refresh, Retry, Expiry e Minimum TTL
+3. Cambiati i due record dns (record NS) così che il dominio venga gestito dal server dns di Mynet
+4. Controllati eventuali errori
+5. Entrare nel server dns in ssh (con utente abilitato a usare solo determinati comandi come sudo)
+6. Usati comandi:</p>
+<pre><code class="language-sh">--- zona = dominio principale ---
+--- zona.txt = file di configurazione dns ---
+
+pdnsutil load-zone &lt;zona&gt; &lt;zona.txt&gt; 
+#Importa tutti i record direttamente nel database di PowerDNS assegnandoli al dominio &lt;zona&gt;
+
+pdnsutil check-zone &lt;zona&gt;
+#Fa la stessa identica cosa di named-checkzone in BIND. Analizza la zona importata nel database per verificare che non ci siano errori sintattici
+
+pdnsutil set-kind &lt;zona&gt; master
+#Dice a PowerDNS che questo server dns dove attualmente si è loggati è il master ovvero il primario, significa che se ci sono altri server DNS dovranno recuperare le info da lui
+
+pdnsutil set-meta &lt;zona&gt; SOA-EDIT-API-DEFAULT
+#Questa regola dice a PowerDNS che ogni volta che si cambia un record tramite API aggiorna e incrementa il Serial del SOA in automatico
+</code></pre>
+<hr />
+<h1 id="10072026">==<strong><em>10/07/2026</em></strong>==</h1>
+<blockquote>
+<p>Diagnostica su un server Hp Ceph guasto</p>
+</blockquote>
+<h2 id="cose-ceph">Cos'è Ceph:</h2>
+<blockquote>
+<p>Ceph è un sistema di archiviazione distribuito che fornisce servizi di archiviazione oggetti blocchi e file da un singolo cluster</p>
+<p>Dopo una giornata passata a sovrascrivere gli hard disk con dati randomici abbiamo seguito la procedura cercando di capire cosa effettivamente non andasse sul server.</p>
+</blockquote>
+<h2 id="1-osservazione"><strong>1° Osservazione</strong></h2>
+<blockquote>
+<p>Attraverso l'ILO (software embedded per la gestione da un altro PC collegato con un cavo RJ45 del server con interfaccia grafica) abbiamo trovato i dati seriali dei vari dischi.
+Questi dati sono stati comparati con quelli che ricevevamo con</p>
+</blockquote>
+<pre><code class="language-sh">sudo dmesg -T | grep -E -i &quot;io error|failed|bad sector|rejecting I/O|buffer i/o&quot; | awk '{print$6}' | sort | uniq
+</code></pre>
+<blockquote>
+<p>Questo comando ci riportavo il disco (la sesta colonna del dmesg $6)che dava problemi ("io error ...) una sola volta (sort | uniq ci permette di vedere il disco una sola volta invece che per ogni errore che hanno mai dato)</p>
+<p>All'inizio i dischi che davano errore sembravano essere solo quelli nella cage anteriore. Per riprovare abbiamo spostato altri dischi sulla prima cage e anche loro davano problemi.</p>
+<p>Di conseguenza abbiamo pensato che il problema fosse dell'intero 1° cage (primi 12 dischi).</p>
+</blockquote>
+<h2 id="2-osservazione"><strong>2° Osservazione</strong></h2>
+<blockquote>
+<p>Dopo abbiamo provato con un altro metodo per verificare se effettivamente fosse un problema del cage o del controller o dei cavi.</p>
+<p>Dopo aver spostato i cavi Sas abbiamo notato che non davano più problemi i dischi davanti ma bensì quelli dietro (2° Cage).
+I cavi partivano dal controller in un unico posto da due da 8 che si divideva in 4 cavi da 2 Sas. 
+2 andavano alla prima cage
+gli altri 2 andavano alla seconda cage ed uno dei due tornava indietro per tornare alla scheda madre.</p>
+<p>Di conseguenza abbiamo stabilito che il problema non era nella posizione dei dischi ma bensì nei cavi del controller che saranno da sostituire e controllare per eventuali danni smontando il case del server.</p>
+</blockquote>
+<hr />
+<h1 id="13072026">==<strong><em>13/07/2026</em></strong>==</h1>
+<ol>
+<li>Prova di configurazione di un profilo di rete per un nuovo utente (IO)</li>
+<li>Rinnovo certificati ssl (CA godaddy) per un sito di un cliente per cui hostiamo il server web (apache2)</li>
+</ol>
+<h2 id="configurazione-profilo-di-rete"><strong>Configurazione profilo di rete</strong></h2>
+<blockquote>
+<p>Una volta arrivato il mini pc che doveva fungere da workstation abbiamo provato ad aggiungere il mio utente come profilo di rete di dominio.</p>
+<p>Arrivati alle impostazioni la password di root del proprietario di dominio che doveva abilitarmi la connessione LAN non funzionava.</p>
+<p>Così abbiamo deciso di utilizzare un'istanza live di un ISO sullo stesso pc per cercare di cambiare la password di root.</p>
+<p>Operazioni:
+1. Flashata ISO sulla mia chiavetta con Ventoy
+2. Inserita nel pc
+3. Entrare nel BIOS e cambiato Boot Order (Secure boot già disabilitato)</p>
+<p>Una volta dentro abbiamo:</p>
+</blockquote>
+<pre><code class="language-sh">sudo -i # Per diventare root per la sessione
+
+lsblk   #Per vedere i dischi e capire la partizione su cui operare (nvme0n1p3)
+
+cryptsetup luksOpen /dev/nvme0n1p3 cryptroot
+</code></pre>
+<blockquote>
+<p>Abbiamo notato che il disco fosse protetto da crittografia LUKS.  Inserita la passphrase dopo lo sblocco comparirà la tipologia di filesystem (ext4)</p>
+</blockquote>
+<pre><code class="language-sh">sudo mount /dev/mapper/cryptroot /mnt
+</code></pre>
+<blockquote>
+<p>Abbiamo poi montato i principali file del sistema per poterci entrare con chroot:</p>
+</blockquote>
+<pre><code class="language-sh">sudo mount --bind /dev /mnt/dev
+sudo mount --bind /dev/pts /mnt/dev/pts
+sudo mount --bind /proc /mnt/proc
+sudo mount --bind /sys /mnt/sys
+sudo mount --bind /run /mnt/run
+
+#Dopo aver copiato tutti i file che servivano abbiamo usato chroot per entrarci
+
+sudo chroot /mnt
+
+#Per vedere che utenti ci siano in quel sistema
+ls /home
+
+#una volta identificato l'utente amministratore cambiata la password con
+
+passwd nome_utente
+
+#Una volta cambiata la password controllare che essa sia stata salvata abbiamo guardato il file /etc/shadow che mantiene le password in modo criptato
+
+ls /etc/shadow
+</code></pre>
+<blockquote>
+<p>Usciti abbiamo riprovato ma non ha funzionato :(</p>
+</blockquote>
+<hr />
+<h2 id="rinnovo-certificati-ssl-su-un-server-web-apache2"><strong>Rinnovo certificati SSL su un server web apache2</strong></h2>
+<blockquote>
+<p>Il sito di un nostro cliente aveva i certificati ssl che garantivano l' Https del sito in scadenza.</p>
+<p>Abbiamo proceduto ad individuare i file di configurazione del Virtualhost del sito in
+<strong>/etc/apache2/sites-enabled</strong></p>
+</blockquote>
+<pre><code class="language-html">&lt;VirtualHost *:80&gt;
+    ServerName il-tuo-sito.it
+    ServerAlias www.il-tuo-sito.it
+
+    # Attivazione e regole di riscrittura (HTTP -&gt; HTTPS)
+    RewriteEngine On
+    RewriteCond %{HTTPS} off
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    ErrorLog ${APACHE_LOG_DIR}/http_error.log
+    CustomLog ${APACHE_LOG_DIR}/http_access.log combined
+&lt;/VirtualHost&gt;
+&lt;VirtualHost *:443&gt;
+    ServerName il-tuo-sito.it
+    ServerAlias www.il-tuo-sito.it
+    DocumentRoot /var/www/html/wordpress
+
+    #Attivazione del motore SSL
+    SSLEngine on
+
+    #1. Certificato principale del dominio (scaricato da GoDaddy)
+    SSLCertificateFile /etc/apache2/certificates/sito.crt
+
+    #2. Chiave privata associata alla richiesta CSR
+    SSLCertificateKeyFile /etc/apache2/certificates/sito.key
+
+    #3. Bundle intermedio di GoDaddy (es. gd_bundle-g2-g1.crt)
+    SSLCertificateChainFile /etc/apache2/certificates/gd_bundle.crt
+
+    &lt;Directory /var/www/html/wordpress&gt;
+        Options FollowSymLinks
+        AllowOverride All
+        Require all granted
+    &lt;/Directory&gt;
+
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+&lt;/VirtualHost&gt;
+</code></pre>
+<blockquote>
+<p>Abbiamo trovato la directory in cui tenevamo i certificati ssl, abbiamo fatto un backup di questi vecchi ed abbiamo scaricato i certificati nuovi con godaddy dalla gestione dei nostri prodotti.</p>
+<p>Una volta scaricati i file dei nuovi certificati abbiamo mandato i file al nostro server tramite scp:</p>
+</blockquote>
+<pre><code class="language-sh">scp sito.crt utente@indirizzo_ip_server:/tmp/
+</code></pre>
+<blockquote>
+<p>E da lì li abbiamo spostati nella cartella specificata in VirtualHost entrando in ssh al server</p>
+<p>Una volta fatto ciò abbiamo fatto 2 controlli finali:</p>
+</blockquote>
+<ol>
+<li>Controllo della sintassi sul file di configurazione con il comando</li>
+</ol>
+<pre><code class="language-sh">sudo apachectl -t
+
+#oppure su sistemi debian
+sudo apache2ctl configtest
+</code></pre>
+<ol>
+<li>Ricaricato il servizio Apache2</li>
+</ol>
+<pre><code class="language-sh">sudo systemctl reload apache2
+</code></pre>
+<blockquote>
+<p>Fatto questo ci basterà cercare sul browser il dominio per cui abbiamo aggiornato i certificati e guardare con l'icona del lucchetto la CA emittente e la data di scadenza del certificato.</p>
+</blockquote>
+<hr />
+<h1 id="14072026">==<strong><em>14/07/2026</em></strong>==</h1>
+<blockquote>
+<p>Continuato studio di Ansible [[Ansible]]
+- Ruoli
+- modulo package
+- gruppi, 
+- variabili di gruppo, 
+- vault Ansible
+- tag,
+- services</p>
+</blockquote>
+<h2 id="task-per-il-futuro">Task per il futuro:</h2>
+<ul>
+<li>Finire di studiare i ruoli e template</li>
+<li>Controllare possibilità di automazione di Proxmox collegando Ansible</li>
+<li>Guardare NetBox (e la relativa implementazione con Ansible)</li>
+</ul>
+<hr />
+<h1 id="15072026">==<strong><em>15/07/2026</em></strong>==</h1>
+<blockquote>
+<p>Studiato come implementare Ansible con Netbox e Proxmox [[Automazione Netbox ---&gt; Proxmox via Ansible]]</p>
+<p>Creata documentazione a riguardo, continuata implementazione con gli appunti.</p>
+</blockquote>
+<hr />
+<h1 id="16072026">==<strong><em>16/07/2026</em></strong>==</h1>
+<blockquote>
+<p>Continuato studio dell'implementazione tra i 3 tool</p>
+</blockquote>
+<hr />
+<h1 id="17072026">==<strong><em>17/07/2026</em></strong>==</h1>
+<blockquote>
+<p>Aggiunti record per delle macchine su Netbox</p>
+</blockquote>
+<h1 id="20072026">==<strong><em>20/07/2026</em></strong>==</h1>
+<blockquote>
+<p>Installato nuovo controller per il server di cui avevamo fatto la diagnosi i primi giorni</p>
+</blockquote>
+<h2 id="repository-debianubuntu-con-aptly-e-firme-gpg-aptly-repository-debian-ubuntu"><strong>Repository Debian/Ubuntu con aptly e firme GPG</strong> [[aptly Repository Debian-Ubuntu]]</h2>
+<hr />
+<h1 id="21072026">==<strong><em>21/07/2026</em></strong>==</h1>
+<blockquote>
+<p>Continuato lavoro della repository locale ubuntu, ora funziona in TLS</p>
+</blockquote>
+<hr />
+<h1 id="22072026">==<strong><em>22/07/2026</em></strong>==</h1>
+<blockquote>
+<p>Continuato lavoro della repository locale ubuntu, ora funziona in mTLS , snapshot di istanze aptly niziato basic auth con password</p>
+</blockquote>
+<hr />
+<h1 id="23072026">==<strong><em>23/07/2026</em></strong>==</h1>
+<blockquote>
+<p>Il server Aptly funziona con basic auth, iniziato a studiare [[Cos'è Gitlab]].</p>
+</blockquote>
+<hr />
+<h1 id="24072026">==<strong><em>24/07/2026</em></strong>==</h1>
+<blockquote>
+<p>Continuato con Gitlab, installazione su macchina del server con prime configurazioni e test per il server aptly per un flusso CI/CD.</p>
+</blockquote>
+<hr />
+<h1 id="27072026">==<strong><em>27/07/2026</em></strong>==</h1>
+<blockquote>
+<p>Continuato lavoro repository CI/CD, spostato su container Docker per compilazione più pulita. Separato spazio di compilazione e di pubblicazione. Unico runner che compila in un container docker dentro una VM. Sposta i file tramite SCP e poi si collega in ssh sul server aptly con un utente abilitato solamente ai comandi aptly.</p>
+<p>Flashati Google Pixel 9a e 10a con GrapheneOS seguendo wiki 
+<a href="https://grapheneos.org/install/cli">Documentazione Installazione CLI per GrapheneOS</a></p>
+</blockquote>
+<hr />
+<h1 id="28072026">==<strong><em>28/07/2026</em></strong>==</h1>
+<blockquote>
+<p>Automazione con GitLab CI/CD + Docker.
+- Finalizzato connessioni ssh ed scp senza password,
+- configurazione di rete per docker,
+- configurazione del runner per usare docker come executor,</p>
+</blockquote>
+<hr />
+<h1 id="29072026">==<strong><em>29/07/2026</em></strong>==</h1>
+<blockquote>
+<p>Automazione CI-CD con GitLab:
+- aggiunto controllo su esistenza della repo
+- aggiunto controllo su esistenza della pubblicazione
+- aggiunta possibilità di compilare specifici pacchetti e pubblicare specifici pacchetti
+- aggiunto pacchetto più complicato per prove dell'esecuzione di comandi come programmi (eseguibili da ovunque)
+- creata documentazione MarkDown + mermaid.js per spiegazione della procedura dell'intera creazione e gestione della repository locale tra GitLab e Ansible [[Struttura repo Aptly]]</p>
+</blockquote>
+<hr />
+<h1 id="30072026">==<strong><em>30/07/2026</em></strong>==</h1>
+<blockquote>
+<p>Automazione CI-CD con GitLab:
+-fixato problema per compilazione e pubblicazione con diverse distro (nome-repo, distro, prefix e component)
+- aggiunta VERA possibilità di pubblicare pacchetti per diverse distribuzioni allo stesso momento
+- configurati diverse docker images per vari linguaggi di programmazione e la loro compilazione diversa
+- controlli su versione del linguaggio
+- aggiunto job per pulire da vecchi .deb file
+- aggiunte note sull'uso della pipeline
+- Iniziata automazione con Ansible</p>
+</blockquote>
+<hr />
+<h1 id="31072026">==<strong><em>31/07/2026</em></strong>==</h1>
+<blockquote>
+<p>Automazione Ansible:
+1. Creazione CA,Server e client keys e certificates
+2. Installazione e configurazione di Aptly
+3. Installazione e configurazione (mTLS e Basic Auth) di Nginx</p>
+<p>Continuata documentazione [[Struttura repo Aptly#<strong>Passi/Ruoli per l'automazione con Ansible</strong>]]</p>
+</blockquote>
+<hr />
+<h1 id="03082026">==<strong><em>03/08/2026</em></strong>==</h1>
+<blockquote>
+<p>Automazione Ansible:
+Manca solo l'automazione dello spostamento dei file dal server ai client, di conseguenza anche la configurazione del mTLS .htpasswd e configutazione repo</p>
+</blockquote>
+<hr />
+<h1 id="04082026">==<strong><em>04/08/2026</em></strong>==</h1>
+<blockquote>
+<p>Prima versione dell'automazione Ansible completata.
+Modificata gestione della creazione della repository e della prima pubblicazione (spostata da GitLab a Ansible)</p>
+</blockquote>
+<hr />
+<h1 id="05082026">==<strong><em>05/08/2026</em></strong>==</h1>
+<blockquote>
+<p>Continuata documentazione e ritocchi al playbook</p>
+</blockquote>
+<h1 id="06082026">==<strong><em>06/08/2026</em></strong>==</h1>
+<blockquote>
+<p><strong>Considerata procedura per CA intermediate per lasciare la Root CA libera e al sicuro</strong>
+</p>
+</blockquote>
+<h1 id="07082026">==<strong><em>07/08/2026</em></strong>==</h1>
+<blockquote>
+<p>Configurazione Access Point per fiera delle Grazie</p>
+<p>Flashato e aggiornato Firmware di tutti e 20 gli access point.
+Configurazione Rete Wifi, (SSID, password, ecc...)</p>
+<p>Continuata automazione tra Ansible e Aptly</p>
+</blockquote>
+<h2 id="considerata-lintroduzione-di-una-ca-intermedia-per-non-esporre-la-root-ca-da-chiedere-al-ritorno-dalle-ferie">&gt;Considerata l'introduzione di una <strong>CA intermedia</strong> per non esporre la Root CA <strong>(da chiedere al ritorno dalle ferie)</strong></h2>
+<h1 id="19082026">==<strong><em>19/08/2026</em></strong>==</h1>
+<blockquote>
+<p>Ritorno dalle vacanze 🇪🇸.
+Server delle settimana precedenti di nuovo in datacenter</p>
+<p>PROBLEMA: Compilazione di pacchetti scritti in più linguaggi.</p>
+<p>Nuova gestione del lavoro per la repository (suppongo finale):
+- compilazione dei pacchetti direttamente dai developer 
+- compilazione dei pacchetti in .deb ed anche .tarGz</p>
+</blockquote>
+<hr />
+<h1 id="20082026">==<strong><em>20/08/2026</em></strong>==</h1>
+<blockquote>
+<p>Continuata versione unix compliant dell' automazione ansible per aptly
+<strong>Iniziata introduzione della CA intermediate</strong></p>
+</blockquote>
+<hr />
+<h1 id="21082026">==<strong><em>21/08/2026</em></strong>==</h1>
+<blockquote>
+<p><strong>Introdotta CA Intermediate</strong> </p>
+<p>Questa CA si occuperà di elargire i certificati e chiavi del server web e del client senza mai esporre la Root CA.</p>
+<p>Sicurezza in caso della compromissione.
+Se viene compromessa la Root CA è finita 💀
+Mentre se viene compromessa solo la Intermediate (solitamente usata solo per un obiettivo specifico) <strong>il danno si limita a quell'area</strong></p>
+</blockquote>
+<hr />
+<h1 id="24082026">==<strong><em>24/08/2026</em></strong>==</h1>
+<blockquote>
+<p><strong>PRIMO TEST su server Aziendale</strong></p>
+<p>Cose da cambiare:
+- integrazione con API di EJBCA per CSR di web_server e client
+- gitlab_runner prende solo i file .deb già compilati e si occupa di pubblicarli</p>
+</blockquote>
+<hr />
+<h1 id="25082026">==<strong><em>25/08/2026</em></strong>==</h1>
+<blockquote>
+<p><strong>Inizializzata integrazione con API di EJBCA</strong></p>
+<p>Modificato ruolo pki_tls:
+- NIENTE GENERAZIONE CA ROOT O CA INTERMEDIA
+- NIENTE GENERAZIONE WEB SERVER
+- Invio CSR per CRT del client via API EJBCA
+- variabili apposite per connessione ad EJBCA
+ - ejbca_url (FQDN)
+ - ejbca_caname (Nome della CA)
+ - ejbca_client_cert_profiles (certificate profile)
+ - ejbca_client_key_profile (end entitity profile)
+ - ejbca_username (user per la connessione https)
+ - ejbca_password (password user connessione)
+ - ejbca_admin_cert (certificato per dimostrare di essere abilitati)
+ - ejbca_admin_key (chiave per dimostrare di essere abilitati)</p>
+<p>Prima prova di raggiungimento: <strong>FALLITA❌️</strong> (non abilitato sulla rete a raggiungere il server di ejbca)</p>
+</blockquote>
+<hr />
+<h1 id="26082026">==<strong><em>26/08/2026</em></strong>==</h1>
+<blockquote>
+<p>Integrazione con API di EJBCA semi conclusa</p>
+<p><strong>Abilitato raggiungimento del server dalla mia macchina</strong></p>
+</blockquote>
+<h3 id="interruzione-servizio-ejbca-causa-manutenzione"><strong>Interruzione servizio EJBCA causa manutenzione ⚙️</strong></h3>
+<blockquote>
+<p><strong>Modifiche ruole web_server:</strong>
+- prende il suo certificato e chiave direttamente dalla cartella sul control node
+- prende il certificato della CA dalla cartella sul control node</p>
+<p>Seconda prova di raggiungimento: <strong>SUCCESSO✅️</strong></p>
+<p><strong>Richieste variabili:</strong> 
+- ejbca_client_cert_profiles
+- ejbca_client_key_profiles</p>
+</blockquote>
+<hr />
+<h1 id="27082026">==<strong><em>27/08/2026</em></strong>==</h1>
+<blockquote>
+<p><strong>Ottenuto valore delle variabili necessarie per la connessione alle API di EJBCA</strong></p>
+<p>Spostati file necessari al collegamento dentro directory all'interno del progetto per una migliore agevolazione e modularità del playbook</p>
+<p>Primo test con tag solamente per i certificati: FALLITO ❌️</p>
+</blockquote>
+<pre><code class="language-shell">ansible-playbook --tags &quot;certs&quot; playbook.yaml --check --diff -v
+</code></pre>
+<blockquote>
+<p>Richiede autorizzazione alla sezione admin/ per la creazione di certificati tramite pkcs10enroll</p>
+</blockquote>
+<hr />
+<h1 id="28082026">==<strong><em>28/08/2026</em></strong>==</h1>
+<blockquote>
+<p>Ottenuto accesso alla sezione admin/</p>
+<p>Una volta lanciato il playbook questo si aspettava i campi DNSNAME per la richiesta CSR.
+Abbiamo dovuto controllare quanti campi erano obbligatori per la request della nostra end_entity. Abbiamo disabilittato l'autenticazione tramite DNSNAME per risolvere l'errore.</p>
+<p>Una volta trovati i giusti campi da inserire per il client sulla dashboard admin di EJBCA siamo riusciti a lanciare il nostro playbook con successo ✅️.
+Stiamo eseguendo il playbook un ruolo alla volta lanciando il comando:</p>
+</blockquote>
+<pre><code class="language-shell">ansible-playbook --tags &quot;pki&quot; --check -diff playbook.yaml
+</code></pre>
+<blockquote>
+<p>Siamo riusciti di conseguenza nella creazione del primo client di prova per la nostra repository e della creazione della repository in sè, mantenendo un ambiente diviso tra gli utenti di ansible-user e l'utente di servizio per il ruolo aptly.</p>
+</blockquote>
+<hr />
+<h1 id="31082026">==<strong><em>31/08/2026</em></strong>==</h1>
+<blockquote>
+<p>Controllata l'esistenza della repository noble creata come test ✅️</p>
+<p>Continuata l'esecuzione del playbook con il ruolo del web-server. </p>
+<p>Primo test con l'esecuzione esclusivamente del tag "web": FALLITO❌️
+Dà un problema relativo alla lunghezza della chiave. SSL ee:key:toosmall</p>
+<p>Notificato il tutor ha controllato subito il tipo di chiave generata e rigenerata con una lunghezza maggiore.</p>
+<p>Test successivo <strong>SUCCESSO</strong></p>
+<p>Continuata documentazione del progetto e successivi controlli dell'effettiva esistenza in rete della repository.
+Manca il primo test di configurazione del client</p>
+</blockquote>
+<hr />
+<h1 id="01092026">==<strong><em>01/09/2026</em></strong>==</h1>
+<blockquote>
+<p>Primo test di configurazione sui client
+Continuata documentazione</p>
+</blockquote>
+<hr />
+<h1 id="02092026">==<strong><em>02/09/2026</em></strong>==</h1>
+<blockquote></blockquote></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../../../img/favicon.ico">
+        <title>Docker [[Cos'è Docker]] - Documentazione di Manuel</title>
+        <link href="../../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../../../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/color-brewer.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../../..">Documentazione di Manuel</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Git & GitHub</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../../../Comandi%20Git%20%26%20GitHub/Comandi%20di%20Git%20Basilari/" class="dropdown-item">Introduzione</a>
+</li>
+                                    
+<li>
+    <a href="../../../../../Comandi%20Git%20%26%20GitHub/Comandi%20di%20Git%20per%20collegarsi%20a%20GitHub/" class="dropdown-item">Connessioni a GitHub</a>
+</li>
+                                    
+<li>
+    <a href="../../../../../Comandi%20Git%20%26%20GitHub/Cos%27%C3%A8%20un%20file%20.gitignore/" class="dropdown-item">Gitignore</a>
+</li>
+                                    
+<li>
+    <a href="../../../../../Comandi%20Git%20%26%20GitHub/Git%20%26%20GitHub/" class="dropdown-item">Generale</a>
+</li>
+                                    
+<li>
+    <a href="../../../../../Comandi%20Git%20%26%20GitHub/Issues%20e%20Pull%20Requests/" class="dropdown-item">Issues e Pull Requests</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">ITS</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Cyber</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../../Cyber/Nmap/Nmap%20Introduction/" class="dropdown-item">Nmap</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Ncat</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../../Cyber/Ncat/Ncat%20Introduction/" class="dropdown-item">Introduzione</a>
+</li>
+            
+<li>
+    <a href="../../../../Cyber/Ncat/Ncat%20Advanced/" class="dropdown-item">Avanzato</a>
+</li>
+    </ul>
+  </li>
+            
+<li>
+    <a href="../../../../Cyber/Challenge%203%2C%20UDP%20Chat%20%28Red%20vs%20Blue%20vs%20Red%20vs%20Blue%29/" class="dropdown-item">Challenge UDP</a>
+</li>
+            
+<li>
+    <a href="../../../../Cyber/RaspBerry%20Pi%20Server/" class="dropdown-item">Raspberry Pi</a>
+</li>
+            
+<li>
+    <a href="../../../../Cyber/Vulnerabilit%C3%A0%20locali%20-%20Programmazione/" class="dropdown-item">Vulnerabilità</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">System</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Docker</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../Docker/Cos'è Docker.md" class="dropdown-item">Cos'è Docker</a>
+</li>
+            
+<li>
+    <a href="../../../Docker/Docker Compose.md" class="dropdown-item">Docker Compose</a>
+</li>
+            
+<li>
+    <a href="../../../Docker/DockerFile.md" class="dropdown-item">Dockerfile</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Linux</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../Comandi%20di%20Linux/" class="dropdown-item">Comandi Base</a>
+</li>
+            
+<li>
+    <a href="../../Bash%20Scripting/" class="dropdown-item">Bash Scripting</a>
+</li>
+            
+<li>
+    <a href="../../Bash%20Scripting%20Advanced/" class="dropdown-item">Bash Avanzato</a>
+</li>
+            
+<li>
+    <a href="../../SSH/" class="dropdown-item">SSH</a>
+</li>
+            
+<li>
+    <a href="../../FileTree/" class="dropdown-item">File Tree</a>
+</li>
+    </ul>
+  </li>
+            
+<li>
+    <a href="../../../Windows%20Server/Installazione%20Servizi%20%204%C2%B0%20e%205%C2%B0%20Slide/" class="dropdown-item">Windows Server</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">PostgreSQL</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../../../PostgreSQL/Introduzione%20a%20PostgreSQL/" class="dropdown-item">Introduzione</a>
+</li>
+                                    
+<li>
+    <a href="../../../../../PostgreSQL/Installazione/" class="dropdown-item">Installazione</a>
+</li>
+                                    
+<li>
+    <a href="../../../../../PostgreSQL/Inserimento%20Dati/" class="dropdown-item">Inserimento Dati</a>
+</li>
+                                    
+<li>
+    <a href="../../../../../PostgreSQL/Queries/" class="dropdown-item">Queries</a>
+</li>
+                                    
+<li>
+    <a href="../../../../../PostgreSQL/Joins/" class="dropdown-item">Joins</a>
+</li>
+                                    
+<li>
+    <a href="../../../../../PostgreSQL/pgAdmin%204/" class="dropdown-item">pgAdmin 4</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Altro</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../../../MkDocs & Mermaid.js.md" class="dropdown-item">Mermaid e MkDocs</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#docker-cose-docker" class="nav-link">Docker [[Cos'è Docker]]</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#cos-e" class="nav-link">COS' E'?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#le-sue-funzioni-principali" class="nav-link">Le sue funzioni principali:</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#non-sostituisce-docker-e-una-sua-estensione" class="nav-link">NON SOSTITUISCE DOCKER, E' UNA SUA ESTENSIONE</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#comandi-essenziali" class="nav-link">Comandi Essenziali</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#avvio-e-build" class="nav-link">Avvio e Build</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#aggiornamento-immagini" class="nav-link">Aggiornamento Immagini</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#stop-e-rimozione" class="nav-link">Stop e Rimozione</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#monitoring-e-debug" class="nav-link">Monitoring e Debug</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#stato-e-risorse" class="nav-link">Stato e risorse</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#logs" class="nav-link">Logs</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#accesso-ai-container" class="nav-link">Accesso ai Container</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#validazione" class="nav-link">Validazione</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#servizi" class="nav-link">Servizi</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#image-vs-build" class="nav-link">Image vs build</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#opzione-1-immagine-pre-costruita" class="nav-link">Opzione 1, Immagine pre-costruita</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#opzione-2-build-da-dockerfile" class="nav-link">Opzione 2, Build da DockerFile</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#ports-mappatura-delle-porte" class="nav-link">Ports: Mappatura delle Porte</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#volumes-persistenza-dei-dati" class="nav-link">Volumes: Persistenza dei Dati</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#named-volume" class="nav-link">Named Volume:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#bind-mount" class="nav-link">Bind Mount:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#anonymous-volume" class="nav-link">Anonymous Volume</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#environment-configurazione-dei-servizi" class="nav-link">Environment: Configurazione dei Servizi</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#depends_on" class="nav-link">depends_on</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#networks" class="nav-link">Networks</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#esempio-di-uno-stack-completo-con-docker-compose" class="nav-link">Esempio di uno stack completo con Docker compose</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="docker-cose-docker">Docker [[Cos'è Docker]]</h1>
+<h1 id="cos-e"><strong>COS' E'?</strong></h1>
+<blockquote>
+<p>Docker Compose è uno strumento per definire e gestire applicazioni Docker multi-container usando un file <strong>YAML</strong> .
+Nato all'inizio come progetto separato (docker-compose) è stato poi integrato all'interno di docker (docker compose)
+E' il ponte tra i container individuali e un'applicazione completa e funzionante.</p>
+</blockquote>
+<h1 id="le-sue-funzioni-principali"><strong>Le sue funzioni principali</strong>:</h1>
+<blockquote>
+<ul>
+<li><strong>Orchestrazione semplificata</strong>
+      gestisce più container come un'unica unità logica</li>
+<li><strong>Configurazione come codice</strong>
+     la config è versionata insieme al progetto
+ <strong>Riproducibilità totale</strong>
+    Stesso ambiente su dev, test e CI/CD senza differenze</li>
+<li><strong>Onboarding rapido</strong>
+    Un nuovo sviluppatore è subito operativo con un solo comando (docker compose up)</li>
+</ul>
+</blockquote>
+<h2 id="non-sostituisce-docker-e-una-sua-estensione">NON SOSTITUISCE DOCKER, E' UNA SUA ESTENSIONE</h2>
+<blockquote>
+<p><em>Ideale per sviluppo, testing, demo, applicazioni single-host e</em>
+Il file <strong>YAML</strong> è composto da tre sezioni che descrivono l'intera applicazione:
+- <em>services (i container)</em>
+- <em>volumes (la persistenza)</em>
+- <em>networks (la comunicazione)</em></p>
+</blockquote>
+<hr />
+<h1 id="comandi-essenziali"><strong>Comandi Essenziali</strong></h1>
+<h2 id="avvio-e-build">Avvio e Build</h2>
+<pre><code class="language-Shell">#Avvia in foreground (vedi i log)
+docker compose up
+
+#Avvia in background (detached)
+docker compose up -d
+
+#Rebuild delle immagini + avvio
+docker compose up --build
+</code></pre>
+<hr />
+<h2 id="aggiornamento-immagini">Aggiornamento Immagini</h2>
+<pre><code class="language-shell">#Guarda il docker-compose.yml e controlla sulla repo di docker se sono disponibili nuove versioni delle immagini specificate
+docker compose pull
+</code></pre>
+<hr />
+<h2 id="stop-e-rimozione">Stop e Rimozione</h2>
+<pre><code class="language-Shell">#Ferma e rimuove container + network
+docker compose down
+
+#Ferma, rimuove e cancella volumi
+docker compose down --volumes
+</code></pre>
+<hr />
+<h2 id="monitoring-e-debug">Monitoring e Debug</h2>
+<blockquote>
+<p>Monitorare e fare debug di uno stack multi-container è semplice con i comandi integrati di compose.</p>
+</blockquote>
+<h2 id="stato-e-risorse">Stato e risorse</h2>
+<pre><code class="language-Shell">docker compose ps  #Lista dei servizi attivi
+docker compose ps -a  #Include quelli fermi
+docker compose stats  #Uso CPU/RAM in real time
+</code></pre>
+<hr />
+<h2 id="logs">Logs</h2>
+<pre><code class="language-Shell">docker compose logs  #Tutti i log
+docker compose logs -f  #Follow real time
+docker compose logs -f api  #Solo servizio API
+docker compose logs --tail=50  #Ultime 50 righe
+docker compose logs --timestamp  #Con timestamp
+</code></pre>
+<hr />
+<h2 id="accesso-ai-container">Accesso ai Container</h2>
+<pre><code class="language-Shell">#Shell interattiva (immagini full)
+docker compose exec api bash
+
+#Shell alpine (immagini lightweight)
+docker compose exec api sh
+
+#Esegui comando one-shot
+docker compose run api comando
+
+</code></pre>
+<hr />
+<h2 id="validazione">Validazione</h2>
+<pre><code class="language-Shell">docker compose config  #Valida YAML
+docker compose config --service  #Lista servizi
+</code></pre>
+<hr />
+<h1 id="servizi"><strong>Servizi</strong></h1>
+<h2 id="image-vs-build">Image vs build</h2>
+<blockquote>
+<p>Ogni servizio può usare un immagine già pronta da Docker Hub oppure costruirne una personalizzata partendo da un Dockerfile locale. La scelta dipende dal tipo di servizio da mettere su</p>
+</blockquote>
+<h2 id="opzione-1-immagine-pre-costruita">Opzione 1, Immagine pre-costruita</h2>
+<pre><code class="language-Shell">services: 
+    nginx:
+    image: nginx:alpine
+    ports:
+        -&quot;80:80&quot;
+</code></pre>
+<blockquote>
+<p>[!ATTENTION] ✅PRO: Veloce e già ottimizzata                                                                                           ❌CONS: Non personalizzabile per la tua logica applicativa</p>
+</blockquote>
+<h2 id="opzione-2-build-da-dockerfile">Opzione 2, Build da DockerFile</h2>
+<pre><code class="language-Shell">services:
+    api:
+        build:
+            context: ./api
+            dockerfile: DockerFile
+            args:
+                NODE_VERSION: 20
+        ports:
+            -&quot;5000:5000&quot;
+
+</code></pre>
+<blockquote>
+<p>[!ATTENTION] ✅<strong>PRO</strong>: Completamente personalizzabile, controllo totale sull'immagine ❌<strong>CONS</strong>: Richiede tempo di build gestione delle versioni</p>
+</blockquote>
+<hr />
+<h1 id="ports-mappatura-delle-porte"><strong>Ports: Mappatura delle Porte</strong></h1>
+<blockquote>
+<p>La mappatura delle porte definisce quali porte del container sono raggiungibili dall'host. 
+Il formato è sempre "PORTA-HOST:PORTA-CONTAINER"</p>
+</blockquote>
+<pre><code class="language-Shell">services:
+    web: 
+        image: nginx
+        ports:
+            -&quot;8080:80&quot;   #HOST:CONTAINER
+            -&quot;443:443&quot;
+            -&quot;127.0.0.1:3000:3000&quot;   #SOLO LOCALHOST
+
+</code></pre>
+<blockquote>
+<p>Quando il browser richiede localhost:8080, Docker instrada il traffico verso la porta 80 del container Nginx. </p>
+<p>[!NOTE] L'Host e il container usano porte indipendenti</p>
+<p>[!IMPORTANT] <strong>✅Best Practices:</strong>
+- <strong>Porte non privilegiate</strong>
+  usa porte &gt; 1024 sull'host per evitare problemi di permessi
+- <strong>Documenta le porte</strong>
+  Tieni aggiornato il README con tutte le porte esposte
+- <strong>Non esporre DB</strong>
+  Database e cache devono essere raggiungibili solo internamente - nessun ports!</p>
+</blockquote>
+<hr />
+<h1 id="volumes-persistenza-dei-dati"><strong>Volumes: Persistenza dei Dati</strong></h1>
+<blockquote>
+<p>I volumi sono il meccanismo di Docker per conservare i dati oltre il ciclo di vita di un container. Ne esistono <strong>3</strong> tipi, ognuno con scopi specifici:</p>
+</blockquote>
+<h2 id="named-volume">Named Volume:</h2>
+<blockquote>
+<p>Gestito Interamente da Docker. 
+Docker crea una directory dentro /var/lib/docker/volumes/ con il nome specificato, sulla macchina HOST. E docker se la gestisce da sola la directory.
+  Cross-Platform, performance ottimali, sopravvive a docker compose down. Ideale per Database e dati Persistenti</p>
+</blockquote>
+<pre><code class="language-Shell">volumes:
+    - pgdata:/var/lib/postgresql/data
+</code></pre>
+<h2 id="bind-mount">Bind Mount:</h2>
+<blockquote>
+<p>Mappa una cartella locale nel container. Accesso diretto ai file, hot reload immediato. Ideale per codice sorgente e configurazioni in sviluppo</p>
+</blockquote>
+<pre><code class="language-Shell">volumes:
+    - ./html:/usr/share/nginx/html
+    - ./config:/etc/myapp:ro
+</code></pre>
+<h2 id="anonymous-volume">Anonymous Volume</h2>
+<blockquote>
+<p>Temporaneo, distrutto al docker compose down. Da usare solo per cache e file temporanei che non devo persistere</p>
+</blockquote>
+<pre><code class="language-Shell">volumes:
+    - /tmp/cache   #Nessun Nome
+
+</code></pre>
+<hr />
+<h1 id="environment-configurazione-dei-servizi"><strong>Environment: Configurazione dei Servizi</strong></h1>
+<blockquote>
+<p><strong>Le variabili d'ambiente sono il modo standard per configurare i container senza modificare il codice.  Esistono 3 approcci tra cui scegliere in base alla sensibilità dei dati.</strong></p>
+</blockquote>
+<ol>
+<li><strong>Inline nel file YAML</strong>:
+   ✅<em>Semplice e leggibile</em>
+   ❌<em>Non usare per Password</em></li>
+</ol>
+<pre><code class="language-Shell">services:
+    api:
+        environment:
+            NODE_ENV: production
+            DB_HOST: db
+            DB_PORT: 5432
+
+</code></pre>
+<ol>
+<li><strong>Da file .env</strong>
+   ✅<em>Informazioni sensibili separati e git-ignorati, supporta ambienti diversi</em></li>
+</ol>
+<pre><code class="language-Shell">#Nel file .env
+DB_PASSWORD=password_sicura
+</code></pre>
+<pre><code class="language-Shell">#Nel file docker-compose.yml
+environment:
+    DB_PASSWORD:${DB_PASSWORD}
+</code></pre>
+<ol>
+<li><strong>Carica tutto il file .env</strong>
+   ✅<em>Carica tutte le variabili automaticamente, supporta più file in merge progressivo</em></li>
+</ol>
+<pre><code class="language-Shell">services:
+    api:
+        env_file:
+            - .env
+            - .env.local  #Override locale
+</code></pre>
+<blockquote>
+<p>[!IMPORTANT] <strong>🔒Best Practice Security:</strong>                               <br />
+- <strong>Aggiungi .env al .gitignore</strong>        <br />
+- <strong>Committa .env.example con valori fake</strong><br />
+- <strong>Mai committare password in Git!</strong></p>
+</blockquote>
+<hr />
+<h1 id="depends_on"><strong>depends_on</strong></h1>
+<blockquote>
+<p>Ordine di avvio</p>
+<p>depends_on garantisce che i container vengano avviati nell'ordine corretto. Aspetta che il servizio sia UP, non che il servizio sia pronto ad accettare connessioni</p>
+<p>Esempio:</p>
+</blockquote>
+<pre><code class="language-d">services:
+    api:
+        depends_on:
+        db:
+            condition: service_healthy
+
+    db:
+        image: postgres:latest
+        healthcheck:
+            test[&quot;CMD&quot;, &quot;pg_is_ready&quot;]
+            interval: 10s
+            timeout: 5s
+            retries: 5
+</code></pre>
+<blockquote>
+<p>[!NOTE] Con condition: service_healthy l'API parte solo quando il DB è veramente pronto ad accettare connessioni - nessun errore di connessione al primo avvio</p>
+</blockquote>
+<hr />
+<h1 id="networks"><strong>Networks</strong></h1>
+<blockquote>
+<p>Comunicazione tra Servizi</p>
+<p>Docker compose crea automaticamente una rete per tutti i servizi. Ogni servizio è raggiungibile dagli altri usando il nome del servizio come hostname DNS.</p>
+<p>[!NOTE] Crea le Network ma su una ipv4 2^16-2 quindi per creare un collegamento tra due container crea una rete che poi potrebbe creare problemi di overlapping di rete</p>
+<p>[!IMPORTANT] Se non si specifica nulla tutti i servizi saranno collegati tra di loro perche docker compose crea automaticamente una rete default: 
+nomeprogetto_default</p>
+<p>[!IMPORTANT] Le reti custom permettono l'isolamento</p>
+<p>Esempio:</p>
+</blockquote>
+<pre><code class="language-yaml">services:
+  web-app:
+    image: nginx
+    networks:
+      - mia-rete
+
+  api-service:
+    image: my-api-image
+    networks:
+      - mia-rete
+
+networks:
+  mia-rete:
+    driver: bridge
+</code></pre>
+<hr />
+<h1 id="esempio-di-uno-stack-completo-con-docker-compose"><strong>Esempio di uno stack completo con Docker compose</strong></h1>
+<pre><code class="language-d">services:
+    api:
+        build: ./api
+        depends_on:
+            db:
+                condition: service_healthy
+            redis:
+                condition: service_healthy
+        ports:
+            - &quot;5000:5000&quot;
+        environment:
+            DB_HOST: db
+            REDIS_HOST: redis
+        networks: [app-network]
+    db:
+        image: postgres:16-alpine
+        volumes:
+            - pgdata:/var/lib/postgresql/data
+        environment:
+            POSTGRES_PASSWORD: ${DB_PASSWORD}           
+        healthcheck:
+            test: [&quot;CMD&quot;, &quot;pg_isready&quot;]
+            interval: 10s
+            networks: [app-network]
+    redis:
+        image: redis:7-alpine
+        volumes:
+            - redisdata:/data //named volume
+        healthcheck:
+            test: [&quot;CMD&quot;, &quot;redis-cli&quot;, &quot;ping&quot;]
+        networks: [app-network]
+volumes:
+    pgdata:
+    redisdata:
+
+networks:
+    app-network:
+    driver: bridge
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../../js/base.js"></script>
+        <script src="../../../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

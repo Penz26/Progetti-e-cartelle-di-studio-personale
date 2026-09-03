@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Bash Scripting - Documentazione di Manuel</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/color-brewer.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">Documentazione di Manuel</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Git & GitHub</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../../Comandi%20Git%20%26%20GitHub/Comandi%20di%20Git%20Basilari/" class="dropdown-item">Introduzione</a>
+</li>
+                                    
+<li>
+    <a href="../../../../Comandi%20Git%20%26%20GitHub/Comandi%20di%20Git%20per%20collegarsi%20a%20GitHub/" class="dropdown-item">Connessioni a GitHub</a>
+</li>
+                                    
+<li>
+    <a href="../../../../Comandi%20Git%20%26%20GitHub/Cos%27%C3%A8%20un%20file%20.gitignore/" class="dropdown-item">Gitignore</a>
+</li>
+                                    
+<li>
+    <a href="../../../../Comandi%20Git%20%26%20GitHub/Git%20%26%20GitHub/" class="dropdown-item">Generale</a>
+</li>
+                                    
+<li>
+    <a href="../../../../Comandi%20Git%20%26%20GitHub/Issues%20e%20Pull%20Requests/" class="dropdown-item">Issues e Pull Requests</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">ITS</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Cyber</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../Cyber/Nmap/Nmap%20Introduction/" class="dropdown-item">Nmap</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Ncat</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../Cyber/Ncat/Ncat%20Introduction/" class="dropdown-item">Introduzione</a>
+</li>
+            
+<li>
+    <a href="../../../Cyber/Ncat/Ncat%20Advanced/" class="dropdown-item">Avanzato</a>
+</li>
+    </ul>
+  </li>
+            
+<li>
+    <a href="../../../Cyber/Challenge%203%2C%20UDP%20Chat%20%28Red%20vs%20Blue%20vs%20Red%20vs%20Blue%29/" class="dropdown-item">Challenge UDP</a>
+</li>
+            
+<li>
+    <a href="../../../Cyber/RaspBerry%20Pi%20Server/" class="dropdown-item">Raspberry Pi</a>
+</li>
+            
+<li>
+    <a href="../../../Cyber/Vulnerabilit%C3%A0%20locali%20-%20Programmazione/" class="dropdown-item">Vulnerabilità</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">System</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Docker</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../Docker/Cos'è Docker.md" class="dropdown-item">Cos'è Docker</a>
+</li>
+            
+<li>
+    <a href="../../Docker/Docker Compose.md" class="dropdown-item">Docker Compose</a>
+</li>
+            
+<li>
+    <a href="../../Docker/DockerFile.md" class="dropdown-item">Dockerfile</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Linux</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../Comandi%20di%20Linux/" class="dropdown-item">Comandi Base</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Bash Scripting</a>
+</li>
+            
+<li>
+    <a href="../Bash%20Scripting%20Advanced/" class="dropdown-item">Bash Avanzato</a>
+</li>
+            
+<li>
+    <a href="../SSH/" class="dropdown-item">SSH</a>
+</li>
+            
+<li>
+    <a href="../FileTree/" class="dropdown-item">File Tree</a>
+</li>
+    </ul>
+  </li>
+            
+<li>
+    <a href="../../Windows%20Server/Installazione%20Servizi%20%204%C2%B0%20e%205%C2%B0%20Slide/" class="dropdown-item">Windows Server</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">PostgreSQL</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../../PostgreSQL/Introduzione%20a%20PostgreSQL/" class="dropdown-item">Introduzione</a>
+</li>
+                                    
+<li>
+    <a href="../../../../PostgreSQL/Installazione/" class="dropdown-item">Installazione</a>
+</li>
+                                    
+<li>
+    <a href="../../../../PostgreSQL/Inserimento%20Dati/" class="dropdown-item">Inserimento Dati</a>
+</li>
+                                    
+<li>
+    <a href="../../../../PostgreSQL/Queries/" class="dropdown-item">Queries</a>
+</li>
+                                    
+<li>
+    <a href="../../../../PostgreSQL/Joins/" class="dropdown-item">Joins</a>
+</li>
+                                    
+<li>
+    <a href="../../../../PostgreSQL/pgAdmin%204/" class="dropdown-item">pgAdmin 4</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Altro</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../../MkDocs & Mermaid.js.md" class="dropdown-item">Mermaid e MkDocs</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../Comandi%20di%20Linux/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../Bash%20Scripting%20Advanced/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#bash-linux" class="nav-link">Bash #Linux</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#cose-uno-script-bash" class="nav-link">Cos'è uno Script bash?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#step-principali-di-uno-script-in-bash" class="nav-link">Step principali di uno script in Bash</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#variabili" class="nav-link">Variabili</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#parametri" class="nav-link">Parametri</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#operatori-aritmetici" class="nav-link">Operatori Aritmetici*</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#operatori-di-confronto" class="nav-link">Operatori di Confronto</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#condizionale-if-then-else" class="nav-link">Condizionale: if-then-else</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#operatori-logici" class="nav-link">Operatori Logici</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#ciclo-for" class="nav-link">Ciclo For</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#ciclo-while" class="nav-link">Ciclo While</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#switch-case" class="nav-link">Switch Case</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#funzioni" class="nav-link">Funzioni</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#redirezioni-e-pipe-orchestrare-il-flusso-dei-dati" class="nav-link">Redirezioni e Pipe: Orchestrare il flusso dei Dati</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="bash-linux">Bash #Linux</h1>
+<h1 id="cose-uno-script-bash"><strong>Cos'è uno Script bash?</strong></h1>
+<blockquote>
+<p>Uno script bash è un file di testo contenente una sequenza di comandi Linux che vengono eseguiti  automaticamente dalla shell bash.
+E' il modo più naturale per automatizzare operazioni e creare strumenti amministrativi personalizzati</p>
+</blockquote>
+<h3 id="quando-utilizzarlo">Quando Utilizzarlo?</h3>
+<blockquote>
+<ul>
+<li>Automatizzare task ripetitivi e noiosi</li>
+<li>Eseguire sequenze complesse di comandi e sistema</li>
+<li>Creare strumenti di amministrazione personalizzati</li>
+<li>Implementare procedure di backup e manutenzione</li>
+<li>Orchestrare operazioni su più server</li>
+</ul>
+</blockquote>
+<h3 id="vantaggi-principali">Vantaggi Principali</h3>
+<blockquote>
+<p><strong>- Semplicità:</strong> facile da scrivere e leggere
+<strong>- Immediatezza:</strong> nessuna compilazione necessaria
+<strong>- Potenza:</strong> Accesso completo ai comandi di sistema
+<strong>- Portabilità:</strong> funziona su tutti i sistemi Unix-like</p>
+</blockquote>
+<h3 id="limitazioni">Limitazioni</h3>
+<blockquote>
+<p>Prestazioni inferiori rispetto a linguaggi compilati. Non ideale per logica computazione complessa</p>
+</blockquote>
+<hr />
+<h1 id="step-principali-di-uno-script-in-bash"><strong>Step principali di uno script in Bash</strong></h1>
+<blockquote>
+<p>Ci sono 4 stadi principali per creare uno script in Bash:</p>
+</blockquote>
+<ol>
+<li>Creazione del File:</li>
+</ol>
+<pre><code class="language-Bash">nano mio_script.sh
+</code></pre>
+<ol>
+<li>Scrivere il Contenuto</li>
+</ol>
+<pre><code class="language-Bash">#!/usr/bin/env bash
+echo &quot;Ciao mondo&quot;
+</code></pre>
+<blockquote>
+<p>[!NOTE] Lo Shebang (#!/usr/bin/env bash) indica al sistema quale interprete utilizzare per eseguire i file. Senza questa riga il sistema non saprà come processare lo script</p>
+</blockquote>
+<ol>
+<li>Rendere eseguibile</li>
+</ol>
+<pre><code class="language-Bash">chmod +x mio_script.sh   
+</code></pre>
+<ol>
+<li>Eseguire lo script</li>
+</ol>
+<pre><code class="language-Bash">./mio_script.sh
+</code></pre>
+<hr />
+<h1 id="variabili"><strong>Variabili</strong></h1>
+<h3 id="dichiarazione-e-assegnazione">Dichiarazione e Assegnazione</h3>
+<pre><code class="language-Bash">nome=&quot;Manu&quot;
+eta=30
+percorso=&quot;/var/www/html&quot;
+
+echo &quot;Il mio nome è $nome&quot;
+echo &quot;Ho $eta anni&quot;
+echo &quot;Il path è $percorso&quot;
+</code></pre>
+<blockquote>
+<p>Output:</p>
+</blockquote>
+<pre><code class="language-Bash">Il mio nome è Manu
+Ho 30 anni
+Il path è /var/www/html
+</code></pre>
+<h3 id="read-input"><strong>Read input</strong></h3>
+<pre><code class="language-shell">read -p &quot;Inserisci un valore&quot; nome_variabile
+</code></pre>
+<h3 id="convenzioni-e-best-practice">Convenzioni e Best Practice</h3>
+<ul>
+<li>Costanti Globali<blockquote>
+<p>Usare MAIUSCOLE PER VALORI CHE NON CAMBIANO</p>
+</blockquote>
+</li>
+</ul>
+<pre><code class="language-Bash">BACKUP_DIR=&quot;/backups&quot;
+MAX_RETRY=3
+</code></pre>
+<ul>
+<li>Variabili Locali<blockquote>
+<p>Usare minuscole per variabili temporanee</p>
+</blockquote>
+</li>
+</ul>
+<pre><code class="language-Bash">nome=&quot;Valore&quot;
+contatore=0  
+</code></pre>
+<ul>
+<li>Regole Fondamentali<blockquote>
+<p>Mai spazi intorno a =
+Prefisso $ per leggere il valore
+Quote per stringhe con spazi</p>
+</blockquote>
+</li>
+</ul>
+<hr />
+<h1 id="parametri"><strong>Parametri</strong></h1>
+<blockquote>
+<p>Gli script bash possono accettare parametri dalla linea di comando, rendendoli estremamente versatili.
+Bash fornisce variabili speciali per accedere a questi parametri</p>
+</blockquote>
+<h3 id="esempio">Esempio:</h3>
+<pre><code class="language-Bash">#!/bin/bash
+echo &quot;Numero argomenti: $#&quot;
+echo &quot;Nome script: $0&quot;
+echo &quot;Primo parametro: $1&quot;
+echo &quot;Secondo parametro: $2&quot;
+echo &quot;Tutti i parametri: $@&quot;
+</code></pre>
+<blockquote>
+<p>Output:</p>
+</blockquote>
+<pre><code class="language-Bash">Numero argomenti: 3
+Nome script: ./script.sh
+Primo parametro: uno
+Secondo parametro: due
+Tutti i parametri: uno due tre
+</code></pre>
+<h3 id="variabili-speciali">Variabili Speciali:</h3>
+<ul>
+<li>$0 - Nome dello script</li>
+<li>$1, $2, ... - Parametri posizionali</li>
+<li>$# - Numero totale di parametri</li>
+<li>$@ - Tutti i parametri come lista</li>
+<li>$? - Codice di uscita del comando precedente</li>
+<li>$ $ - PID (Process ID) dello script corrente </li>
+</ul>
+<hr />
+<h1 id="operatori-aritmetici"><strong>Operatori Aritmetici</strong>*</h1>
+<h3 id="operazioni-base">Operazioni Base</h3>
+<pre><code class="language-Bash">a=10
+b=3
+echo $((a + b)) # Somma: 13
+echo $((a - b)) # Sottrazione: 7
+echo $((a * b)) # Moltiplicazione: 30
+echo $((a / b)) # Divisione: 3
+echo $((a % b)) # Modulo (resto): 1
+echo $((a ** 2)) # Potenza: 100
+</code></pre>
+<h3 id="incrementi-e-decrementi">Incrementi e Decrementi</h3>
+<pre><code class="language-Bash">((a++)) # Incrementa a di 1
+((a--)) # Decrementa a di 1
+((a+=5)) # Aggiunge 5 a a
+((a*=2)) # Moltiplica a per 2
+((a-=3)) # Sottrae 3 da a
+((a/=2)) # Divide a per 2
+</code></pre>
+<h3 id="sintassi-avanzata">Sintassi Avanzata</h3>
+<pre><code class="language-Bash">risultato=$((a * b + 5))
+somma=$(( (a + b) * 2 ))
+# Usare (( )) per aritmetica
+# No spazi tra parentesi
+# Supporto espressioni complesse
+</code></pre>
+<blockquote>
+<p>[!IMPORTANT] Bash esegue solo aritmetica intera. Per calcoli con decimali, utilizzare strumenti esterni come bc o awk</p>
+</blockquote>
+<hr />
+<h1 id="operatori-di-confronto">Operatori di Confronto</h1>
+<h3 id="confronto-numerico">Confronto Numerico</h3>
+<pre><code class="language-Bash">a=10
+b=20
+[ $a -eq $b ] # uguale
+[ $a -ne $b ] # diverso
+[ $a -lt $b ] # minore
+[ $a -le $b ] # minore uguale
+[ $a -gt $b ] # maggiore
+[ $a -ge $b ] # maggiore uguale
+</code></pre>
+<h3 id="confronto-stringhe">Confronto Stringhe</h3>
+<pre><code class="language-Bash">str1=&quot;hello&quot;
+str2=&quot;world&quot;
+[ &quot;$str1&quot; = &quot;$str2&quot; ] # uguale
+[ &quot;$str1&quot; != &quot;$str2&quot; ] # diverso
+[ -z &quot;$str&quot; ] # vuota
+[ -n &quot;$str&quot; ] # non vuota
+</code></pre>
+<h3 id="test-su-file">Test su File</h3>
+<pre><code class="language-Bash">file=&quot;/etc/passwd&quot;
+dir=&quot;/home&quot;
+[ -f &quot;$file&quot; ] # è un file
+[ -d &quot;$dir&quot; ] # è directory
+[ -r &quot;$file&quot; ] # leggibile
+[ -w &quot;$file&quot; ] # scrivibile
+[ -x &quot;$file&quot; ] # eseguibile
+[ -e &quot;$file&quot; ] # esiste
+</code></pre>
+<hr />
+<h1 id="condizionale-if-then-else"><strong>Condizionale: if-then-else</strong></h1>
+<h3 id="struttura-base">Struttura Base</h3>
+<pre><code class="language-Bash">#!/bin/bash
+eta=$1
+if [ $eta -ge 18 ]; then
+    echo &quot;Sei maggiorenne&quot;
+else
+    echo &quot;Sei minorenne&quot;
+fi
+</code></pre>
+<h3 id="esempi-di-esecuzione">Esempi di Esecuzione</h3>
+<pre><code class="language-Bash">./script.sh 25
+# Output: Sei maggiorenne
+./script.sh 15
+# Output: Sei minorenne
+</code></pre>
+<h3 id="if-elif-else-multipli">If-Elif-Else Multipli</h3>
+<pre><code class="language-Bash">
+Struttura Base
+Esempi di Esecuzione
+#!/bin/bash
+voto=$1
+if [ $voto -ge 90 ]; then
+    echo &quot;Eccellente&quot;
+elif [ $voto -ge 80 ]; then
+    echo &quot;Buono&quot;
+elif [ $voto -ge 70 ]; then
+    echo &quot;Sufficiente&quot;
+elif [ $voto -ge 60 ]; then
+    echo &quot;Appena sufficiente&quot;
+else
+    echo &quot;Insufficiente&quot;
+fi
+</code></pre>
+<hr />
+<h1 id="operatori-logici">Operatori Logici</h1>
+<h3 id="and-entrambe-vere">AND (&amp;&amp;) - Entrambe Vere</h3>
+<blockquote>
+<p>Entrambe le condizioni devono essere soddisfatte</p>
+</blockquote>
+<pre><code class="language-Bash">if [ $eta -ge 18 ] &amp;&amp; [ -f &quot;$documento&quot; ]; then
+    echo &quot;Puoi votare, hai documento valido&quot;
+fi
+</code></pre>
+<h3 id="or-almeno-una-vera">OR ( | | ) - Almeno Una Vera</h3>
+<blockquote>
+<p>Basta che una delle condizioni sia soddisfatta</p>
+</blockquote>
+<pre><code class="language-Bash">if [ &quot;$EUID&quot; -eq 0 ] || [ &quot;$UID&quot; -eq 0 ]; then
+    echo &quot;Sei root o hai privilegi elevati&quot;
+fi
+</code></pre>
+<h3 id="not-negazione">NOT (!) - Negazione</h3>
+<blockquote>
+<p>Inverte i risultati di una condizione</p>
+</blockquote>
+<pre><code class="language-Bash">if [ ! -f &quot;$file&quot; ]; then
+    echo &quot;File non esiste&quot;
+    touch &quot;$file&quot;
+fi
+</code></pre>
+<h3 id="combinazioni-complesse">Combinazioni Complesse</h3>
+<blockquote>
+<p>Usare parentesi per raggruppare condizioni</p>
+</blockquote>
+<pre><code class="language-Bash">if [ -f &quot;$file&quot; ] &amp;&amp; ([ -r &quot;$file&quot; ] || [ -w &quot;$file&quot; ]); then
+    echo &quot;File esiste ed è leggibile o scrivibile&quot;
+fi
+</code></pre>
+<hr />
+<h1 id="ciclo-for"><strong>Ciclo For</strong></h1>
+<h3 id="lista-di-elementi">Lista di Elementi</h3>
+<pre><code class="language-Bash">#!/bin/bash
+for frutto in mela banana arancia; do
+    echo &quot;Mi piace: $frutto&quot;
+done
+</code></pre>
+<blockquote>
+<p>Output:</p>
+</blockquote>
+<pre><code class="language-Bash">Mi piace: mela
+Mi piace: banana
+Mi piace: arancia
+</code></pre>
+<h3 id="parametri-script">Parametri Script</h3>
+<pre><code class="language-Bash">#!/bin/bash
+for parametro in $@; do
+    echo &quot;Parametro: $parametro&quot;
+done
+</code></pre>
+<blockquote>
+<p>Esecuzione e Output</p>
+</blockquote>
+<pre><code class="language-Bash">./script.sh uno due tre
+
+Parametro: uno
+Parametro: due
+Parametro: tre
+</code></pre>
+<h3 id="sequenza-numerica">Sequenza Numerica</h3>
+<pre><code class="language-Bash">#!/bin/bash
+for ((i=1; i&lt;=5; i++)); do
+    echo &quot;Numero: $i&quot;
+done
+</code></pre>
+<blockquote>
+<p>Output:</p>
+</blockquote>
+<pre><code class="language-Bash">Numero: 1
+Numero: 2
+Numero: 3
+Numero: 4
+Numero: 5
+</code></pre>
+<h3 id="iterare-su-file-e-directory">Iterare su File e Directory</h3>
+<pre><code class="language-Bash">for file in /var/log/*.log; do
+    echo &quot;Elaborando: $file&quot;
+    wc -l &quot;$file&quot;
+done
+</code></pre>
+<hr />
+<h1 id="ciclo-while"><strong>Ciclo While</strong></h1>
+<h3 id="ciclo-condizionale-base">Ciclo Condizionale Base</h3>
+<pre><code class="language-Bash">#!/bin/bash
+contatore=1
+while [ $contatore -le 5 ]; do
+    echo &quot;Contatore: $contatore&quot;
+    ((contatore++))
+done
+</code></pre>
+<h3 id="leggere-file-riga-per-riga">Leggere File Riga per Riga</h3>
+<pre><code class="language-Bash">#!/bin/bash
+while IFS= read -r riga; do
+    echo &quot;Riga: $riga&quot;
+done &lt; /etc/passwd
+</code></pre>
+<blockquote>
+<p>[!NOTE] IFS (Internal Field Separator): Quando si legge da file, IFS= preserva gli spazi iniziali e finali. read -r disabilita l'interpretazione dei backslash</p>
+</blockquote>
+<hr />
+<h1 id="switch-case"><strong>Switch Case</strong></h1>
+<blockquote>
+<p>Da usare quando si devono confrontare valori discreti contro una singola variabile.
+Particolarmente utile per:
+- Menù di selezione
+- Script di gestione servizi
+- Parser di opzioni
+- Switch su tipi di file</p>
+</blockquote>
+<h3 id="pattern-matching">Pattern Matching:</h3>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>qualsiasi stringa</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>? - singolo carattere</li>
+<li>[...] - set di caratteri</li>
+</ul>
+<h3 id="esempio-completo">Esempio Completo:</h3>
+<pre><code class="language-Bash">#!/bin/bash
+opzione=$1
+case $opzione in
+start)
+echo &quot;Avviando servizio...&quot;
+systemctl start myservice
+;;
+stop)
+echo &quot;Fermando servizio...&quot;
+systemctl stop myservice
+;;
+restart)
+echo &quot;Riavviando servizio...&quot;
+systemctl restart myservice
+;;
+status)
+echo &quot;Stato servizio:&quot;
+systemctl status myservice
+;;
+*)
+echo &quot;Opzione non riconosciuta: $opzione&quot;
+echo &quot;Uso: $0 {start|stop|restart|status}&quot;
+exit 1
+;;
+esac
+</code></pre>
+<hr />
+<h1 id="funzioni"><strong>Funzioni</strong></h1>
+<blockquote>
+<p>Le funzioni permettono di suddividere script complessi in blocchi riutilizzabili, migliorando leggibilità e manutenzione del codice.</p>
+</blockquote>
+<h3 id="dichiarazione-e-utilizzo-base">Dichiarazione e Utilizzo Base</h3>
+<pre><code class="language-Bash">#!/bin/bash
+# Definizione funzione
+saluta() {
+echo &quot;Ciao, $1!&quot;
+echo &quot;Benvenuto nel sistema&quot;
+}
+# Chiamate alla funzione
+saluta &quot;Marco&quot;
+saluta &quot;Lucia&quot;
+</code></pre>
+<blockquote>
+<p>Output:</p>
+</blockquote>
+<pre><code class="language-Bash">Ciao, Marco!
+Benvenuto nel sistema
+Ciao, Lucia!
+Benvenuto nel sistema
+</code></pre>
+<h3 id="variabili-locali-vs-globali">Variabili Locali vs Globali</h3>
+<pre><code class="language-Bash">#!/bin/bash
+GLOBALE=&quot;Visibile ovunque&quot;
+funzione_esempio() {
+    local var_locale=&quot;Visibile solo qui&quot;
+    var_globale=&quot;Accessibile all'esterno&quot;
+    echo &quot;Dentro funzione: $var_locale&quot;
+}
+echo &quot;Fuori funzione: $var_globale&quot;
+# echo &quot;$var_locale&quot; # ERRORE: non definita
+</code></pre>
+<blockquote>
+<p>[!NOTE] <strong>Best Practice:</strong> usare sempre local per variabili di funzioni per evitare conflitti e side-effects</p>
+</blockquote>
+<h3 id="funzioni-con-ritorno-valore">Funzioni con ritorno valore</h3>
+<pre><code class="language-Bash">#!/bin/bash
+addiziona() {
+    local a=$1
+    local b=$2
+    local risultato=$((a + b))
+    echo $risultato
+}
+# Catturare il risultato
+somma=$(addiziona 10 20)
+echo &quot;Risultato: $somma&quot;
+</code></pre>
+<hr />
+<h1 id="redirezioni-e-pipe-orchestrare-il-flusso-dei-dati"><strong>Redirezioni e Pipe: Orchestrare il flusso dei Dati</strong></h1>
+<h3 id="redirezione-output-stdout">Redirezione Output (stdout)</h3>
+<pre><code class="language-Bash">echo &quot;Testo nel file&quot; &gt; file.txt # Sovrascrive
+echo &quot;Aggiungi riga&quot; &gt;&gt; file.txt # Appende
+ls -la &gt; lista_file.txt # Output in file
+</code></pre>
+<h3 id="redirezione-errori-stderr">Redirezione Errori (stderr)</h3>
+<pre><code class="language-Bash">comando_errato 2&gt; errori.log # Solo errori
+comando 2&gt;&amp;1 output_completo.log # Output + errori
+comando &gt; output.log 2&gt;&amp;1 # Sintassi alternativa
+</code></pre>
+<h3 id="pipe-concatenazione-comandi">Pipe | - Concatenazione Comandi</h3>
+<pre><code class="language-Bash">cat /var/log/syslog | grep &quot;error&quot; # Filtra righe
+cat lista.txt | sort | uniq # Ordina e deduplica
+ls -l | wc -l # Conta file
+ps aux | grep apache | wc -l # Conta processi
+</code></pre>
+<h3 id="combinazioni-avanzate">Combinazioni Avanzate</h3>
+<pre><code class="language-Bash">#!/bin/bash
+# Conta errori in log
+errori=$(grep -c &quot;ERROR&quot; /var/log/apache2/error.log)
+echo &quot;Errori trovati: $errori&quot;
+# Salva processi Apache
+ps aux | grep apache &gt; processi_apache.txt
+# Reindirizza tutto
+./script.sh &gt; output.log 2&gt;&amp;1 &amp;
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js"></script>
+        <script src="../../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
