@@ -125,6 +125,72 @@ Tutti i parametri: uno due tre
 - $ $ - PID (Process ID) dello script corrente 
 
 ---
+# **Liste** (Array indicizzato)
+
+>Dichiarazione
+```shell
+server_list=("repo01" "repo02" "test")
+
+# oppure con declare -a
+declare -a server_list=("repo01" "repo02" "test")
+```
+
+>Come iterare/fare controlli su determinati indici:
+```shell
+# Accedere a singoli indici
+echo "primo server "${server_list[0]}""
+echo "secondo server "${server_list[1]}""
+
+# Accedere a tutti gli indici in contemporanea
+echo "Tutti i server "${server_list[@]}""
+
+# Aggiungere un nuovo elemento in coda
+server_list+=("backports")
+
+# Ottenere il numero di elementi di una lista
+echo "Totale elementi: "${#server_list[@]}""
+
+# Iterare su elementi della lista
+for server in "${server_list[@]}"; do
+	echo "Processing server: "$server""
+done
+```
+
+# Dizionari (Array Associativo)
+
+>Dichiarazione
+```shell
+declare -A server_ips
+
+server_ips["web01"]="10.0.0.20"
+server_ips["repo"]="10.30.21.06"
+server_ips["pki"]="10.20.10.14"
+
+# Oppure tutto in una volta
+declare -A server_ips=(
+	["web01"]="https://blablabla.it"
+	["repo"]="https:/pipopipi.com"
+	["pki"]="192.168.1.89"
+)
+```
+
+>Come iterare/fare controlli:
+```shell
+# accedere a solo un valore
+echo "${server_ips["web01"]}"
+
+# Leggere tutti i VALORI
+echo "${server_ips[@]}"
+
+# Leggere tutte le CHIAVI
+echo "${!server_ips[@]}"
+
+for service_name in "${!server_ips[@]}"; do
+	ip = "${server_ips}["$service_name"]"
+	echo "Sto analizzando il server "$service_name" che ha questo IP "$ip""
+done
+```
+---
 # **Operatori Aritmetici***
 
 ### Operazioni Base
@@ -277,7 +343,6 @@ fi
 ---
 # **Ciclo For**
 
-### Lista di Elementi
 ```Bash
 #!/bin/bash
 for frutto in mela banana arancia; do

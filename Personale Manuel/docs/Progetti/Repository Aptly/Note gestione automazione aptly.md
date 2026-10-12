@@ -1,3 +1,4 @@
+#Linux  #aptly
 # Da fare:
  - [x] Aggiungere controllo dell'esistenza della repository aptly
  - [x] **automazione della configurazione del server aptly con Ansible**

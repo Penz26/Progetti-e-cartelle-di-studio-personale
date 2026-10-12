@@ -555,6 +555,92 @@ ansible-playbook --tags "pki" --check -diff playbook.yaml
 >Continuata documentazione
 
 ---
-# ==***02/09/2026***==
 
->
+# ==***02/09/2026***==
+>Test fallito a causa di privilegi
+
+---
+# ==***03/09/2026***==
+>Continuata documentazione  e test su macchina locale collegandomi in ssh a root con la chiave
+
+---
+# ==***04/09/2026***==
+>**TEST: SUCCESSO ✅️**
+
+>Iniziata fase di hardening del playbook:
+>Cose da cambiare:
+>- mail dello user di deployment durante la creazione della chiave gpg
+>- nome repository (non più dipendendente dal nome della distribuzione di default)
+>- gestione dei ruoli all'interno del playbook
+>- **per ora** pubblicazione a mano dei pacchetti
+
+## **Nuovo incarico**
+>Sviluppo di uno script bash che sostituisce l'intera parte del client
+>- generazione chiave e certificato tramite chiamata API ad EJBCA in mTLS mandando un payload con i dati del client
+>- configurazione della repository
+> Ciò causa l'embedding di:
+>- Chiave GPG che firma le repository
+>- chain dei certificati della CA
+>- certificato per mTLS ad EJBCA
+>- chiave per mTLS ad EJBCA
+
+>Iniziata progettazione delllo script
+---
+# ==***07/09/2026***==
+>Continuato sviluppo dello script.
+>Primi testing di connessione ad EJBCA via curl:
+>- GET ✅️
+>- POST: ⁉️ (bad request)
+---
+# ==***08/09/2026***==
+>Finalizzata prima versione dello script:
+>Creazione dei certificati con EJBCA: ✅️
+>(Errore causato dalla presenza di "" in più)
+
+>Prima prova su client esterno: ❌️
+>(Errore: Bad Request, Repository is not signed)
+
+>Scoperto errore nella configurazione della configurazione dell'mTLS
+
+>La variabile "$REPOURL" conteneva l'inter URL quando invece era da dividere in
+>Acquire::https::"$FQDN"::CaInfo "..."
+>...
+
+>Configurazione errata ❌️: 
+```text
+Acquire::"REPOURL"::CAInfo "$CACHAIN";
+Acquire::"REPOURL"::SSLCert "$CLIENT_CERT";
+Acquire::"REPOURL"::SSLKey "CLIENT_KEY";
+Acquire::"REPOURL"::Verify-Peer "true";
+Acquire::"REPOURL"::Verify-Host "true";
+```
+
+>Configurazione corretta ✅️: 
+```text
+Acquire::https::"FQDN"::CAInfo "$CACHAIN";
+Acquire::https::"FQDN"::SSLCert "$CLIENT_CERT";
+Acquire::https::"FQDN"::SSLKey "CLIENT_KEY";
+Acquire::https::"FQDN"::Verify-Peer "true";
+Acquire::https::"FQDN"::Verify-Host "true";
+```
+---
+# ==***09/09/2026***==
+>Continuata documentazione script e analisi della possibilità di pubblicare per diverse distribuzioni in una sola repository
+
+>E' possibile pubblicare per più distribuzioni sotto un'unica repository **MA** non è consigliato se i pacchetti funzionano in modo diverso su altre distribuzioni
+
+>Esplorazione più profonda della struttura di aptly
+
+>Aiutata collega con inserimento dati per lista invitati inaugurazione anello di fibra
+---
+# ==***10/09/2026***==
+>**Risolti**✅️: 
+>- Documentazione della pubblicazione manuale dei pacchetti
+>- gestione dei ruoli del playbook (eliminati ruoli pki_tls e apt_client, riorganizzate connessioni)
+>- Testing nuove distribuzioni su singoli prefix,
+>- Nome diverso della repository e commento
+>- Nuova chiave gpg (causata dal cambiamento della mail dello user di gpg durante la generazione)
+>- droppati snapshot e vecchia repository
+
+---
+# ==***11/09/2026***==

@@ -1,4 +1,4 @@
-#Linux 
+#Linux #Proxmox 
 
 # **Cos'è?**
 >Samba è un software che implementa il protocollo SMB/CIFS su Linux, permettendo la condivisione di file e stampanti in rete.
@@ -6,6 +6,8 @@
 >Opera a livello di utente di sistema e permessi di filesystem (POSIX)
 
 >Ma anche a livello applicativo attraverso credenziali e policy definite nel database TDB di Samba (smbpasswd)
+
+[Ubuntu docs per samba](https://ubuntu.com/server/docs/how-to/samba/)
 
 ---
 # **Installazione**

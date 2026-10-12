@@ -1,4 +1,4 @@
-#Linux 
+2#Linux 
 
 # **Cos' è nmcli?**
 >nmcli è l' "applicazione da terminale" di network manager.

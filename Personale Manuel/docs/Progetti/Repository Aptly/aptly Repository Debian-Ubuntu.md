@@ -1,4 +1,4 @@
-#Linux 
+#Linux #aptly 
 
 # **Che cos'è una Repository Debian/Ubuntu?**
 
@@ -135,12 +135,17 @@ sudo apt update && sudo apt install aptly -y
 >[!IMPORTANT] Il prefix influenza l'URL a cui deve puntare il client
 
 
->[!ATTENTION] Ogni coppia distribution-component deve avere la sua repo
+>[!NOTE] E' consigliato che ogni coppia distribution-component abbia la sua repo.
+>Si può però pubblicare sotto la stessa repository pacchetti per più distribuzioni.
+
 ```sh
 aptly repo create -comment="Repository Interna Manuel Prod" -distribution="noble" -component="main" nome-repo
 ```
 
 ## **Spiegazione delle flag**
+>**QUESTI CAMPI SONO SOLO DI DEFAULT**
+> >potranno essere sovrascritti durante una pubblicazione specifando i campi -distribution="" e -component=""
+
 >**- comment** : descrizione della repo
 >**- distribution**: release per cui sono compilati i pacchetti (servono come valori predefiniti)
 >**- main**: sezione a cui appartengono i pacchetti                 (servono come valori predefiniti)
@@ -170,18 +175,69 @@ aptly repo add nome-repo /path/al/software_1.0_amd64.deb
 >- Scarica Packages.gz per aggiornare la lista dei software disponibili
 >- Scarica il file .deb via HTTPs con mTLS
 ---
-## **Come vedere le repo esistenti**
+## **Manutenzione repository**
 
->Mostra tutte le repo esistenti
+>**Mostra tutte le repo esistenti**
 ```shell
 aptly repo list
 ```
 
->Mostra le informazioni della repo con i pacchetti di quella repo in particolare
+>**Mostra le informazioni della repo con i pacchetti di quella repo in particolare**
 ```shell
-aptly repo show -with-packages Manuel-prod
+aptly repo show -with-packages NOMEREPO
 ```
 
+>**Vedere che repository sono state già pubblicate con i loro snapshot attuali**
+```shell
+aptly publish list
+```
+
+>**Vedere informazioni sulla repository pubblicata in base al prefix**
+```shell
+aptly publish show DISTRIBUTION PREFIX
+```
+
+>**Aggiungere pacchetti ad una repository**
+```shell
+aptly repo add NOMEREPO path/al/file.deb
+```
+
+>**Creazione snapshot**
+```shell
+aptly snapshot create "nomesnapshot" from repo NOMEREPO
+```
+
+>==***PRIMA PUBBLICAZIONE DI UNO SNAPSHOT***== (**specificare distribuzione e pubblicazione)
+
+>**Pubblicazione snapshot / rollback a snapshot precedente**
+```shell
+aptly publish switch -gpg-key="EMAIL_USER_GPG" DISTRIBUTION PREFIX nomesnapshot
+```
+
+>**Vedere gli snapshot creati fino ad ora in tutte le repository**
+```shell
+aptly snapshot list
+```
+
+>**ELIMINARE UN PREFIX (scollega quel prefix dal server web)**
+```shell
+aptly publish drop DISTRIBUTION PREFIX
+```
+
+>**ELIMINARE UNO SNAPSHOT**
+```shell
+aptly snapshot drop nomesnapshot
+```
+
+>**ELIMINARE UNA REPOSITORY**
+```shell
+aptly repo drop NOMEREPO
+```
+
+>**Cancella tutti i pacchetti non referenziati in alcuna pubblicazione**
+```shell
+aptly db cleanup
+```
 ---
 ## **Come rendere la repo pubblica ed accessibile**:
 
@@ -227,9 +283,6 @@ aptly repo add nome-repo /path/al/software_1.0_amd64.deb
 ```shell
 #Creazione dello snapshot della repo DOPO aver aggiunto i file
 aptly snapshot create <nome-snapshot> from repo <nome-repo>
-
-#Vedere tutti gli snapshot che abbiamo fatto fino ad oggi
-aptly snapshot list
 ```
 
 ## Prima pubblicazione
@@ -238,11 +291,16 @@ aptly snapshot list
 aptly publish snapshot -gpg-key="ID-chiave" -passphrase="passphrase" -distribution="noble" -component="main" nome-snapshot internal
 ```
 
->**-gpg-key**: ID (non intera chiave) della chiave GPG
->**- passphrase**: pasphrase che protegge la repo
+>**-gpg-key**: ID (non intera chiave) della chiave GPG / email dell'utente configurato durante la creazione della chiave GPG
+>**- passphrase**: pasphrase che protegge la repo **(se utilizzata altrimenti si può evitare)**
 >**-distribution**: distribuzione/release per cui sono stati compilati i pacchetti
->**-component**: a che sezione devono appartenere i file
+>**-component**: a che sotto-sezione devono appartenere i file dentro quel prefisso
 >**- internal  :** indica il prefisso sotto cui pubblicarla (il punto indica nell'indirizzo principale della repo `http://server-aptly/dists/...`., in questo caso `http://server-aptly/internal`) 
+
+>**==CAMPI MINIMI:==**
+```shell
+aptly publish snapshot -gpg-key="EMAIL_USER" -distribution="DISTRIBUTION" -component="COMPONENT" nome-snapshot PREFIX
+```
 
 ## Aggiornamento degli snapshot
 >Aggiornamento della repo basata su snapshot 
@@ -257,6 +315,7 @@ aptly publish switch -batch -gpg-key="ID-chiave" -passphrase="" noble internal "
 > - internal: è la sottocartella in cui vive il repository 
 > - nome-snapshot: il nuovo snapshot appena creato che vogliamo pubblicare
 
+>==**CAMPI MINIMI:**==
 ```shell
 aptly publish switch -gpg-key="deployer@azienda.local" DISTRIBUTION PREFIX nome_snapshot
 ```
@@ -265,6 +324,7 @@ aptly publish switch -gpg-key="deployer@azienda.local" DISTRIBUTION PREFIX nome_
 >Una volta inserita darà come risultato questo messaggio:
 
 ![[aptly-publish.png]]
+
 
 ---
 # **Creazione dei certificati per il sito Nginx e i client**
@@ -323,7 +383,7 @@ openssl x509 -req -days 365 -in client.csr -CA ca.crt -CAkey ca.key -CAcreateser
 ```shell
 server {
     listen 443 ssl;
-    server_name 192.168.1.196;    #IP del server aptly oppure FQDN
+    server_name FQDN;    #IP del server aptly oppure FQDN
 
     # 1. Radice dei file (Punta alla cartella che contiene i file di Aptly)
     root /var/www/apt-repo/public;
@@ -390,7 +450,7 @@ gpg --list-keys
 gpg --armor --export ID-chiave-gpg > /tmp/nome-password.pub
 ```
 
->Successivamente condividere la chiave al client tramite metodo personale (rsync/scp/ecc...)
+>Successivamente condividere la chiave al client tramite metodo personale a scelta (rsync/scp/ansible/ecc...)
 
 ## **Sul client**
 
@@ -410,12 +470,17 @@ chmod 644 /etc/apt/keyrings/manuel-repo.pub
 
 ## **Trasferimento del certificato**
 
->Copiare il certificato della CA aziendale sul client nella cartella:
+>Copiare il certificato della CA aziendale sul client nella cartella con metodo a scelta
+
+>Spostare / copiare il file del certificato dentro /usr/local/share/ca-certificates
+>(Questa directory funge solo da appoggio per il passaggio dopo):
 ```sh
-cp ca.crt /usr/local/share/ca-certificates/ca-aziendale.crt
+mv ca.crt /usr/local/share/ca-certificates/ca.crt
 ```
 
->Aggiornare il database dei certificati fidati del sistema:
+>Aggiornare il database dei certificati fidati del sistema
+>(il comando crea il link simbolico del nostro certificato di prima dentro
+>/etc/ssl/certs/ convertendolo già in .pem):
 ```shell
 sudo update-ca-certificates
 ```
@@ -433,7 +498,7 @@ sudo update-ca-certificates
 >- **SLLKey**, indica il path per la propria chiave in modo che il server si possa fidare
 >Gli ultimi due forza i controlli
 ```shell
-Acquire::https::IP/FQDN::CAInfo "/usr/local/share/ca-certificates/ca.crt";
+Acquire::https::IP/FQDN::CAInfo "/etc/ssl/certs/ca.pem";
 Acquire::https::IP/FQDN::SSLCert "/etc/apt/certs/repo-client.crt";
 Acquire::https::IP/FQDN::SSLKey "/etc/apt/certs/repo-client.key";
 Acquire::https::IP/FQDN::Verify-Peer "true";
@@ -441,12 +506,6 @@ Acquire::https::IP/FQDN::Verify-Host "true";
 ```
 
 >[!IMPORTANT] La chiave del client deve essere decifrata altrimenti apt non riesce a leggerla
-
->Decifrazione della chiave del client
-```shell
-cp /etc/apt/certs/repo-client.key /etc/apt/certs/repo-client.key.bak
-openssl rsa -in /etc/apt/certs/repo-client.key.bak -out /etc/apt/certs/repo-client.key
-```
 
 ---
 # **Aggiungere la repo ad apt**
@@ -463,7 +522,7 @@ sudo nano /etc/apt/sources.list.d/apt-repo.sources
 >Contenuto del file:
 ```shell
 Types: deb
-URIs: https://192.168.1.196/prefix
+URIs: https://FQDN/PREFIX
 Suites: noble
 Components: main
 Signed-By: /etc/apt/keyrings/manuel-repo.pub
@@ -558,12 +617,10 @@ systemctl reload nginx
 
 >Su Debian/Ubuntu c'è una directory creata proprio per questo scopo **(/etc/apt/auth.conf.d)**:
 ```shell
-machine 192.168.1.196 login nome-utente password password_usata_per_.htpasswd
+machine https://FQDN login nome-utente password password_usata_per_.htpasswd
 ```
 > - machine: identifica su che macchina queste credenziali possono esssere utilizzate
 > - login: va ad indicare il nome utente specificato al momento della creazione del file .htpasswd
 > - password: indica la password specificata per .htpasswd
 
 ---
-# **Integrazione con GitLab**
-[[Esempio pipeline per aptly]]

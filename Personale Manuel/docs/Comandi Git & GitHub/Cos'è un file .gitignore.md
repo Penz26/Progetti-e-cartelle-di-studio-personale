@@ -12,12 +12,12 @@
 >- **Windows:** `Thumbs.db`, `desktop.ini`
 >- **macOS:** `.DS_Store`
 
-### **2. Dati Sensibili (I più pericolosi!)🛡️
+### **2. Dati Sensibili
 
->Non vuoi mai che le tue password o le chiavi di accesso al database finiscano su GitHub (che è pubblico!).
+>File usati per la configurazione di servizi contenenti password, utenti e chiavi API non dovrebbero mai essere su github.
 - **Esempio:** file `.env`, `config.json` con password, chiavi API private.
 
-### **3. Cartelle delle dipendenze (Troppo pesanti) 📦
+### **3. Cartelle delle dipendenze
 
 >I progetti moderni usano librerie esterne che possono pesare centinaia di MB. Non serve caricarle su GitHub perché possono essere scaricate in un secondo momento con un comando.
 >- **Node.js:** `node_modules/`

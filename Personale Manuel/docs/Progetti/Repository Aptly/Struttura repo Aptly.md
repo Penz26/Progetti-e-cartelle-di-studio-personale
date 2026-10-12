@@ -1,4 +1,5 @@
-#Linux [[aptly Repository Debian-Ubuntu]] [[Note gestione automazione aptly]]
+#Linux #aptly
+[[aptly Repository Debian-Ubuntu]] [[Note gestione automazione aptly]]  
 
 
 # **Configurazione repository**

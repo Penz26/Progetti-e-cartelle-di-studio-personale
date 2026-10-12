@@ -1,3 +1,4 @@
+#Linux #aptly 
 - **all**
 ```shell
 aptly_server_ip: "192.168.1.176"

@@ -1,4 +1,4 @@
-#Linux 
+#Linux #Proxmox 
 
 >Non credo ci sia da spiegare cosa sia Proxmox ma per correttezza spreco 2 righe nel dire cos'è.
 
@@ -23,3 +23,47 @@
   >Elenca la configurazione generale del container specificandone l'ID
 - **Pct exec $vmid -- bash -c "comando_che_si_vuole_eseguire"**
   >Permette di eseguire comandi all'interno di un container direttamente dal nodo principale specificandone l'ID
+  
+  ---
+Installazione proxmox su una vm,
+network interna in modo che il server proxmox possa accedere solo
+2 schede una in NAT una in host only
+Le schede di rete devono essere utilizzate collengandole a degli switch virtuali su proxmox:
+
+---
+# **Snapshot**
+>Fotografia dell'immagine attuale dello stato del server
+
+# **Backup**
+>
+
+>Su proxmox copia anche gli snapshot
+
+---
+# **Network**
+>Una scheda di rete collegato ad uno switch
+![[rete-proxmox.png]]
+
+
+Masquerade sul nodo proxmox
+
+```bash
+ip route | grep default
+sysctl -w net.ipv4.ip_forward=1
+iptables -t nat -A POSTROUTING -s 192.168.56.0 -o <NIC_NAT> -j MASQUERADE
+
+#Per renderlo operativo al riavvio
+post-up echo 1 > /proc/sys/net/ipv4/ip_forward
+post-up iptables -t nat -a POSTROUTINNG -s 192.168.56.0 -o <NIC_NAT> -j MASQUERADE
+```
+
+Dalla gui di proxmox
+Net0 campo gateway 192.168.56.10
+DNS server 1.1.1.1
+
+Di nuovo dentro la CT
+```shell
+ip route
+ping 1.1.1.1
+ping google.com
+```
