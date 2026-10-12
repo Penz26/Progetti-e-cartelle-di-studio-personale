@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>ELF - Documentazione di Manuel</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/color-brewer.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">Documentazione di Manuel</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Git & GitHub</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../../Comandi%20Git%20%26%20GitHub/Comandi%20di%20Git%20Basilari/" class="dropdown-item">Introduzione</a>
+</li>
+                                    
+<li>
+    <a href="../../../../Comandi%20Git%20%26%20GitHub/Comandi%20di%20Git%20per%20collegarsi%20a%20GitHub/" class="dropdown-item">Connessioni a GitHub</a>
+</li>
+                                    
+<li>
+    <a href="../../../../Comandi%20Git%20%26%20GitHub/Cos%27%C3%A8%20un%20file%20.gitignore/" class="dropdown-item">Gitignore</a>
+</li>
+                                    
+<li>
+    <a href="../../../../Comandi%20Git%20%26%20GitHub/Git%20%26%20GitHub/" class="dropdown-item">Generale</a>
+</li>
+                                    
+<li>
+    <a href="../../../../Comandi%20Git%20%26%20GitHub/Issues%20e%20Pull%20Requests/" class="dropdown-item">Issues e Pull Requests</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">ITS</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Cyber</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../Cyber/Nmap/Nmap%20Introduction/" class="dropdown-item">Nmap</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Ncat</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../Cyber/Ncat/Ncat%20Introduction/" class="dropdown-item">Introduzione</a>
+</li>
+            
+<li>
+    <a href="../../../Cyber/Ncat/Ncat%20Advanced/" class="dropdown-item">Avanzato</a>
+</li>
+    </ul>
+  </li>
+            
+<li>
+    <a href="../../../Cyber/Challenge%203%2C%20UDP%20Chat%20%28Red%20vs%20Blue%20vs%20Red%20vs%20Blue%29/" class="dropdown-item">Challenge UDP</a>
+</li>
+            
+<li>
+    <a href="../../../Cyber/RaspBerry%20Pi%20Server/" class="dropdown-item">Raspberry Pi</a>
+</li>
+            
+<li>
+    <a href="../../../Cyber/Vulnerabilit%C3%A0%20locali%20-%20Programmazione/" class="dropdown-item">Vulnerabilità</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">System</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Docker</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../System/Docker/Cos'è Docker.md" class="dropdown-item">Cos'è Docker</a>
+</li>
+            
+<li>
+    <a href="../../../System/Docker/Docker Compose.md" class="dropdown-item">Docker Compose</a>
+</li>
+            
+<li>
+    <a href="../../../System/Docker/DockerFile.md" class="dropdown-item">Dockerfile</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Linux</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../System/Linux/Comandi di Linux.md" class="dropdown-item">Comandi Base</a>
+</li>
+            
+<li>
+    <a href="../../../System/Linux/Bash Scripting.md" class="dropdown-item">Bash Scripting</a>
+</li>
+            
+<li>
+    <a href="../../../System/Linux/Bash Scripting Advanced.md" class="dropdown-item">Bash Avanzato</a>
+</li>
+            
+<li>
+    <a href="../../../System/Linux/SSH/" class="dropdown-item">SSH</a>
+</li>
+            
+<li>
+    <a href="../../../System/Linux/FileTree/" class="dropdown-item">File Tree</a>
+</li>
+    </ul>
+  </li>
+            
+<li>
+    <a href="../../../System/Windows%20Server/Installazione%20Servizi%20%204%C2%B0%20e%205%C2%B0%20Slide/" class="dropdown-item">Windows Server</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">PostgreSQL</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../../PostgreSQL/Introduzione%20a%20PostgreSQL/" class="dropdown-item">Introduzione</a>
+</li>
+                                    
+<li>
+    <a href="../../../../PostgreSQL/Installazione/" class="dropdown-item">Installazione</a>
+</li>
+                                    
+<li>
+    <a href="../../../../PostgreSQL/Inserimento%20Dati/" class="dropdown-item">Inserimento Dati</a>
+</li>
+                                    
+<li>
+    <a href="../../../../PostgreSQL/Queries/" class="dropdown-item">Queries</a>
+</li>
+                                    
+<li>
+    <a href="../../../../PostgreSQL/Joins/" class="dropdown-item">Joins</a>
+</li>
+                                    
+<li>
+    <a href="../../../../PostgreSQL/pgAdmin%204/" class="dropdown-item">pgAdmin 4</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Altro</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../../MkDocs & Mermaid.js.md" class="dropdown-item">Mermaid e MkDocs</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#excalidraw-data" class="nav-link">Excalidraw Data</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#text-elements" class="nav-link">Text Elements</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#drawing" class="nav-link">Drawing</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p>==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠== You can decompress Drawing data with the command palette: 'Decompress current Excalidraw file'. For more info check in plugin settings under 'Saving'</p>
+<h1 id="excalidraw-data">Excalidraw Data</h1>
+<h2 id="text-elements">Text Elements</h2>
+<p>Elf ^hpfBeqz1</p>
+<p>Codice ^YQrMkPPO</p>
+<p>Stack ^Fq2GYuEE</p>
+<p>int prova                                 0x15
+int test                                  0x10
+ ^O5eyhaHL</p>
+<p>%%</p>
+<h2 id="drawing">Drawing</h2>
+<pre><code class="language-compressed-json">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
+</code></pre>
+<p>%%</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js"></script>
+        <script src="../../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
