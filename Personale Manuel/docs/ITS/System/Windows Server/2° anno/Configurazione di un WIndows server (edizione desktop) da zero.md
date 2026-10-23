@@ -1,5 +1,11 @@
 
 #Windows
+
+# Installazione Windows Server
+
+- Disco Sata prima perchè dobbiamo scaricare i driver VirtIO
+- Esperienza Desktop
+- riconosciuto il disco windows farà in automatico la partizione.
 # Configurazione
 
 Una volta dentro inizializzare il disco.
@@ -53,3 +59,29 @@ Riattaccare il disco, riavviare e vedere se funziona
 # 1° Backup 
 
 Fare un backup sul disco Localbackup modalità snapshot ZSTD.
+
+
+---
+
+>Una volta fatte le prime configurazioni ed installate le applicazioni necessarie, procedere con:
+1. Cambio password Administrator
+2. Ingresso nella console e creazione degli utenti amministrativi per Disaster Recovery (SysAdm e Rescue)
+3. Modifica indirizzo IP da dinamico (DHCP) a statico
+4. Ingresso al sistema come utente D.R. (SysAdm e Rescue)  e creazione del profilo relativo
+5. Disabilitazione dell’utente Administrator
+6. Personalizzazione del profilo D.R.
+
+>Per la creazione di utenti da riga di comando dare i seguenti comandi sul terminale:
+```shell
+net user <NOME_UTENTE> <PASSWORD> /ADD
+net user <NOME_UTENTE> /expires:never
+net localgroup Administrators <NOME_UTENTE> /add
+net localgroup "Utenti Desktop Remoto" <NOME_UTENTE> /add
+net user <NOME_UTENTE> <PASSWORD> 
+```
+
+---
+
+Licenza datacenter
+riempire i core del server
+massimo licenza datacenter 32core

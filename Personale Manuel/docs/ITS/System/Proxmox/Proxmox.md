@@ -45,7 +45,7 @@ Le schede di rete devono essere utilizzate collengandole a degli switch virtuali
 ![[rete-proxmox.png]]
 
 
-Masquerade sul nodo proxmox
+## **Masquerade sul nodo proxmox**
 
 ```bash
 ip route | grep default
@@ -67,3 +67,76 @@ ip route
 ping 1.1.1.1
 ping google.com
 ```
+
+
+---
+
+# **Utenti ruoli e permessi**
+
+| realm   | chi                       | per cosa              |
+| ------- | ------------------------- | --------------------- |
+| **pam** | utenti di sistema         | shell, emergenza      |
+| **pve** | utenti interni di Proxmox | GUI e API ogni giorno |
+Catena: gruppo --> Ruolo --> permesso per path -->API token
+
+>**Perchè non da root@pam**:
+
+Un utente per persona --> in un gruppo --> con un ruolo su un path
+Dai solo i permessi che servono: **minimum privilege**
+
+
+
+# **Repository e aggiornamenti**
+
+Usando un proxmox senza enterprise subscription serve una repo **no-subscription**
+
+Si può fare da GUI nella sezione:
+**datacenter --> pve --> updates --> repositories**
+
+Disabilitare:
+1. pve-enterprise.sources
+2. ceph.sources
+
+>Per attivare invece la repository no-subscription
+
+add --> no-subscription
+
+Da terminale bisogna andare in /etc/apt/sources.list.d:
+
+# **Firewall**
+
+Su Proxmox ci sono tre piani, dal più largo al più stretto:
+
+- **Dataceenter:** vale per tutto
+- **Nodo:** l'host
+- **Guest:** la singola VM/CT
+
+>Se si accednde un firewall senza una regola d'accesso ci si chiude fuori.
+
+Controllare prima di avviare:
+1. **snapshot del nodo**
+2. consentire porta 22 (SSH) e 8006 (GUI) dalla tua rete
+3. **Poi** abilito
+
+---
+## **Quorom -- maggioranza (almeno 3 nodi , sempre dispari per la question della maggioranza)**
+>Il cluster decide a **maggioranza dei dati** dei voti
+
+>2 nodi: se uno muore l'altro resta in minoranza 
+>Soluzione un terzo voto esterno, il QDevice
+
+
+# **Replica dischi (almeno 2 nodi)**
+>Copia schedulativa di un CT/VM su un secondo nodo
+>Asincrona: ogni N minuti, non in tempo reale
+>Nodo A muore: su B c'è una copia recente delle VM e CT
+
+>Dal vivo: CT --> Replication --> job, schedulazione, nodo di destinazione
+
+---
+
+|         | Cos'è                   | Quando               |
+| ------- | ----------------------- | -------------------- |
+| Backup  | copia nel tempo esterno | ripristino, disastro |
+| Replica |                         |                      |
+| HA      |                         |                      |
