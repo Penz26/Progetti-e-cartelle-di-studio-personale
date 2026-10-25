@@ -24,23 +24,5 @@
 
 # **[Profilo Github](https://github.com/Penz26)**
 
-<iframe
-
-src="https://github.com/Penz26"
-
-width="100%"
-
-height="600px"
-
-style="border: 1px solid #ddd; border-radius: 8px;">
-
-</iframe>
 
 # **[Sito Personale self hostato](https://manuelbernardelli.it)**
-
-<iframe
-	src="https://manuelbernardelli.it"
-	width="100%"
-	height="600px"
-	style="border: 1px solid #ddd; border-radius: 8px;">
-</iframe>

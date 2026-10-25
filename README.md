@@ -1,9 +1,12 @@
-#######################################################################
-###### BENVENUTO ALLA MIA REPOSITORY DI STUDIO E LAVORO PERSONALE #####
-#######################################################################
+# Repository di studio e progetti personali
 
-##Al suo interno potrai trovare:
-- Directory Inerente Python e i suoi approfondimenti
-- Directory ITS dove mantengo tutti i miei appunti delle varie materie
-- Directory sulle basi di Git & GitHub dove tengo i comandi e le basi dei due servizi
+> personale raccolta di appunti dal mio percorso di studi e anche da autodidatta
 
+## **_Aree Tematiche_**
+
+- [Actions github](.github/workflows/deploy.yml)
+- Java autodidatta (in corso)
+- Python autodidatta
+- arduino ITS
+- c++ autodidatta (in corso)
+- [appunti](docs/Knowledge/index.md)
