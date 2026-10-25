@@ -1,18 +1,18 @@
 site_name: Documentazione di Manuel
 site_description: Il mio archivio personale di appunti su Obsidian.
-
-theme: 
+docs_dir: "Knowledge"
+theme:
   name: lux
 
   # Funzionalità Extra per l'interfaccia
   features:
-    - navigation.tabs          # Sposta il menu principale in alto
-    - navigation.sections      # Rende le sezioni cliccabili e ordinate
-    - navigation.expand        # Espande i menu automaticamente
-    - navigation.top           # Aggiunge il tasto "Torna su"
-    - search.suggest           # Suggerimenti durante la ricerca
-    - search.highlight         # Evidenzia i risultati della ricerca
-    - content.code.copy        # Aggiunge il tasto copia ai blocchi di codice
+    - navigation.tabs # Sposta il menu principale in alto
+    - navigation.sections # Rende le sezioni cliccabili e ordinate
+    - navigation.expand # Espande i menu automaticamente
+    - navigation.top # Aggiunge il tasto "Torna su"
+    - search.suggest # Suggerimenti durante la ricerca
+    - search.highlight # Evidenzia i risultati della ricerca
+    - content.code.copy # Aggiunge il tasto copia ai blocchi di codice
 
 docs_dir: Personale Manuel/docs
 nav:
@@ -53,3 +53,4 @@ nav:
       - pgAdmin 4: "PostgreSQL/pgAdmin 4.md"
   - Altro:
       - Mermaid e MkDocs: "MkDocs & Mermaid.js.md"
+
