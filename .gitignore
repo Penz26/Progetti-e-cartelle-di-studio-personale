@@ -16,8 +16,7 @@ env/
 .out
 
 ### Obsidian ###
-# Ignora le impostazioni locali di Obsidian (ma tiene i tuoi appunti .md)
-.obsidian/
+docs/docs
 
 ### System Files ###
 .DS_Store

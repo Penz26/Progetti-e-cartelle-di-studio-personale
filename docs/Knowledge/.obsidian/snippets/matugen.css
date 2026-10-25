@@ -1,0 +1,24 @@
+/* Generato automaticamente da Matugen per Obsidian */
+body {
+    /* Colori primari e accenti */
+    --accent-h: 195;
+    --accent-s: 71%;
+    --accent-l: 72%;
+    --color-accent: #87d1eb;
+    --color-accent-hover: #004e5f;
+    
+    /* Sfondi interfaccia */
+    --background-primary: #0f1416;
+    --background-primary-alt: #171c1f;
+    --background-secondary: #1b2023;
+    --background-secondary-alt: #252b2d;
+    
+    /* Testo e bordi */
+    --text-normal: #dee3e6;
+    --text-muted: #bfc8cc;
+    --text-faint: #899296;
+    --border-color: #303638;
+    
+    /* Selezione e cursore */
+    --text-selection: #344a52;
+}
