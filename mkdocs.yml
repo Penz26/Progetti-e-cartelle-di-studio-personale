@@ -1,7 +1,7 @@
 site_name: Documentazione di Manuel
 site_description: Il mio archivio personale di appunti su Obsidian.
 theme:
-    name: readthedocs
+    name: material
     language: it
     palette:
         # Modalità chiara/scura automatica o commutabile
@@ -40,6 +40,7 @@ markdown_extensions:
                 class: mermaid
                 format:
                     !!python/name:pymdownx.superfences.fence_code_format # Evidenziazione sintattica avanzata per il codice
+
 
     - pymdownx.highlight:
           anchor_linenums: true

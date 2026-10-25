@@ -17,6 +17,7 @@ env/
 
 ### Obsidian ###
 docs/docs
+docs/Knowledge/.obsidian
 
 ### System Files ###
 .DS_Store

@@ -2,7 +2,7 @@
 
 > Qui raccolgo appunti, configurazioni e guide rapide riguardanti il mio percorso di studi e i miei progetti personali.
 
-![[Images/vault_obsidian.png]]
+![obsidian-vault](Images/vault_obsidian.png)
 
 > [!NOTE] La documentazione è in continuo aggiornamento e potrebbe non essere sempre al passo con quella su GitHub
 
@@ -22,6 +22,25 @@
 
 ## **Link Utili**
 
-**[Profilo Github](https://github.com/Penz26)**
+# **[Profilo Github](https://github.com/Penz26)**
 
-**[Sito Personale](https://manuelbernardelli.it)**
+<iframe
+
+src="https://github.com/Penz26"
+
+width="100%"
+
+height="600px"
+
+style="border: 1px solid #ddd; border-radius: 8px;">
+
+</iframe>
+
+# **[Sito Personale self hostato](https://manuelbernardelli.it)**
+
+<iframe
+	src="https://manuelbernardelli.it"
+	width="100%"
+	height="600px"
+	style="border: 1px solid #ddd; border-radius: 8px;">
+</iframe>
