@@ -13,7 +13,7 @@ theme:
     - search.highlight # Evidenzia i risultati della ricerca
     - content.code.copy # Aggiunge il tasto copia ai blocchi di codice
 
-docs_dir: Personale Manuel/docs/Knownledge
+docs_dir: Personale Manuel/docs/Knowledge
 nav:
   - Home: index.md
   - Git & GitHub:
@@ -52,4 +52,3 @@ nav:
       - pgAdmin 4: "PostgreSQL/pgAdmin 4.md"
   - Altro:
       - Mermaid e MkDocs: "MkDocs & Mermaid.js.md"
-
