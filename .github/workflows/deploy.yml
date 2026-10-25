@@ -20,8 +20,8 @@ jobs:
       - name: Installa Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.x'
-      
+          python-version: "3.x"
+
       - name: Installa MkDocs e il tema Lux
         run: |
           pip install mkdocs
@@ -29,3 +29,4 @@ jobs:
 
       - name: Compila e Pubblica
         run: mkdocs gh-deploy --force
+
