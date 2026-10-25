@@ -1,24 +1,27 @@
-# Benvenuto nella mia Documentazione 
->Benvenuto nella mia documentazione personale. Qui raccolgo appunti, configurazioni e guide rapide riguardanti il mio percorso di studi e i miei progetti personali. 
+# **Benvenuto nella mia Documentazione**
 
->[!NOTE] La documentazione è in continuo aggiornamento e potrebbe non essere sempre al passo con quella su GitHub
+> Qui raccolgo appunti, configurazioni e guide rapide riguardanti il mio percorso di studi e i miei progetti personali.
 
---- 
-## Aree Tematiche: 
+![[Images/vault_obsidian.png]]
 
-### Sviluppo & Controllo Versione 
-* **[Git & GitHub](Comandi Git %26 GitHub/Git %26 GitHub.md)**: 
-Tutto quello che serve per gestire i repository, risolvere conflitti e collaborare. 
+> [!NOTE] La documentazione è in continuo aggiornamento e potrebbe non essere sempre al passo con quella su GitHub
 
-* **[MkDocs & Mermaid](MkDocs %26 Mermaid.js.md)**: Note su come è stato costruito questo sito e come generare diagrammi da codice. ### 🗄️ Database 
+---
 
-* **[PostgreSQL](PostgreSQL/Introduzione a PostgreSQL.md)**: Dall'installazione alle query complesse, passando per i join e la gestione con pgAdmin. 
+## **Aree Tematiche**
 
-### ITS 
-- Cybersecurity 
-    * **Networking**: Guide su [Nmap](ITS/Cyber/Nmap/Nmap Introduction.md) e [Ncat](ITS/Cyber/Ncat/Ncat Introduction.md). 
-    * **Lab**: Documentazione sui server [Raspberry Pi](ITS/Cyber/RaspBerry Pi Server.md) e vulnerabilità locali. ### 🐧 ITS - Systems & DevOps * **Linux**: [Bash Scripting](ITS/System/Linux/Bash Scripting.md), SSH e gestione del file system. 
-    * **Docker**: Containerizzazione, [Docker Compose](ITS/System/Docker/Docker Compose.md) e creazione di Dockerfile. 
-    * **Windows Server**: Appunti sulle slide e installazione servizi. 
----  
-## Link Utili - [Il mio profilo GitHub](https://github.com/penz26)
+> Utilizzo Obsidian come applicazione di note taking e per mantenere il mio ambiente pulito ho deciso di organizzare il vault in 2 cartelle principali per il momento:
+
+- **ITS**
+  In questa cartella tengo tutti gli appunti presi durante il mio percorso presso ITS Digital Academy Mario Volpato di Verona.
+
+- **Personal-Experiences**
+  Mentre qua ci sono appunti presi da autodidatta tra vari videocorsi ed altri miniprogetti che ho svolto per conto mio.
+
+---
+
+## **Link Utili**
+
+**[Profilo Github](https://github.com/Penz26)**
+
+**[Sito Personale](https://manuelbernardelli.it)**

@@ -1,54 +1,175 @@
 site_name: Documentazione di Manuel
 site_description: Il mio archivio personale di appunti su Obsidian.
 theme:
-  name: lux
+    name: readthedocs
+    language: it
+    palette:
+        # Modalità chiara/scura automatica o commutabile
+        - scheme: default
+          primary: indigo
+          accent: indigo
+          toggle:
+              icon: material/brightness-7
+              name: Passa alla modalità scura
+        - scheme: slate
+          primary: indigo
+          accent: indigo
+          toggle:
+              icon: material/brightness-4
+              name: Passa alla modalità chiara
 
-  # Funzionalità Extra per l'interfaccia
-  features:
-    - navigation.tabs # Sposta il menu principale in alto
-    - navigation.sections # Rende le sezioni cliccabili e ordinate
-    - navigation.expand # Espande i menu automaticamente
-    - navigation.top # Aggiunge il tasto "Torna su"
-    - search.suggest # Suggerimenti durante la ricerca
-    - search.highlight # Evidenzia i risultati della ricerca
-    - content.code.copy # Aggiunge il tasto copia ai blocchi di codice
+    # Funzionalità Extra per l'interfaccia
+    features:
+        - navigation.tabs # Sposta il menu principale in alto
+        - navigation.sections # Rende le sezioni cliccabili e ordinate
+        - navigation.expand # Espande i menu automaticamente
+        - navigation.top # Aggiunge il tasto "Torna su"
+        - search.suggest # Suggerimenti durante la ricerca
+        - search.highlight # Evidenzia i risultati della ricerca
+        - content.code.copy # Aggiunge il tasto copia ai blocchi di codice
+plugins:
+    - search
+    - callouts
+markdown_extensions:
+    # Supporto per i callout / box di avviso
+    - admonition
+    - pymdownx.details # Supporta i callout comprimibili (> [!NOTE]-)
+    - pymdownx.superfences: # Supporta blocchi di codice annidati e Mermaid
+          custom_fences:
+              - name: mermaid
+                class: mermaid
+                format:
+                    !!python/name:pymdownx.superfences.fence_code_format # Evidenziazione sintattica avanzata per il codice
 
-docs_dir: Personale Manuel/docs/Knowledge
+    - pymdownx.highlight:
+          anchor_linenums: true
+          line_spans: __span
+          pygments_lang_class: true
+    - pymdownx.inlinehilite
+    # Checklist e checkbox stile Obsidian (- [x])
+    - pymdownx.tasklist:
+          custom_checkbox: true
+    # Tabelle avanzate, emoji e tab di codice
+    - tables
+    - pymdownx.tabbed:
+          alternate_style: true
+    - pymdownx.emoji:
+          emoji_index: !!python/name:material.extensions.emoji.twemoji
+          emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+docs_dir: docs/Knowledge
 nav:
-  - Home: index.md
-  - Git & GitHub:
-      - Introduzione: "Comandi Git & GitHub/Comandi di Git Basilari.md"
-      - Connessioni a GitHub: "Comandi Git & GitHub/Comandi di Git per collegarsi a GitHub.md"
-      - Gitignore: "Comandi Git & GitHub/Cos'è un file .gitignore.md"
-      - Generale: "Comandi Git & GitHub/Git & GitHub.md"
-      - Issues e Pull Requests: "Comandi Git & GitHub/Issues e Pull Requests.md"
-  - ITS:
-      - Cyber:
-          - Nmap: "ITS/Cyber/Nmap/Nmap Introduction.md"
-          - Ncat:
-              - Introduzione: "ITS/Cyber/Ncat/Ncat Introduction.md"
-              - Avanzato: "ITS/Cyber/Ncat/Ncat Advanced.md"
-          - Challenge UDP: "ITS/Cyber/Challenge 3, UDP Chat (Red vs Blue vs Red vs Blue).md"
-          - Raspberry Pi: "ITS/Cyber/RaspBerry Pi Server.md"
-          - Vulnerabilità: "ITS/Cyber/Vulnerabilità locali - Programmazione.md"
-      - System:
-          - Docker:
-              - Cos'è Docker: "ITS/System/Docker/Cos'è Docker.md"
-              - Docker Compose: "ITS/System/Docker/Docker Compose.md"
-              - Dockerfile: "ITS/System/Docker/DockerFile.md"
-          - Linux:
-              - Comandi Base: "ITS/System/Linux/Comandi di Linux.md"
-              - Bash Scripting: "ITS/System/Linux/Bash Scripting.md"
-              - Bash Avanzato: "ITS/System/Linux/Bash Scripting Advanced.md"
-              - SSH: "ITS/System/Linux/SSH.md"
-              - File Tree: "ITS/System/Linux/FileTree.md"
-          - Windows Server: "ITS/System/Windows Server/Installazione Servizi  4° e 5° Slide.md"
-  - PostgreSQL:
-      - Introduzione: "PostgreSQL/Introduzione a PostgreSQL.md"
-      - Installazione: "PostgreSQL/Installazione.md"
-      - Inserimento Dati: "PostgreSQL/Inserimento Dati.md"
-      - Queries: "PostgreSQL/Queries.md"
-      - Joins: "PostgreSQL/Joins.md"
-      - pgAdmin 4: "PostgreSQL/pgAdmin 4.md"
-  - Altro:
-      - Mermaid e MkDocs: "MkDocs & Mermaid.js.md"
+    - Home: index.md
+    - ITS:
+          - Cybersecurity:
+                - 1° Anno:
+                      - Brute Force KeePass2: "ITS/Cyber/1° Anno/Brute Force keepas2.md"
+                      - Challenge 3 - UDP Chat: "ITS/Cyber/1° Anno/Challenge 3, UDP Chat (Red vs Blue vs Red vs Blue).md"
+                      - Domande Tipo Esame: "ITS/Cyber/1° Anno/Domande Tipo Esame.md"
+                      - MITM: "ITS/Cyber/1° Anno/MITM.md"
+                      - Raspberry Pi Server: "ITS/Cyber/1° Anno/RaspBerry Pi Server.md"
+                      - SSFR (Server Side Forge Request): "ITS/Cyber/1° Anno/SSFR (Server Side Forge Request).md"
+                      - Vulnerabilità Locali - Programmazione: "ITS/Cyber/1° Anno/Vulnerabilità locali - Programmazione.md"
+                      - XSS (Cross Site Scripting): "ITS/Cyber/1° Anno/XSS (Cross Site Scripting).md"
+                - 2° Anno:
+                      - Fondamenta Cybersecurity: "ITS/Cyber/2° Anno/Fondamenta Cybersecurity.md"
+                      - Vulnerability Assessment: "ITS/Cyber/2° Anno/Vulnerability Assessment.md"
+                      - Burp Suite: "ITS/Cyber/2° Anno/Burpsuite/ITS.md"
+                - Tools:
+                      - GoBuster: "ITS/Cyber/GoBuster/Gobuster Functionality.md"
+                      - Hydra: "ITS/Cyber/Hydra PassCracker/Hydra Funtionality.md"
+                      - Ncat:
+                            - Introduzione: "ITS/Cyber/Ncat/Ncat Introduction.md"
+                            - Avanzato: "ITS/Cyber/Ncat/Ncat Advanced.md"
+                      - Nmap: "ITS/Cyber/Nmap/Nmap Introduction.md"
+          - Sistemi & DevOps:
+                - Linux:
+                      - Comandi di Linux: "ITS/System/Linux/Bash/Comandi di Linux.md"
+                      - Bash Scripting: "ITS/System/Linux/Bash/Bash Scripting.md"
+                      - Bash Scripting Avanzato: "ITS/System/Linux/Bash/Bash Scripting Advanced.md"
+                      - SSH: "ITS/System/Linux/SSH.md"
+                      - FileTree: "ITS/System/Linux/FileTree.md"
+                      - Cron: "ITS/System/Linux/Cron.md"
+                      - nmcli: "ITS/System/Linux/nmcli.md"
+                      - Ansible: "ITS/System/Linux/Ansible.md"
+                      - Docker:
+                            - Cos'è Docker: "ITS/System/Linux/Docker/Cos'è Docker.md"
+                            - Docker Compose: "ITS/System/Linux/Docker/Docker Compose.md"
+                            - Dockerfile: "ITS/System/Linux/Docker/DockerFile.md"
+                      - Proxmox:
+                            - Proxmox VE: "ITS/System/Linux/Proxmox/Proxmox.md"
+                            - Servizi:
+                                  - Grafana + Prometheus: "ITS/System/Linux/Proxmox/Servizi/Grafana + Prometheus.md"
+                                  - Samba: "ITS/System/Linux/Proxmox/Servizi/Samba.md"
+                                  - What's Up Docker: "ITS/System/Linux/Proxmox/Servizi/What's Up Docker.md"
+                - Windows Server:
+                      - Configurazione da Zero (2° anno): "ITS/System/Windows Server/2° anno/Configurazione di un WIndows server (edizione desktop) da zero.md"
+                      - Installazione Servizi (Slide 4 e 5): "ITS/System/Windows Server/Installazione Servizi  4° e 5° Slide.md"
+                      - Modifiche Basilari Configurazioni: "ITS/System/Windows Server/Modifiche basilari alle configurazioni di Windows Server.md"
+                      - Network e Sistema: "ITS/System/Windows Server/Network e Sistema.md"
+                      - RAID: "ITS/System/Windows Server/RAID.md"
+                      - Tipologie Partizioni: "ITS/System/Windows Server/Tipologie Partizioni.md"
+          - Reti:
+                - Appunti: "ITS/Reti/Appunti.md"
+                - Configurazione VLAN: "ITS/Reti/Configurazione VLAN.md"
+          - Database:
+                - PostgreSQL:
+                      - Introduzione a PostgreSQL: "ITS/Databases/PostgreSQL/Introduzione a PostgreSQL.md"
+                      - Installazione: "ITS/Databases/PostgreSQL/Installazione.md"
+                      - Inserimento Dati: "ITS/Databases/PostgreSQL/Inserimento Dati.md"
+                      - Queries: "ITS/Databases/PostgreSQL/Queries.md"
+                      - Joins: "ITS/Databases/PostgreSQL/Joins.md"
+                      - pgAdmin 4: "ITS/Databases/PostgreSQL/pgAdmin 4.md"
+          - Sviluppo & Strumenti:
+                - Git & GitHub:
+                      - Comandi di Git Basilari: "ITS/Comandi Git & GitHub/Comandi di Git Basilari.md"
+                      - Connessione a GitHub: "ITS/Comandi Git & GitHub/Comandi di Git per collegarsi a GitHub.md"
+                      - Cos'è un file .gitignore: "ITS/Comandi Git & GitHub/Cos'è un file .gitignore.md"
+                      - Git & GitHub: "ITS/Comandi Git & GitHub/Git & GitHub.md"
+                      - Issues e Pull Requests: "ITS/Comandi Git & GitHub/Issues e Pull Requests.md"
+                - Software Security (C):
+                      - Puntatori: "ITS/Software Security/C/Puntatori.md"
+                      - ELF: "ITS/Software Security/C/ELF.md"
+                      - Registers: "ITS/Software Security/C/Registers.md"
+                      - Null Byte: "ITS/Software Security/C/null byte.md"
+                - Programmazione Java:
+                      - Spring Boot: "ITS/Programmazione/Java/Springboot/Springboot.md"
+                - Embedded Code:
+                      - Basi: "ITS/Embedded Code/Basi.md"
+                - Documentazione Efficace:
+                      - CI/CD: "ITS/Documentazione Efficace/CI CD.md"
+                      - MkDocs & Mermaid.js: "ITS/Documentazione Efficace/MkDocs & Mermaid.js.md"
+    - Personal experiences:
+          - Esperienze:
+                - Mynet - Stage: "Personal experiences/Mynet - Stage.md"
+                - Linux Day Primaverile: "Personal experiences/Linux Day Primaverile.md"
+                - Progettini di studio: "Personal experiences/Progettini di studio.md"
+          - GitLab:
+                - Cos'è GitLab: "Personal experiences/GitLab/Cos'è Gitlab.md"
+                - Esempio pipeline per aptly: "Personal experiences/GitLab/Esempio pipeline per aptly.md"
+          - Progetti:
+                - Registrazione Automatica Netbox-Proxmox:
+                      - Automazione Netbox ---> Proxmox via Ansible: "Personal experiences/Progetti/Registrazione automatica Netbox-Proxmox/Automazione Netbox ---> Proxmox via Ansible.md"
+                - Repository Aptly:
+                      - Repository Debian-Ubuntu: "Personal experiences/Progetti/Repository Aptly/aptly Repository Debian-Ubuntu.md"
+                      - Struttura repo Aptly: "Personal experiences/Progetti/Repository Aptly/Struttura repo Aptly.md"
+                      - Variabili Ansible: "Personal experiences/Progetti/Repository Aptly/Variabili Ansible.md"
+                      - Note gestione automazione: "Personal experiences/Progetti/Repository Aptly/Note gestione automazione aptly.md"
+          - Networking:
+                - Introduzione al Networking:
+                      - Base: "Personal experiences/Networking/Introduzione/Base.md"
+                      - Boot: "Personal experiences/Networking/Introduzione/Boot.md"
+                      - Cloud: "Personal experiences/Networking/Introduzione/Cloud.md"
+                      - DNS: "Personal experiences/Networking/Introduzione/DNS.md"
+                      - Protocollo HTTP: "Personal experiences/Networking/Introduzione/Http protocol.md"
+                      - Modello ISO/OSI: "Personal experiences/Networking/Introduzione/ISO OSI.md"
+                      - Web: "Personal experiences/Networking/Introduzione/Web.md"
+                - FreeCodeCamp Networking:
+                      - Basi di Rete: "Personal experiences/Networking/FreecodeCamp networking/BASE.md"
+                      - DHCP: "Personal experiences/Networking/FreecodeCamp networking/DHCP.md"
+                      - Dispositivi di Rete: "Personal experiences/Networking/FreecodeCamp networking/OSI/Dispositivi di rete.md"
+                      - Network Access Services: "Personal experiences/Networking/FreecodeCamp networking/Networking services and applications/Network access services.md"
+                      - VPN (Virtual Private Network): "Personal experiences/Networking/FreecodeCamp networking/Networking services and applications/VPN (Virtual Private Network).md"
+                - Linux Networking:
+                      - iptables: "Personal experiences/Networking/Linux Networking/iptables.md"
+                      - nftables: "Personal experiences/Networking/Linux Networking/nftables.md"

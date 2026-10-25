@@ -1,32 +1,30 @@
 name: Deploy della Documentazione
 
 on:
-  push:
-    branches:
-      - main
+    push:
+        branches:
+            - main
 
 permissions:
-  contents: write
+    contents: write
 
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Scarica il codice
-        uses: actions/checkout@v4
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Scarica il codice
+              uses: actions/checkout@v4
 
-      - name: Mostra i file del server
-        run: ls -la
-      - name: Installa Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.x"
+            - name: Mostra i file del server
+              run: ls -la
+            - name: Installa Python
+              uses: actions/setup-python@v5
+              with:
+                  python-version: "3.x"
 
-      - name: Installa MkDocs e il tema Lux
-        run: |
-          pip install mkdocs
-          pip install mkdocs-bootswatch
+            - name: Installa MkDocs e il tema Lux
+              run: |
+                  pip install mkdocs mkdocs-material mkdocs-callouts pymdown-extensions
 
-      - name: Compila e Pubblica
-        run: mkdocs gh-deploy --force
-
+            - name: Compila e Pubblica
+              run: mkdocs gh-deploy --force
