@@ -1,7 +1,10 @@
 {
   "theme": "obsidian",
-  "cssTheme": "AnuPpuccin",
-  "accentColor": "#a9a7af",
+  "cssTheme": "",
+  "accentColor": "",
   "baseFontSize": 16,
-  "enabledCssSnippets": []
+  "enabledCssSnippets": [
+    "matugen"
+  ],
+  "showRibbon": false
 }
