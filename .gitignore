@@ -16,7 +16,6 @@ env/
 .out
 
 ### Obsidian ###
-docs/docs
 docs/Knowledge/.obsidian
 
 ### System Files ###
