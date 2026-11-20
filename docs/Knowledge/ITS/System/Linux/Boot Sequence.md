@@ -68,7 +68,7 @@ source:
 systemctl get-default
 ```
 
->Per settare invece il default.target
+>Per settare invece il default.target (al prossimo riavvio)
 ```bash
 systemctl set-default multiuser.target
 ```
@@ -116,6 +116,50 @@ systemctl unmask ssh.service
 
 >Questi servizi esistono solo per quello user, per far si che possano esistere anche quando lo user non è loggatto:
 ```bash
-userctl enable-lingering
+loginctl enable-lingering
 ```
 
+Per settare subito un nuovo target a cui avviarsi
+```shell
+sudo systemctl isolate graphical.target
+```
+
+---
+##  **Come settare il multiuser.target direttamente all'avvio del kernel**
+
+>Modificare nella sezione linux in fondo dove c'è boot/ e mettere in fondo con systemd il target di default
+
+Cartelle di configurazione di grub /etc/default/grub
+Una volta aggiornate le configurazioni eseguire
+```shel
+sudo update-grub
+```
+
+>Dal menù di grub si può aprire una shell in cui si possono esplorare i dischi e scoprire dove vivono kernel ed altre cose.
+
+Questa shell può essere usata per cambiare il kernel dicendogli:
+```shell
+linux (hd0,gpt3)/boot/vmlinux... 
+
+initrd
+```
+
+Con `journalctl -b` possiamo vedere i log dall'avvio corrente del kernel
+
+Comando wall manda una "notifica" a tutti gli user usiamo il comando `wall`
+
+Il messaggio al login di uno user sul terminale il file risiede in `etc/motd`
+
+>Mentre /etc/issue viene mostrato direttamente all'avvio /etc/issue.net invece viene solamente creato per le connessioni remote
+
+---
+## **Tipologie di servizi**
+
+`/lib/systemd/system` UNIT SYSTEMD INSTALLATE DAI PACCHETTI
+`/etc/systemd/system` UNIT SYSTEMD INSTALLATE DALL'UTENTE
+Da non confondere con systemd user
+
+
+Per vedere quelli dello user mettiamo `systemctl --user status nomeservizio`
+
+`/etc/systemd/logind.conf` ci sono tutte le impostazioni per il login e ACPI (gestice )
